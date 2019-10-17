@@ -139,24 +139,3 @@ $(document).scroll(function(){
 
 			
 
-// title my-mask mask animationend listener ( not being used )
-$(document).ready(function() {
-	$(".my-mask").each(function() {
-		$(this)[0].addEventListener("animationend", function() {
-			$(this).css("animation", "");
-		});
-	});
-});
-
-$(document).scroll(function() {
-	$(".my-mask").each(function(section_i, section_box) {
-		var top_offset = $(section_box).offset().top - $(window).scrollTop();
-		var bottom_offset = window.innerHeight - (top_offset + $(section_box).height());
-		if((0 < top_offset) && (0 < bottom_offset)) {
-			$(section_box).css('animation', 'my-mask-ani 0.8s');
-			$(section_box)[0].addEventListener("animationend", function() {
-				$(this).css("animation", "")
-			});
-		};
-	});
-});

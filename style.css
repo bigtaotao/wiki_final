@@ -1,0 +1,612 @@
+@charset "utf-8";
+@font-face {
+	font-family: "Myanmar Text";
+	src: url(./mmrtext.ttf) format('truetype');
+}
+
+@keyframes jump-left {
+	0% {
+		left: -40%;
+	}
+	75% {
+		left: -10%;
+	}
+	100% {
+		left: -20%;
+	}
+}
+
+@-webkit-keyframes jump-left {
+	0% {
+		left: -40%;
+	}
+	75% {
+		left: -10%;
+	}
+	100% {
+		left: -20%;
+	}
+}
+
+@keyframes jump-right {
+	0% {
+		right: -40%;
+	}
+	75% {
+		right: -10%;
+	}
+	100% {
+		right: -20%;
+	}
+}
+
+@-webkit-keyframes jump-right {
+	0% {
+		right: -40%;
+	}
+	75% {
+		right: -10%;
+	}
+	100% {
+		right: -20%;
+	}
+}
+
+@keyframes title-mask-an {
+	0% {
+		width: 0%;
+		left: 0;
+	}
+	50% {
+		width: 100%;
+		left: 0%;
+	}
+	100% {
+		width: 0%;
+		left: 100%;
+	}
+}
+
+@-webkit-keyframes title-mask-an {
+	0% {
+		width: 0%;
+		left: 0;
+	}
+	50% {
+		width: 100%;
+		left: 0%;
+	}
+	100% {
+		width: 0%;
+		left: 100%;
+	}
+}
+
+@keyframes title-has-mask-an {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 0;
+	}
+	51% {
+		opacity: 100;
+	}
+	100% {
+		opacity: 100;
+	}
+}
+
+@-webkit-keyframes title-has-mask-an {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 0;
+	}
+	51% {
+		opacity: 100;
+	}
+	100% {
+		opacity: 100;
+	}
+}
+
+
+/* CSS Document */
+
+
+/* home.html start */
+
+
+/* navigation start*/
+
+h1,
+h2,
+h3,
+h4,
+a,p {
+	font-family: "Myanmar Text";
+}
+
+.title-box {
+	Padding-top: 50px;
+	Padding-bottom: 50px;
+	/*to offset the nav-top*/
+}
+
+.title {
+	margin: 0;
+}
+
+.title-has-mask {
+	color: #000;
+	opacity: 100;
+	width: 100%;
+	height: 100%;
+}
+
+.title-has-mask.playing {
+	animation-name: title-has-mask-an;
+	animation-duration: 0.6s;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+	/* Safari 与 Chrome: */
+	-webkit-animation-name: title-has-mask-an;
+	-webkit-animation-duration: 0.6s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-fill-mode: forwards;
+}
+
+.title-has-mask.played {
+	opacity: 100;
+}
+
+.title-mask {
+	position: absolute;
+	width: 0%;
+	/* 隐藏*/
+	height: 50%;
+	background-color: rgb(255, 55, 68);
+	top: 30px;
+	left: 0;
+	z-index: 250;
+}
+
+.title-mask.playing {
+	opacity: 100;
+	animation-name: title-mask-an;
+	animation-duration: 0.6s;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+	/* Safari 与 Chrome: */
+	-webkit-animation-name: title-mask-an;
+	-webkit-animation-duration: 0.6s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-fill-mode: forwards;
+}
+
+.title-mask.played {
+	/*width: 1%;*/
+	opacity: 0;
+}
+
+.title-box {
+	position: relative;
+}
+
+.navigation {
+	width: 100%;
+	height: 4.69rem;
+	margin: auto;
+	flex: auto;
+	position: fixed;
+	z-index: 500;
+}
+
+.navigation-logo {
+	display: flex;
+	align-items: center;
+	width: 16rem;
+}
+
+.logo-img {
+	height: 4.69rem;
+	width: 4.69rem;
+	align-items: center;
+}
+
+.navigation-brand {
+	align-items: center;
+}
+
+.navigation-list {
+	list-style: none;
+	/* float: right; */
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: space-around;
+	font-size: 95%;
+}
+
+.navigation-blue {
+	background-color: rgb(25, 46, 67);
+}
+
+.navigation-blue .navigation-subitem {
+	background-color: rgb(25, 46, 67);
+}
+
+.navigation-red {
+	background-color: rgb(255, 55, 68);
+}
+
+.navigation-red .navigation-subitem {
+	background-color: rgb(255, 55, 68);
+}
+
+.navigation-div {
+	width: 50%;
+	display: flex;
+}
+
+.navigation-item {
+	flex-grow: 1;
+	cursor: pointer;
+	display: inline-block;
+	height: 4.69rem;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.navigation-item.active {
+	background-color: rgba(0, 0, 0, 0);
+	color: rgb(210, 210, 210);
+}
+
+.navigation-item-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	font-size: 0.94rem;
+	font-weight: 300;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.navigation-item-link:link {
+	color: rgb(253, 253, 253);
+	text-decoration: none;
+	font-family: "Myanmar Text";
+	font-size: 1.5rem;
+}
+
+.navigation-item.active>.navigation-item-link:link {
+	color: rgb(210, 210, 210);
+	text-decoration: none;
+}
+
+.navigation-item-link:visited {
+	color: rgb(167, 167, 167);
+	text-decoration: none;
+}
+
+.navigation-item.active>.navigation-item-link:visited {
+	color: rgb(210, 210, 210);
+	text-decoration: none;
+}
+
+.navigation-item:hover {
+	background-color: rgb(210, 210, 210);
+}
+
+.navigation-dropdown-panel {
+	display: none;
+	position: absolute;
+	/* top: 5rem; */
+	/* width:33rem; */
+	margin-top: -0.3rem;
+	/* margin-left: -0.625rem; */
+	padding: 0;
+	/* background-color: #fff; */
+	font-size: 0.875rem;
+	z-index: 999;
+}
+
+.navigation-subitem {
+	list-style: none;
+	line-height: 3.125rem;
+	/* padding: 0 0.625rem; */
+	height: 3.125rem;
+	display: flex;
+	justify-content: space-around;
+}
+
+.navigation-subitem>a {
+	color: rgb(253, 253, 253);
+	height: 3.125rem;
+	line-height: 3.125rem;
+}
+
+.navigation-dropdown-panel>li:hover {
+	background-color: rgb(210, 210, 210);
+}
+
+.navigation-item.dropdown:hover>.navigation-dropdown-panel {
+	display: block;
+}
+
+
+/* 内容的样式 */
+
+.content {
+	width: 100%;
+}
+
+.content-box {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.text-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.video-box {
+	width: 50%;
+}
+
+.content-white {
+	background-color: #fff;
+}
+
+.content-blue {
+	background-color: rgb(25, 46, 67);
+}
+
+.content-red {
+	background-color: rgb(255, 55, 68);
+}
+
+.piano {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	z-index: 100;
+}
+
+.piano-one,
+.piano-three {
+	left: 0;
+}
+
+.piano-one>.piano-key,
+.piano-three>.piano-key {
+	left: -40%;
+	justify-content: flex-start;
+	/* 动画 */
+	animation-name: jump-left;
+	animation-duration: 0.6s;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+	/* Safari 与 Chrome: */
+	-webkit-animation-name: jump-left;
+	-webkit-animation-duration: 0.6s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-fill-mode: forwards;
+}
+
+.play-animation {
+	animation-play-state: running;
+	-webkit-animation-play-state: running;
+}
+
+.stop-animation {
+	animation-play-state: paused;
+	-webkit-animation-play-state: paused;
+}
+
+.piano-two,
+.piano-four {
+	right: 0;
+}
+
+.piano-two>.piano-key,
+.piano-four>.piano-key {
+	right: -40%;
+	justify-content: flex-end;
+	/* 动画 */
+	animation-name: jump-right;
+	animation-duration: 0.4s;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+	/* Safari 与 Chrome: */
+	-webkit-animation-name: jump-right;
+	-webkit-animation-duration: 0.4s;
+	-webkit-animation-timing-function: ease;
+	-webkit-animation-fill-mode: forwards;
+}
+
+.piano-key {
+	position: relative;
+	width: 16rem;
+	height: 2rem;
+	margin: 0.4rem;
+	display: flex;
+}
+
+.piano-key-colorkernel {
+	width: 16rem;
+	height: 2rem;
+	background-color: rgb(255, 55, 68);
+	border-radius: 0.3rem;
+	-moz-border-radius: 0.3rem;
+	/* Old Firefox */
+	box-shadow: 0.4rem 0.4rem 0.2rem rgba(180, 180, 180, 50%);
+}
+
+.piano-key-1-1 {
+	animation-delay: 0.2s;
+	-webkit-animation-delay: 0.2s;
+}
+
+.piano-key-1-1>.piano-key-colorkernel {
+	width: 6rem;
+}
+
+.piano-key-2-1 {
+	animation-delay: 0.2s;
+	-webkit-animation-delay: 0.1s;
+}
+
+.piano-key-2-1>.piano-key-colorkernel {
+	width: 8rem;
+}
+
+.piano-key-2-2 {
+	animation-delay: 0.2s;
+	-webkit-animation-delay: 0.2s;
+}
+
+.piano-key-2-2>.piano-key-colorkernel {
+	width: 12rem;
+}
+
+.piano-key-3-1 {
+	animation-delay: 0.2s;
+	-webkit-animation-delay: 0.1s;
+}
+
+.piano-key-3-1>.piano-key-colorkernel {
+	width: 8rem;
+}
+
+.piano-key-3-2 {
+	animation-delay: 0.2s;
+	-webkit-animation-delay: 0.2s;
+}
+
+.piano-key-3-2>.piano-key-colorkernel {
+	width: 12rem;
+}
+
+.piano-key-3-3 {
+	animation-delay: 0.2s;
+	-webkit-animation-delay: 0.3s;
+}
+
+.piano-key-3-3>.piano-key-colorkernel {
+	width: 6rem;
+}
+
+.logo-content {
+	display: flex;
+	flex-direction: row;
+	flex-grow: 1;
+	justify-content: space-around;
+	align-items: center;
+	background-color: rgb(253, 253, 253);
+}
+
+.logo {
+	width: 230%;
+}
+
+.logo-content-logo {
+	display: flex;
+	flex-direction: column;
+	align-items: center
+}
+
+.foot {
+	width: 100%;
+	background-color: rgb(255, 55, 68);
+}
+
+.foot-content {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.foot-content-item {
+	flex-grow: 1;
+	display: flex;
+	align-content: center;
+	margin: 0.5% 5%;
+}
+
+.foot-content-item>h3 {
+	margin: 0rem 0rem 0rem 3rem;
+	align-self: center;
+}
+
+.video {
+	width: 100%;
+}
+
+.video>video {
+	width: 100%;
+}
+
+
+/*navigation clean default css*/
+
+.navigation {
+	top: 16px;
+	/* left: 0 !important;
+	right: 0 !important; */
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.navigation-list {
+	top: 16px;
+	left: 0 !important;
+	right: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.navigation-item {
+	margin: 0 !important;
+}
+
+.navigation-dropdown-panel {
+	margin: 0 !important;
+}
+
+.navigation-subitem {
+	margin: 0 !important;
+}
+
+/*字体大小*/
+/* h1 {
+	font-size:64px;
+}
+
+h2 {
+	font-size:48px;
+}
+
+h3 {
+	font-size:36px;
+}
+
+h4 {
+	font-size:30px;
+}
+
+h5 {
+	font-size:28px;
+} */
+
+p {
+	/* font-size:26px !important;  */
+	/*font-size:1.75rem;*/
+}

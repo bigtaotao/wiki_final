@@ -2,12 +2,122 @@
 <html>
 
 <head>
-    <link type="text/css" rel="stylesheet" href="style.css">
-    <link type="text/css" rel="stylesheet" href="safety.css">
-    <script src="./jquery.js"></script>
-    <script src="./home.js"></script>
-    <script src="safety.js"></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        .title-box-title h1 {
+            font-family: Georgia, 'Times New Roman', Times, serif !important;
+        }
+
+        /* title */
+        .title-box-new {
+            /* margin: 5vw 5vw 2vw 5vw; */
+            position: relative;
+            width: 100%;
+
+        }
+
+        .title-big h1 {
+            font-size: 16rem !important;
+            /* line-height:14vw; */
+
+        }
+
+        .title-big>.title-box-title {
+            border-left-style: none !important;
+            border-bottom-style: solid;
+            border-color: rgb(255, 55, 68);
+            border-bottom-width: 0.2vw;
+
+        }
+
+        .title-box-mask {
+            position: absolute;
+
+            height: 100%;
+
+            background-color: rgb(255, 55, 68);
+        }
+
+        .title-box-mask-left {
+            left: 0;
+        }
+
+        .title-box-mask-right {
+            right: 0;
+        }
+
+        .title-box-title {
+            /* width: 100%; */
+            height: inherit;
+            border-left-style: solid;
+            border-color: rgb(255, 55, 68);
+            border-left-width: 0.25rem;
+            opacity: 0;
+            display: flex;
+            /* justify-content: center; */
+
+
+        }
+
+        .title-big h1 {
+            flex-grow: 1;
+            vertical-align: middle;
+            text-align: center;
+            margin: 0;
+            font-size: 8rem;
+            color: rgb(25, 46, 67);
+        }
+
+        .title-box-title>h1 {
+            /* flex-grow: 1; */
+            vertical-align: middle;
+            /* text-align:center; */
+            padding: 0 4rem;
+            margin: 0;
+            font-size: 8rem;
+            color: rgb(25, 46, 67);
+        }
+
+        /* title end */
+        /* reference */
+
+        /* reference end */
+        /* content start */
+        .content p {
+            font-size: 4rem;
+            text-align: justify;
+            color: rgb(25, 46, 67);
+        }
+
+        /* content end */
+    </style>
+    <!-- standard head -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript"
+        src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
+    <link type="text/css" rel="stylesheet"
+        href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
+    <script type="text/javascript"
+        src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/navigation&action=raw&ctype=text/javascript"></script>
+    <link rel="stylesheet"
+        href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
+    <script
+        src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
+    <link type="text/css" rel="stylesheet"
+        href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/anvigation&action=raw&ctype=text/css" />
+    <!-- standard head end -->
+    <link type="text/css" rel="stylesheet"
+        href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/safety&action=raw&ctype=text/css" />
+    <script type="text/javascript"
+        src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/safety&action=raw&ctype=text/javascript"></script>
+
+    <!-- <link type="text/css" rel="stylesheet" href="safety.css"> -->
+    <!-- <script src="safety.js"></script> -->
+    <!-- <link type="text/css" rel="stylesheet" href="./navigation.css">
+    <script src="./navigation.js"></script> -->
+
+
     <title>home</title>
 
 </head>
@@ -105,115 +215,267 @@
             </div>
         </div>
     </div> -->
-    <div class="title-box-new title-big">
-        <div class="title-box-mask"></div>
-        <div class="title-box-title">
-            <h1>SAFETY</h1>
-        </div>
-    </div>
-    <div class="title-box-new title-0">
-        <div class="title-box-mask"></div>
-        <div class="title-box-title">
-            <h1>Introduction</h1>
-        </div>
-    </div>
-    <div class="content content-0">
-        <p>Safety, which is an eternal topic of social concern, is the prerequisite for mankind to understand and
-            transform the world, so our project is no different.</p>
-        <p>First of all, what is safety? Safety is to control the possible damage to human life, property and
-            environment caused by the running state of the system in the process of human production below the
-            acceptable level. In another word, safety usually refers to the person is not threatened, dangerous, harm,
-            loss.</p>
-        <p>We hope that our study can provide new ideas for clinical treatment under the premise of safety. Therefore,
-            in this chapter we will describe how we address biosecurity and other safety requirements in our project.
-        </p>
-
-    </div>
-
-
-    <div class="title-box-new title-1">
-        <div class="title-box-mask"></div>
-        <div class="title-box-title">
-            <h1>Project safety</h1>
-        </div>
-    </div>
-    <div class="content content-1">
-        <p>
-            Our project is dedicated to the study of oncolytic viruses M1. M1 is a strain of Getah-like alphavirus that
-            was isolated from culicine mosquitoes collected on Hainan Island of China. Getah virus is transmitted mainly
-            among horses and pigs, and it has not been linked to human illness. Also, M1 does not cause apparent disease
-            symptoms in mice or rats, even on administration of doses up to 3 × 107 pfu per mouse or 3 × 108 pfu per
-            rat[1]. M1 kills tumor cells, but activates innate immunity that can eliminate M1 in normal cells.
-            Therefore, our research is harmless to the human body and the environment.
-        </p>
-    </div>
-
-
-
-    <div class="title-box-new title-2">
-        <div class="title-box-mask"></div>
-        <div class="title-box-title">
-            <h1>design safety</h1>
-        </div>
-    </div>
-    <div class="content content-2">
-        <p>As a Chinese saying goes, we should nip something harmful in the bud. Foreseeing safety problems and
-            proposing solutions is a necessity for everyone engaged in biological research, and that's what we did. The
-            following table shows the security issues we considered in the design and the corresponding solutions.</p>
-    </div>
-
-
-
-    <div class="title-box-new title-3">
-        <div class="title-box-mask"></div>
-        <div class="title-box-title">
-            <h1>lab safety</h1>
-        </div>
-    </div>
-    <div class="content content-3">
-        <p>Our project is conducted in the biosafety 1/2 laboratory, and our lab conforms to the regulations on
-            laboratory safety management of Sun Yat_Sen university. The experimental consumables especially the
-            quick-burning, flammable materials are stored in designated locations away from the fire source, and the lab
-            is equipped with effective fire fighting facilities. The laboratory and office are strictly separated to
-            prevent unnecessary cross-contamination. Our lab provides biosafety cabinets, autoclave cookers and eye
-            washers, and the waste generated in the experiment was put into trash bags and dustbins with biohazard
-            labels which disposed by relevant personnel.</p>
-        <p>Our team is made up of members from various disciplines, and members in the experimental group have been
-            trained about general lab safety and experimental skills by our guide teacher such as proper use of
-            laboratory equipment and so on. For the safety and health of experimenters in our team, eating and drinking
-            are prohibited in the laboratory, and all the experimenters must wear protective equipment such as gloves
-            and Lab coats. All laboratory work was in accordance with the safety requirements for the laboratory.</p>
-
-    </div>
-    <div class="title-box-new title-4">
-        <div class="title-box-mask"></div>
-        <div class="title-box-title">
-            <h1>ethics</h1>
-        </div>
-    </div>
-    <div class="content content-4">
-        <p>Laboratory animals are replacements for humans. Therefore, safeguarding animal welfare is not only a
-            humanitarian requirement, but also related to the quality of scientific research. Our project was approved
-            by the Animal Ethical and Welfare Committee of Sun Yat¬_sen University, and you can download the document
-            here.</p>
-    </div>
-
-    <div class="reference-box">
-        <div class="title-box-new title-5">
-            <div class="title-box-mask"></div>
-            <div class="title-box-title">
-                <h1 class="reference-title">REFERENCE</h1>
+    <div class="clearfix" style="margin-bottom: 23em;"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-4">
+                <div class="title-box-new title-big">
+                    <div class="title-box-mask"></div>
+                    <div class="title-box-title">
+                        <h1>SAFETY</h1>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="reference-content">
-            <p>[1] Yuan Lin al. Identification and characterization of alphavirus M1 as a selective oncolytic virus
-                targeting ZAP-defective human cancers. PNAS 2014:E4504-E4512
-            </p>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="title-box-new title-0">
+                    <div class="title-box-mask"></div>
+                    <div class="title-box-title">
+                        <h1>Introduction</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="content content-0">
+                    <p>Safety, which is an eternal topic of social concern, is the prerequisite for mankind to
+                        understand and
+                        transform the world, so our project is no different.</p>
+                    <p>First of all, what is safety? Safety is to control the possible damage to human life, property
+                        and
+                        environment caused by the running state of the system in the process of human production below
+                        the
+                        acceptable level. In another word, safety usually refers to the person is not threatened,
+                        dangerous, harm,
+                        loss.</p>
+                    <p>We hope that our study can provide new ideas for clinical treatment under the premise of safety.
+                        Therefore,
+                        in this chapter we will describe how we address biosecurity and other safety requirements in our
+                        project.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="title-box-new title-1">
+                    <div class="title-box-mask"></div>
+                    <div class="title-box-title">
+                        <h1>Project safety</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="content content-1">
+                    <p>
+                        Our project is dedicated to the study of oncolytic viruses M1. M1 is a strain of Getah-like
+                        alphavirus that
+                        was isolated from culicine mosquitoes collected on Hainan Island of China. Getah virus is
+                        transmitted mainly
+                        among horses and pigs, and it has not been linked to human illness. Also, M1 does not cause
+                        apparent disease
+                        symptoms in mice or rats, even on administration of doses up to 3 × 107 pfu per mouse or 3 × 108
+                        pfu per
+                        rat[1]. M1 kills tumor cells, but activates innate immunity that can eliminate M1 in normal
+                        cells.
+                        Therefore, our research is harmless to the human body and the environment.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="title-box-new title-2">
+                    <div class="title-box-mask"></div>
+                    <div class="title-box-title">
+                        <h1>design safety</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="content content-2">
+                    <p>As a Chinese saying goes, we should nip something harmful in the bud. Foreseeing safety problems
+                        and
+                        proposing solutions is a necessity for everyone engaged in biological research, and that's what
+                        we did. The
+                        following table shows the security issues we considered in the design and the corresponding
+                        solutions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="title-box-new title-3">
+                    <div class="title-box-mask"></div>
+                    <div class="title-box-title">
+                        <h1>lab safety</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="content content-3">
+                    <p>Our project is conducted in the biosafety 1/2 laboratory, and our lab conforms to the regulations
+                        on
+                        laboratory safety management of Sun Yat_Sen university. The experimental consumables especially
+                        the
+                        quick-burning, flammable materials are stored in designated locations away from the fire source,
+                        and the lab
+                        is equipped with effective fire fighting facilities. The laboratory and office are strictly
+                        separated to
+                        prevent unnecessary cross-contamination. Our lab provides biosafety cabinets, autoclave cookers
+                        and eye
+                        washers, and the waste generated in the experiment was put into trash bags and dustbins with
+                        biohazard
+                        labels which disposed by relevant personnel.</p>
+                    <p>Our team is made up of members from various disciplines, and members in the experimental group
+                        have been
+                        trained about general lab safety and experimental skills by our guide teacher such as proper use
+                        of
+                        laboratory equipment and so on. For the safety and health of experimenters in our team, eating
+                        and drinking
+                        are prohibited in the laboratory, and all the experimenters must wear protective equipment such
+                        as gloves
+                        and Lab coats. All laboratory work was in accordance with the safety requirements for the
+                        laboratory.</p>
+
+                </div>
+            </div>
+
         </div>
     </div>
+    <div class="clearfix" style="margin-bottom: 10em;"></div>
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+            <div class="title-box-new title-4">
+                <div class="title-box-mask"></div>
+                <div class="title-box-title">
+                    <h1>ethics</h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="clearfix" style="margin-bottom: 10em;"></div>
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <div class="content content-4">
+
+                <p>Laboratory animals are replacements for humans. Therefore, safeguarding animal welfare is not only a
+                    humanitarian requirement, but also related to the quality of scientific research. Our project was
+                    approved
+                    by the Animal Ethical and Welfare Committee of Sun Yat¬_sen University, and you can download the
+                    document
+                    here.</p>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <div class="clearfix" style="margin-bottom: 10em;"></div>
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+            <div class="title-box-new title-5">
+                <div class="title-box-mask"></div>
+                <div class="title-box-title">
+                    <h1 class="reference-title">REFERENCE</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix" style="margin-bottom: 10em;"></div>
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <div class="reference-content">
+                <p>[1] Yuan Lin al. Identification and characterization of alphavirus M1 as a selective oncolytic
+                    virus
+                    targeting ZAP-defective human cancers. PNAS 2014:E4504-E4512
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    
 
 
     <div class="space" style="height: 30vw;"></div>
 </body>
+<script type="text/javascript">
+    // title
+    $(document).ready(function () {
+        speed = 250;
+        $(".title-box-new").each(function (titlebox_i, title_box) {
+            var last = $(title_box).offset().top - $(window).scrollTop();
+            var viewheight = window.innerHeight / 5 * 3;
+            if (last < viewheight) {
+                if ($(title_box).hasClass("played")) { } else {
+                    $(title_box).addClass("played");
+
+                    $(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+                    $(title_box).children(".title-box-mask").animate({ width: $(title_box).find("h1").outerWidth() }, speed, "swing", function () {
+                        $(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
+                        // console.log($(title_box).width());
+                        // console.log($(title_box).find("h1").width());
+                        console.log(parseInt($(title_box).find(".title-box-title").css("border-left-width")));
+                        var cache = $(title_box).width() - $(title_box).find("h1").outerWidth();
+                        $(title_box).children(".title-box-mask").css("right", cache);
+                        // $(title_box).children(".title-box-mask").addClass("title-box-mask-right");
+                        $(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
+                    });
+                    $(title_box).children(".title-box-mask").animate({ width: "0" }, speed, "swing");
+                }
+
+
+            }
+        });
+    })
+    $(document).scroll(function () {
+        speed = 250;
+        $(".title-box-new").each(function (titlebox_i, title_box) {
+            var last = $(title_box).offset().top - $(window).scrollTop();
+            var viewheight = window.innerHeight / 5 * 3;
+            if (last < viewheight) {
+                if ($(title_box).hasClass("played")) { } else {
+                    $(title_box).addClass("played");
+
+                    $(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+                    $(title_box).children(".title-box-mask").animate({ width: $(title_box).find("h1").outerWidth() }, speed, "swing", function () {
+                        $(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
+                        // console.log($(title_box).width());
+                        // console.log($(title_box).find("h1").width());
+                        console.log(parseInt($(title_box).find(".title-box-title").css("border-left-width")));
+                        var cache = $(title_box).width() - $(title_box).find("h1").outerWidth();
+                        $(title_box).children(".title-box-mask").css("right", cache);
+                        // $(title_box).children(".title-box-mask").addClass("title-box-mask-right");
+                        $(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
+                    });
+                    $(title_box).children(".title-box-mask").animate({ width: "0" }, speed, "swing");
+                }
+
+
+            }
+        });
+    })
+
+// title end
+
+</script>
 
 </html>

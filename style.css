@@ -124,6 +124,8 @@
 h1,
 h2,
 h3,
+h4,
+h5,
 a,p {
 	font-family: "Myanmar Text" !important;
 }
@@ -338,11 +340,8 @@ a,p {
 
 /* 内容的样式 */
 
-.content {
-	width: 100%;
-}
 
-.content-box {
+/*.content-box {
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -355,10 +354,8 @@ a,p {
 	flex-direction: column;
 	align-items: center;
 }
+*/
 
-.video-box {
-	width: 50%;
-}
 
 .content-white {
 	background-color: #fff;
@@ -607,6 +604,6 @@ h5 {
 
 p {
 	font-size:26px !important; 
-	/*font-size:1.75rem;*/
-}
-*/
+
+}*/
+

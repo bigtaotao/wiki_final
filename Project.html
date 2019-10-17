@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="./jquery.js"></script>
+		<script src="./home.js"></script>
+		<script src="./bootstrap.js"></script>
+		<link type="text/css" rel="stylesheet" href="bootstrap.css">
+		<link type="text/css" rel="stylesheet" href="style.css">
+
+		<script>
+			//			$('body').scrollspy({
+			//				target: '#navbarExample'
+			//			});
+			//			$('[data-spy="scroll"]').each(function() {
+			//				var $spy = $(this).scrollspy('refresh')
+			//			});
+		</script>
+
+		<style>
+			body {
+				position: relative;
+			}
+			/* navigation default css clean*/
+			.navigation {
+				top: 16px;
+				left: 0 !important;
+				right: 0 !important;
+				margin: 0 !important;
+				padding: 0 !important;
+			}
+			
+			.navigation-list {
+				top: 16px;
+				left: 0 !important;
+				right: 0 !important;
+				margin: 0 !important;
+				padding: 0 !important;
+			}
+			
+			.navigation-item {
+				margin: 0 !important;
+			}
+			
+			.navigation-dropdown-panel {
+				margin: 0 !important;
+			}
+			
+			.navigation-subitem {
+				margin: 0 !important;
+			}
+			
+			/* navigation default css clean (end)*/
+			
+			ul.nav-pills {
+				top: 170px;
+				position: fixed;
+			}
+			
+			ul.nav-pills>li {
+				background: grey;
+				color: white;
+			}
+			
+			ul.nav-pills>li>a {
+				/*background: grey;*/
+				color: white;
+				/*height: 30px;*/
+			}
+			
+			ul.nav-pills>li.active {
+				background: rgb(255, 55, 68);
+				width: 130%;
+				/*height:40px;*/
+			}
+			
+			ul.nav-pills>li.active>a {
+				background: rgb(255, 55, 68);
+				/*height:40px;*/
+			}
+			
+			ul.nav-pills>li.active>a:hover {
+				background: rgb(255, 55, 68);
+			}
+			
+			#section1 {
+				background: white;
+			}
+			
+			.my-mask {
+				background: red;
+				color: red;
+			}
+			
+			@keyframes my-mask-ani {
+				0% {
+					background-color: #red;
+					color: black;
+				}
+				50% {
+					background-color: #red;
+				}
+				100% {
+					background-color: #white;
+					color: black;
+				}
+			}
+			
+			@-webkit-keyframes my-mask-ani {
+				0% {
+					background-color: #red;
+					color: black;
+				}
+				50% {
+					background-color: #red;
+					;
+				}
+				100% {
+					background-color: #white;
+					color: black;
+				}
+			}
+			/* div.col-sm-9 div {
+            height: 250px;
+            font-size: 28px;
+        } */
+			/* @media screen and (max-width: 810px) {
+
+            #section1,
+            #section2,
+            #section3,
+            #section41,
+            #section42 {
+                margin-left: 150px;
+            }
+        } */
+		</style>
+
+		<title>SYSU-Medicine</title>
+	</head>
+
+	<body data-spy="scroll" data-target="#navbarExample" data-offset="150" style="position:relative">
+		<!-- <div class="debug" style= "position:fixed;top:6rem">
+        <a class="a">a</a>
+    </div> -->
+
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 column">
+					<nav class="navigation" id="nav-top">
+						<ul class="navigation-list nav-justified">
+							<div class="navigation-blue navigation-div">
+								<li class="navigation-item activate ">
+									<a class="navigation-item-link " href="./index.html">Home</a>
+									<ul class="navigation-dropdown-panel"></ul>
+								</li>
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link " href="./Team.html">Team</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a>Team Members</a>
+										</li>
+										<li class="navigation-subitem">
+											<a>Collaborations</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item dropdown">
+									<a class="navigation-item-link " href="./Project.html">Project</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a>Description</a>
+										</li>
+										<li class="navigation-subitem">
+											<a>Design</a>
+										</li>
+										<li class="navigation-subitem">
+											<a>Experiments</a>
+										</li>
+										<li class="navigation-subitem">
+											<a>Notebook</a>
+										</li>
+										<li class="navigation-subitem">
+											<a>Contribution</a>
+										</li>
+										<li class="navigation-subitem">
+											<a>Results</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link " href="/parts.html">Parts</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a>Parts Overview</a>
+										</li>
+										<li class="navigation-subitem">
+											<a>Basic Parts</a>
+										</li>
+										<li class="navigation-subitem">
+											<a>Composite Parts</a>
+										</li>
+										<li class="navigation-subitem">
+											<a>Part collection</a>
+										</li>
+									</ul>
+								</li>
+							</div>
+							<div class="navigation-red navigation-div">
+								<li class="navigation-item ">
+									<a class="navigation-item-link" href="/safety.html">Safety</a>
+									<ul class="navigation-dropdown-panel"></ul>
+								</li>
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link" href="/hp.html">Human Practices</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Human Practices</a>
+										</li>
+										<li class="navigation-subitem">
+											<a>Education & Engagement</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link" href="/awards.html">Awards</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a>Entreperneurship</a>
+										</li>
+										<li class="navigation-subitem">
+											<a>Hardware</a>
+										</li>
+										<li class="navigation-subitem">
+											<a>Measurement</a>
+										</li>
+										<li class="navigation-subitem">
+											<a>Model</a>
+										</li>
+										<li class="navigation-subitem">
+											<a>Plant</a>
+										</li>
+										<li class="navigation-subitem">
+											<a>Software</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item ">
+									<a class="navigation-item-link" href="/jf.html">Judging Form</a>
+									<ul class="navigation-dropdown-panel"></ul>
+								</li>
+							</div>
+
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-sm-9 column" style="height: 4.69rem">
+				</div>
+				<div class="col-sm-9 column">
+					<h1 class="text-center"> Description
+                </h1>
+				</div>
+			</div>
+			<div class="row clearfix">
+				<nav class="col-sm-3 hidden-xs" id="navbarExample">
+					<div class="container-fluid">
+						<div class="container-fluid">
+							<ul class="nav nav-pills nav-stacked">
+								<li class="">
+									<a href="#section1">Section 1</a>
+								</li>
+								<li>
+									<a href="#section2">Section 2</a>
+								</li>
+								<li>
+									<a href="#section3">Section 3</a>
+								</li>
+								<li>
+									<a href="#section4">Section 4</a>
+								</li>
+								<li>
+									<a href="#section5">Section 5</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+
+				<div class="col-sm-9">
+					<div class="row clearfix">
+						<br />
+						<div class="col-sm-6 column title-box" id="section1">
+							<h3 class="title">
+                        	<span class="title-has-mask playing"> Background</span>
+                        	<span class="title-mask playing"></span>
+                        	</h3>
+						</div>
+						<br />
+						<br />
+					</div>
+					<div class="row clearfix">
+						<div class="col-sm-6 column ">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+						<div class="col-sm-6 column ">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+					</div>
+					<div class="row clearfix">
+						<br />
+						<div class="col-sm-6 column title-box" id="section2">
+							<h3 class="title ">
+                        	<span class="title-has-mask"> Problem definition</span>
+                        	<span class="title-mask"></span>
+                        </h3>
+						</div>
+						<br />
+						<br />
+					</div>
+					<div class="row clearfix">
+						<div class="col-sm-6 column ">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+						<div class="col-sm-6 column ">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+					</div>
+					<div class="row clearfix">
+						<div class="col-sm-6 column ">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+						<div class="col-sm-6 column ">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+					</div>
+					<div class="row clearfix">
+						<br />
+						<div class="col-sm-6 column title-box" id="section3">
+							<h3 class="title ">
+                        	<span class="title-has-mask"> Approach</span>
+                        	<span class="title-mask"></span>
+                        	</h3>
+						</div>
+						<br />
+						<br />
+					</div>
+					<div class="row clearfix">
+						<div class="col-sm-6 column ">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+						<div class="col-sm-6 column ">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+					</div>
+					<div class="row clearfix">
+						<br />
+						<div class="col-sm-6 column title-box" id="section4">
+							<h3 class="title ">
+                        	<span class="title-has-mask"> Preparation</span>
+                        	<span class="title-mask"></span>
+                        </h3>
+						</div>
+						<br />
+						<br />
+					</div>
+					<div class="row clearfix">
+						<div class="col-sm-12 column ">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+						<div class="col-sm-12 column ">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+						<div class="col-sm-12 column ">
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+					</div>
+
+					<div class="row clearfix">
+						<br />
+						<div class="col-sm-6 column title-box" id="section5">
+							<h3 class="title ">
+                        	<span class="title-has-mask"> Reference</span>
+                        	<span class="title-mask"></span>
+                        </h3>
+						</div>
+						<br />
+						<br />
+					</div>
+					<div class="row clearfix">
+						<div class="col-sm-12 column">
+							<ol>
+								<li>
+									Lorem ipsum dolor sit amet
+								</li>
+								<li>
+									Consectetur adipiscing elit
+								</li>
+								<li>
+									Integer molestie lorem at massa
+								</li>
+								<li>
+									Facilisis in pretium nisl aliquet
+								</li>
+								<li>
+									Nulla volutpat aliquam velit
+								</li>
+								<li>
+									Faucibus porta lacus fringilla vel
+								</li>
+								<li>
+									Aenean sit amet erat nunc
+								</li>
+								<li>
+									Eget porttitor lorem
+								</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>

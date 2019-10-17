@@ -1,7 +1,7 @@
 @charset "utf-8";
 @font-face {
 	font-family: "Myanmar Text";
-	src: url(./mmrtext.ttf) format('truetype');
+	src: url(https://2019.igem.org/wiki/images/e/eb/T--SYSU-Medicine--mmrtext.ttf) format('truetype');
 }
 
 @keyframes jump-left {
@@ -124,9 +124,8 @@
 h1,
 h2,
 h3,
-h4,
 a,p {
-	font-family: "Myanmar Text";
+	font-family: "Myanmar Text" !important;
 }
 
 .title-box {
@@ -166,7 +165,7 @@ a,p {
 	position: absolute;
 	width: 0%;
 	/* 隐藏*/
-	height: 50%;
+	height: 40%;
 	background-color: rgb(255, 55, 68);
 	top: 30px;
 	left: 0;
@@ -303,7 +302,7 @@ a,p {
 .navigation-dropdown-panel {
 	display: none;
 	position: absolute;
-	/* top: 5rem; */
+	/*top: 5rem;*/
 	/* width:33rem; */
 	margin-top: -0.3rem;
 	/* margin-left: -0.625rem; */
@@ -559,8 +558,8 @@ a,p {
 
 .navigation {
 	top: 16px;
-	/* left: 0 !important;
-	right: 0 !important; */
+	left: 0 !important;
+	right: 0 !important;
 	margin: 0 !important;
 	padding: 0 !important;
 }
@@ -585,8 +584,8 @@ a,p {
 	margin: 0 !important;
 }
 
-/*字体大小*/
-/* h1 {
+/*字体大小
+h1 {
 	font-size:64px;
 }
 
@@ -604,9 +603,10 @@ h4 {
 
 h5 {
 	font-size:28px;
-} */
+}
 
 p {
-	/* font-size:26px !important;  */
+	font-size:26px !important; 
 	/*font-size:1.75rem;*/
 }
+*/

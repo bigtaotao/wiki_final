@@ -12,8 +12,8 @@ $(function(){
     setTimeout('justify_navigation',3000);
     
     //
-    // var content_height = $(".content").width()/16*9;
-    // $(".content").css("height",content_height);
+    //var content_height = $(".content").width()/16*9;
+    //$(".content").css("height",content_height);
     // stop animation
     var $pianos = $(".piano");
     $pianos.each(function(piano_i,piano){
@@ -21,6 +21,7 @@ $(function(){
             $(this).addClass("stop-animation");
         });
     }); 
+    // 注释了以下7行才能显示title mask的动画，并且显示title
     // $(".title-has-mask").each(function(piano_i,piano){
     //     $(piano).addClass("stop-animation");
 
@@ -29,6 +30,30 @@ $(function(){
     //     $(piano).addClass("stop-animation");
     // });
     //video warp
+    $(".title-box").each(function(titlebox_i,title_box){
+    	$(title_box).find(".title-has-mask")[0].addEventListener("webkitAnimationEnd",function(){
+			$(this).css("animation","");
+			$(this).removeClass("playing");
+			$(this).addClass("played");
+    	});
+		$(title_box).find(".title-has-mask")[0].addEventListener("AnimationEnd",function(){
+			$(this).css("animation","");
+			$(this).removeClass("playing");
+			$(this).addClass("played");
+    	});
+		$(title_box).find(".title-mask")[0].addEventListener("webkitAnimationEnd",function(){
+			$(this).css("animation","");
+			$(this).removeClass("playing");
+			$(this).addClass("played");
+		});
+		$(title_box).find(".title-has-mask")[0].addEventListener("AnimationEnd",function(){
+			$(this).css("animation","");
+			$(this).removeClass("playing");
+			$(this).addClass("played");
+    	});
+    });
+    
+    
     $(".navigation").css("width",window.innerWidth);
     $(".video-big").css("width",$(".navigation").css("width"));
     // $(".video").click(function(){this.paused?this.play():this.pause();});
@@ -38,13 +63,18 @@ $(document).scroll(function(){
     $(".piano").each(function(piano_i,piano){
         var last = $(piano).offset().top - $(window).scrollTop();
         var viewheight = window.innerHeight/3*2;
-        if (last<viewheight){
+        if (0<last && last<viewheight){
             if ($(piano).hasClass("played")){
                 
             }else{
                 $(piano).children().each(function(key_i,key){
                     $(key).removeClass("stop-animation");
                     $(key).addClass("play-animation");
+                    // setTimeout(function(){
+                    //     $(key).removeClass("play-animation");
+                    //     $(key).css({"animation":"", "-webkit-animation":"" });
+                    //     $(key).css({"animation":"", "-webkit-animation":"" });
+                    // },3000); // 间隔3000ms后又能重新播放
                 })
                 $(piano).addClass("played");
             };
@@ -57,13 +87,15 @@ $(document).scroll(function(){
         
         var last = $(evideo).offset().top - $(window).scrollTop();
         var viewheight = window.innerHeight/5*3;
-        if (last<viewheight){
+        if (viewheight/5 < last && last<viewheight ){
             if ($(evideo).hasClass("played")){
                 
             }else{
                 evideo.play();
                 
             };
+        }else{
+            evideo.pause();
         }
     }); 
 });
@@ -77,20 +109,54 @@ $(document).scroll(function (){
     });
 });
 //title
-// $(document).scroll(function(){
-//     $(".title-box").each(function(titlebox_i,title_box){
-//         var last = $(title_box).offset().top - $(window).scrollTop();
-//         var viewheight = window.innerHeight/5*3;
-//         if (last<viewheight){
-//             if ($(title_box).hasClass("played")){
-//                 //pass
-//             }else{
-//                 $(title_box).find(".title-has-mask").removeClass("stop-animation");
-//                 $(title_box).find(".title-mask").removeClass("stop-animation");
-//                 $(title_box).find(".title-has-mask").addClass("play-animation");
-//                 $(title_box).find(".title-mask").addClass("play-animation");
-//                 $(title_box).addClass("played");
-//             };
-//         }
-//     });
-// })
+$(document).scroll(function(){
+    $(".title-box").each(function(titlebox_i,title_box){
+        var last = $(title_box).offset().top - $(window).scrollTop();
+        var viewheight = window.innerHeight/10*3;
+        var viewbottom = window.innerHeight - (last+$(title_box).height());
+        // 最下面的动画不能触发
+        var navtop_height = $("#nav-top").height();
+        if (navtop_height<last && last<viewheight){
+            if ($(title_box).find(".title-has-mask").hasClass("played") || $(title_box).find(".title-has-mask").hasClass("playing")){
+            	//pass
+            }else{
+                //$(title_box).find(".title-has-mask").removeClass("stop-animation");
+                //$(title_box).find(".title-mask").removeClass("stop-animation");
+                $(title_box).find(".title-has-mask").addClass("playing");
+                $(title_box).find(".title-mask").addClass("playing");
+                
+            };
+        }else{
+        	if($(title_box).find(".title-has-mask").hasClass("played")){
+        		$(title_box).find(".title-has-mask").removeClass("played");
+        		$(title_box).find(".title-mask").removeClass("played");
+//      		$(title_box).find(".title-has-mask").addClass("playing");
+//              $(title_box).find(".title-mask").addClass("playing");
+        	}
+        }
+    });
+});
+
+			
+
+// title my-mask mask animationend listener ( not being used )
+$(document).ready(function() {
+	$(".my-mask").each(function() {
+		$(this)[0].addEventListener("animationend", function() {
+			$(this).css("animation", "");
+		});
+	});
+});
+
+$(document).scroll(function() {
+	$(".my-mask").each(function(section_i, section_box) {
+		var top_offset = $(section_box).offset().top - $(window).scrollTop();
+		var bottom_offset = window.innerHeight - (top_offset + $(section_box).height());
+		if((0 < top_offset) && (0 < bottom_offset)) {
+			$(section_box).css('animation', 'my-mask-ani 0.8s');
+			$(section_box)[0].addEventListener("animationend", function() {
+				$(this).css("animation", "")
+			});
+		};
+	});
+});

@@ -2,13 +2,342 @@
 <html>
 
 <head>
-    <link type="text/css" rel="stylesheet" href="style.css">
-    <link type="text/css" rel="stylesheet" href="design.css">
-    <script src="./jquery.js"></script>
-    <script src="./home.js"></script>
-    <script src="design.js"></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>home</title>
+    <style type="text/css">
+        /* title */
+/* fix  */
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    line-height: 0;
+}
+/* fix end */
+        .title-box-new {
+            margin: 5vw 5vw 2vw 5vw;
+            position: relative;
+        }
+
+        .title-big {
+            margin: 5vw 35vw 5vw 35vw;
+            width: 30vw;
+            height: 10vw;
+        }
+
+        .title-big h1 {
+            font-size: 6vw !important;
+            line-height: 14vw;
+        }
+
+        .title-big>.title-box-title {
+            border-left-style: none !important;
+            border-bottom-style: solid;
+            border-color: rgb(255, 55, 68);
+            border-bottom-width: 0.2vw;
+        }
+
+        .title-1 {
+            width: 16vw;
+            height: 5vw;
+        }
+
+        .title-2 {
+            width: 18vw;
+            height: 5vw;
+        }
+
+        .title-3 {
+            width: 27vw;
+            height: 5vw;
+        }
+
+        .title-4 {
+            width: 16vw;
+            height: 5vw;
+        }
+
+        .title-box-mask {
+            position: absolute;
+            /* width: 40px; */
+            height: inherit;
+            background-color: rgb(255, 55, 68);
+        }
+
+        .title-box-mask-left {
+            left: 0;
+        }
+
+        .title-box-mask-right {
+            right: 0;
+        }
+
+        .title-box-title {
+            width: inherit;
+            height: inherit;
+            border-left-style: solid;
+            border-color: rgb(255, 55, 68);
+            border-left-width: 0.2vw;
+            opacity: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .title-box-title>h1 {
+            vertical-align: middle;
+            text-align: center;
+            margin: 0;
+            font-size: 3vw;
+            color: rgb(25, 46, 67);
+        }
+
+        /* title end */
+
+        /* arrow start */
+        .arrow {
+            opacity: 0;
+        }
+
+        .arrow_1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .arrow_1>img {
+            width: 15vw;
+        }
+
+        .arrow_2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .arrow_2>img {
+            width: 8vw;
+        }
+
+        /* arrow end */
+
+        /* video */
+
+
+        .video-1 {
+            width: 30vw;
+        }
+
+        .video-box {
+            width: 100% !important;
+        }
+
+        /* video end */
+
+        /* content start */
+        .content-text p {
+            color: rgb(25, 46, 67);
+        }
+
+        .content-1 p,
+        .content-2 p,
+        .content-3 p,
+        .content-4 p {
+            font-size: 1.1vw;
+            color: rgb(25, 46, 67);
+            text-align: justify;
+        }
+
+        /* content-1-2 */
+
+        .content-1-2 {
+            display: flex;
+            width: 80vw;
+            margin: 10vw 10vw 2vw 10vw;
+        }
+
+        .content-1,
+        .content-2 {
+            width: 40vw;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content-1 {
+            padding: 0 2.5vw 0 0;
+        }
+
+        .content-2 {
+            padding: 0 0 0 2.5vw;
+        }
+
+        /* content-3 */
+
+        .content-3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 60vw;
+            height: 43vw;
+            margin: 0vw 20vw;
+        }
+
+        /* content-4 */
+
+        .content-4 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 60vw;
+            height: 50vw;
+            margin: 2vw 20vw;
+        }
+
+        .content-5 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 60vw;
+            height: 68vw;
+            margin: 2vw 20vw;
+        }
+
+        .content-5-h4 {
+            align-self: flex-start;
+            color: rgb(25, 46, 67);
+            text-align: justify;
+            font-size: 1.5vw;
+        }
+
+        .content-mask {
+
+
+            flex-direction: column;
+            position: absolute;
+        }
+
+        .content-mask-0 {
+
+            width: 100%;
+            height: 50%;
+            background-color: rgb(25, 46, 67);
+
+            left: 0;
+            float: left;
+        }
+
+        .content-mask-1 {
+            width: 100%;
+            height: 50%;
+            background-color: rgb(255, 55, 68);
+            top: 11vw;
+            position: absolute;
+            right: 0;
+            float: right;
+        }
+
+        .content-mask-2 {
+
+            width: 100%;
+            height: 50%;
+            background-color: rgb(25, 46, 67);
+
+            left: 0;
+            float: left;
+        }
+
+        .content-mask-3 {
+            width: 100%;
+            height: 50%;
+            background-color: rgb(255, 55, 68);
+            top: 9vw;
+            position: absolute;
+            right: 0;
+            float: right;
+        }
+
+        .content-6 {
+            width: 80vw;
+            margin: 2vw 10vw;
+            height: 35vw;
+
+        }
+
+        .content-mask-6 {
+            width: 80vw;
+            height: 22vw;
+        }
+
+        .content-6 p {
+            font-size: 1.1vw;
+            text-align: justify;
+
+        }
+
+        .content-7 {
+            width: 80vw;
+            height: 54vw;
+            margin: 2vw 10vw;
+        }
+
+        .content-mask-7 {
+            width: 80vw;
+            height: 18vw;
+        }
+
+        .content-7 p {
+            font-size: 1.1vw;
+            text-align: justify;
+
+        }
+
+        /* content end */
+
+        /* table */
+
+        table,
+        table tr th,
+        table tr td {
+            border: 2px solid #000000;
+            color: rgb(25, 46, 67);
+            font-family: "Myanmar Text";
+            font-size: 1vw;
+        }
+
+        td {
+            padding: 0.5em;
+        }
+
+        .tr-double {
+            background-color: rgb(217, 217, 217);
+        }
+
+        table {
+            width: 65vw;
+            height: 40vw;
+            min-height: 25px;
+
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        /* table end */
+    </style>
+    <!-- standard head -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript"
+        src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
+    <link type="text/css" rel="stylesheet"
+        href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
+    <script type="text/javascript"
+        src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/navigation&action=raw&ctype=text/javascript"></script>
+    <link rel="stylesheet"
+        href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
+    <script
+        src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
+    <link type="text/css" rel="stylesheet"
+        href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/navigation&action=raw&ctype=text/css" />
+    <!-- standard head end -->
+    <title>Design</title>
 
 </head>
 
@@ -120,7 +449,7 @@
     <div class="content-1-2">
         <div class="content-1">
             <video class="video-box" autoplay="autoplay" muted="muted" loop="loop">
-                <source src="./src/design_1.mp4" type="video/mp4"></video>
+                <source src="https://2019.igem.org/wiki/images/6/6f/T--SYSU-Medicine--design_1.mp4" type="video/mp4"></video>
             <p>
                 &nbsp&nbsp&nbsp&nbspWith the increasing incidence and mortality of cancer, there are many limitations of
                 the current
@@ -135,7 +464,7 @@
         </div>
         <div class="content-2">
             <video class="video-box" autoplay="autoplay" muted="muted" loop="loop">
-                <source src="./src/design_2.mp4" type="video/mp4"></video>
+                <source src="https://2019.igem.org/wiki/images/8/84/T--SYSU-Medicine--design_2.mp4" type="video/mp4"></video>
             <p>
                 &nbsp&nbsp&nbsp&nbspAlthough the advantages of oncolytic virus are obvious, the ability of the virus to
                 spread in tumor also
@@ -149,11 +478,11 @@
         </div>
     </div>
     <div class="arrow arrow_1">
-        <img src="./arrow_2.svg">
+        <img src="https://2019.igem.org/wiki/images/6/6b/T--SYSU-Medicine--arrow_1.svg">
     </div>
     <div class="content-3">
         <video class="video-box" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="./src/design_3.mp4" type="video/mp4"></video>
+            <source src="https://2019.igem.org/wiki/images/8/87/T--SYSU-Medicine--design_3.mp4" type="video/mp4"></video>
         <p>
             &nbsp&nbsp&nbsp&nbspHowever, Actinomycin D has many side effects, such as myelosuppression, gastrointestinal
             reactions, liver
@@ -162,11 +491,11 @@
         </p>
     </div>
     <div class="arrow arrow_2">
-        <img src="./arrow_1.svg">
+        <img src="https://2019.igem.org/wiki/images/5/55/T--SYSU-Medicine--arrow_2.svg">
     </div>
     <div class="content-4">
         <video class="video-box" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="./src/design_4.mp4" type="video/mp4"></video>
+            <source src="https://2019.igem.org/wiki/images/c/c9/T--SYSU-Medicine--design_4.mp4" type="video/mp4"></video>
         <p>
             &nbsp&nbsp&nbsp&nbspPrevious studies have reported that the prodrug of actinomycin D can be activated by
             nitroreductase.
@@ -398,5 +727,114 @@
 
     <div class="space" style="height: 30vw;"></div>
 </body>
+<script type="text/javascript">
+    // title
+    $(document).ready(function () {
+        speed = 250
+        $(".title-box-new").each(function (titlebox_i, title_box) {
+            var last = $(title_box).offset().top - $(window).scrollTop();
+            var viewheight = window.innerHeight / 5 * 3;
+            if (last < viewheight) {
+                if ($(title_box).hasClass("played")) { } else {
+                    $(title_box).addClass("played");
+
+                    $(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+                    $(title_box).children(".title-box-mask").animate({ width: $(title_box).width() }, speed, "swing", function () {
+                        $(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
+                        $(title_box).children(".title-box-mask").addClass("title-box-mask-right");
+                        $(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
+                    });
+                    $(title_box).children(".title-box-mask").animate({ width: "0" }, speed, "swing");
+                }
+
+
+            }
+        });
+    })
+    $(document).scroll(function () {
+        speed = 250
+        $(".title-box-new").each(function (titlebox_i, title_box) {
+            var last = $(title_box).offset().top - $(window).scrollTop();
+            var viewheight = window.innerHeight / 5 * 3;
+            if (last < viewheight) {
+                if ($(title_box).hasClass("played")) { } else {
+                    $(title_box).addClass("played");
+
+                    $(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+                    $(title_box).children(".title-box-mask").animate({ width: $(title_box).width() }, speed, "swing", function () {
+                        $(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
+                        $(title_box).children(".title-box-mask").addClass("title-box-mask-right");
+                        $(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
+                    });
+                    $(title_box).children(".title-box-mask").animate({ width: "0" }, speed, "swing");
+                }
+
+
+            }
+        });
+    })
+    // title end
+    //video
+    // $(document).scroll(function(){
+    //     $(".video-box").each(function(video_i,evideo){
+
+    //         var last = $(evideo).offset().top - $(window).scrollTop();
+    //         var viewheight = window.innerHeight/5*3;
+    //         if (viewheight/5 < last && last<viewheight ){
+    //             if ($(evideo).hasClass("played")){
+
+    //             }else{
+    //                 evideo.play();
+
+    //             };
+    //         }else{
+    //             evideo.pause();
+    //         }
+    //     }); 
+    // });
+    // video end
+    //content
+    $(document).scroll(function () {
+        speed = 700
+        $(".content-mask").each(function (titlebox_i, title_box) {
+            var last = $(title_box).offset().top - $(window).scrollTop();
+            var viewheight = window.innerHeight / 5 * 3;
+            if (last < viewheight) {
+                if ($(title_box).hasClass("played")) { } else {
+                    $(title_box).addClass("played");
+                    $(title_box).children().each(function (mask_i, mask) {
+                        $(mask).animate({ width: "0" }, speed);
+                    });
+                    // $(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+                    // $(title_box).children(".title-box-mask").animate({ width: $(title_box).width() }, speed,"swing", function () {
+                    //     $(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
+                    //     $(title_box).children(".title-box-mask").addClass("title-box-mask-right");
+                    //     $(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
+                    // });
+                    // $(title_box).children(".title-box-mask").animate({ width: "0" }, speed,"swing");
+                }
+
+
+            }
+        });
+    })
+    //arrow
+    $(document).scroll(function () {
+        speed = 700
+        $(".arrow").each(function (titlebox_i, title_box) {
+            var last = $(title_box).offset().top - $(window).scrollTop();
+            var viewheight = window.innerHeight / 5 * 3;
+            if (last < viewheight) {
+                if ($(title_box).hasClass("played")) { } else {
+                    $(title_box).addClass("played");
+                    $(title_box).animate({ opacity: "100" }, 5000);
+
+                }
+
+            }
+        });
+    })
+//content end
+</script>
 
 </html>

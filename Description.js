@@ -110,7 +110,7 @@
 // });
 
 
-
+var hover_speed = 300;
 //content-0 悬停+点击
 $(function () {
     //悬停
@@ -121,8 +121,8 @@ $(function () {
             var $mask = $($(this).nextAll(".mask"));//获取遮罩层
             $mask.children().each(function () {
                 var fuck = $(this).width() * 0.9;
-                $(this).animate({ width: "42vw" }, 150, "swing");
-                $(this).animate({ width: "45vw" }, 150, "swing");
+                $(this).animate({ width: "42vw" }, hover_speed, "swing");
+                $(this).animate({ width: "45vw" }, hover_speed, "swing");
 
             })
         }
@@ -171,7 +171,7 @@ $(function () {
 //content-1 悬停+点击
 $(function () {
     //悬停
-    hover_speed = 100;
+    
     $("#content-1 .switch").hover(function () {
         var $mask = $($(this).nextAll(".mask"));
         if ($mask.hasClass("open-flag")) { } else {
@@ -179,20 +179,21 @@ $(function () {
             $mask.find(".mask-1").each(function () {
 
                 $(this).animate({ width: "43vw",height: "15vw" }, hover_speed, "swing");
+                $(this).animate({ width: "45vw",height: "18vw" }, hover_speed, "swing");
                 // $(this).animate({ height: "13vw" }, hover_speed, "swing");
 
             })
         }
     }, function () {
-        var $mask = $($(this).nextAll(".mask"));
-        if ($mask.hasClass("open-flag")) { } else {
-            var $mask = $($(this).nextAll(".mask"));//获取遮罩层
-            $mask.find(".mask-1").each(function () {
+        // var $mask = $($(this).nextAll(".mask"));
+        // if ($mask.hasClass("open-flag")) { } else {
+        //     var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+        //     $mask.find(".mask-1").each(function () {
 
-                $(this).animate({ width: "45vw",height: "18vw" }, hover_speed, "swing");
-                // $(this).animate({  }, hover_speed, "swing");
-            })
-        }
+        //         $(this).animate({ width: "45vw",height: "18vw" }, hover_speed, "swing");
+        //         // $(this).animate({  }, hover_speed, "swing");
+        //     })
+        // }
     });
     //点击
     $("#content-1 .switch").click(function () {
@@ -227,7 +228,7 @@ $(function () {
 //content-2 悬停+点击
 $(function () {
     //悬停
-    hover_speed = 100;
+    
     $("#content-2 .switch").hover(function () {
         var $mask = $($(this).nextAll(".mask"));
         if ($mask.hasClass("open-flag")) { } else {
@@ -235,19 +236,19 @@ $(function () {
             $mask.children().each(function () {
                 
                 $(this).animate({ width: "40vw" }, hover_speed, "swing");
-
+                $(this).animate({ width: "45vw" }, hover_speed, "swing");
             })
         }
 
     }, function () {
-        var $mask = $($(this).nextAll(".mask"));
-        if ($mask.hasClass("open-flag")) { } else {
-            var $mask = $($(this).nextAll(".mask"));//获取遮罩层
-            $mask.children().each(function () {
+        // var $mask = $($(this).nextAll(".mask"));
+        // if ($mask.hasClass("open-flag")) { } else {
+        //     var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+        //     $mask.children().each(function () {
                 
-                $(this).animate({ width: "45vw" }, hover_speed, "swing");
-            })
-        }
+        //         $(this).animate({ width: "45vw" }, hover_speed, "swing");
+        //     })
+        // }
     });
     //点击
     $("#content-2 .switch").click(function () {
@@ -279,7 +280,7 @@ $(function () {
 //content-3 悬停+点击
 $(function () {
     //悬停
-    hover_speed = 100;
+    
     $("#content-3 .switch").hover(function () {
         var $mask = $($(this).nextAll(".mask"));
         if ($mask.hasClass("open-flag")) { } else {
@@ -287,19 +288,19 @@ $(function () {
             $mask.children().each(function () {
                 
                 $(this).animate({ width: "80vw" }, hover_speed, "swing");
-
+                $(this).animate({ width: "90vw" }, hover_speed, "swing");
             })
         }
 
     }, function () {
-        var $mask = $($(this).nextAll(".mask"));
-        if ($mask.hasClass("open-flag")) { } else {
-            var $mask = $($(this).nextAll(".mask"));//获取遮罩层
-            $mask.children().each(function () {
+        // var $mask = $($(this).nextAll(".mask"));
+        // if ($mask.hasClass("open-flag")) { } else {
+        //     var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+        //     $mask.children().each(function () {
                 
-                $(this).animate({ width: "90vw" }, hover_speed, "swing");
-            })
-        }
+        //         $(this).animate({ width: "90vw" }, hover_speed, "swing");
+        //     })
+        // }
     });
     //点击
     $("#content-3 .switch").click(function () {

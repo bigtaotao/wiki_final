@@ -198,6 +198,9 @@
     width: 50%;
     height: initial;
 }
+.mask-front-content-00 > p,.mask-front-content-01 > p{
+    font-size: 6vw !important;
+}
 .mask-front-content-20,.mask-front-content-21{
     width: 50%;
     height: initial;
@@ -425,7 +428,7 @@ p{
 }
 .title-big h1{
     font-size: 6vw !important;
-    line-height:14vw;
+    line-height:10vw;
     
 }
 .title-big > .title-box-title{
@@ -452,7 +455,7 @@ p{
     height: 5vw;
 }
 .title-4{
-    width: 27vw;
+    width: 34vw;
     height: 6.8vw;
 }
 .reference-title{
@@ -491,7 +494,7 @@ p{
 .title-box-title > h1{
     vertical-align: middle; 
     text-align:center;
-    margin: 0;
+    /* margin: 0; */
     font-size: 3vw;
     color: rgb(25,46,67);
 }

@@ -2,12 +2,43 @@
 <html>
 
 	<head>
+		<style>
+			.navigation {
+				top: 16px;
+				left: 0 !important;
+				right: 0 !important;
+				margin: 0 !important;
+				padding: 0 !important;
+			}
+			
+			.navigation-list {
+				top: 16px;
+				left: 0 !important;
+				right: 0 !important;
+				margin: 0 !important;
+				padding: 0 !important;
+			}
+			
+			.navigation-item {
+				margin: 0 !important;
+			}
+			
+			.navigation-dropdown-panel {
+				margin: 0 !important;
+			}
+			
+			.navigation-subitem {
+				margin: 0 !important;
+			}
+		</style>
+
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
 		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
 		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/home&action=raw&ctype=text/javascript"></script>
+		<!--<script type="text/javascript" src="home.js"></script>-->
 		<link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
 		<script src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
 		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
@@ -51,6 +82,11 @@
 				font-size: 16px;
 				/*font-size:1.75rem;*/
 			}
+			
+			.my-no-padding {
+				padding:0 0 0 0;
+			}
+			
 		</style>
 	</head>
 
@@ -167,10 +203,10 @@
 
 		<div class="container-fluid">
 			<div class="row clearfix">
-				<div class="col-xs-12">
+				<div class="col-xs-12 my-no-padding">
 					<img src="https://2019.igem.org/wiki/images/7/73/T--SYSU-Medicine--homepage_11.jpg" style="width:100%;" />
 				</div>
-				<div class="col-xs-12">
+				<div class="col-xs-12 my-no-padding">
 					<video class="video-big" controls="controls" style="max-width: 100%;margin-top: 0;">
 						<source src="https://2019.igem.org/wiki/images/d/d8/T--SYSU-Medicine--homepage_0.mp4" type="video/mp4">
 					</video>
@@ -183,7 +219,7 @@
 				<div class="col-xs-12 col-sm-6">
 					<div class="content-white">
 						<div class="row clearfix">
-							<div class="col-xs-12 col-sm-6">
+							<div class="col-xs-12 col-sm-6 col-xs-offset-1">
 								<div class="piano piano-one">
 									<div class="piano-key piano-key-0-0">
 										<div class="piano-key-colorkernel"></div>
@@ -194,7 +230,7 @@
 							<br />
 						</div>
 						<div class="row clearfix">
-							<div class="col-xs-6 col-sm-6">
+							<div class="col-xs-6 col-sm-6 col-xs-offset-1">
 								<div class="title-box">
 									<h3 class="title">
                     					<span class="title-has-mask playing">Modified M1</span>
@@ -204,7 +240,7 @@
 							</div>
 						</div>
 						<div class="row clearfix">
-							<div class="col-xs-10 col-sm-10">
+							<div class="col-xs-10 col-sm-10 col-xs-offset-1">
 								<p>A Nitroreductase is inserted into the genome of the oncolytic virus M1.</p>
 								<p>The prodrug CB1954 (5-(aziridin-1-yl)-2,4-dinitrobenzamide) is a weak monofunctional alkylating agent which could be reduced by the nitroreductase to a 100,000 more cytotoxic potent DNA cross-linking intermediates (4-hydroxylamines-2-nitrobenzamide)[1].</p>
 								<p>Modified M1 and prodrugs are injected intravenously at the same time, reaching normal tissue in the body. Non-functional prodrugs cannot work effectively, while M1's selective infection mechanism also prevents it from acting on normal cells.</p>
@@ -265,31 +301,31 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="clearfix" style="margin-bottom: 10em;"></div>
-			
+
 			<div class="row clearfix content-white">
 				<div class="col-xs-12 col-sm-6 content-white">
-						<div class="row clearfix">
-							<div class="col-xs-6 col-sm-6">
-								<div class="piano piano-three">
-									<div class="piano-key piano-key-2-0">
-										<div class="piano-key-colorkernel"></div>
-									</div>
-									<div class="piano-key piano-key-2-1">
-										<div class="piano-key-colorkernel"></div>
-									</div>
-									<div class="piano-key piano-key-2-2">
-										<div class="piano-key-colorkernel"></div>
-									</div>
+					<div class="row clearfix">
+						<div class="col-xs-6 col-sm-6 col-xs-offset-1">
+							<div class="piano piano-three">
+								<div class="piano-key piano-key-2-0">
+									<div class="piano-key-colorkernel"></div>
 								</div>
-								<br />
-								<br />
-								<br />
-								<br />
+								<div class="piano-key piano-key-2-1">
+									<div class="piano-key-colorkernel"></div>
+								</div>
+								<div class="piano-key piano-key-2-2">
+									<div class="piano-key-colorkernel"></div>
+								</div>
 							</div>
+							<br />
+							<br />
+							<br />
+							<br />
 						</div>
-						<!--<div class="row clearfix">
+					</div>
+					<!--<div class="row clearfix">
 							<div class="col-xs-6 col-sm-6">
 								<div class="title-box">
 									<h3 class="title">
@@ -299,25 +335,25 @@
 								</div>
 							</div>
 						</div>-->
-						<div class="row clearfix">
-							<div class="col-xs-8 col-sm-8 col-xs-offset-1">
-								<br />
-								<br />
-								<br />
-								<br />
-								<p>The active drugs diffuse in the tumor, together with M1 cause a bystander effect while synergistically killing tumor cells, recruiting more immune cells to remove residual tumors.</p>
-							</div>
+					<div class="row clearfix">
+						<div class="col-xs-8 col-sm-8 col-xs-offset-1">
+							<br />
+							<br />
+							<br />
+							<br />
+							<p>The active drugs diffuse in the tumor, together with M1 cause a bystander effect while synergistically killing tumor cells, recruiting more immune cells to remove residual tumors.</p>
 						</div>
 					</div>
+				</div>
 				<div class="col-xs-12 col-sm-6 content-white">
 					<video class="video-box" muted loop autoplay style="width:90%;">
 						<source src="https://2019.igem.org/wiki/images/d/d1/T--SYSU-Medicine--homepage_3.mp4" type="video/mp4" style="width:80%;">
 					</video>
 				</div>
 			</div>
-			
+
 			<div class="clearfix" style="margin-bottom: 10em;"></div>
-			
+
 			<div class="row clearfix content-blue">
 				<div class="col-xs-12 col-sm-6 content-blue">
 					<video class="video-box" muted autoplay loop style="width:90%;">
@@ -368,14 +404,14 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="clearfix" style="margin-bottom: 10em;"></div>
 
 			<div class="row clearfix content-white">
 				<div class="col-xs-12 col-sm-6 content-white">
 					<div class="content-white">
 						<div class="row clearfix">
-							<div class="col-xs-10 col-sm-6">
+							<div class="col-xs-10 col-sm-6 col-xs-offset-1">
 								<div class="piano piano-one">
 									<div class="piano-key piano-key-0-0">
 										<div class="piano-key-colorkernel"></div>

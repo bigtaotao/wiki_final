@@ -53,11 +53,13 @@ $(function(){
     	});
     });
     
-    
-    $(".navigation").css("width",window.innerWidth);
-    $(".video-big").css("width",$(".navigation").css("width"));
+// 注释掉下面一句就能对齐中线！
+//  $(".navigation").css("width",window.innerWidth);
+//  $(".video-big").css("width",$(".navigation").css("width"));
     // $(".video").click(function(){this.paused?this.play():this.pause();});
 });
+
+
 //piano
 $(document).scroll(function(){
     $(".piano").each(function(piano_i,piano){

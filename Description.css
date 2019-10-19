@@ -252,6 +252,9 @@ p{
     width: 45vw;
     position: relative;
     
+
+
+    
 }
 
 .m00{
@@ -348,6 +351,12 @@ p{
     height: inherit;
     width: 45vw;
     position: relative;
+    /* Safari for macOS & iOS */
+    -webkit-backdrop-filter: blur(15px); 
+
+    /* Google Chrome */
+    backdrop-filter: blur(15px);
+    opacity: 3;
 }
 
 .m20{

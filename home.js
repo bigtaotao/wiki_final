@@ -53,7 +53,7 @@ $(function(){
     	});
     });
     
-// 注释掉下面一句就能对齐中线！
+// 注释掉下面一句就能在index对齐中线！
 //  $(".navigation").css("width",window.innerWidth);
 //  $(".video-big").css("width",$(".navigation").css("width"));
     // $(".video").click(function(){this.paused?this.play():this.pause();});

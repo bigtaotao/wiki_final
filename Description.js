@@ -116,17 +116,22 @@ var hover_speed = 300;
 //content-0 悬停+点击
 $(function () {
     //悬停
-
+    
     $("#content-0 .switch").hover(function () {
+        
         var $mask = $($(this).nextAll(".mask"));
-        if ($mask.hasClass("open-flag")) { } else {
+        if ($mask.hasClass("hover_flag")) { } else {
+            $mask.addClass("hover_flag");
             var $mask = $($(this).nextAll(".mask"));//获取遮罩层
             $mask.children().each(function () {
                 var fuck = $(this).width() * 0.9;
                 $(this).animate({ width: "42vw" }, hover_speed, "swing");
-                $(this).animate({ width: "45vw" }, hover_speed, "swing");
+                $(this).animate({ width: "45vw" }, hover_speed, "swing",function(){
+                    $mask.removeClass("hover_flag");
+                });
 
             })
+            
         }
 
 
@@ -147,7 +152,7 @@ $(function () {
             $mask.removeClass("open-flag");
             $mask.children().each(function () {
                 $(this).animate({ opacity: "100" }, 1);
-                $(this).animate({ width: $(this).attr("old-width") }, 1000);
+                $(this).animate({ width: $(".mask-0-box").width()/2 }, 1000);
 
             });
             $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "100" }, 1000);
@@ -181,12 +186,15 @@ $(function () {
 
     $("#content-1 .switch").hover(function () {
         var $mask = $($(this).nextAll(".mask"));
-        if ($mask.hasClass("open-flag")) { } else {
+        if ($mask.hasClass("hover_flag")) { } else {
+            $mask.addClass("hover_flag");
             var $mask = $($(this).nextAll(".mask"));//获取遮罩层
             $mask.find(".mask-1").each(function () {
 
                 $(this).animate({ width: "43vw", height: "15vw" }, hover_speed, "swing");
-                $(this).animate({ width: "45vw", height: "18vw" }, hover_speed, "swing");
+                $(this).animate({ width: "45vw", height: "18vw" }, hover_speed, "swing",function(){
+                    $mask.removeClass("hover_flag");
+                });
                 // $(this).animate({ height: "13vw" }, hover_speed, "swing");
 
             })
@@ -210,7 +218,7 @@ $(function () {
             $mask.removeClass("open-flag");
             $mask.find(".mask-1").each(function () {
                 $(this).animate({ opacity: "100" }, 1, "swing");
-                $(this).animate({ width: $(this).attr("old-width"), height: $(this).attr("old-height") }, speed, "swing");
+                $(this).animate({ width: $(".mask-1-box").width()/2, height: $(".mask-1-box").height()/2 }, speed, "swing");
 
 
             });
@@ -238,12 +246,15 @@ $(function () {
 
     $("#content-2 .switch").hover(function () {
         var $mask = $($(this).nextAll(".mask"));
-        if ($mask.hasClass("open-flag")) { } else {
+        if ($mask.hasClass("hover_flag")) { } else {
+            $mask.addClass("hover_flag");
             var $mask = $($(this).nextAll(".mask"));//获取遮罩层
             $mask.children().each(function () {
 
                 $(this).animate({ width: "40vw" }, hover_speed, "swing");
-                $(this).animate({ width: "45vw" }, hover_speed, "swing");
+                $(this).animate({ width: "45vw" }, hover_speed, "swing",function(){
+                    $mask.removeClass("hover_flag");
+                });
             })
         }
 
@@ -265,7 +276,7 @@ $(function () {
             $mask.removeClass("open-flag");
             $mask.children().each(function () {
                 $(this).animate({ opacity: "100" }, 1, "swing");
-                $(this).animate({ width: $(this).attr("old-width") }, speed, "swing");
+                $(this).animate({ width: $(".mask-2-box").width()/2 }, speed, "swing");
 
             });
             $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "100" }, speed);
@@ -289,13 +300,17 @@ $(function () {
     //悬停
 
     $("#content-3 .switch").hover(function () {
+        
         var $mask = $($(this).nextAll(".mask"));
-        if ($mask.hasClass("open-flag")) { } else {
+        if ($mask.hasClass("hover_flag")) { } else {
+            $mask.addClass("hover_flag");
             var $mask = $($(this).nextAll(".mask"));//获取遮罩层
             $mask.children().each(function () {
 
                 $(this).animate({ width: "80vw" }, hover_speed, "swing");
-                $(this).animate({ width: "90vw" }, hover_speed, "swing");
+                $(this).animate({ width: "90vw" }, hover_speed, "swing",function(){
+                    $mask.removeClass("hover_flag");
+                });
             })
         }
 
@@ -317,7 +332,7 @@ $(function () {
             $mask.removeClass("open-flag");
             $mask.children().each(function () {
                 $(this).animate({ opacity: "100" }, 1, "swing");
-                $(this).animate({ width: $(this).attr("old-width") }, speed, "swing");
+                $(this).animate({ width: $(".mask-3-box").width() }, speed, "swing");
 
             });
             $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "100" }, speed);

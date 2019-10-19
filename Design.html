@@ -6,7 +6,9 @@
         .title-box-title h1 {
             font-family: Georgia, 'Times New Roman', Times, serif !important;
         }
-
+        p{
+            opacity: 0;
+        }
         /* title */
         .title-box-new {
             /* margin: 5vw 5vw 2vw 5vw; */
@@ -126,10 +128,12 @@
         .content-text p {
             color: rgb(25, 46, 67);
         }
-        h4{
+
+        h4 {
             font-family: "Myanmar Text" !important;
             padding: 4rem;
         }
+
         .content-1 p,
         .content-2 p,
         .content-3 p,
@@ -176,6 +180,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             /* width: 60vw; */
             /* height: 43vw; */
             /* margin: 0vw 20vw; */
@@ -319,7 +324,11 @@
             text-align: center;
             border-collapse: collapse;
         }
-
+        .my-vertical-align{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
         /* table end */
 
         /* content-design end */
@@ -367,7 +376,8 @@
                     <ul class="navigation-list nav-justified">
                         <div class="navigation-blue navigation-div">
                             <li class="navigation-item activate ">
-                                <a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
+                                <a class="navigation-item-link "
+                                    href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
                                 <ul class="navigation-dropdown-panel"></ul>
                             </li>
                             <li class="navigation-item dropdown ">
@@ -377,7 +387,8 @@
                                         <a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
                                     </li>
                                     <li class="navigation-subitem">
-                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
+                                        <a
+                                            href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
                                     </li>
                                 </ul>
                             </li>
@@ -409,7 +420,8 @@
                                         <a href="https://2019.igem.org/Team:SYSU-Medicine/Improve">Improve</a>
                                     </li>
                                     <li class="navigation-subitem">
-                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions </a>
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions
+                                        </a>
                                     </li>
                                 </ul>
                             </li>
@@ -423,27 +435,32 @@
                                         <a href="https://2019.igem.org/Team:SYSU-Medicine/Basic_Part">Basic Parts</a>
                                     </li>
                                     <li class="navigation-subitem">
-                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Composite_Part">Composite Parts</a>
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Composite_Part">Composite
+                                            Parts</a>
                                     </li>
                                     <li class="navigation-subitem">
-                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Part_Collection">Part Collection</a>
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Part_Collection">Part
+                                            Collection</a>
                                     </li>
                                 </ul>
                             </li>
                         </div>
                         <div class="navigation-red navigation-div">
                             <li class="navigation-item ">
-                                <a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
+                                <a class="navigation-item-link"
+                                    href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
                                 <ul class="navigation-dropdown-panel"></ul>
                             </li>
                             <li class="navigation-item dropdown ">
                                 <a class="navigation-item-link" href="#">Human Practices</a>
                                 <ul class="navigation-dropdown-panel ">
                                     <li class="navigation-subitem">
-                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Human Practices</a>
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Human
+                                            Practices</a>
                                     </li>
                                     <li class="navigation-subitem">
-                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education & Engagement</a>
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education &
+                                            Engagement</a>
                                     </li>
                                 </ul>
                             </li>
@@ -456,7 +473,8 @@
                                 </ul>
                             </li>
                             <li class="navigation-item ">
-                                <a class="navigation-item-link" href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging Form</a>
+                                <a class="navigation-item-link"
+                                    href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging Form</a>
                                 <ul class="navigation-dropdown-panel"></ul>
                             </li>
                         </div>
@@ -567,8 +585,8 @@
             </div>
         </div>
         <div class="clearfix" style="margin-bottom: 5em;"></div>
-        
-        
+
+
         <div class="row">
             <div class="col-xs-12">
                 <div class="arrow arrow_1">
@@ -578,18 +596,29 @@
         </div>
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2">
-                <div class="content-3">
-                    <video class="video-box" autoplay="autoplay" muted="muted" loop="loop">
-                        <source src="https://2019.igem.org/wiki/images/8/87/T--SYSU-Medicine--design_3.mp4"
-                            type="video/mp4"></video>
-                    <p>
-                        &nbsp&nbsp&nbsp&nbspHowever, Actinomycin D has many side effects, such as myelosuppression,
-                        gastrointestinal
-                        reactions, liver
-                        function impairment etc. Accordingly, it is of vital importance to improve its targeting
-                        ability, which is
-                        exactly one of the most significant advantages of M1.
-                    </p>
+                <div class="row my-vertical-align">
+                    <div class="col-xs-2">
+                        <div class="content-3">
+                            <p>&nbsp&nbsp&nbsp&nbspHowever, Actinomycin D has many side effects, such as
+                                myelosuppression,
+                                gastrointestinal
+                                reactions, liver
+                                function impairment etc.</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-8"><video class="video-box" autoplay="autoplay" muted="muted" loop="loop">
+                            <source src="https://2019.igem.org/wiki/images/8/87/T--SYSU-Medicine--design_3.mp4"
+                                type="video/mp4"></video></div>
+                    <div class="col-xs-2">
+                        <div class="content-3">
+                            <p>
+                                &nbsp&nbsp&nbsp&nbspAccordingly, it is of vital importance to improve its targeting
+                                ability, which is
+                                exactly one of the most significant advantages of M1.
+                            </p>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -604,28 +633,36 @@
         <div class="clearfix" style="margin-bottom: 5em;"></div>
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2">
-                <div class="content-4">
-                    <video class="video-box" autoplay="autoplay" muted="muted" loop="loop">
-                        <source src="https://2019.igem.org/wiki/images/c/c9/T--SYSU-Medicine--design_4.mp4"
-                            type="video/mp4"></video>
-                    <p>
-                        &nbsp&nbsp&nbsp&nbspPrevious studies have reported that the prodrug of actinomycin D can be
-                        activated by
-                        nitroreductase.
-                        Therefore, we designed this system to combine M1 virus with actinomycin D for cancer treatment.
-                        We
-                        engineered M1 armed with nitroreductase, and after nitroreductase was delivered to the cancer
-                        cell by M1 and
-                        expressed, the enzyme can activate subsequently administered prodrugs of actinomycin D to potent
-                        drugs.
-                        Further, actinomycin D can promote the replication of M1 virus, which made up a constant
-                        reinforcing system.
-
-                        In addition, in order to ensure the controllability and safety of the system, we used engineered
-                        riboswitches to control gene expression of M1 armed with nitroreductase.
-
-                    </p>
-                </div>
+                    <div class="row my-vertical-align">
+                            <div class="col-xs-2">
+                                <div class="content-4">
+                                    <p>&nbsp&nbsp&nbsp&nbspPrevious studies have reported that the prodrug of actinomycin D can be
+                                            activated by
+                                            nitroreductase.
+                                            Therefore, we designed this system to combine M1 virus with actinomycin D for cancer treatment.
+                                            We
+                                            engineered M1 armed with nitroreductase, and after nitroreductase was delivered to the cancer
+                                            cell by M1 and
+                                            expressed, the enzyme can activate subsequently administered prodrugs of actinomycin D to potent
+                                            drugs.</p>
+                                </div>
+                            </div>
+                            <div class="col-xs-8"><video class="video-box" autoplay="autoplay" muted="muted" loop="loop">
+                                    <source src="https://2019.igem.org/wiki/images/c/c9/T--SYSU-Medicine--design_4.mp4"
+                                        type="video/mp4"></video></div>
+                            <div class="col-xs-2">
+                                <div class="content-4">
+                                    <p>
+                                        &nbsp&nbsp&nbsp&nbspFurther, actinomycin D can promote the replication of M1 virus, which made up a constant
+                                        reinforcing system.
+                
+                                        In addition, in order to ensure the controllability and safety of the system, we used engineered
+                                        riboswitches to control gene expression of M1 armed with nitroreductase.
+                                    </p>
+                                </div>
+        
+                            </div>
+                        </div>
             </div>
 
         </div>
@@ -965,6 +1002,7 @@
 
     // title end
     //content
+    //mask
     $(document).scroll(function () {
         speed = 700
         $(".content-mask").each(function (titlebox_i, title_box) {
@@ -985,6 +1023,22 @@
                     // $(title_box).children(".title-box-mask").animate({ width: "0" }, speed,"swing");
                 }
 
+
+            }
+        });
+    });
+    //p
+    $(document).scroll(function () {
+        speed = 700
+        $("p").each(function (titlebox_i, title_box) {
+            var last = $(title_box).offset().top - $(window).scrollTop();
+            var viewheight = window.innerHeight / 5 * 3;
+            if (last < viewheight) {
+                if ($(title_box).hasClass("played")) { } else {
+                    $(title_box).addClass("played");
+                    $(title_box).animate({ opacity: "100" }, 5000);
+
+                }
 
             }
         });

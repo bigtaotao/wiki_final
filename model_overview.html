@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+        .title-box-title h1 {
+            font-family: Georgia, 'Times New Roman', Times, serif !important;
+        }
+
+        /* title */
+        .title-box-new {
+            /* margin: 5vw 5vw 2vw 5vw; */
+            position: relative;
+            width: 100%;
+
+        }
+
+        /* .title-big {
+            background-image: url("../title.jpg");
+            opacity: 50;
+            z-index: -100;
+            
+background-size: auto 100%;  
+background-position: center; 
+background-repeat: no-repeat;
+background-origin: border-box; 
+background-clip: border-box;  
+        } */
+
+        .title-big h1 {
+            font-size: 10vw !important;
+            /* line-height:14vw; */
+
+        }
+
+        .title-big>.title-box-title {
+            border-left-style: none !important;
+            border-bottom-style: solid;
+            border-color: rgb(255, 55, 68);
+            border-bottom-width: 0.2vw;
+
+        }
+
+        .title-box-mask {
+            position: absolute;
+
+            height: 100%;
+
+            background-color: rgb(255, 55, 68);
+        }
+
+        .title-box-mask-left {
+            left: 0;
+        }
+
+        .title-box-mask-right {
+            right: 0;
+        }
+
+        .title-box-title {
+            /* width: 100%; */
+            height: inherit;
+            border-left-style: solid;
+            border-color: rgb(255, 55, 68);
+            border-left-width: 0.25rem;
+            opacity: 0;
+            display: flex;
+            /* justify-content-safety: center; */
+
+
+        }
+
+        .title-big h1 {
+            flex-grow: 1;
+            vertical-align: middle;
+            text-align: center;
+            margin: 0;
+            font-size: 8rem;
+            color: rgb(25, 46, 67);
+        }
+
+        .title-box-title>h1 {
+            /* flex-grow: 1; */
+            vertical-align: middle;
+            /* text-align:center; */
+            padding: 0 4rem;
+            margin: 0;
+            font-size: 8rem;
+            color: rgb(25, 46, 67);
+        }
+
+        /* title end */
+        /* reference */
+
+        /* reference end */
+        /* content-safety start */
+        .content-safety p {
+            font-size: 4rem;
+            text-align: justify;
+            color: rgb(25, 46, 67);
+        }
+
+        /* content-safety end */
+    </style>
+    <!-- standard head -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript"
+        src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
+    <link type="text/css" rel="stylesheet"
+        href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
+    <script type="text/javascript"
+        src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/home&action=raw&ctype=text/javascript"></script>
+    <link rel="stylesheet"
+        href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
+    <script
+        src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
+    <link type="text/css" rel="stylesheet"
+        href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
+    <!-- standard head end -->
+    <!-- <link type="text/css" rel="stylesheet"
+        href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/safety&action=raw&ctype=text/css" />
+    <script type="text/javascript"
+        src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/safety&action=raw&ctype=text/javascript"></script> -->
+
+    <!-- <link type="text/css" rel="stylesheet" href="safety.css"> -->
+    <!-- <script src="safety.js"></script> -->
+    <!-- <link type="text/css" rel="stylesheet" href="./navigation.css">
+    <script src="./navigation.js"></script> -->
+
+
+    <title>Safety</title>
+
+</head>
+
+<body>
+    <!-- <div class="debug" style= "position:fixed;top:6rem">
+        <a class="a">a</a>
+    </div> -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 column">
+                <nav class="navigation" id="nav-top">
+                    <ul class="navigation-list nav-justified">
+                        <div class="navigation-blue navigation-div">
+                            <li class="navigation-item activate ">
+                                <a class="navigation-item-link "
+                                    href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
+                                <ul class="navigation-dropdown-panel"></ul>
+                            </li>
+                            <li class="navigation-item dropdown ">
+                                <a class="navigation-item-link " href="#">Team</a>
+                                <ul class="navigation-dropdown-panel ">
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a
+                                            href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navigation-item dropdown">
+                                <a class="navigation-item-link " href="#">Project</a>
+                                <ul class="navigation-dropdown-panel ">
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Design">Design</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Experiments">Experiments</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Notebook">Notebook</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Contribution">Contribution</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Demonstrate">Demonstrate</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Improve">Improve</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navigation-item dropdown ">
+                                <a class="navigation-item-link " href="#">Parts</a>
+                                <ul class="navigation-dropdown-panel ">
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts Overview</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Basic_Part">Basic Parts</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Composite_Part">Composite
+                                            Parts</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Part_Collection">Part
+                                            Collection</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </div>
+                        <div class="navigation-red navigation-div">
+                            <li class="navigation-item ">
+                                <a class="navigation-item-link"
+                                    href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
+                                <ul class="navigation-dropdown-panel"></ul>
+                            </li>
+                            <li class="navigation-item dropdown ">
+                                <a class="navigation-item-link" href="#">Human Practices</a>
+                                <ul class="navigation-dropdown-panel ">
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Human
+                                            Practices</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education &
+                                            Engagement</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navigation-item dropdown ">
+                                <a class="navigation-item-link" href="/awards.html">Awards</a>
+                                <ul class="navigation-dropdown-panel ">
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Model">Model</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navigation-item ">
+                                <a class="navigation-item-link"
+                                    href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging Form</a>
+                                <ul class="navigation-dropdown-panel"></ul>
+                            </li>
+                        </div>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- <div class="piano-subpage piano-subpage-demo">
+    <div id="content-safety-0-key" class="piano-subpage-key piano-subpage-key-0"><div class="key-kernel key-kernel-0"></div></div>
+    <div id="content-safety-1-key" class="piano-subpage-key piano-subpage-key-1"><div class="key-kernel key-kernel-1"></div></div>
+    <div id="content-safety-2-key" class="piano-subpage-key piano-subpage-key-2"><div class="key-kernel key-kernel-2"></div></div>
+    <div id="content-safety-3-key" class="piano-subpage-key piano-subpage-key-3"><div class="key-kernel key-kernel-3"></div></div>
+    <div id="content-safety-4-key" class="piano-subpage-key piano-subpage-key-4"><div class="key-kernel key-kernel-4"></div></div>
+    <div id="content-safety-5-key" class="piano-subpage-key piano-subpage-key-5"><div class="key-kernel key-kernel-5"></div></div>
+    </div> -->
+    <!-- <div class="title-margin">
+        <div class="row clearfix">
+            <div class="col-xs-10">
+                <div class="title-box">
+                    <h1 class="title">
+                        <span class="title-has-mask playing">Human Practices</span>
+                        <span class="title-mask playing"></span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="clearfix" style="margin-bottom: 23em;"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+                <div class="title-box-new title-big">
+                    <div class="title-big-bg"></div>
+                    <div class="title-box-mask"></div>
+                    <div class="title-box-title">
+                        <h1>Abstract</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="content-safety content-safety-0">
+                    <p>&#160&#160&#160&#160Modeling is a way to help reduce time and cost of work, especially
+                        in the experiment. The cost in exploring the suitable condition for ex-
+                        periment is high, including the reagents purchase, lab cost, and probable
+                        consulting cost. And experiments often begin on experience, including the
+                        collection time. After the method is established, can we have a prediction
+                        on its effect? Because of these reasons, our modeling is necessary.</p>
+                    <p>&#160&#160&#160&#160Our modeling contains 4 parts:M1 Cultivation, Injection System,
+                        Saty and Effectiveness and Future. Each section relate with the spe-
+                        cific period of our experiment. And the target of each section is to solve
+                        the problem that happened in the experiment and probably in the future.</p>
+                    <p>&#160&#160&#160&#160In the section of expanding the gene library of M1, we compared
+                        many structures and parameters of models and finally selected our differ-
+                        ential equations. We improved the mutation model to describe the change
+                        of number of M1 and the situation of RNA sequence mutation accurate-
+                        ly. And this method was also used in the next section. As a result, we
+                        calculated 72h as the best time for collection, which could be confirmed
+                        by experiment. We provided the method which can be used in the next
+                        section. Firstly, it was considered that there were uninfected vero cells,
+                        infected vero cells and M1 in the culture medium, and the change of the
+                        number of the three microorganisms was related to the number at the
+                        current moment. Based on the biological characteristics of viruses grow-
+                        ing in culture medium and the growth rules of other types of viruses in
+                        culture medium, functional differential equations were established to de-
+                        scribe the number of the three kinds of microorganisms over time. For the
+                        differential equations in the model, we adopted Runge-Kutta algorithm.
+                        The numerical solution of the equations was obtained with the help of
+                        MATLAB, which reflected the relation between the number of M1 and
+                        it's growing time.</p>
+                    <p>&#160&#160&#160&#160Then, we analyzed the process of the directed evolution of M1. Dur-
+                        ing the growth of M1, we hoped to accumulate useful mutations by con-
+                        trolling its growth environment, so as to enhance its effect on tumors and
+                        even expand its range of action.</p>
+                    <p>&#160&#160&#160&#160During the process, each site of the RNA was assumed to mutate
+                        independently. That is, the mutational probability of each site was not
+                        affected by the mutation of other sites. And we also assumed that within
+                        a certain time, the number of mutated sites of M1 obeyed Poisson Process.
+                        This enabled us to know the change rule of mutation sites number after
+                        the M1 mutation rate reached 0.1%, which provided the best time for the
+                        experiment to collect the target M1 virus.</p>
+                    <p>&#160&#160&#160&#160In the section of Animal Experiment, we established the models ac-
+                        cording to M1’s and actinomycin D’s concentration development in
+                        the area of tumor and the whole body of mouse.</p>
+                    <p>&#160&#160&#160&#160In the area of tumor, we established the ER-M1 model which con-
+                        sidered the enzymatic reaction was caused by M1 injection and enzyme
+                        production. This model was tranformed according to the Dynamic Sys-
+                        tem of enzymatic reaction. The rate of the reaction was adaptive to the
+                        time-varying titer of M1 and the concentration of enzyme, and then we
+                        could realize the development of the complex time-varying concentration
+                        of actinomycin D. Furthermore, we considered the injection of M1 and
+                        the damage of actinomycin D to tumor cell. By the improved differential
+                        equations model above and innovative Mixed Michaelis-Menten Equation,
+                        we simulated the movement of M1 and drug therapy more accurately.</p>
+                    <p>&#160&#160&#160&#160For the whole body of mouse, M1 targeting ability and prodrug con-
+                        centration variation in the local and global relationship were taken into
+                        consideration. And we used compartment model to obtain the relation-
+                        ship between medicine concentration in blood and in targeting area under
+                        the rapid intravenous injection. Then we could acquire the initial titer of
+                        M1 and prodrug concentration in the tumor area. In addition, we provid-
+                        ed the method of estimating the distribution of drug in the specific area
+                        to predict the upper and lower bound of concentration. On the basis of it,
+                        we could control the side effect and maintain the curative level of drug.
+                        From the macroscopic injection to microcosmic variation of medicine con-
+                        centration, virus titer and the tumor cell concentration, the mixed model
+                        depicted the process elaborately. Thus, we got that around 72h is the
+                        best injection time interval and about 3.455µg/mL as the best injection
+                        volume. The model got sufficient theoretical support and was innovative. It provided vital
+                        reference value for the establishment of treatment
+                        regime.</p>
+                    <p>&#160&#160&#160&#160It is indubitable that doctors wish to apply the successful excellent
+                    medical method on the body of patients in the future to solve the problem
+                    that could not be solved by traditional methods. To evaluate the probable
+                    curative effect on human beings, we collected large amounts of medical
+                    data of mouse and human, and also read a lot of references. Then we
+                    compared a great many regression methods(polynomial, linear, etc) and
+                    classifiers (including SVM, RF, AdaBoost etc.) by using the AUC and
+                    accuracy rate to get the Ensemble Classifier with the best configuration.
+                    We luckily found that M1 method could make the tumor decrease about
+                    60% in 48h in prediction based on data. However, we could not just apply
+                    the treatment strategies of mouse to man directly due to the complexity of
+                    human body. What’s more, the traditional treatment regime that could
+                    not be strictly time-varying could not always have good effect. In fact,
+                    oncotherapy is more likely to be the game between tumor and doctor,
+                    so we added the DTR model on the basis of reinforcement learning to
+                    provide the dynamic treatment regime for the future.</p>
+                    <p>&#160&#160&#160&#160In addition, we adopted the Path Model that SYSU-Medicine used in
+                    2016, and made the change of the picture more smooth by using neutral
+                    network, by which the medicine distribution change can be visualized
+                    in the body of mouse with time. And we collected the data from the
+                    experiments, references and databases to guarantee the accuracy of our
+                    models. But some data was difficult to collect or the measurement of
+                    them had big error. In that case, we simulated the process based on
+                    our model. And in the actual process, contact ratio has its time-varying
+                    distribution. We used Gaussian Mixture Model to fit the distribution, and
+                    we could got the estimated value of contact ratio based on the position.
+                    In the end, we tried to package the models and algorithms to make them
+                    simple in practical use, especially for synthetic biology researchers and
+                    medicine science researchers. In the future, we will consider to reduce
+                    the algorithm complexity and add the improved Cellular Automation to
+                    adjust our model for higher accuracy and better efficiency. In a whole, our
+                    modeling result has the advantages of elaboration, accuracy, innovation,
+                    intelligence and convenience, giving our experiment important support
+                    and vital evaluation. It pushes our experimental result into models and
+                    data in order to make the research can stand on the shoulder of us and
+                    make it better.</p>
+                    
+
+
+
+                    
+                    
+
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <img id="map-img" src="https://2019.igem.org/wiki/images/5/5b/T--SYSU-Medicine--model_abstract.jpg"
+                    style="width: 100%;" usemap="#subpage">
+                <map class="map-img-map" name="subpage">
+                    <area shape="circle" coords="399,210,85" href="Injection_system">
+                    <area shape="circle" coords="908,240,111" href="Future">
+                    <area shape="circle" coords="345,518,67" href="M1_cultivation">
+                    <area shape="circle" coords="646,382,96" href="Safety_and_Effectiveness">
+                </map>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="space" style="height: 30vw;"></div>
+</body>
+<script type="text/javascript">
+    // title
+    $(document).ready(function () {
+        speed = 250;
+        $(".title-box-new").each(function (titlebox_i, title_box) {
+            var last = $(title_box).offset().top - $(window).scrollTop();
+            var viewheight = window.innerHeight / 5 * 3;
+            if (last < viewheight) {
+                if ($(title_box).hasClass("played")) { } else {
+                    $(title_box).addClass("played");
+
+                    $(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+                    $(title_box).children(".title-box-mask").animate({ width: $(title_box).find("h1").outerWidth() }, speed, "swing", function () {
+                        $(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
+                        // console.log($(title_box).width());
+                        // console.log($(title_box).find("h1").width());
+                        console.log(parseInt($(title_box).find(".title-box-title").css("border-left-width")));
+                        var cache = $(title_box).width() - $(title_box).find("h1").outerWidth();
+                        $(title_box).children(".title-box-mask").css("right", cache);
+                        // $(title_box).children(".title-box-mask").addClass("title-box-mask-right");
+                        $(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
+                    });
+                    $(title_box).children(".title-box-mask").animate({ width: "0" }, speed, "swing");
+                }
+
+
+            }
+        });
+    })
+    $(document).scroll(function () {
+        speed = 250;
+        $(".title-box-new").each(function (titlebox_i, title_box) {
+            var last = $(title_box).offset().top - $(window).scrollTop();
+            var viewheight = window.innerHeight / 5 * 3;
+            if (last < viewheight) {
+                if ($(title_box).hasClass("played")) { } else {
+                    $(title_box).addClass("played");
+
+                    $(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+                    $(title_box).children(".title-box-mask").animate({ width: $(title_box).find("h1").outerWidth() }, speed, "swing", function () {
+                        $(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
+                        // console.log($(title_box).width());
+                        // console.log($(title_box).find("h1").width());
+                        console.log(parseInt($(title_box).find(".title-box-title").css("border-left-width")));
+                        var cache = $(title_box).width() - $(title_box).find("h1").outerWidth();
+                        $(title_box).children(".title-box-mask").css("right", cache);
+                        // $(title_box).children(".title-box-mask").addClass("title-box-mask-right");
+                        $(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
+                    });
+                    $(title_box).children(".title-box-mask").animate({ width: "0" }, speed, "swing");
+                }
+
+
+            }
+        });
+    })
+
+    // title end
+    //map start
+    $(function () {
+        var zoom_factor = $("#map-img").width() / 1280;
+        $("#map-img").next().children().each(function (i, area) {
+            var new_coords = []
+            $(this).attr("coords").split(",").map(function (item) {
+                new_coords.push(parseInt(item) * zoom_factor);
+            })
+            $(this).attr("coords", new_coords.toString());
+        });
+    });
+
+//map end
+</script>
+
+</html>

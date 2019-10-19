@@ -235,9 +235,9 @@ p{
     display: center;
 }
 /* content-0 */
-#content-0{
+/* #content-0{
     height: 75vw;
-}
+} */
 #content-0 .mask{
     height: inherit;
     width: inherit;
@@ -563,7 +563,13 @@ p{
     
     float: left;
 }
-
+.need-scale-0{
+}
+.need-scale-rich-0{
+    /* height: 30vw; */
+    /* transform: scaleY(0.3); */
+    opacity: 0;
+}
 /* .title-margin{
     margin: 5vw 5vw 2vw 5vw;
 }

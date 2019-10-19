@@ -1,0 +1,124 @@
+<html>
+<style type="text/css">
+    .title-box-new {
+
+        position: relative;
+        width: 100%;
+
+    }
+
+
+
+    .title-box-mask {
+        position: absolute;
+
+        height: 100%;
+
+        background-color: rgb(255, 55, 68);
+    }
+
+    .title-box-mask-left {
+        left: 0;
+    }
+
+    .title-box-mask-right {
+        right: 0;
+    }
+
+    .title-box-title {
+
+        height: inherit;
+        border-left-style: solid;
+        border-color: rgb(255, 55, 68);
+        /* border 的粗细！！！ */
+        border-left-width: 0.25rem;
+        opacity: 0;
+        display: flex;
+
+
+
+    }
+
+
+
+    .title-box-title>h1 {
+        margin: 0;
+        vertical-align: middle;
+        /* 距离border的距离！！！ */
+        padding: 0 4rem;
+
+
+        color: rgb(25, 46, 67);
+    }
+
+    /* title end */
+</style>
+<head>
+        <script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
+</head>
+<body>
+    <div class="title-box-new title-0">
+        <div class="title-box-mask"></div>
+        <div class="title-box-title">
+            <h1>Introduction</h1>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    // title
+    $(document).ready(function () {
+        speed = 250;//出现时间！！！
+        $(".title-box-new").each(function (titlebox_i, title_box) {
+            var last = $(title_box).offset().top - $(window).scrollTop();
+            var viewheight = window.innerHeight / 5 * 3;
+            if (last < viewheight) {
+                if ($(title_box).hasClass("played")) { } else {
+                    $(title_box).addClass("played");
+
+                    $(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+                    $(title_box).children(".title-box-mask").animate({ width: $(title_box).find("h1").outerWidth() }, speed, "swing", function () {
+                        $(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
+                        
+                        
+                        var cache = $(title_box).width() - $(title_box).find("h1").outerWidth();
+                        $(title_box).children(".title-box-mask").css("right", cache);
+                        
+                        $(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
+                    });
+                    $(title_box).children(".title-box-mask").animate({ width: "0" }, speed, "swing");
+                }
+
+
+            }
+        });
+    })
+    $(document).scroll(function () {
+        speed = 250;
+        $(".title-box-new").each(function (titlebox_i, title_box) {
+            var last = $(title_box).offset().top - $(window).scrollTop();
+            var viewheight = window.innerHeight / 5 * 3;
+            if (last < viewheight) {
+                if ($(title_box).hasClass("played")) { } else {
+                    $(title_box).addClass("played");
+
+                    $(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+                    $(title_box).children(".title-box-mask").animate({ width: $(title_box).find("h1").outerWidth() }, speed, "swing", function () {
+                        $(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
+                        
+                        var cache = $(title_box).width() - $(title_box).find("h1").outerWidth();
+                        $(title_box).children(".title-box-mask").css("right", cache);
+                        
+                        $(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
+                    });
+                    $(title_box).children(".title-box-mask").animate({ width: "0" }, speed, "swing");
+                }
+
+
+            }
+        });
+    })
+
+// title end
+</script>
+
+</html>

@@ -28,12 +28,15 @@ background-clip: border-box;
         } */
 
         .title-big h1 {
-            font-size: 10vw !important;
+            font-size: 8vw !important;
+            padding: 0 !important;
             /* line-height:14vw; */
 
         }
 
         .title-big>.title-box-title {
+            
+            justify-content: center;
             border-left-style: none !important;
             border-bottom-style: solid;
             border-color: rgb(255, 55, 68);
@@ -75,7 +78,7 @@ background-clip: border-box;
             vertical-align: middle;
             text-align: center;
             margin: 0;
-            font-size: 8rem;
+            /* font-size: 8rem; */
             color: rgb(25, 46, 67);
         }
 
@@ -113,36 +116,60 @@ background-clip: border-box;
             flex-direction: row;
             text-align: center;
             box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
-            border-left-color: rgb(25, 46, 67);
+            padding: 1em 2em;
         }
-
+        .card-blue{
+            border-left-color:rgb(25, 46, 67) ;
+        }
+        .card-red{
+            border-left-color:rgb(255, 55, 68);
+        }
+        }
         .card-img-top {
             width: 60%;
         }
-        .card-body{
+
+        .card-body {
             width: 80%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
+
         .card-button {
+            cursor:pointer;
             align-self: flex-end;
             -webkit-align-self: flex-end;
-            /* width: 60%; */
-            background-color:rgb(25, 46, 67);
-            margin-bottom: 1em;
-        
-        }
-        .card-text{
-            text-align: justify;
+            width: 100%;
             
+            margin-bottom: 1em;
+
         }
-        .card-button-link{
-            color: seashell;
-            font-size: 3em;
-            margin: 2em;
+        .card-button-blue{
+            background-color: rgb(25, 46, 67);
         }
+        .card-button-red{
+            background-color:rgb(255, 55, 68);
+        }
+        .card-text {
+            text-align: justify;
+            line-height: 2em;
+            font-family: 'Open Sans';
+
+
+        }
+        .card-button-link:hover{
+            text-decoration: none;
+            color: rgb(210,210,210);
+        }
+        .card-button-link {
+            
+            color: rgb(255, 255, 255);
+            font-size: 2.8em;
+            /* margin: 2em; */
+        }
+
         /* content-safety end */
     </style>
     <!-- standard head -->
@@ -173,7 +200,7 @@ background-clip: border-box;
     <script src="./navigation.js"></script> -->
 
 
-    <title>Safety</title>
+    <title>Model Overview</title>
 
 </head>
 
@@ -329,19 +356,32 @@ background-clip: border-box;
     </div> -->
     <div class="clearfix" style="margin-bottom: 23em;"></div>
     <div class="container-fluid">
+        
         <div class="row">
             <div class="col-xs-6 col-xs-offset-3">
                 <div class="title-box-new title-big">
                     <div class="title-big-bg"></div>
                     <div class="title-box-mask"></div>
                     <div class="title-box-title">
-                        <h1>Abstract</h1>
+                        <h1>ABSTRACT</h1>
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <img id="map-img" src="https://2019.igem.org/wiki/images/5/5b/T--SYSU-Medicine--model_abstract.jpg"
+                        style="width: 100%;" usemap="#subpage">
+                    <map class="map-img-map" name="subpage">
+                        <area shape="circle" coords="399,210,85" href="Injection_system">
+                        <area shape="circle" coords="908,240,111" href="Future">
+                        <area shape="circle" coords="345,518,67" href="M1_cultivation">
+                        <area shape="circle" coords="646,382,96" href="Safety_and_Effectiveness">
+                    </map>
+                </div>
+            </div>
+        
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2">
                 <div class="content-safety content-safety-0">
@@ -460,34 +500,71 @@ background-clip: border-box;
             </div>
         </div>
         <div class="clearfix" style="margin-bottom: 10em;"></div>
-        <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
-                <img id="map-img" src="https://2019.igem.org/wiki/images/5/5b/T--SYSU-Medicine--model_abstract.jpg"
-                    style="width: 100%;" usemap="#subpage">
-                <map class="map-img-map" name="subpage">
-                    <area shape="circle" coords="399,210,85" href="Injection_system">
-                    <area shape="circle" coords="908,240,111" href="Future">
-                    <area shape="circle" coords="345,518,67" href="M1_cultivation">
-                    <area shape="circle" coords="646,382,96" href="Safety_and_Effectiveness">
-                </map>
-            </div>
-        </div>
+        
         <div class="clearfix" style="margin-bottom: 10em;"></div>
         <div class="row">
-            <div class="col-xs-12 col-md-6">
-                <div class="card">
+            <div class="col-xs-12 col-md-3">
+                <div class="card card-blue">
                     <img class="card-img-top" src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg">
                     <div class="card-body">
-                        <h4 class="card-title">test</h4>
+                        <h2 class="card-title">test</h2>
                         <p class="card-text">
-                                Due to M1's selective infection of tumor cells and the exquisitely-designed prodrug/enzyme
-                                collocation, the system has 
+                            Due to M1's selective infection of tumor cells and the exquisitely-designed prodrug/enzyme
+                            collocation, the system has
                         </p>
-                        
+
                     </div>
-                    <div class="card-button">
-                            <a class="card-button-link">it is a link</a>
-                        </div>
+                    <div class="card-button card-button-blue">
+                        <a class="card-button-link">it is a link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-3">
+                <div class="card card-blue">
+                    <img class="card-img-top" src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg">
+                    <div class="card-body">
+                        <h2 class="card-title">test</h2>
+                        <p class="card-text">
+                            Due to M1's selective infection of tumor cells and the exquisitely-designed prodrug/enzyme
+                            collocation, the system has
+                        </p>
+
+                    </div>
+                    <div class="card-button card-button-blue">
+                        <a class="card-button-link">it is a link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-3">
+                <div class="card card-red">
+                    <img class="card-img-top" src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg">
+                    <div class="card-body">
+                        <h2 class="card-title">test</h2>
+                        <p class="card-text">
+                            Due to M1's selective infection of tumor cells and the exquisitely-designed prodrug/enzyme
+                            collocation, the system has
+                        </p>
+
+                    </div>
+                    <div class="card-button card-button-red">
+                        <a class="card-button-link">it is a link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-3">
+                <div class="card card-red">
+                    <img class="card-img-top" src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg">
+                    <div class="card-body">
+                        <h2 class="card-title">test</h2>
+                        <p class="card-text">
+                            Due to M1's selective infection of tumor cells and the exquisitely-designed prodrug/enzyme
+                            collocation, the system has
+                        </p>
+
+                    </div>
+                    <div class="card-button card-button-red">
+                        <a class="card-button-link">it is a link</a>
+                    </div>
                 </div>
             </div>
         </div>

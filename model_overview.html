@@ -100,6 +100,49 @@ background-clip: border-box;
             color: rgb(25, 46, 67);
         }
 
+        /* 下面的card */
+        .card {
+            border-left: 10px solid;
+            /* display: -webkit-flex; */
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+            align-content: stretch;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: row;
+            text-align: center;
+            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+            border-left-color: rgb(25, 46, 67);
+        }
+
+        .card-img-top {
+            width: 60%;
+        }
+        .card-body{
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .card-button {
+            align-self: flex-end;
+            -webkit-align-self: flex-end;
+            /* width: 60%; */
+            background-color:rgb(25, 46, 67);
+            margin-bottom: 1em;
+        
+        }
+        .card-text{
+            text-align: justify;
+            
+        }
+        .card-button-link{
+            color: seashell;
+            font-size: 3em;
+            margin: 2em;
+        }
         /* content-safety end */
     </style>
     <!-- standard head -->
@@ -149,51 +192,65 @@ background-clip: border-box;
                                     href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
                                 <ul class="navigation-dropdown-panel"></ul>
                             </li>
-                            <li class="navigation-item dropdown ">
-                                <a class="navigation-item-link " href="#">Team</a>
-                                <ul class="navigation-dropdown-panel ">
-                                    <li class="navigation-subitem">
-                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
-                                    </li>
-                                    <li class="navigation-subitem">
-                                        <a
-                                            href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
-                                    </li>
-                                </ul>
-                            </li>
+
                             <li class="navigation-item dropdown">
                                 <a class="navigation-item-link " href="#">Project</a>
                                 <ul class="navigation-dropdown-panel ">
+
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Inspiration">Inspiration</a>
+                                    </li>
                                     <li class="navigation-subitem">
                                         <a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
-                                    </li>
-                                    <li class="navigation-subitem">
-                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Design">Design</a>
-                                    </li>
-                                    <li class="navigation-subitem">
-                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Experiments">Experiments</a>
-                                    </li>
-                                    <li class="navigation-subitem">
-                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Notebook">Notebook</a>
-                                    </li>
-                                    <li class="navigation-subitem">
-                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Contribution">Contribution</a>
                                     </li>
                                     <li class="navigation-subitem">
                                         <a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
                                     </li>
                                     <li class="navigation-subitem">
-                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Demonstrate">Demonstrate</a>
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Contribution">Contribution</a>
                                     </li>
                                     <li class="navigation-subitem">
-                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Improve">Improve</a>
-                                    </li>
-                                    <li class="navigation-subitem">
-                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions
-                                        </a>
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Notebook">Notebook</a>
                                     </li>
                                 </ul>
                             </li>
+                            <li class="navigation-item dropdown">
+                                <a class="navigation-item-link"
+                                    href="https://2019.igem.org/Team:SYSU-Medicine/Model">Model</a>
+                                <ul class="navigation-dropdown-panel">
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/M1_Cultivation">M1
+                                            Cultivation</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Injection_System">Injection
+                                            System</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Safety_and_Effectiveness">Safety
+                                            and Effectiveness</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Future">Future</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navigation-item dropdown ">
+                                <a class="navigation-item-link" href="#">Human Practices</a>
+                                <ul class="navigation-dropdown-panel ">
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Human
+                                            Practices</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education &
+                                            Engagement</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </div>
+                        <div class="navigation-red navigation-div">
                             <li class="navigation-item dropdown ">
                                 <a class="navigation-item-link " href="#">Parts</a>
                                 <ul class="navigation-dropdown-panel ">
@@ -213,33 +270,25 @@ background-clip: border-box;
                                     </li>
                                 </ul>
                             </li>
-                        </div>
-                        <div class="navigation-red navigation-div">
+                            <li class="navigation-item dropdown ">
+                                <a class="navigation-item-link " href="#">Team</a>
+                                <ul class="navigation-dropdown-panel ">
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a
+                                            href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions</a>
+                                    </li>
+                                </ul>
+                            </li>
                             <li class="navigation-item ">
                                 <a class="navigation-item-link"
                                     href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
                                 <ul class="navigation-dropdown-panel"></ul>
-                            </li>
-                            <li class="navigation-item dropdown ">
-                                <a class="navigation-item-link" href="#">Human Practices</a>
-                                <ul class="navigation-dropdown-panel ">
-                                    <li class="navigation-subitem">
-                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Human
-                                            Practices</a>
-                                    </li>
-                                    <li class="navigation-subitem">
-                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education &
-                                            Engagement</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="navigation-item dropdown ">
-                                <a class="navigation-item-link" href="/awards.html">Awards</a>
-                                <ul class="navigation-dropdown-panel ">
-                                    <li class="navigation-subitem">
-                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Model">Model</a>
-                                    </li>
-                                </ul>
                             </li>
                             <li class="navigation-item ">
                                 <a class="navigation-item-link"
@@ -253,6 +302,7 @@ background-clip: border-box;
             </div>
         </div>
     </div>
+
 
 
 
@@ -364,47 +414,47 @@ background-clip: border-box;
                         reference value for the establishment of treatment
                         regime.</p>
                     <p>&#160&#160&#160&#160It is indubitable that doctors wish to apply the successful excellent
-                    medical method on the body of patients in the future to solve the problem
-                    that could not be solved by traditional methods. To evaluate the probable
-                    curative effect on human beings, we collected large amounts of medical
-                    data of mouse and human, and also read a lot of references. Then we
-                    compared a great many regression methods(polynomial, linear, etc) and
-                    classifiers (including SVM, RF, AdaBoost etc.) by using the AUC and
-                    accuracy rate to get the Ensemble Classifier with the best configuration.
-                    We luckily found that M1 method could make the tumor decrease about
-                    60% in 48h in prediction based on data. However, we could not just apply
-                    the treatment strategies of mouse to man directly due to the complexity of
-                    human body. What’s more, the traditional treatment regime that could
-                    not be strictly time-varying could not always have good effect. In fact,
-                    oncotherapy is more likely to be the game between tumor and doctor,
-                    so we added the DTR model on the basis of reinforcement learning to
-                    provide the dynamic treatment regime for the future.</p>
+                        medical method on the body of patients in the future to solve the problem
+                        that could not be solved by traditional methods. To evaluate the probable
+                        curative effect on human beings, we collected large amounts of medical
+                        data of mouse and human, and also read a lot of references. Then we
+                        compared a great many regression methods(polynomial, linear, etc) and
+                        classifiers (including SVM, RF, AdaBoost etc.) by using the AUC and
+                        accuracy rate to get the Ensemble Classifier with the best configuration.
+                        We luckily found that M1 method could make the tumor decrease about
+                        60% in 48h in prediction based on data. However, we could not just apply
+                        the treatment strategies of mouse to man directly due to the complexity of
+                        human body. What’s more, the traditional treatment regime that could
+                        not be strictly time-varying could not always have good effect. In fact,
+                        oncotherapy is more likely to be the game between tumor and doctor,
+                        so we added the DTR model on the basis of reinforcement learning to
+                        provide the dynamic treatment regime for the future.</p>
                     <p>&#160&#160&#160&#160In addition, we adopted the Path Model that SYSU-Medicine used in
-                    2016, and made the change of the picture more smooth by using neutral
-                    network, by which the medicine distribution change can be visualized
-                    in the body of mouse with time. And we collected the data from the
-                    experiments, references and databases to guarantee the accuracy of our
-                    models. But some data was difficult to collect or the measurement of
-                    them had big error. In that case, we simulated the process based on
-                    our model. And in the actual process, contact ratio has its time-varying
-                    distribution. We used Gaussian Mixture Model to fit the distribution, and
-                    we could got the estimated value of contact ratio based on the position.
-                    In the end, we tried to package the models and algorithms to make them
-                    simple in practical use, especially for synthetic biology researchers and
-                    medicine science researchers. In the future, we will consider to reduce
-                    the algorithm complexity and add the improved Cellular Automation to
-                    adjust our model for higher accuracy and better efficiency. In a whole, our
-                    modeling result has the advantages of elaboration, accuracy, innovation,
-                    intelligence and convenience, giving our experiment important support
-                    and vital evaluation. It pushes our experimental result into models and
-                    data in order to make the research can stand on the shoulder of us and
-                    make it better.</p>
-                    
+                        2016, and made the change of the picture more smooth by using neutral
+                        network, by which the medicine distribution change can be visualized
+                        in the body of mouse with time. And we collected the data from the
+                        experiments, references and databases to guarantee the accuracy of our
+                        models. But some data was difficult to collect or the measurement of
+                        them had big error. In that case, we simulated the process based on
+                        our model. And in the actual process, contact ratio has its time-varying
+                        distribution. We used Gaussian Mixture Model to fit the distribution, and
+                        we could got the estimated value of contact ratio based on the position.
+                        In the end, we tried to package the models and algorithms to make them
+                        simple in practical use, especially for synthetic biology researchers and
+                        medicine science researchers. In the future, we will consider to reduce
+                        the algorithm complexity and add the improved Cellular Automation to
+                        adjust our model for higher accuracy and better efficiency. In a whole, our
+                        modeling result has the advantages of elaboration, accuracy, innovation,
+                        intelligence and convenience, giving our experiment important support
+                        and vital evaluation. It pushes our experimental result into models and
+                        data in order to make the research can stand on the shoulder of us and
+                        make it better.</p>
 
 
 
-                    
-                    
+
+
+
 
                 </div>
             </div>
@@ -420,6 +470,25 @@ background-clip: border-box;
                     <area shape="circle" coords="345,518,67" href="M1_cultivation">
                     <area shape="circle" coords="646,382,96" href="Safety_and_Effectiveness">
                 </map>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div class="card">
+                    <img class="card-img-top" src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg">
+                    <div class="card-body">
+                        <h4 class="card-title">test</h4>
+                        <p class="card-text">
+                                Due to M1's selective infection of tumor cells and the exquisitely-designed prodrug/enzyme
+                                collocation, the system has 
+                        </p>
+                        
+                    </div>
+                    <div class="card-button">
+                            <a class="card-button-link">it is a link</a>
+                        </div>
+                </div>
             </div>
         </div>
     </div>

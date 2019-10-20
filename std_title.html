@@ -1,126 +1,240 @@
 <html>
-<style type="text/css">
-    .title-box-new {
+	<style type="text/css">
+		.title-box-new {
+			position: relative;
+			width: 100%;
+		}
+		
+		.title-box-mask {
+			position: absolute;
+			height: 100%;
+			background-color: rgb(255, 55, 68);
+		}
+		
+		.title-box-mask-left {
+			left: 0;
+		}
+		
+		.title-box-mask-right {
+			right: 0;
+		}
+		
+		.title-box-title {
+			justify-content: center;
+			height: inherit;
+			border-left-style: solid;
+			border-color: rgb(255, 55, 68);
+			/* border 的粗细！！！ */
+			border-left-width: 0.25rem;
+			opacity: 0;
+			display: flex;
+			align-items: center !important;
+		}
+		
+		.title-box-title>h1 {
+			margin: 0;
+			vertical-align: middle;
+			/* 距离border的距离！！！ */
+			padding: 0 4rem !important;
+			margin: 0 !important;
+			color: rgb(25, 46, 67);
+		}
+		/* title end */
+	</style>
 
-        position: relative;
-        width: 100%;
+	<head>
+		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
+	</head>
 
-    }
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 column">
+					<nav class="navigation" id="nav-top">
+						<ul class="navigation-list nav-justified">
+							<div class="navigation-blue navigation-div">
+								<li class="navigation-item activate ">
+									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
+									<ul class="navigation-dropdown-panel"></ul>
+								</li>
+								<li class="navigation-item dropdown">
+									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine/Description">Project</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Inspiration">Inspiration</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Experiments">Experiments</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Contribution">Contribution</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item dropdown">
+									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Model">Model</a>
+									<ul class="navigation-dropdown-panel">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Model">Overview</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/M1_Cultivation">M1 Cultivation
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Injection_System">Injection System
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Safety_and_Effectiveness">Safety and Effectiveness</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Future">Future</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Human Practices</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Overview
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education & Engagement
+											</a>
+										</li>
+									</ul>
+								</li>
 
+							</div>
+							<div class="navigation-red navigation-div">
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link " href="#">Parts</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts Overview</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Basic_Part">Basic Parts</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Composite_Part">Composite Parts
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Part_Collection">Part Collection
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item ">
+									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
+									<ul class="navigation-dropdown-panel"></ul>
+								</li>
+								<li class="navigation-item ">
+									<a class="navigation-item-link" href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging Form</a>
+									<ul class="navigation-dropdown-panel"></ul>
+								</li>
+							</div>
 
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
 
-    .title-box-mask {
-        position: absolute;
+		<div class="title-box-new title-0">
+			<div class="title-box-mask"></div>
+			<div class="title-box-title">
+				<h1>Introduction</h1>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		// title
+		$(document).ready(function() {
+			speed = 250; //出现时间！！！
+			$(".title-box-new").each(function(titlebox_i, title_box) {
+				var last = $(title_box).offset().top - $(window).scrollTop();
+				var viewheight = window.innerHeight / 5 * 3;
+				if(last < viewheight) {
+					if($(title_box).hasClass("played")) {} else {
+						$(title_box).addClass("played");
 
-        height: 100%;
+						$(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+						$(title_box).children(".title-box-mask").animate({
+							width: $(title_box).find("h1").outerWidth()
+						}, speed, "swing", function() {
+							$(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
 
-        background-color: rgb(255, 55, 68);
-    }
+							var cache = $(title_box).width() - $(title_box).find("h1").outerWidth();
+							$(title_box).children(".title-box-mask").css("right", cache);
 
-    .title-box-mask-left {
-        left: 0;
-    }
+							$(title_box).children(".title-box-title").animate({
+								opacity: "100"
+							}, speed / 2);
+						});
+						$(title_box).children(".title-box-mask").animate({
+							width: "0"
+						}, speed, "swing");
+					}
 
-    .title-box-mask-right {
-        right: 0;
-    }
+				}
+			});
+		})
+		$(document).scroll(function() {
+			speed = 250;
+			$(".title-box-new").each(function(titlebox_i, title_box) {
+				var last = $(title_box).offset().top - $(window).scrollTop();
+				var viewheight = window.innerHeight / 5 * 3;
+				if(last < viewheight) {
+					if($(title_box).hasClass("played")) {} else {
+						$(title_box).addClass("played");
 
-    .title-box-title {
-        justify-content: center;
-        height: inherit;
-        border-left-style: solid;
-        border-color: rgb(255, 55, 68);
-        /* border 的粗细！！！ */
-        border-left-width: 0.25rem;
-        opacity: 0;
-        display: flex;
-        align-items: center !important;
+						$(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+						$(title_box).children(".title-box-mask").animate({
+							width: $(title_box).find("h1").outerWidth()
+						}, speed, "swing", function() {
+							$(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
 
+							var cache = $(title_box).width() - $(title_box).find("h1").outerWidth();
+							$(title_box).children(".title-box-mask").css("right", cache);
 
+							$(title_box).children(".title-box-title").animate({
+								opacity: "100"
+							}, speed / 2);
+						});
+						$(title_box).children(".title-box-mask").animate({
+							width: "0"
+						}, speed, "swing");
+					}
 
-    }
+				}
+			});
+		})
 
-
-
-    .title-box-title>h1 {
-        margin: 0;
-        vertical-align: middle;
-        /* 距离border的距离！！！ */
-        padding: 0 4rem !important;
-        margin: 0 !important;
-
-
-        color: rgb(25, 46, 67);
-    }
-
-    /* title end */
-</style>
-<head>
-        <script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
-</head>
-<body>
-    <div class="title-box-new title-0">
-        <div class="title-box-mask"></div>
-        <div class="title-box-title">
-            <h1>Introduction</h1>
-        </div>
-    </div>
-</body>
-<script type="text/javascript">
-    // title
-    $(document).ready(function () {
-        speed = 250;//出现时间！！！
-        $(".title-box-new").each(function (titlebox_i, title_box) {
-            var last = $(title_box).offset().top - $(window).scrollTop();
-            var viewheight = window.innerHeight / 5 * 3;
-            if (last < viewheight) {
-                if ($(title_box).hasClass("played")) { } else {
-                    $(title_box).addClass("played");
-
-                    $(title_box).children(".title-box-mask").addClass("title-box-mask-left");
-                    $(title_box).children(".title-box-mask").animate({ width: $(title_box).find("h1").outerWidth() }, speed, "swing", function () {
-                        $(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
-                        
-                        
-                        var cache = $(title_box).width() - $(title_box).find("h1").outerWidth();
-                        $(title_box).children(".title-box-mask").css("right", cache);
-                        
-                        $(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
-                    });
-                    $(title_box).children(".title-box-mask").animate({ width: "0" }, speed, "swing");
-                }
-
-
-            }
-        });
-    })
-    $(document).scroll(function () {
-        speed = 250;
-        $(".title-box-new").each(function (titlebox_i, title_box) {
-            var last = $(title_box).offset().top - $(window).scrollTop();
-            var viewheight = window.innerHeight / 5 * 3;
-            if (last < viewheight) {
-                if ($(title_box).hasClass("played")) { } else {
-                    $(title_box).addClass("played");
-
-                    $(title_box).children(".title-box-mask").addClass("title-box-mask-left");
-                    $(title_box).children(".title-box-mask").animate({ width: $(title_box).find("h1").outerWidth() }, speed, "swing", function () {
-                        $(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
-                        
-                        var cache = $(title_box).width() - $(title_box).find("h1").outerWidth();
-                        $(title_box).children(".title-box-mask").css("right", cache);
-                        
-                        $(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
-                    });
-                    $(title_box).children(".title-box-mask").animate({ width: "0" }, speed, "swing");
-                }
-
-
-            }
-        });
-    })
-
-// title end
-</script>
+		// title end
+	</script>
 
 </html>

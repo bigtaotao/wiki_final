@@ -1,8 +1,8 @@
 @charset "utf-8";
-@font-face {
+/*@font-face {
 	font-family: "Myanmar Text";
 	src: url(https://2019.igem.org/wiki/images/e/eb/T--SYSU-Medicine--mmrtext.ttf) format('truetype');
-}
+}*/
 
 @keyframes jump-left {
 	0% {
@@ -127,7 +127,7 @@ h3,
 h4,
 h5,
 a,p {
-	font-family: "Myanmar Text" !important;
+	/*font-family: "Myanmar Text" !important;*/
 }
 
 .title-box {
@@ -278,7 +278,7 @@ a,p {
 .navigation-item-link:link {
 	color: rgb(253, 253, 253);
 	text-decoration: none;
-	font-family: "Myanmar Text";
+	/*font-family: "Myanmar Text";*/
 	font-size: 1.5rem;
 }
 

@@ -18,6 +18,14 @@
 			*::after 在Wiki上会给contianer前面加一个伪元素，所以container会被选中.
 			*/
 			
+			/*暗锚*/
+			:target
+			{
+				position: relative;
+				padding-top:92px;
+				/*visibility: hidden;*/	
+			}
+			
 			* {
 				margin: 0;
 				padding: 0;
@@ -45,32 +53,42 @@
 				width: 12px;
 				margin: 0 auto;
 				padding-top: 50px;
-				/*background: rgba(128, 128, 128, 0.5);*/
-				background: linear-gradient(180deg, rgba(255, 55, 68, 0), rgba(255, 55, 68, 0.5));
+				background: rgba(255, 55, 68, 1);
+				/*background: linear-gradient(180deg, rgba(255, 55, 68, 0), rgba(255, 55, 68, 0.5));*/
+				
+				/*动画*/
 				transition: all 0.5s ease-in-out;
+				
 			}
 			/*时间轴上的点*/
 			
 			.timeline ul li::after {
+				/*-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+				clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);*/
 				content: '';
 				/*隐藏了*/
 				visibility: hidden;
 				position: absolute;
-				left: 50%;
-				bottom: -4%;
-				/*transform: translateX(-50%) rotate(45deg);*/
-				/*-webkit-transform: translateX(-50%) rotate(45deg);*/
-				width: 20px;
-				height: 20px;
+				left: -30px;
+				/*bottom: -4%;*/
+				
+				
+				/*transform: translateX(-50%) rotate(45deg);
+				-webkit-transform: translateX(-50%) rotate(45deg);*/
+				
+				
+				width: 0px;
+				height: 0px;
 				margin: 0;
 				padding: 0;
 				box-sizing: border-box;
 				z-index: 2;
 				background: rgba(255, 55, 68, 1);
+				color: white;
 			}
 			/* 时间轴旁边的卡片 */
 			
-			.timeline ul li div {
+			.timeline ul li>div {
 				position: relative;
 				bottom: 0;
 				width: 500px;
@@ -83,28 +101,37 @@
 				border-radius: 5px;
 				display: flex;
 				align-items: initial;
+				
+				visibility: hidden;
 			}
 			/*卡片顶部的时间*/
 			
-			.timeline ul li div time {
+			.timeline ul li time {
 				/*绝对定位*/
 				position: absolute;
 				/*background: #f5af19;*/
-				font-size: 130%;
-				width: 120px;
-				height: 35px;
-				top: -15px;
-				left: 10%;
+				font-size: 100%;
+				width: 100px;
+				height: 100px;
+				/*top: -50px;*/
+				left: -43.5px;
 				/*border-style:solid;
 				border-color: rgba(252, 56, 56, 0.2);*/
-				background: rgba(252, 56, 56, 0.1);
-				color: gray;
+				background: rgba(252, 56, 56, 1);
+				color: white;
 				border-radius: 5px;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				letter-spacing: 2px;
 				transition: all 0.5s ease-in-out;
+				-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+				clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+				z-index: 10;
+			
+				/*动画 消失和出现*/
+				transition: all 0.5s ease-in-out;
+				visibility: hidden;
 			}
 			/*卡片内部的小框*/
 			
@@ -121,6 +148,13 @@
 			.timeline ul li div div p {
 				text-align: left;
 			}
+			
+			.timeline ul li a {
+				color: black;
+				
+				text-align: left;
+			}
+			
 			/*卡片内部的小框的外间距*/
 			
 			.timeline ul li div>div {
@@ -139,11 +173,12 @@
 			.timeline ul li:nth-of-type(even)>div {
 				/*left: -439px;*/
 				/*交叉重叠*/
-				margin-top: -500px;
+				/*margin-top: -500px;*/
 				/*margin-bottom: -500px;*/
 				/*更好的处理办法是在对面贴图*/
 				right: calc(40vw + 30px);
 			}
+			/*变色动画部分开始*/
 			/*变色动画部分开始*/
 			
 			.timeline ul li div {
@@ -166,19 +201,25 @@
 			
 			.timeline ul li.in-view {
 				/*background: rgba(255, 55, 68, 0.8);*/
-				background: linear-gradient(180deg, rgba(255, 55, 68, 0.5), rgba(255, 55, 68, 1));
+				/*background: linear-gradient(180deg, rgba(255, 55, 68, 0.5), rgba(255, 55, 68, 1));*/
 			}
 			
 			.timeline ul li.in-view div {
 				/* 消除静态属性，或者修改属性值，就会发生动画transition */
+				visibility: visible;	
 				transform: none;
 				-webkit-transform: none;
 				color: rgba(25, 46, 67, 1);
 			}
 			
-			.timeline ul li.in-view div time {
-				color: red;
+			.timeline ul li.in-view time {
+				visibility: visible;	
 			}
+			
+			
+			/*.timeline ul li.in-view div time {
+				color: white;
+			}*/
 			/*变色动画部分结束*/
 			/*移动适配*/
 			
@@ -377,34 +418,34 @@
 					<section class="timeline">
 						<ul>
 							<li>
+								<time>March</time>
 								<div>
-									<time>March</time>
 									<div class="">
-										<h3>Public survey; Interview Professor Zhou Penghui (deciding to choose virus)</h3>
-										<p>
-											To take a first step on human social practices. As medical students, improving the therapy in reality would be the most suitable point for us to work in synthetic biology. Therefore, we designed a questionnaire for the public and spread it through social networking services. We assessed the general awareness of several important diseases of mankind and asked which disease they cared most, and that should be the focus of our project.
-										</p>
-										<p>The overwhelming majority of survey participants picked malignant tumor as an area of priority, this influenced the development of our project into a malignant tumor， based idea from our initial ideas. After reviewing projects completed by other iGEM teams in the past few years, searching for papers in many areas and having debate between team members, we finally determined to focus on the ‘silver bullet’ to malignant tumors——Oncolytic virus.</p>
-										<p>
-											Since the research direction was confirmed, we made our first interview. We interviewed professor Zhou who engaged in tumor immunology research. After consulting with Professor Zhou about the prospect of tumor immunology and oncolytic virus therapy, our determination is that much stronger and our belief is that much more.
-										</p>
+										<!--要给step-1加padding-->
+										<!--或者clearfix padding-bottom xxpx-->
+										<a href="#step-1">
+											<h3>deciding to choose virus<br/> 
+											Public survey; Interview Professor Zhou Penghui
+										</h3>
+										</a>
 									</div>
 								</div>
 							</li>
 							<li>
+								<time>April</time>
 								<div>
-									<time>April</time>
+
 									<div class="">
-										<h3>Interview Professor Yan Guangmei; Public survey(deciding to study directed evolution of oncolytic virus)</h3>
-										<p>
-											After choosing oncolytic virus for our research direction, our second question came, ‘What kind of virus should we choose? How can we engineer this kind of virus?’ Our public survey reflected that most survey participants hoped OVs can kill tumor cells thoroughly without any tumor cell left, or simply, can kill many types of tumor cells. So, we wanted to start from its lethality and spectrum of antitumor property. We then consulted with Professor Yan who works on oncolytic virus about the questions above. After the conversation, we decided to pick M1 virus and directed evolution for the direction of our research to study its spectrum of antitumor property.
-										</p>
+										<a href="#step-2"><h3> deciding to study directed evolution of oncolytic virus
+										 Interview Professor Yan Guangmei; Public survey
+										</h3></a>
 									</div>
 								</div>
 							</li>
 							<li>
+								<time>May</time>
 								<div>
-									<time>May</time>
+
 									<div class="">
 										<h3>YGA supporting education (learn that students have strong interest in synthetic biology)</h3>
 										<p>
@@ -414,8 +455,9 @@
 								</div>
 							</li>
 							<li>
+								<time>June</time>
 								<div>
-									<time>June</time>
+
 									<div class="">
 										<h3>Visit GCP Office</h3>
 										<p>
@@ -425,8 +467,9 @@
 								</div>
 							</li>
 							<li>
+								<time>July</time>
 								<div>
-									<time>July</time>
+
 									<div class="">
 										<h3>Meet trouble when doing experiment, looking for another ways and systems (finding combination of oncolytic virus with Prodrug)</h3>
 										<p>
@@ -439,8 +482,9 @@
 								</div>
 							</li>
 							<li>
+								<time>August</time>
 								<div>
-									<time>August</time>
+
 									<div class="">
 										<h3>Collaboration with other igem teams (improving the experiment)</h3>
 										<p>
@@ -453,8 +497,9 @@
 								</div>
 							</li>
 							<li>
+								<time>September</time>
 								<div>
-									<time>September</time>
+
 									<div class="">
 										<h3>Dinner talk (improving the experiment) </h3>
 										<p>
@@ -484,9 +529,12 @@
 								</div>
 							</div>
 						</div>
-						<h3><i>1.	Conduct a survey</i></h3>
+						<!--<div  class="clearfix" style="padding-bottom: 100px;"></div>-->
+						<h3 id="step-1"><i>1.	Conduct a survey</i></h3>
 						<p></p>
-						<h3><i>2.	interview Professor Yan Guangmei</i></h3>
+						<h3 id="step-2"><i>2.	deciding to study directed evolution of oncolytic virus
+						 Interview Professor Yan Guangmei; Public survey
+						</i></h3>
 						<p></p>
 						<h3><i>3.	interview Professor Zhou Penghui</i></h3>
 						<p>Q1: professor Zhou, you are an expert in the field of immunotherapy. We would like to know the advantages of immunotherapy over other classical tumor treatments.</p>

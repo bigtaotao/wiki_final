@@ -14,7 +14,9 @@
 		<title>SYSU-Medicine</title>
 
 		<script type="text/x-mathjax-config">
-			MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} });
+			$(function(){
+				MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} });
+			});
 		</script>
 		<script src="https://2019.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 		<style>
@@ -31,6 +33,14 @@
 			body {
 				/* for table */
 				/*counter-reset: counter8;*/ 
+			}
+			
+			#model-head h1{
+				font-size: 48px;
+			}
+			
+			#model-head h3{
+				font-size: 32px;
 			}
 			
 			#model-content {
@@ -251,7 +261,7 @@
 			</div>
 			<div class="row clearfix">
 				<div class="col-xs-8 col-xs-offset-2" id="model-head" style="text-align: center;">
-					<p class="author">Xiaohang Liang, Zibin Huang</p>
+					<h3 class="author">Xiaohang Liang, Zibin Huang</h3>
 				</div>
 			</div>
 			<div class="row clearfix" id="model-content">

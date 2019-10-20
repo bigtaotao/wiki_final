@@ -526,6 +526,7 @@ p {
     opacity: 0;
     display: flex;
     justify-content: center;
+    align-items: center !important;
 }
 
 .title-box-title>h1 {
@@ -534,6 +535,8 @@ p {
     /* margin: 0; */
     font-size: 3vw;
     color: rgb(25, 46, 67);
+    margin: 0 !important;
+    
 }
 
 /* rich-content */

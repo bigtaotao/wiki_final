@@ -147,6 +147,34 @@ $(function () {
     });
     //点击
     $("#content-0 .switch").click(function () {
+        // var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+        // if ($mask.hasClass("open-flag")) {
+        //     $mask.removeClass("open-flag");
+        //     $mask.children().each(function () {
+        //         $(this).animate({ opacity: "100" }, 1);
+        //         $(this).animate({ width: $(".mask-0-box").width()/2 }, 1000);
+
+        //     });
+        //     $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "100" }, 1000,);
+        // } else {
+        //     $("#content-0").animate({ height: "75vw" }, 750, function () {
+        //         var $mask = $($("#content-0 .switch").nextAll(".mask"));
+        //         // $("#content-0").find(".need-scale-rich-0").removeClass("need-scale-rich-0");
+        //         $(".rich-content-box-shadow").css("display","none");
+        //         $mask.children().each(function () {
+        //             $(this).attr("old-width", $(this).width());
+        //             $(this).animate({ width: "0" }, 750, "swing");
+        //             $(this).animate({ opacity: "0" }, 1, "swing");
+        //         });
+
+
+        //     });
+        //     $("#content-0").find(".need-scale-rich-0").animate({opacity: "100"},1500);
+        //     // $("#content-0").find(".need-scale-rich-0").animate({transform: "scaleY(1)"},750);
+        //     $mask.addClass("open-flag");
+        //     hover_flag = 0;
+        //     $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "0" }, 1000);
+        // }
         var $mask = $($(this).nextAll(".mask"));//获取遮罩层
         if ($mask.hasClass("open-flag")) {
             $mask.removeClass("open-flag");

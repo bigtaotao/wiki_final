@@ -256,7 +256,7 @@ a,p {
 	flex-grow: 1;
 	cursor: pointer;
 	display: inline-block;
-	height: 4.69rem;
+	height: 60px;
 	background-color: rgba(0, 0, 0, 0);
 }
 
@@ -265,13 +265,19 @@ a,p {
 	color: rgb(210, 210, 210);
 }
 
+.navigation-item a{
+	text-decoration: none;
+	color: white;
+	font-size: 16px;
+	font-weight: 400;
+}
+
 .navigation-item-link {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	height: 100%;
-	font-size: 0.94rem;
-	font-weight: 300;
+	/*font-size: 0.94rem;*/
 	background-color: rgba(0, 0, 0, 0);
 }
 
@@ -279,7 +285,7 @@ a,p {
 	color: rgb(253, 253, 253);
 	text-decoration: none;
 	/*font-family: "Myanmar Text";*/
-	font-size: 1.5rem;
+	/*font-size: 1.5rem;*/
 }
 
 .navigation-item.active>.navigation-item-link:link {
@@ -288,12 +294,12 @@ a,p {
 }
 
 .navigation-item-link:visited {
-	color: rgb(167, 167, 167);
+	/*color: rgb(167, 167, 167);*/
 	text-decoration: none;
 }
 
 .navigation-item.active>.navigation-item-link:visited {
-	color: rgb(210, 210, 210);
+	/*color: rgb(210, 210, 210);*/
 	text-decoration: none;
 }
 
@@ -325,7 +331,7 @@ a,p {
 
 .navigation-subitem>a {
 	color: rgb(253, 253, 253);
-	height: 3.125rem;
+	/*height: 3.125rem;*/
 	line-height: 3.125rem;
 }
 
@@ -611,3 +617,26 @@ p {
 	font-family: 'Open Sans';
 }
 
+.std-content h1 {
+	font-size: 58px;
+}
+
+.std-content h2 {
+	font-size: 48px;
+}
+
+.std-content h3 {
+	font-size: 36px;
+}
+
+.std-content h4 {
+	font-size: 26px;
+}
+
+.std-content h5 {
+	font-size: 22px;
+}
+
+.std-content p {
+	font-size: 18px;
+}

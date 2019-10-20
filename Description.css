@@ -1,92 +1,100 @@
 /* 初始化钢琴动画 */
-@keyframes piano-init{
 
-}
-@-webkit-keyframes piano-init{
+@keyframes piano-init {}
 
-}
+@-webkit-keyframes piano-init {}
+
 /* 钢琴键激活 */
-@keyframes key-activate{
+
+@keyframes key-activate {
     0% {
-        
-        width:100%;
+        width: 100%;
         height: 2rem;
     }
-
-    100%{
-        
-        width:150%;
+    100% {
+        width: 150%;
         height: 3rem;
     }
 }
-@-webkit-keyframes key-activate{
+
+@-webkit-keyframes key-activate {
     0% {
-        
-        width:100%;
+        width: 100%;
         height: 100%;
     }
-
-    100%{
-        
-        width:150%;
+    100% {
+        width: 150%;
         height: 150%;
     }
 }
-@keyframes key-kernel-activate{
-    0%{
-        background-color: rgb(186,186,186);
+
+@keyframes key-kernel-activate {
+    0% {
+        background-color: rgb(186, 186, 186);
     }
-    100%{
-        background-color: rgb(255,55,68);
+    100% {
+        background-color: rgb(255, 55, 68);
     }
 }
-@-webkit-keyframes key-kernel-activate{
-    0%{
-        background-color: rgb(255,55,68);
+
+@-webkit-keyframes key-kernel-activate {
+    0% {
+        background-color: rgb(255, 55, 68);
     }
-    100%{
-        background-color: rgb(186,186,186);
+    100% {
+        background-color: rgb(186, 186, 186);
     }
-    
 }
+
 /* 钢琴键取消激活 */
-@keyframes key-deactivate{
-    0%{
-        background-color: rgb(255,55,68);
+
+@keyframes key-deactivate {
+    0% {
+        background-color: rgb(255, 55, 68);
     }
-    100%{
-        background-color: rgb(186,186,186);
+    100% {
+        background-color: rgb(186, 186, 186);
     }
 }
-@-webkit-keyframes key-deactivate{}
+
+@-webkit-keyframes key-deactivate {}
+
 /* 钢琴键内部字体淡入 */
-@keyframes key-title-in{}
-@-webkit-keyframes key-title-in{}
+
+@keyframes key-title-in {}
+
+@-webkit-keyframes key-title-in {}
+
 /* 钢琴内部字体淡出 */
-@keyframes key-title-out{}
-@-webkit-keyframes key-title-out{}
+
+@keyframes key-title-out {}
+
+@-webkit-keyframes key-title-out {}
+
 /* 鼠标悬停在content */
-@keyframes content-hover-2item{
-    0%{
+
+@keyframes content-hover-2item {
+    0% {
         width: 50%;
     }
-    100%{
+    100% {
         width: 40%;
     }
 }
-@-webkit-keyframes content-hover-2item{
-    0%{
+
+@-webkit-keyframes content-hover-2item {
+    0% {
         width: 50%;
     }
-    100%{
+    100% {
         width: 40%;
     }
 }
 
 /* @keyframes {}
 @-webkit-keyframes{} */
-.piano-subpage{
-    
+
+.piano-subpage {
     background-color: rgba(0, 0, 0, 0);
     position: fixed;
     z-index: 200;
@@ -96,190 +104,214 @@
     flex-direction: column;
     justify-content: flex-start;
 }
+
 /* demo继承的子类piano */
-.piano-subpage-demo{
+
+.piano-subpage-demo {
     width: 16rem;
     /* height: 44rem; */
 }
-.piano-subpage-key{
-    
+
+.piano-subpage-key {
     /* margin: 1rem 0rem 1rem 0; */
     width: 8vw;
-    height:1vh ;
+    height: 1vh;
     background-color: rgba(0, 0, 0, 0);
-
     /*  */
     animation-name: key-activate;
     -webkit-animation-name: key-activate;
-    
 }
-.animation{
+
+.animation {
     animation-duration: 0.4s;
     animation-timing-function: ease;
-    
-    animation-fill-mode:forwards;
-    
+    animation-fill-mode: forwards;
     -webkit-animation-duration: 0.4s;
     -webkit-animation-timing-function: ease;
-    -webkit-animation-fill-mode:forwards;
-
+    -webkit-animation-fill-mode: forwards;
 }
 
-.piano-subpage  .key-kernel{
+.piano-subpage .key-kernel {
     /* background-color: rgb(255,55,68); */
-    background-color: rgb(186,186,186);
+    background-color: rgb(186, 186, 186);
     height: 100%;
-    border-radius:0rem 0.3rem 0.3rem 0rem;
-    -moz-border-radius:0.3rem; /* Old Firefox */
-    box-shadow: 0.4rem 0.4rem 0.2rem rgba(180,180,180,50%);
-
+    border-radius: 0rem 0.3rem 0.3rem 0rem;
+    -moz-border-radius: 0.3rem;
+    /* Old Firefox */
+    box-shadow: 0.4rem 0.4rem 0.2rem rgba(180, 180, 180, 50%);
     /*  */
     animation-name: key-kernel-activate;
     -webkit-animation-name: key-kernel-activate;
     animation-play-state: running;
     -webkit-animation-play-state: running;
 }
-.key-kernel-0{
-    width:80%;
+
+.key-kernel-0 {
+    width: 80%;
 }
-.key-kernel-1
-{
+
+.key-kernel-1 {
     width: 85;
 }
-.key-kernel-2{
+
+.key-kernel-2 {
     width: 50%;
 }
-.key-kernel-3{
-    width:62%;
+
+.key-kernel-3 {
+    width: 62%;
 }
-.key-kernel-4{
-    width:90%;
+
+.key-kernel-4 {
+    width: 90%;
 }
-.key-kernel-5{
+
+.key-kernel-5 {
     width: 48%;
 }
 
-
 /* 下面是页面内容css */
-.sub-content{
+
+.sub-content {
     width: 90vw;
-    
     /* background-color: rgb(186,186,186); */
     margin: 0 5vw 0 5vw;
-    
 }
-.switch{
+
+.switch {
     background-color: brown;
     opacity: 0;
     position: absolute;
-    height:inherit;
+    height: inherit;
     width: inherit;
     float: left;
     z-index: 10;
 }
-.mask-front-content-box{
-    
+
+.mask-0,.mask-1,.mask-2,.mask-3{
+    /* Safari for macOS & iOS */
+    -webkit-backdrop-filter: blur(5px);
+    /* Google Chrome */
+    backdrop-filter: blur(5px);
+}
+.m00,.m10,.m13,.m21,.m30,.m32{
+    background-color: rgb(25, 46, 67,0.7) !important;
+}
+.m01,.m11,.m12,.m20,.m31{
+    background-color: rgba(255, 55, 68,0.7) !important;
+}
+
+.mask-front-content-box {
     position: absolute;
-    height:inherit;
+    height: inherit;
     width: inherit;
     float: left;
     z-index: 9;
     display: flex;
     flex-wrap: wrap;
 }
-.mask-front-content-10,.mask-front-content-11,.mask-front-content-12,.mask-front-content-13{
+
+.mask-front-content-10, .mask-front-content-11, .mask-front-content-12, .mask-front-content-13 {
     width: 50%;
     height: 50%;
 }
-.mask-front-content-10> p,.mask-front-content-11> p,.mask-front-content-12> p,.mask-front-content-13 > p{
+
+.mask-front-content-10>p, .mask-front-content-11>p, .mask-front-content-12>p, .mask-front-content-13>p {
     font-size: 2vw !important;
 }
-.mask-front-content-00,.mask-front-content-01{
+
+.mask-front-content-00, .mask-front-content-01 {
     width: 50%;
     height: initial;
 }
-.mask-front-content-00 > p,.mask-front-content-01 > p{
+
+.mask-front-content-00>p, .mask-front-content-01>p {
     font-size: 6vw !important;
 }
-.mask-front-content-20,.mask-front-content-21{
+
+.mask-front-content-20, .mask-front-content-21 {
     width: 50%;
     height: initial;
 }
-.mask-front-content-20>p,.mask-front-content-21>p{
+
+.mask-front-content-20>p, .mask-front-content-21>p {
     font-size: 3.5vw !important;
 }
-.mask-front-content-30,.mask-front-content-31,.mask-front-content-32{
-    width:100%;
+
+.mask-front-content-30, .mask-front-content-31, .mask-front-content-32 {
+    width: 100%;
     height: 33.33%;
 }
-.mask-front-content-30 >p,.mask-front-content-31>p,.mask-front-content-32>p{
+
+.mask-front-content-30>p, .mask-front-content-31>p, .mask-front-content-32>p {
     font-size: 3.5vw !important;
 }
-p{
-    color: rgb(255,255,255);
+
+p {
+    color: rgb(255, 255, 255);
     font-size: 1vw;
 }
-.mask-front-content{
+
+.mask-front-content {
     flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    
 }
-.mask-front-content > p{
+
+.mask-front-content>p {
     /* font-size: 6vw !important; */
-    
 }
-.mask > div{
+
+.mask>div {
     display: center;
 }
+
 /* content-0 */
+
 /* #content-0{
     height: 75vw;
 } */
-#content-0 .mask{
+
+#content-0 .mask {
     height: inherit;
     width: inherit;
     /* display: flex; */
     position: absolute;
     float: left;
     z-index: 5;
-    
 }
-.mask-0{
+
+.mask-0 {
     height: inherit;
     width: 45vw;
     position: relative;
-    
 }
 
-.m00{
-    background-color:rgb(25,46,67);
+.m00 {
+    background-color: rgb(25, 46, 67,0.7);
     /* flex-grow: 1; */
-    
     left: 0;
     float: left;
-    
 }
-.m01{
-    background-color: rgb(255,55,68);
+
+.m01 {
+    background-color: rgb(255, 55, 68);
     /* flex-grow: 1; */
-    
     float: right;
     right: 0;
     /* animation: content-hover-2item 0.2s ease 0s 1 normal forwards; */
 }
 
-
-
 /* content-1 */
+
 #content-1 {
     height: 36vw;
 }
-#content-1 .mask{
+
+#content-1 .mask {
     display: flex;
-    
     flex-direction: column;
     flex-wrap: wrap;
     grid-template-columns: 1fr 1fr;
@@ -289,93 +321,90 @@ p{
     float: left;
     z-index: 5;
 }
-.content-1s{
+
+.content-1s {
     width: 90vw;
     height: 15vw;
 }
-.mask-1{
+
+.mask-1 {
     width: 45vw;
     height: 18vw;
     /* == #content-1 height/2 */
     position: absolute;
 }
-.m10{
-    background-color:rgb(25,46,67);
+
+.m10 {
+    background-color: rgb(25, 46, 67);
     left: 0;
     float: left;
-    
-    
 }
-.m11{
-    background-color: rgb(255,55,68);
-    
+
+.m11 {
+    background-color: rgb(255, 55, 68);
     float: right;
     right: 0;
-    
-
-    
 }
-.m12{
-    background-color: rgb(255,55,68);
+
+.m12 {
+    background-color: rgb(255, 55, 68);
     left: 0;
-    
     float: left;
     bottom: 0;
-    
 }
-.m13{
-    background-color:rgb(25,46,67);
-    
+
+.m13 {
+    background-color: rgb(25, 46, 67);
     float: right;
     right: 0;
     bottom: 0;
 }
 
 /* content-2 */
-#content-2{
+
+#content-2 {
     height: 16vw;
 }
-#content-2 .mask{
+
+#content-2 .mask {
     height: inherit;
     width: inherit;
     /* display: flex; */
     position: absolute;
     float: left;
     z-index: 5;
-    
 }
-.mask-2{
+
+.mask-2 {
     height: inherit;
     width: 45vw;
     position: relative;
 }
 
-.m20{
-    background-color:rgb(255,55,68);
+.m20 {
+    background-color: rgb(255, 55, 68);
     /* flex-grow: 1; */
-    
     left: 0;
     float: left;
-    
 }
-.m21{
-    background-color: rgb(25,46,67);
+
+.m21 {
+    background-color: rgb(25, 46, 67);
     /* flex-grow: 1; */
-    
     float: right;
     right: 0;
     /* animation: content-hover-2item 0.2s ease 0s 1 normal forwards; */
 }
+
 /* content-3 */
 
 #content-3 {
     height: 75vw;
 }
-#content-3 .mask{
+
+#content-3 .mask {
     display: flex;
-    
     flex-direction: column;
-    
     grid-template-columns: 1fr 1fr;
     width: 90vw;
     height: 75vw;
@@ -384,191 +413,226 @@ p{
     z-index: 5;
 }
 
-.mask-3{
+.mask-3 {
     width: 90vw;
     height: 25vw;
     /* == #content-1 height/2 */
     position: absolute;
 }
-.m30{
-    background-color:rgb(25,46,67);
+
+.m30 {
+    background-color: rgb(25, 46, 67);
     left: 0;
     float: left;
-    
-    
 }
-.m31{
-    background-color: rgb(255,55,68);
-    top:25vw;
+
+.m31 {
+    background-color: rgb(255, 55, 68);
+    top: 25vw;
     float: right;
     right: 0;
-    
-
-    
 }
-.m32{
-    background-color: rgb(25,46,67);
+
+.m32 {
+    background-color: rgb(25, 46, 67);
     left: 0;
-    top:50vw;
+    top: 50vw;
     float: left;
-    
-    
 }
 
 /* title */
-.title-box-new{
+
+.title-box-new {
     margin: 5vw 5vw 2vw 5vw;
     position: relative;
-    
 }
-.title-big{
+
+.title-big {
     margin: 5vw 35vw 5vw 35vw;
     width: 30vw;
     height: 10vw;
 }
-.title-big h1{
+
+.title-big h1 {
     font-size: 6vw !important;
-    line-height:10vw;
-    
+    line-height: 10vw;
 }
-.title-big > .title-box-title{
+
+.title-big>.title-box-title {
     border-left-style: none !important;
     border-bottom-style: solid;
-    border-color: rgb(255,55,68);
+    border-color: rgb(255, 55, 68);
     border-bottom-width: 0.2vw;
-    
 }
-.title-0{
+
+.title-0 {
     width: 24vw;
     height: 5vw;
 }
-.title-1{
+
+.title-1 {
     width: 29vw;
     height: 5vw;
 }
-.title-2{
+
+.title-2 {
     width: 16vw;
     height: 5vw;
 }
-.title-3{
+
+.title-3 {
     width: 30vw;
     height: 5vw;
 }
-.title-4{
+
+.title-4 {
     width: 34vw;
     height: 6.8vw;
 }
-.reference-title{
+
+.reference-title {
     font-size: 5vw !important;
 }
-.reference-content{
+
+.reference-content {
     margin: 5vw;
 }
-.reference-content > p{
-    
-    color:rgb(120,120,120) !important;
+
+.reference-content>p {
+    color: rgb(120, 120, 120) !important;
 }
-.title-box-mask{
+
+.title-box-mask {
     position: absolute;
     /* width: 40px; */
     height: inherit;
-    
-    background-color: rgb(255,55,68);
+    background-color: rgb(255, 55, 68);
 }
-.title-box-mask-left{
+
+.title-box-mask-left {
     left: 0;
 }
-.title-box-mask-right{
+
+.title-box-mask-right {
     right: 0;
 }
-.title-box-title{
+
+.title-box-title {
     width: inherit;
     height: inherit;
     border-left-style: solid;
-    border-color: rgb(255,55,68);
+    border-color: rgb(255, 55, 68);
     border-left-width: 0.2vw;
     opacity: 0;
     display: flex;
     justify-content: center;
 }
-.title-box-title > h1{
-    vertical-align: middle; 
-    text-align:center;
+
+.title-box-title>h1 {
+    vertical-align: middle;
+    text-align: center;
     /* margin: 0; */
     font-size: 3vw;
-    color: rgb(25,46,67);
+    color: rgb(25, 46, 67);
 }
 
 /* rich-content */
-.rich-content-box{
+
+.rich-content-box {
     display: flex;
     flex-direction: row;
     width: inherit;
     height: inherit;
     flex-wrap: wrap;
 }
-.rich-content{
+
+.rich-content {
     flex-grow: 1;
+    display: flex;
+    align-items: center;
 }
-.rich-content > p{
+.rich-content-00,.rich-content-01{
+    flex-grow:1;
+}
+.rich-content-00>p,.rich-content-01>p {
+    
     font-size: 1.5vw !important;
-    color:rgb(25,46,67) !important;
-    text-align:justify !important;
+    color: rgb(25, 46, 67) !important;
+    text-align: justify !important;
 }
-.rich-content-10,.rich-content-11,.rich-content-12,.rich-content-13{
+.rich-content>p {
+    font-size: 1.5vw !important;
+    color: rgb(25, 46, 67) !important;
+    text-align: justify !important;
+}
+.rich-content-10, .rich-content-11, .rich-content-12, .rich-content-13 {
     width: 45%;
     flex-grow: 1;
     height: 50%;
     padding: 0% 2.5%;
 }
 
-.rich-content-00,.rich-content-01{
-    width: 45%;
-    padding: 0% 2.5%  ;
-    height: 100%;
-}
-.rich-content-20,.rich-content-21{
+.rich-content-00, .rich-content-01 {
     width: 45%;
     padding: 0% 2.5%;
     height: 100%;
 }
-.rich-content-30,.rich-content-31,.rich-content-32{
-    width:100%;
-    height: 33.3%;;
+
+.rich-content-20, .rich-content-21 {
+    width: 45%;
+    padding: 0% 2.5%;
+    height: 100%;
 }
-.introduction{
+
+.rich-content-30, .rich-content-31, .rich-content-32 {
+    width: 100%;
+    height: 33.3%;
+    ;
+}
+
+.introduction {
     margin: 4vw 25vw 3vw 25vw;
 }
-.introduction > p{
+
+.introduction>p {
     font-size: 1.5vw !important;
-    color: rgb(120,120,120) !important;
+    color: rgb(120, 120, 120) !important;
 }
-.img-bg-0,.img-bg-1{
+
+.img-bg-0, .img-bg-1 {
     width: 10vw;
-    
     float: left;
 }
-.img-pd-0,.img-pd-1,.img-pd-2,.img-pd-3{
+
+.img-pd-0, .img-pd-1, .img-pd-2, .img-pd-3 {
     width: 8vw;
-    
     float: left;
 }
-.img-approach-0,.img-approach-1{
+
+.img-approach-0, .img-approach-1 {
     width: 10vw;
-    
     float: left;
 }
-.img-fp-0,.img-fp-1,.img-fp-2{
+
+.img-fp-0, .img-fp-1, .img-fp-2 {
     width: 10vw;
-    
     float: left;
 }
-.need-scale-0{
-}
-.need-scale-rich-0{
+/* content-0 scale */
+.need-scale-0 {}
+
+.need-scale-rich-0 {
     /* height: 30vw; */
     /* transform: scaleY(0.3); */
     opacity: 0;
+}
+.rich-content-box-shadow{
+    position: absolute;
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    height: inherit;
+    flex-wrap: wrap;
 }
 /* .title-margin{
     margin: 5vw 5vw 2vw 5vw;

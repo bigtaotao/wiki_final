@@ -1,0 +1,530 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>SYSU-Medicine</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
+		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
+		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/home&action=raw&ctype=text/javascript"></script>
+		<link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
+		<script src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
+		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
+
+		<style>
+			/**,
+			*::before,
+			*::after 在Wiki上会给contianer前面加一个伪元素，所以container会被选中.
+			*/
+			/*暗锚*/
+			/*:target
+			{
+				position: relative;
+				padding-top:92px;
+				/*visibility: hidden;*/
+			/*}*/
+			
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			.panel,.panel-default {
+				border: none;
+				box-shadow: none;
+			}
+			
+			.container {}
+			
+			body {
+				/*background: linear-gradient(54deg, #9164ff, #8bfff4);*/
+				color: #3c3f64;
+				overflow-x: hidden;
+				padding-bottom: 50px;
+			}
+			/*去掉ul默认的点*/
+			
+			.timeline ul {
+				list-style: none;
+			}
+			/*时间轴的线条*/
+			
+			.timeline ul li {
+				list-style-type: none;
+				position: relative;
+				width: 24px;
+				margin: 0 100px;
+				padding-top: 50px;
+				background: grey;
+				/*background: linear-gradient(180deg, rgba(255, 55, 68, 0), rgba(255, 55, 68, 0.5));*/
+				/*动画*/
+				transition: all 0.5s ease-in-out;
+			}
+			/*时间轴最后的箭头*/
+			
+			.timeline ul li:last-of-type:after {
+				/*-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+				clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);*/
+				content: '';
+				/*隐藏了*/
+				/*visibility: hidden;*/
+				position: absolute;
+				/*bottom: -4%;*/
+				width: 0px;
+				height: 0px;
+				left: -24px;
+				border-width: 36px;
+				border-style: solid;
+				border-color: grey white white white;
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				z-index: 2;
+				background: grey;
+				color: white;
+			}
+			/* 时间轴旁边的卡片 */
+			
+			.timeline ul li>div {
+				position: relative;
+				bottom: 0;
+				width: 700px;
+				width: calc(70vw - 15px);
+				width: -webkit-calc(70vw - 15px);
+				flex-direction: column;
+				padding: 20px;
+				background: #fff;
+				box-shadow: 4px 6px 12px 1px rgba(25, 46, 67, 0.2);
+				border-radius: 5px;
+				display: flex;
+				align-items: initial;
+				visibility: hidden;
+			}
+			/*圆圈*/
+			
+			.timeline ul li time {
+				/*绝对定位*/
+				position: absolute;
+				/*background: #f5af19;*/
+				font-size: 100%;
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				/*top: -50px;*/
+				left: -38px;
+				/*border-style:solid;
+				border-color: rgba(252, 56, 56, 0.2);*/
+				background: rgb(25, 46, 67);
+				color: white;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				letter-spacing: 2px;
+				transition: all 0.5s ease-in-out;
+				/*-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+				clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);*/
+				z-index: 10;
+				box-shadow: 0px 4px 5px 2px #192e4387;
+				/*动画 消失和出现*/
+				transition: all 0.5s ease-in-out;
+				visibility: hidden;
+			}
+			/*卡片内部的小框
+			
+			.timeline ul li div>div {
+				display: flex;
+				width: 95%;
+				/*内部的弹性盒元素的排列方向
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}*/
+			/*卡片内部的框内部的段落*/
+			
+			.timeline ul li div div p {
+				text-align: left;
+			}
+			
+			.timeline ul li a {
+				color: black;
+				text-align: left;
+			}
+			/*卡片内部的小框的外间距*/
+			
+			.timeline ul li div>div {
+				margin-top: 10px;
+				margin-bottom: 10px;
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+			/* 奇数编号的卡片 相对于时间轴的位置（relative） */
+			
+			.timeline ul li>div {
+				left: 100px;
+			}
+			/*变色动画部分开始*/
+			/*变色动画部分开始*/
+			
+			.timeline ul li div {
+				/*visibility: hidden;
+				opacity: 0;*/
+				/*控制所有卡片及其内部元素的动画速度*/
+				color: gray;
+				transition: all 0.5s ease-in-out;
+			}
+			
+			.timeline ul li:nth-of-type(odd) div {
+				/*transform: translate3d(100px, -10px, 0) rotate(10deg);
+				-webkit-transform: translate3d(100px, -10px, 0) rotate(10deg);*/
+			}
+			
+			.timeline ul li.in-view {
+				/*background: rgba(255, 55, 68, 0.8);*/
+				/*background: linear-gradient(180deg, rgba(255, 55, 68, 0.5), rgba(255, 55, 68, 1));*/
+			}
+			
+			.timeline ul li.in-view div {
+				/* 消除静态属性，或者修改属性值，就会发生动画transition */
+				visibility: visible;
+				transform: none;
+				-webkit-transform: none;
+				color: rgba(25, 46, 67, 1);
+			}
+			
+			.timeline ul li.in-view time {
+				visibility: visible;
+			}
+			/*.timeline ul li.in-view div time {
+				color: white;
+			}*/
+			/*变色动画部分结束*/
+			/*移动适配*/
+			
+			@media screen and (max-width: 900px) {
+				.timeline ul li div {
+					width: 350px;
+					width: calc(80vw - 200px);
+					width: -webkit-calc(80vw - 200px);
+					flex-direction: column;
+				}
+				.timeline ul li div div {
+					width: 95%;
+					margin: 10px;
+				}
+			}
+			
+			@media screen and (max-width: 600px) {
+				.timeline ul li {
+					margin-left: 15px;
+					left: 40px;
+				}
+				.timeline ul li div {
+					left: 80px;
+					width: 300px;
+					width: calc(100vw - 200px);
+					width: -webkit-calc(100vw - 200px);
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 column">
+					<nav class="navigation" id="nav-top">
+						<ul class="navigation-list nav-justified">
+							<div class="navigation-blue navigation-div">
+								<li class="navigation-item activate ">
+									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
+									<ul class="navigation-dropdown-panel"></ul>
+								</li>
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link " href="#">Team</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item dropdown">
+									<a class="navigation-item-link " href="#">Project</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Design">Design</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Experiments">Experiments</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Notebook">Notebook</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Contribution">Contribution</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Demonstrate">Demonstrate</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Improve">Improve</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions </a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link " href="#">Parts</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts Overview</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Basic_Part">Basic Parts</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Composite_Part">Composite Parts</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Part_Collection">Part Collection</a>
+										</li>
+									</ul>
+								</li>
+							</div>
+							<div class="navigation-red navigation-div">
+								<li class="navigation-item ">
+									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
+									<ul class="navigation-dropdown-panel"></ul>
+								</li>
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link" href="#">Human Practices</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Human Practices</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education & Engagement</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link" href="/awards.html">Awards</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Model">Model</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item ">
+									<a class="navigation-item-link" href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging Form</a>
+									<ul class="navigation-dropdown-panel"></ul>
+								</li>
+							</div>
+
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-xs-12">
+					<br />
+					<br />
+					<br />
+					<br />
+					<div class="row clearfix">
+						<div class="col-xs-10">
+							<div class="title-box">
+								<h1 class="title">
+                        			<span class="title-has-mask playing">Human Practices</span>
+									<span class="title-mask playing"></span>
+								</h1>
+							</div>
+						</div>
+					</div>
+					<div class="row clearfix">
+						<div class="col-xs-6">
+							<div class="title-box">
+								<h2 class="title">
+                        		<span class="title-has-mask playing">Overview</span>
+								<span class="title-mask playing"></span>
+								</h2>
+							</div>
+						</div>
+					</div>
+
+					<p>Because of the increasing need of individual health care in China, more and more people are looking for a better therapy to cure cancers. In order to get better acquainted with social need and to popularize advanced therapy as well as synthetic biology. The focus of our work on human social practices consist of three parts.</p>
+					<h3><i>Product design and improvement</i></h3>
+					<p>Through the public survey and the interviews with specialists, we decided to choose oncolytic virus therapy and improve it again and again in order to meet the needs of patients and society.</p>
+					<h3><i>Therapy promotion</i></h3>
+					<p>Limited by its deficiencies of oncolytic virus, this kind of therapy is not as widespread and popular as other biotherapies. For that reason, we make an effort to engineer the virus to make it more available and harmless for clinical treatment by having interview with specialists and patients, collaborating with other Igem teams and conducting public surveys.</p>
+					<h3><i>Biosynthesis publicity</i></h3>
+					<p>Our purpose for the public education part is to develop new opportunities to encourage more people to learn about synthetic biology and to shape it. In order to realize it, we took the opportunity to participate in YGA program where we have supporting education for high school students in the remote regions. We also establish our own WeChat Official Accounts Platform to propagandize oncolytic virus and synthetic biology.</p>
+					<h3><i></i></h3>
+					<p></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-xs-12 column">
+					<div class="row clearfix">
+						<div class="col-xs-5 column">
+							<div class="title-box">
+								<h2 class="title">
+		                        <span class="title-has-mask playing">Protocol</span>
+								<span class="title-mask playing"></span>
+								</h2>
+							</div>
+						</div>
+					</div>
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<section class="timeline">
+								<ul>
+									<li>
+										<time>March</time>
+										<div>
+											<!--要给step-1加padding-->
+											<!--或者clearfix padding-bottom xxpx-->
+											<div class="panel-heading">
+												<h3 class="panel-title">
+														<a data-toggle="collapse" data-parent="#accordion" href="#step-1">
+														deciding to choose virus<br/> 
+														Public survey; Interview Professor Zhou Penghui
+														</a>
+													</h3>
+											</div>
+											<div id="step-1" class="panel-collapse collapse in">
+												<div class="panel-body">
+													Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<time>March</time>
+										<div>
+											<!--要给step-1加padding-->
+											<!--或者clearfix padding-bottom xxpx-->
+											<div class="panel-heading">
+												<h3 class="panel-title">
+														<a data-toggle="collapse" data-parent="#accordion" href="#step-2">
+														deciding to choose virus<br/> 
+														Public survey; Interview Professor Zhou Penghui
+														</a>
+													</h3>
+											</div>
+											<div id="step-2" class="panel-collapse collapse in">
+												<div class="panel-body">
+													Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br />
+		<br />
+		<br />
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-sm-12">
+					<div class="row clearfix">
+						<div class="col-xs-8 column">
+							<div class="title-box">
+								<h2 class="title">
+	                       			 <span class="title-has-mask playing">Human Practice</span>
+									<span class="title-mask playing"></span>
+									</h2>
+							</div>
+						</div>
+					</div>
+					<!--<div  class="clearfix" style="padding-bottom: 100px;"></div>-->
+					<h3 id=""><i>1.	Conduct a survey</i></h3>
+					<p></p>
+					<h3 id=""><i>2.	deciding to study directed evolution of oncolytic virus
+						 Interview Professor Yan Guangmei; Public survey
+						</i></h3>
+					<p></p>
+				</div>
+			</div>
+		</div>
+		<br />
+		<br />
+		<br />
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-sm-12">
+					<div class="row clearfix">
+						<div class="col-xs-10 column">
+							<div class="title-box">
+								<h2 class="title">
+			                        <span class="title-has-mask playing">Education and Public Engagement</span>
+									<span class="title-mask playing"></span>
+									</h2>
+							</div>
+						</div>
+					</div>
+					<h3><i>1.	Gongzhonghao</i></h3>
+					<p>Wechat has invaded the lives of Chinese since it’s invention. Nowadays, the quickest way to spread news and ideas is by Wechat Official Account. It’s just like twitter or facebook. We wanted to let more people into the realm of biological engineering, so we opened our own account igem2019. It’s intentions are to educate the public about biological engineering and for team propaganda. We put on articles about biological engineering introductions, introduction of oncolytic viruses, cancer chemical therapeutic drugs, modeling in biological engineering and even how bioengineering collaborates with food. It can also act as a team’s log, recording the twists and turns and historical moments of our team. Up to now, thousands of people have continued to follow us in order to learn the latest news of synthetic biology and our product.</p>
+					<h3><i>2.	YGA supporting education</i></h3>
+					<p>During the summer vocation, our team took the opportunity to participate in YGA program where we have supporting education for high school students in the remote regions. YGA is a summer camp held by Medical School of Sun Yat-sen University, which contains three weeks supporting education in Meizhou city, an undeveloped region. Students from The University of Hong Kong (HKU), the Chinese University of Hong Kong (CUHK), Peking University (PKU), University of Macau, Fudan University (FDU) and other 13 universities all came together to participate in YGA program. During the program, we had created lessons about synthetic biology for high school students. “What is synthetic biology?”,” How can synthetic biology change the world?”. Then we asked students to think about their ideal world filled with synthetic biology. The last part is the introduction of oncolytic virus. In this part, we hoped students can understand some simple questions of oncolytic virus. “What is oncolytic virus?”, “What’s the function of oncolytic virus?”, “How can oncolytic virus benefit to humans?” “How can we engineer the virus to make it more useful?”. During the class, students had been paying great attention to the content of the class. They showed great interest in synthetic biology and oncolytic virus. At break, some students brought their biology textbook to the platform, telling us that they had learnt some basic content of virus and ask for more details about oncolytic virus and the correlation between virus and synthetic biology.</p>
+					<p>During this supporting education, our goal was to promote synthetic biology, developing new opportunities to encourage more people to learn about synthetic biology and to shape it. Oncolytic virus is also an important part we wanted to promote, since this kind of therapy was not as widespread and popular as other biotherapies. Therefore, we aimed to change the way people think about oncolytic virus and we fortunately got the positive feedback.</p>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			var items = document.querySelectorAll(".timeline li");
+
+			function isElementInViewport(el) {
+				var rect = el.getBoundingClientRect();
+				//&& 会被转义,无奈只能改用||
+				return !(
+					rect.top < 0 ||
+					rect.left < 0 ||
+					// 块太长会超出屏幕下方
+					//rect.bottom > (window.innerHeight || document.documentElement.clientHeight) ||
+					rect.right > (window.innerWidth || document.documentElement.clientWidth)
+				);
+			}
+
+			function inViewToggle() {
+				for(var i = 0; i < items.length; i++) {
+					if(isElementInViewport(items[i])) {
+						if(!items[i].classList.contains("in-view")) {
+							items[i].classList.add("in-view");
+						}
+					} else if(items[i].classList.contains("in-view")) {
+						items[i].classList.remove("in-view");
+					}
+				}
+			}
+
+			window.addEventListener("load", inViewToggle);
+			window.addEventListener("scroll", inViewToggle);
+		</script>
+
+	</body>
+
+</html>

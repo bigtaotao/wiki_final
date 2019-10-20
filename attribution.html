@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+        /* .title-box-title h1 {
+            font-family: Georgia, 'Times New Roman', Times, serif !important;
+        } */
+
+        /* title */
+        .title-box-new {
+            /* margin: 5vw 5vw 2vw 5vw; */
+            position: relative;
+            width: 100%;
+
+        }
+
+        /* .title-big {
+            background-image: url("../title.jpg");
+            opacity: 50;
+            z-index: -100;
+            
+background-size: auto 100%;  
+background-position: center; 
+background-repeat: no-repeat;
+background-origin: border-box; 
+background-clip: border-box;  
+        } */
+
+        .title-big h1 {
+            font-size: 10vw !important;
+            /* line-height:14vw; */
+
+        }
+
+        .title-big>.title-box-title {
+            padding: 0 !important;
+            justify-content: center;
+            border-left-style: none !important;
+            border-bottom-style: solid;
+            border-color: rgb(255, 55, 68);
+            border-bottom-width: 0.2vw;
+
+        }
+
+        .title-box-mask {
+            position: absolute;
+
+            height: 100%;
+
+            background-color: rgb(255, 55, 68);
+        }
+
+        .title-box-mask-left {
+            left: 0;
+        }
+
+        .title-box-mask-right {
+            right: 0;
+        }
+
+        .title-box-title {
+            /* justify-content: center; */
+            /* width: 100%; */
+            height: inherit;
+            border-left-style: solid;
+            border-color: rgb(255, 55, 68);
+            border-left-width: 0.25rem;
+            opacity: 0;
+            display: flex;
+            /* justify-content-safety: center; */
+
+
+        }
+
+        .title-big h1 {
+            flex-grow: 1;
+            vertical-align: middle;
+            text-align: center;
+            margin: 0;
+            font-size: 8rem;
+            color: rgb(25, 46, 67);
+        }
+
+        .title-box-title>h1 {
+            /* flex-grow: 1; */
+            vertical-align: middle;
+            /* text-align:center; */
+            padding: 0 4rem;
+            margin: 0;
+            /* font-size: 8rem; */
+            color: rgb(25, 46, 67);
+        }
+
+        /* title end */
+        /* reference */
+
+        /* reference end */
+        /* content-safety start */
+        .content-safety p {
+            /* font-size: 4rem !important; */
+            text-align: justify;
+            color: rgb(25, 46, 67);
+        }
+
+        /* content-safety end */
+    </style>
+    <!-- standard head -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript"
+        src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
+    <link type="text/css" rel="stylesheet"
+        href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
+    <script type="text/javascript"
+        src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/home&action=raw&ctype=text/javascript"></script>
+    <link rel="stylesheet"
+        href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
+    <script
+        src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
+    <link type="text/css" rel="stylesheet"
+        href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
+    <!-- standard head end -->
+    <!-- <link type="text/css" rel="stylesheet"
+        href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/safety&action=raw&ctype=text/css" />
+    <script type="text/javascript"
+        src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/safety&action=raw&ctype=text/javascript"></script> -->
+
+    <!-- <link type="text/css" rel="stylesheet" href="safety.css"> -->
+    <!-- <script src="safety.js"></script> -->
+    <!-- <link type="text/css" rel="stylesheet" href="./navigation.css">
+    <script src="./navigation.js"></script> -->
+
+
+    <title>Attributions</title>
+
+</head>
+
+<body>
+    <!-- <div class="debug" style= "position:fixed;top:6rem">
+        <a class="a">a</a>
+    </div> -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 column">
+                <nav class="navigation" id="nav-top">
+                    <ul class="navigation-list nav-justified">
+                        <div class="navigation-blue navigation-div">
+                            <li class="navigation-item activate ">
+                                <a class="navigation-item-link "
+                                    href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
+                                <ul class="navigation-dropdown-panel"></ul>
+                            </li>
+                            <li class="navigation-item dropdown">
+                                <a class="navigation-item-link "
+                                    href="https://2019.igem.org/Team:SYSU-Medicine/Description">Project</a>
+                                <ul class="navigation-dropdown-panel ">
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Design">Design</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Experiments">Experiments</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Inspiration">Inspiration</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navigation-item dropdown">
+                                <a class="navigation-item-link"
+                                    href="https://2019.igem.org/Team:SYSU-Medicine/Model">Model</a>
+                                <ul class="navigation-dropdown-panel">
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Model_Overview">Overview</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/M1_Cultivation">M1 Cultivation
+                                        </a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Injection_System">Injection
+                                            System
+                                        </a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/TES">T. E. S.</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Future">Future</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navigation-item dropdown ">
+                                <a class="navigation-item-link"
+                                    href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Human Practices</a>
+                                <ul class="navigation-dropdown-panel ">
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices_Overview">Overview
+                                        </a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Integrated_Practices">Integrated
+                                            Practices
+                                        </a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education &
+                                            Engagement
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </div>
+                        <div class="navigation-red navigation-div">
+                            <li class="navigation-item dropdown ">
+                                <a class="navigation-item-link "
+                                    href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts</a>
+                                <ul class="navigation-dropdown-panel ">
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts Overview</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Basic_Part">Basic Parts</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Composite_Part">Composite
+                                            Parts
+                                        </a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Part_Collection">Part
+                                            Collection
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navigation-item dropdown ">
+                                <a class="navigation-item-link "
+                                    href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team</a>
+                                <ul class="navigation-dropdown-panel ">
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a
+                                            href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
+                                    </li>
+                                    <li class="navigation-subitem">
+                                        <a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="navigation-item ">
+                                <a class="navigation-item-link"
+                                    href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
+                                <ul class="navigation-dropdown-panel"></ul>
+                            </li>
+                            <li class="navigation-item ">
+                                <a class="navigation-item-link"
+                                    href="https://2019.igem.org/Team:SYSU-Medicine/Medal">Awards</a>
+                                <ul class="navigation-dropdown-panel">
+                                    <li class="navigation-subitem">
+                                        <a href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </div>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- <div class="piano-subpage piano-subpage-demo">
+    <div id="content-safety-0-key" class="piano-subpage-key piano-subpage-key-0"><div class="key-kernel key-kernel-0"></div></div>
+    <div id="content-safety-1-key" class="piano-subpage-key piano-subpage-key-1"><div class="key-kernel key-kernel-1"></div></div>
+    <div id="content-safety-2-key" class="piano-subpage-key piano-subpage-key-2"><div class="key-kernel key-kernel-2"></div></div>
+    <div id="content-safety-3-key" class="piano-subpage-key piano-subpage-key-3"><div class="key-kernel key-kernel-3"></div></div>
+    <div id="content-safety-4-key" class="piano-subpage-key piano-subpage-key-4"><div class="key-kernel key-kernel-4"></div></div>
+    <div id="content-safety-5-key" class="piano-subpage-key piano-subpage-key-5"><div class="key-kernel key-kernel-5"></div></div>
+    </div> -->
+    <!-- <div class="title-margin">
+        <div class="row clearfix">
+            <div class="col-xs-10">
+                <div class="title-box">
+                    <h1 class="title">
+                        <span class="title-has-mask playing">Human Practices</span>
+                        <span class="title-mask playing"></span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="clearfix" style="margin-bottom: 23em;"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+                <div class="title-box-new title-big">
+                    <div class="title-big-bg"></div>
+                    <div class="title-box-mask"></div>
+                    <div class="title-box-title">
+                        <h1>Attributions</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid std-content">
+
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="title-box-new title-0">
+                    <div class="title-box-mask"></div>
+                    <div class="title-box-title">
+                        <h1>Team members</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th> </th>
+                            <th><strong>Wet Lab</strong> </th>
+                            <th><strong>Modelling</strong> </th>
+                            <th><strong>Human Practice</strong> </th>
+                            <th><strong>Wiki</strong> </th>
+                            <th><strong>Parts</strong> </th>
+                            <th><strong>Art Design</strong> </th>
+                            <th><strong>Presentation</strong> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Zibin Huang </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>Xiaohang Liang </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                        </tr>
+                        <tr>
+                            <td>Xingyu Li </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> <strong>√</strong> </td>
+                        </tr>
+                        <tr>
+                            <td>Xiangxue Li </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>Lizhi Guan </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>Yuantao Liu </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>Shijian Song </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> <strong>√</strong> </td>
+                        </tr>
+                        <tr>
+                            <td>Fengmin Yang </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>Weisheng Lu </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>Jiayi Zeng </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>Shanshan Chen </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>Yihui Wang </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>Shunjie Hu </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>Xi Wang </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> <strong>√</strong> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row team-profile">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-lg-3 col-sm-3"></div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="team-profile-header">
+                        <h4>Zibin Huang</h4>
+                    </div>
+                    <div class="team-profile-job">
+                        <p>-Modelling: mainly responsible for modelling and finished the modeling part of our work.</p>
+                        <p>-Human Practice: participated in the 6th CCiC in Shenzhen and helped modify the modeling part
+                            of
+                            the
+                            public account, as well as discussing the current social reaction of the new therapy
+                            represented
+                            by
+                            the oncolytic virus therapy.</p>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row team-profile">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-lg-3 col-sm-3"></div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="team-profile-header">
+                        <h4>Xiaohang Liang</h4>
+                    </div>
+                    <div class="team-profile-job">
+                        <p>-Modeling: model establishment, parameter estimation, data analysis, paper writing.</p>
+                        <p>-Human Practice: attend 2019 CCiC, scientific article (When Synthetic Biology meet with
+                            Mathematics) writing.</p>
+                        <p>-Wiki: wiki writing(modeling).</p>
+                        <p>-Presentation: modeling part.</p>
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"> </div>
+        <div class="row team-profile">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-lg-3 col-sm-3"></div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="team-profile-header">
+                        <h4>Xingyu Li</h4>
+                    </div>
+                    <div class="team-profile-job">
+                        <p>-Wet lab: cell culture, molecular cloning, plasmid extraction, flow cytometry, virus harvest,
+                            reverse transcription and identification.</p>
+                        <p>-Human Practice: interview with professors, questionnaire design and analysis, writing for
+                            official accounts.</p>
+                        <p>-Art Design: homepage design and advise.</p>
+                        <p>-Wiki: outline for project description, manuscript for homepage, background and problem
+                            definition.</p>
+                        <p>-Presentation: introduction.</p>
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row team-profile">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-lg-3 col-sm-3"></div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="team-profile-header">
+                        <h4>Xiangxue Li</h4>
+                    </div>
+                    <div class="team-profile-job">
+                        <p>-Art Design: In charge of art design including logo, bookmark, name cards as well as our
+                            poster
+                            and presentation slides.</p>
+                        <p>-Wiki: designing, painting illustrations and making animation.</p>
+                        <p>-Human practice: making stickers.</p>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row team-profile">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-lg-3 col-sm-3"></div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="team-profile-header">
+                        <h4>Lizhi Guan</h4>
+                    </div>
+                    <div class="team-profile-job">
+                        <p>-Wet lab: cell culture (293T, HCT-116, HCT-8, Bxpc, A549, B16 tumor cell lines etc. ),
+                            measurement of the infection rate and lethality effect of M1 virus on tumor cells. Molecular
+                            cloning like extraction of plasmids, DNA purification and so on. Pre-experiment of directed
+                            evolution that was mentioned in the initial ideas, including serial passaging of M1 virus.
+                        </p>
+                        <p>-Human Practice: participated in one of the interviews with professors as well as wrote an
+                            article in our official accounts.</p>
+                        <p>-Wiki: future perspectives, inspiration and initial ideas.
+                        </p>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row team-profile">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-lg-3 col-sm-3"></div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="team-profile-header">
+                        <h4>Yuantao Liu</h4>
+                    </div>
+                    <div class="team-profile-job">
+                        <p>- Wet lab: construction of M1 virus. Molecular cloning, plasmid extraction, PCR, reverse
+                            transcription and in vitro transcription</p>
+                        <p>-Wiki: assistant person in charge of webpage production including website visual design,
+                            coding,
+                            testing.</p>
+                        <p>-Human Practice: interview with professors</p>
+                        <p>-Art Design: give some suggestions to the web page</p>
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row team-profile">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-lg-3 col-sm-3"></div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="team-profile-header">
+                        <h4>Shijian Song</h4>
+                    </div>
+                    <div class="team-profile-job">
+                        <p>-Wet lab: construction of M1 virus. Molecular cloning such as DNA purification, DNA gel
+                            extraction, extraction of plasmids, PCR, RTPCR and so on.</p>
+                        <p>-Human practice: managing our Wechat Official Account, participated in all of the interviews
+                            with professors and the dinner party with local virologists.</p>
+                        <p>-Wiki: the writing of the Collaboration part.</p>
+                        <p>-Parts: Molecular cloning such as extraction of plasmids.</p>
+                        <p>-Art Design: The dubbing actor of our team video.</p>
+                        <p>-Presentation: sharing the lab results part.</p>
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row team-profile">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-lg-3 col-sm-3"></div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="team-profile-header">
+                        <h4>Fengmin Yang</h4>
+                    </div>
+                    <div class="team-profile-job">
+                        <p>-Wet Lab: General manager of the experimental group. Conducting molecular cloning experiments
+                            including PCR, restriction enzyme digestion of plasmid and PCR product, gel extraction
+                            purification and construction of recombinant plasmids. Cell culture, flow cytometry and cell
+                            viability analysis (Bxpc-3, Bt474, J82, A549, Hct116, Hct8, Mcf-7, HepG2, etc.).
+                            Pre-experiment
+                            of directed evolution of M1 virus on several cell lines (Bt474, A549, J82, Bxpc-3). Data
+                            analysis.</p>
+                        <p>-Parts: gel extraction purification.</p>
+                        <p>-Wiki: results.</p>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row team-profile">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-lg-3 col-sm-3"></div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="team-profile-header">
+                        <h4>Weisheng Lu</h4>
+                    </div>
+                    <div class="team-profile-job">
+                        <p>-Modeling: data visualization.</p>
+                        <p>-Wiki: main person in charge of webpage production including website visual design, coding,
+                            testing.</p>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row team-profile">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-lg-3 col-sm-3"></div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="team-profile-header">
+                        <h4>Jiayi Zeng</h4>
+                    </div>
+                    <div class="team-profile-job">
+                        <p>-Wet lab: cell culture (Vero, BHK-21, 293T), measurement of the titer of M1 virus on tumor
+                            cells. Amplification of M1 virus used for cells and animal experiment. Measurement of the
+                            infection rate of M1 virus on tumor cells. Pre-experiment of directed evolution that was
+                            mentioned in the initial ideas, including serial passaging of M1 virus.</p>
+                        <p>-Human Practice: Participated in several interviews with professors. Wrote the first article
+                            in
+                            our official accounts. Participated in the visit to GCP office in SYSU Cancer Center and had
+                            consultation with the director. Had the supporting education in Meizhou city. Participated
+                            in
+                            the public survey, making and spreading the questionnaire.</p>
+                        <p>-Wiki: Human Practice, Education and Public Engagement.</p>
+                        <p>-Art Design: The dubbing actor of our team video</p>
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row team-profile">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-lg-3 col-sm-3"></div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="team-profile-header">
+                        <h4>Shanshan Chen</h4>
+                    </div>
+                    <div class="team-profile-job">
+                        <p>Student leader of our team.</p>
+                        <p>-Wet lab: digestion, gel extraction purification, construction of recombinant plasmids, PCR,
+                            in
+                            vitro transcription, transformation, virus harvest, virus purification.</p>
+                        <p>-Human Practice: interview with professors</p>
+                        <p>-Wiki: writing</p>
+                        <p>-Art Design: giving advice</p>
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row team-profile">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-lg-3 col-sm-3"></div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="team-profile-header">
+                        <h4>Yihui Wang</h4>
+                    </div>
+                    <div class="team-profile-job">
+                        <p>-Wet lab: cell culture (cell thawing/subculture/cryopreservation),as well as testing M1 virus
+                            infection rate in different cells with different treatments via flow cytometry.</p>
+                        <p>-Parts: building and characterizing the basic and composite parts, also characterizing some
+                            existing parts.</p>
+                        <p>-Human practice: interviewing with the professor.</p>
+                        <p>-Wiki: writing for the safety and parts chapter.</p>
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row team-profile">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-lg-3 col-sm-3"></div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="team-profile-header">
+                        <h4>Shunjie Hu</h4>
+                    </div>
+                    <div class="team-profile-job">
+                        <p>-Wet lab: mainly involved in molecular experiments, including the construction of the
+                            synthetic
+                            virus. Offering assistance to teammates who carried out cell experiments is also included.
+                        </p>
+                        <p>-Human Practices: conducting interviews with several professors with teammates as well as
+                            recording and collating the contents of those interviews. Following the support team to the
+                            local high school to promote the knowledge of synthetic biology and responsible for the
+                            writing
+                            of some of the contents of the education.</p>
+                        <p>-Parts: construction of components.</p>
+                        <p>-Wiki: assisting in writing the introduction of parts.</p>
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row team-profile">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-lg-3 col-sm-3"></div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="team-profile-header">
+                        <h4>Xi Wang</h4>
+                    </div>
+                    <div class="team-profile-job">
+                        <p>-Wet lab: cell culture (cell thawing/subculture/cryopreservation), operating the cell
+                            viability
+                            assays (MTT assay) and testing M1 virus infection rate in different cells with different
+                            treatments via flow cytometry.</p>
+                        <p>-Human practice: heading for MeiZhou to give lessons about synthetic biology to students in
+                            Jiaying middle school and introduction of iGEM and the project we have been working in.
+                            Writing
+                            an article about the relationship between food and synthetic biology and published on our
+                            team’s
+                            official account.</p>
+                        <p>-Wiki: results part.</p>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="container-fluid std-content">
+
+
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="title-box-new title-0">
+                    <div class="title-box-mask"></div>
+                    <div class="title-box-title">
+                        <h1>Team members</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-lg-3 col-sm-3"></div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="team-profile-header">
+                        <h4>Prof. Guangmei Yan</h4>
+                    </div>
+                    <div class="team-profile-job">
+                        <p>Primary PI of SYSU-Medicine team. Professor Yan made constructive suggestions on our project,
+                            provided us with all the resources needed to implement the project, and allowed us to
+                            complete
+                            all the experiments in his lab.</p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-lg-3 col-sm-3"></div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="team-profile-header">
+                        <h4>Prof. Yuan Lin</h4>
+                    </div>
+                    <div class="team-profile-job">
+                        <p>Secondary PI of our team. Professor Lin gave guidance on all aspects of our project,
+                            including wet experiments, human practice, etc. He evaluated all our whimsical ideas and
+                            guided us to implement them bit by bit.</p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-lg-3 col-sm-3">
+
+                </div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="team-profile-header">
+                        <h4>Zhiqian Zhang</h4>
+                    </div>
+                    <div class="team-profile-job">
+                        <p>Instructor of our team. He followed up the whole process of our project, from the initial
+                            recruitment to the pre-competition preparation, which provided us with a lot of valuable
+                            experience.</p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-lg-3 col-sm-3"></div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="team-profile-header">
+                        <h4>Guangen Wu</h4>
+                    </div>
+                    <div class="team-profile-job">
+                        <p>Instructor of our team. He mainly guided us to finish the wet experiment, and his meticulous
+                            and patient attitude gave us a lot of help.</p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-lg-3 col-sm-3"></div>
+                <div class="col-lg-9 col-sm-9">
+                    <div class="team-profile-header">
+                        <h4>PhD Li Guo</h4>
+                    </div>
+                    <div class="team-profile-job">
+                        <p>Advisor of our team. She gave us many useful suggestions about the nature of oncolytic virus
+                            M1.</p>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="team-profile-header">
+                    Ziqing Lin
+                </div>
+                <div class="team-profile-job">
+                    <p>He gave us advice and guidance on purifying and concentrating the virus.</p>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="team-profile-header">
+                    <h4>Xiaozhi Yang</h4>
+                </div>
+                <div class="team-profile-job">
+                    <p>He gave us advice and help for the experiments.</p>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="team-profile-header">
+                    <h4>Youyu Wu</h4>
+                </div>
+                <div class="team-profile-job">
+                    <p>She advised us on experiments and provided reagents.</p>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="team-profile-header">
+                    <h4>Deli Song</h4>
+                </div>
+                <div class="team-profile-job">
+                    <p>He gave us advice and help for the experiments.</p>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="team-profile-header">
+                    <h4>Xingwen Su</h4>
+                </div>
+                <div class="team-profile-job">
+                    <p>He assisted us in ordering reagent materials.</p>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="team-profile-header">
+                    <h4>Liumei Wu</h4>
+                </div>
+                <div class="team-profile-job">
+                    <p>She provided reagents for us.</p>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="team-profile-header">
+                    <h4>Jiayu Zhang</h4>
+                </div>
+                <div class="team-profile-job">
+                    <p>She provided us with the space to do experiment.</p>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="team-profile-header">
+                    <h4>Prof. Penghui Zhou</h4>
+                </div>
+                <div class="team-profile-job">
+                    <p>We consulted with him about the prospect of tumor immunology and oncolytic virus therapy which
+                        inspired us a lot.</p>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="team-profile-header">
+                    <h4>Prof. Xinwen Chen, Prof. Musheng Zeng, Prof. Ren Sun, Prof. Yerong Su, Prof. Pei Xu, Prof. Miao
+                        Xu and Prof. Qian Zhong</h4>
+                </div>
+                <div class="team-profile-job">
+                    <p>The virologists shared their own research experiences and inspirations at the dinner talk, and
+                        discussed with our team the current situation and prospects of oncolytic virus.</p>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <div class="team-profile-header">
+                    <h4>PhD Zhenhua Huang, Yang Liu, Jia Dan, Bingzheng Lu, Jingyi Tan and other researchers in Prof.
+                        Guangmei Yan’s Laborotary</h4>
+                </div>
+                <div class="team-profile-job">
+                    <p>They provided advice and help for our experiment.</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="container-fluid std-content">
+
+
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="title-box-new title-0">
+                    <div class="title-box-mask"></div>
+                    <div class="title-box-title">
+                        <h1>Funding</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix" style="margin-bottom: 10em;"></div>
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <ul>
+                    <li>
+                        <h3>Professor Guangmei Yan's laboratory</h3>
+                    </li>
+                    <li>
+                        <h3>Guangzhou Virotech Pharmaceutical Technology CO., LTD</h3>
+                    </li>
+                    <li>
+                        <h3>National Students’ platform for innovation and entrepreneurship training program</h3>
+                    </li>
+                </ul>
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="space" style="height: 30vw;"></div>
+</body>
+<script type="text/javascript">
+    // title
+    $(document).ready(function () {
+        speed = 250;
+        $(".title-box-new").each(function (titlebox_i, title_box) {
+            var last = $(title_box).offset().top - $(window).scrollTop();
+            var viewheight = window.innerHeight / 5 * 3;
+            if (last < viewheight) {
+                if ($(title_box).hasClass("played")) { } else {
+                    $(title_box).addClass("played");
+
+                    $(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+                    $(title_box).children(".title-box-mask").animate({ width: $(title_box).find("h1").outerWidth() }, speed, "swing", function () {
+                        $(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
+                        // console.log($(title_box).width());
+                        // console.log($(title_box).find("h1").width());
+                        console.log(parseInt($(title_box).find(".title-box-title").css("border-left-width")));
+                        var cache = $(title_box).width() - $(title_box).find("h1").outerWidth();
+                        $(title_box).children(".title-box-mask").css("right", cache);
+                        // $(title_box).children(".title-box-mask").addClass("title-box-mask-right");
+                        $(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
+                    });
+                    $(title_box).children(".title-box-mask").animate({ width: "0" }, speed, "swing");
+                }
+
+
+            }
+        });
+    })
+    $(document).scroll(function () {
+        speed = 250;
+        $(".title-box-new").each(function (titlebox_i, title_box) {
+            var last = $(title_box).offset().top - $(window).scrollTop();
+            var viewheight = window.innerHeight / 5 * 3;
+            if (last < viewheight) {
+                if ($(title_box).hasClass("played")) { } else {
+                    $(title_box).addClass("played");
+
+                    $(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+                    $(title_box).children(".title-box-mask").animate({ width: $(title_box).find("h1").outerWidth() }, speed, "swing", function () {
+                        $(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
+                        // console.log($(title_box).width());
+                        // console.log($(title_box).find("h1").width());
+                        console.log(parseInt($(title_box).find(".title-box-title").css("border-left-width")));
+                        var cache = $(title_box).width() - $(title_box).find("h1").outerWidth();
+                        $(title_box).children(".title-box-mask").css("right", cache);
+                        // $(title_box).children(".title-box-mask").addClass("title-box-mask-right");
+                        $(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
+                    });
+                    $(title_box).children(".title-box-mask").animate({ width: "0" }, speed, "swing");
+                }
+
+
+            }
+        });
+    })
+
+// title end
+
+</script>
+
+</html>

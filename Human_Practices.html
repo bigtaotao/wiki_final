@@ -18,19 +18,24 @@
 			*::before,
 			*::after 在Wiki上会给contianer前面加一个伪元素，所以container会被选中.
 			*/
-			
 			/*暗锚*/
-			:target
+			/*:target
 			{
 				position: relative;
 				padding-top:92px;
-				/*visibility: hidden;*/	
-			}
+				/*visibility: hidden;*/
+			/*}*/
 			
 			* {
 				margin: 0;
 				padding: 0;
 				box-sizing: border-box;
+			}
+			
+			.panel,
+			.panel-default {
+				border: none;
+				box-shadow: none;
 			}
 			
 			.container {}
@@ -56,36 +61,8 @@
 				padding-top: 50px;
 				background: rgba(255, 55, 68, 1);
 				/*background: linear-gradient(180deg, rgba(255, 55, 68, 0), rgba(255, 55, 68, 0.5));*/
-				
 				/*动画*/
 				transition: all 0.5s ease-in-out;
-				
-			}
-			/*时间轴上的点*/
-			
-			.timeline ul li::after {
-				/*-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-				clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);*/
-				content: '';
-				/*隐藏了*/
-				visibility: hidden;
-				position: absolute;
-				left: -30px;
-				/*bottom: -4%;*/
-				
-				
-				/*transform: translateX(-50%) rotate(45deg);
-				-webkit-transform: translateX(-50%) rotate(45deg);*/
-				
-				
-				width: 0px;
-				height: 0px;
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-				z-index: 2;
-				background: rgba(255, 55, 68, 1);
-				color: white;
 			}
 			/* 时间轴旁边的卡片 */
 			
@@ -102,8 +79,7 @@
 				border-radius: 5px;
 				display: flex;
 				align-items: initial;
-				
-				visibility: hidden;
+				/*visibility: hidden;*/
 			}
 			/*卡片顶部的时间*/
 			
@@ -120,6 +96,7 @@
 				border-color: rgba(252, 56, 56, 0.2);*/
 				background: rgba(252, 56, 56, 1);
 				color: white;
+				font-weight: bold;
 				border-radius: 5px;
 				display: flex;
 				justify-content: center;
@@ -129,21 +106,16 @@
 				-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 				clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 				z-index: 10;
-			
-				/*动画 消失和出现*/
-				transition: all 0.5s ease-in-out;
-				visibility: hidden;
 			}
 			/*卡片内部的小框*/
-			
-			.timeline ul li div>div {
+			/*.timeline ul li div>div {
 				display: flex;
 				width: 95%;
-				/*内部的弹性盒元素的排列方向*/
+				/*内部的弹性盒元素的排列方向
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
-			}
+			}*/
 			/*卡片内部的框内部的段落*/
 			
 			.timeline ul li div div p {
@@ -152,10 +124,8 @@
 			
 			.timeline ul li a {
 				color: black;
-				
 				text-align: left;
 			}
-			
 			/*卡片内部的小框的外间距*/
 			
 			.timeline ul li div>div {
@@ -167,7 +137,7 @@
 			/* 奇数编号的卡片 相对于时间轴的位置（relative） */
 			
 			.timeline ul li:nth-of-type(odd)>div {
-				left: 45px;
+				left: 80px;
 			}
 			/* 偶数编号的卡片在左边 */
 			
@@ -177,27 +147,23 @@
 				/*margin-top: -500px;*/
 				/*margin-bottom: -500px;*/
 				/*更好的处理办法是在对面贴图*/
-				right: calc(40vw + 30px);
+				right: calc(40vw + 60px);
 			}
 			/*变色动画部分开始*/
 			/*变色动画部分开始*/
 			
 			.timeline ul li div {
-				/*visibility: hidden;
-				opacity: 0;*/
+				/*opacity: 0;*/
 				/*控制所有卡片及其内部元素的动画速度*/
 				color: gray;
+				/*visibility: hidden;*/
+				opacity: 0.5;
 				transition: all 0.5s ease-in-out;
 			}
 			
-			.timeline ul li:nth-of-type(odd) div {
-				/*transform: translate3d(100px, -10px, 0) rotate(10deg);
-				-webkit-transform: translate3d(100px, -10px, 0) rotate(10deg);*/
-			}
-			
-			.timeline ul li:nth-of-type(even) div {
-				/*transform: translate3d(-100px, -10px, 0) rotate(10deg);
-				-webkit-transform: translate3d(-100px, -10px, 0) rotate(10deg);*/
+			.timeline ul li time {
+				transition: all 0.5s ease-in-out;
+				color: rgb(255, 55, 68);
 			}
 			
 			.timeline ul li.in-view {
@@ -207,17 +173,16 @@
 			
 			.timeline ul li.in-view div {
 				/* 消除静态属性，或者修改属性值，就会发生动画transition */
-				visibility: visible;	
+				visibility: visible;
+				opacity: 1;
 				transform: none;
 				-webkit-transform: none;
 				color: rgba(25, 46, 67, 1);
 			}
 			
 			.timeline ul li.in-view time {
-				visibility: visible;	
+				color: white;
 			}
-			
-			
 			/*.timeline ul li.in-view div time {
 				color: white;
 			}*/
@@ -234,7 +199,7 @@
 					margin: 10px;
 				}
 				.timeline ul li:nth-of-type(even)>div {
-					left: -289px;
+					left: -300px;
 				}
 			}
 			
@@ -247,7 +212,7 @@
 					width: calc(100vw - 100px);
 				}
 				.timeline ul li:nth-of-type(even)>div {
-					left: 45px;
+					left: 80px;
 					margin-top: 20px;
 					margin-bottom: 0px;
 				}
@@ -389,16 +354,21 @@
 							</div>
 						</div>
 					</div>
-
 					<p>Because of the increasing need of individual health care in China, more and more people are looking for a better therapy to cure cancers. In order to get better acquainted with social need and to popularize advanced therapy as well as synthetic biology. The focus of our work on human social practices consist of three parts.</p>
-					<h3><i>Product design and improvement</i></h3>
-					<p>Through the public survey and the interviews with specialists, we decided to choose oncolytic virus therapy and improve it again and again in order to meet the needs of patients and society.</p>
-					<h3><i>Therapy promotion</i></h3>
-					<p>Limited by its deficiencies of oncolytic virus, this kind of therapy is not as widespread and popular as other biotherapies. For that reason, we make an effort to engineer the virus to make it more available and harmless for clinical treatment by having interview with specialists and patients, collaborating with other Igem teams and conducting public surveys.</p>
-					<h3><i>Biosynthesis publicity</i></h3>
-					<p>Our purpose for the public education part is to develop new opportunities to encourage more people to learn about synthetic biology and to shape it. In order to realize it, we took the opportunity to participate in YGA program where we have supporting education for high school students in the remote regions. We also establish our own WeChat Official Accounts Platform to propagandize oncolytic virus and synthetic biology.</p>
-					<h3><i></i></h3>
-					<p></p>
+					<div class="row clearfix">
+						<div class="col-xs-4">
+							<h3><i>Product design and improvement</i></h3>
+							<p>Through the public survey and the interviews with specialists, we decided to choose oncolytic virus therapy and improve it again and again in order to meet the needs of patients and society.</p>
+						</div>
+						<div class="col-xs-4">
+							<h3><i>Therapy promotion</i></h3>
+							<p>Limited by its deficiencies of oncolytic virus, this kind of therapy is not as widespread and popular as other biotherapies. For that reason, we make an effort to engineer the virus to make it more available and harmless for clinical treatment by having interview with specialists and patients, collaborating with other Igem teams and conducting public surveys.</p>
+						</div>
+						<div class="col-xs-4">
+							<h3><i>Biosynthesis publicity</i></h3>
+							<p>Our purpose for the public education part is to develop new opportunities to encourage more people to learn about synthetic biology and to shape it. In order to realize it, we took the opportunity to participate in YGA program where we have supporting education for high school students in the remote regions. We also establish our own WeChat Official Accounts Platform to propagandize oncolytic virus and synthetic biology.</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -416,219 +386,169 @@
 							</div>
 						</div>
 					</div>
-					<section class="timeline">
-						<ul>
-							<li>
-								<time>March</time>
-								<div>
-									<div class="">
-										<!--要给step-1加padding-->
-										<!--或者clearfix padding-bottom xxpx-->
-										<a href="#step-1">
-											<h3>deciding to choose virus<br/> 
-											Public survey; Interview Professor Zhou Penghui
-										</h3>
-										</a>
-									</div>
-								</div>
-							</li>
-							<li>
-								<time>April</time>
-								<div>
-
-									<div class="">
-										<a href="#step-2"><h3> deciding to study directed evolution of oncolytic virus
-										 Interview Professor Yan Guangmei; Public survey
-										</h3></a>
-									</div>
-								</div>
-							</li>
-							<li>
-								<time>May</time>
-								<div>
-
-									<div class="">
-										<h3>YGA supporting education (learn that students have strong interest in synthetic biology)</h3>
-										<p>
-											During the summer vocation, our team took the opportunity to participate in YGA program where we have supporting education for high school students in the remote regions. We created lessons about synthetic biology for high school students. “What is synthetic biology?”,” How can synthetic biology change the world?”. Then we asked students to think about their ideal world filled with synthetic biology. The last part is the introduction of Oncolytic virus.
-										</p>
-									</div>
-								</div>
-							</li>
-							<li>
-								<time>June</time>
-								<div>
-
-									<div class="">
-										<h3>Visit GCP Office</h3>
-										<p>
-
-										</p>
-									</div>
-								</div>
-							</li>
-							<li>
-								<time>July</time>
-								<div>
-
-									<div class="">
-										<h3>Meet trouble when doing experiment, looking for another ways and systems (finding combination of oncolytic virus with Prodrug)</h3>
-										<p>
-											As the program went on, we met some troubles with the experiment, that was, the uncertainty of directed evolution. Although we could control the selection pressure, the mutation of virus was randomness. After several tries, we could hardly find positive result. Therefore, our team had several discussions to look for another way to engineer the M1 virus. Before long, we found a workable solution, that was, the combination with prodrug.
-										</p>
-										<p>
-											Subsequently, we had a conversation with Professor Lin. He suggested us to find a drug which had strong ability to kill the tumor cells but lower lethal to normal cells and M1 virus. After reading a lot of paper, we selected several candidate drugs.
-										</p>
-									</div>
-								</div>
-							</li>
-							<li>
-								<time>August</time>
-								<div>
-
-									<div class="">
-										<h3>Collaboration with other igem teams (improving the experiment)</h3>
-										<p>
-											China southern exchange conference
-										</p>
-										<p>
-											China Southern University of Science and Technology ccic
-										</p>
-									</div>
-								</div>
-							</li>
-							<li>
-								<time>September</time>
-								<div>
-
-									<div class="">
-										<h3>Dinner talk (improving the experiment) </h3>
-										<p>
-											We invited many virologists to have dinner together in order to have a deep conversation about virus. We started with their respective stories about their virus research. Then we talked about the current situation of oncolytic virus. Finally, we asked for their advice on our project.
-										</p>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</section>
-				</div>
-			</div>
-
-			<br />
-			<br />
-			<br />
-			<div class="container">
-				<div class="row clearfix">
-					<div class="col-sm-12">
-						<div class="row clearfix">
-							<div class="col-xs-8 column">
-								<div class="title-box">
-									<h2 class="title">
-	                       			 <span class="title-has-mask playing">Human Practice</span>
-									<span class="title-mask playing"></span>
-									</h2>
-								</div>
-							</div>
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<section class="timeline">
+								<ul>
+									<li>
+										<time>March</time>
+										<div>
+											<div class="panel-heading">
+												<h3 class="panel-title">
+														<a data-toggle="collapse" data-parent="#accordion" href="#step-1">
+														deciding to choose virus<br/> 
+														Public survey; Interview Professor Zhou Penghui
+														</a>
+													</h3>
+											</div>
+											<div id="step-1" class="panel-collapse collapse in">
+												<div class="panel-body">
+													Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<time>March</time>
+										<div>
+											<div class="panel-heading">
+												<h3 class="panel-title">
+														<a data-toggle="collapse" data-parent="#accordion" href="#step-2">
+														deciding to choose virus<br/> 
+														Public survey; Interview Professor Zhou Penghui
+														</a>
+													</h3>
+											</div>
+											<div id="step-2" class="panel-collapse collapse in">
+												<div class="panel-body">
+													Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</section>
 						</div>
-						<!--<div  class="clearfix" style="padding-bottom: 100px;"></div>-->
-						<h3 id="step-1"><i>1.	Conduct a survey</i></h3>
-						<p></p>
-						<h3 id="step-2"><i>2.	deciding to study directed evolution of oncolytic virus
-						 Interview Professor Yan Guangmei; Public survey
-						</i></h3>
-						<p></p>
-						<h3><i>3.	interview Professor Zhou Penghui</i></h3>
-						<p>Q1: professor Zhou, you are an expert in the field of immunotherapy. We would like to know the advantages of immunotherapy over other classical tumor treatments.</p>
-						<p>Professor Zhou: As a kind of tumor therapy that has been developed, tumor immunotherapy has the potential to completely cure malignant tumors, especially some patients with advanced malignant tumors. The side effects of immunotherapy are also much smaller and more manageable than conventional cancer treatments such as chemotherapy and radiation.</p>
-						<p>Q2：At present, we are also committed to publicizing oncolytic virus to the public by spreading scientific knowledge and eliminating everyone's confusion, so that the public will not be afraid of the word "virus". What’s your views and Suggestions?</p>
-						<p>Professor Zhou：The key to make the public not afraid of virus is the curative effect. If the modified oncolytic virus can play a good therapeutic effect or adjuvant therapeutic effect, the public's "fear" will disappear naturally. </p>
-						<p>Q3: We know that one of the mechanisms of oncolytic virus is the activation of the immune system. What do you think are the main differences between oncolytic virus and other popular immunotherapy?</p>
-						<p>Professor Zhou: Presently, oncolytic virus is more of an auxiliary means and plays a role of a "trigger". The effect of oncolytic virus alone is relatively low. More often than not, the role of the oncolytic virus is to initiate the body's initial immune response to maximize the effectiveness of subsequent immunotherapy.</p>
-						<p>Q4: It has been decades since the development of oncolytic virus, but it has not become the main force of tumor therapy. What do you think of it?</p>
-						<p>Professor Zhou: The current oncolytic virus cannot stimulate a strong enough tumor immune response from the perspective of tumor immune activation. From the point of view of direct oncolytic effect, the unmodified oncolytic virus can not kill 100% of the tumor tissue in the body. Oncolytic virus can carry tumor antigens to enhance the killing effect and anti-tumor immunity of the body, but its main functional part is the virus, so the immune response of the body cannot be too strong, otherwise, oncolytic virus will be killed by the immune system of the body before it reaches the tumor site. At the same time, it cannot be too weak, or it will not play a very good role in tumor killing. Perhaps we could consider inducing the expression of tumor antigens carried by oncolytic viruses to be highly expressed in the right place to enhance the tumor killing effect.</p>
-						<p>Q5: Could you comment on the current safety of immunotherapy or the potential risk of oncolytic virus?</p>
-						<p>Professor Zhou: The safety of an immunotherapy needs to be tested clinically. The main purpose of existing immunotherapy and oncolytic virus is to activate the tumor immune system to kill tumor tissues. Therefore, the most likely potential risk is that the overresponse of the immune system will lead to an overreaction which may cause damage to the patient's body. But now, there is a complete set of guidelines and methods, both at home and abroad, to deal with the body damage caused by the possible immune overreaction.</p>
-						<h3><i>4.	Dinner talk</i></h3>
-						<p>Q1：At present, we are also committed to publicizing oncolytic virus to the public by spreading scientific knowledge and eliminating everyone's confusion, so that the public will not be afraid of the word "virus". What’s your views and Suggestions?</p>
-						<p>Professor Sun: That’s a good question. Our lab is also making oncolytic virus, but we call it “immunoenhancer”, which can avoid the word “virus” and emphasize the function of our product. </p>
-						<p>Q2: What are the current barriers to the development of oncolytic viruses</p>
-						<p>Professor Sun: So far, oncolytic viruses have been making no major breakthroughs for decades. A reason is that we often use protozoan viruses or only change one gene of the virus. However, such changes are very limited and cannot achieve the goal of curing tumors effectively. Secondly, there is no technical breakthrough to reconstruct the virus, and each of these oncolytic viruses has a great limitation for tumors. The other thing is that the limited market funds, funding for oncolytic viruses is very limited. Last but not the least, there is the dispersion of resources. Each oncolytic virus has very few people working on it, only a few teams or none, which greatly limits the breakthrough of oncolytic virus.</p>
-						<p>Q3: So where should the oncolytic virus go in the future?</p>
-						<p>A: In my opinion, in the future, oncolytic virus should seek a major breakthrough in virus engineering. How to completely kill different kinds of tumor cells is a problem that oncolyic virus need to solve. Another key is how to get the virus to activate the body's anti-tumor immunity and enhance the body's own immune system's ability to kill tumor cells.</p>
-						<h3><i>5.	collaboration with other igem teams</i></h3>
-						<p>Written by team members: “IGEM is a community”, our instructor, second-time iGEMer often tells us. The first time I had a feeling of a community was around the beginning of November 2018. When the 2018 iGEMers finished their run and came home. Four teams, including the best in high school group and the second runner-up in undergraduates group, held an after-iGEM conference in Shenzhen to share their experience and. Three of us attended the conference and had our first actual impression about iGEM. We realized that this wasn’t just a contest, but a place where we share exciting thoughts and do amazing things. And we realized that being a part of iGEM, we need to stretch out to other iGEMers as well. Attending Southern China’s biggest iGEMers get-together was our first thought of collaboration. We shared our project and gave some suggestions to other projects as well. “</p>
-						<p>“Summer vocation in 2019 for us was quite frustrating. We had to move to plan B when plan A was out of option. Plan B required the choosing of drug we wanted to use on the system. At first, we wanted to create a pro-drug on our own based on other pro-drug creating methods. But when we attended CCIC, China’s largest iGEM conference, looking for help making the pro-drug, we found that creating a pro-drug on our own was impossible. So we quickly turned to a drug with an existing pro-drug. The one who gave us the advice was the adviser from CPU. Later, in gratitude of their help, we send them TLR4 plasmids to help them progress in their experiments.”</p>
-						<p>“The national holiday wasn’t a holiday for our members but was for the companies. That left us in an awkward situation where we used up all our primer but had no where to get more. Luckily, SCUT, also a member of iGEM society, lent us the primer we needed.”</p>
-						<p>“Our collaboration with other iGEMers not only promoted our decision-making at a turning point, but also drove our experiment schedules on. We all agree that we couldn’t make it without the help of the community. “</p>
-						<h3><i>6.	GCP Office (Good Clinical Practice)</i></h3>
-						<p>Q1: Article 5 “Before conducting a human trial, the expected benefits and risks to subjects and public health should be weighed, and the expected benefits should outweigh the possible damages.” How should the expected benefit outweigh the possible harm be assessed in actual clinical trials?</p>
-						<p>Professor Cao : This is a matter of principle. The treatment program provided by the doctor must be for the relief or cure of the disease. The clinical trial of the drug can be regarded as a special clinical treatment. At this time, the efficacy and safety of the drug have not been fully verified and it is expected to be effective against the tumor. But whether it will work in humans and its possible side effects are unknown. This is actually a clinical practice with a scientific research and high risk, and any clinical study is designed on the basis that we predict that the effect of treating the tumor outweighs the side effects and damage.</p>
-						<p>Q2: How important is the role of ethics committees?</p>
-						<p>Professor Cao: it is very important. The primary responsibility of ethics committees is to review whether the scheme will cause excessive risks to patients, weigh the proportion of risks and benefits, and check the readability of informed consent.</p>
-						<p>Q3: Do you know about oncolytic virus? have there been any application related to Oncolytic virus recently?</p>
-						<p>Professor Cao: Our hospital has done a research on oncolytic virus before, but the road was bumpy. Finally, the drug could not be made and marketed. There has also been a recent application of oncolytic virus in the field, but the concept of the treatment cannot really solve the problem of the disease. At present, oncolytic virus is mainly through local injection, so the scope of elimination of the virus is limited. It did not take into account the majority, resulting in metastatic cancer is difficult to eliminate.</p>
-						<p>Q4: The oncolytic virus we are currently studying is actually selectively recruited locally in the tumor through intravenous injection, which eliminates the previous limitations of oncolytic virus in local injection. What do you think of its prospect?</p>
-						<p>Professor Cao: It's worth trying.</p>
-						<p>Q5: What is the current trend in the clinical treatment of cancer?</p>
-						<p>Professor Cao: Currently, non-invasive treatment is preferred. Oral medicine is more suitable for promotion. Patients don't have to go to the hospital for injection every day. Nowadays, with the improvement of the technology, there are a lot of drugs that used to be used in injections and now a lot of companies are gradually developing it into oral medicine.</p>
 					</div>
 				</div>
 			</div>
 			<br />
 			<br />
 			<br />
-			<div class="container">
-				<div class="row clearfix">
-					<div class="col-sm-12">
-						<div class="row clearfix">
-							<div class="col-xs-10 column">
-								<div class="title-box">
-									<h2 class="title">
-			                        <span class="title-has-mask playing">Education and Public Engagement</span>
-									<span class="title-mask playing"></span>
-									</h2>
-								</div>
+		</div>
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-sm-12">
+					<div class="row clearfix">
+						<div class="col-xs-8 column">
+							<div class="title-box">
+								<h2 class="title">
+							 <span class="title-has-mask playing">Human Practice</span>
+							<span class="title-mask playing"></span>
+							</h2>
 							</div>
 						</div>
-						<h3><i>1.	Gongzhonghao</i></h3>
-						<p>Wechat has invaded the lives of Chinese since it’s invention. Nowadays, the quickest way to spread news and ideas is by Wechat Official Account. It’s just like twitter or facebook. We wanted to let more people into the realm of biological engineering, so we opened our own account igem2019. It’s intentions are to educate the public about biological engineering and for team propaganda. We put on articles about biological engineering introductions, introduction of oncolytic viruses, cancer chemical therapeutic drugs, modeling in biological engineering and even how bioengineering collaborates with food. It can also act as a team’s log, recording the twists and turns and historical moments of our team. Up to now, thousands of people have continued to follow us in order to learn the latest news of synthetic biology and our product.</p>
-						<h3><i>2.	YGA supporting education</i></h3>
-						<p>During the summer vocation, our team took the opportunity to participate in YGA program where we have supporting education for high school students in the remote regions. YGA is a summer camp held by Medical School of Sun Yat-sen University, which contains three weeks supporting education in Meizhou city, an undeveloped region. Students from The University of Hong Kong (HKU), the Chinese University of Hong Kong (CUHK), Peking University (PKU), University of Macau, Fudan University (FDU) and other 13 universities all came together to participate in YGA program. During the program, we had created lessons about synthetic biology for high school students. “What is synthetic biology?”,” How can synthetic biology change the world?”. Then we asked students to think about their ideal world filled with synthetic biology. The last part is the introduction of oncolytic virus. In this part, we hoped students can understand some simple questions of oncolytic virus. “What is oncolytic virus?”, “What’s the function of oncolytic virus?”, “How can oncolytic virus benefit to humans?” “How can we engineer the virus to make it more useful?”. During the class, students had been paying great attention to the content of the class. They showed great interest in synthetic biology and oncolytic virus. At break, some students brought their biology textbook to the platform, telling us that they had learnt some basic content of virus and ask for more details about oncolytic virus and the correlation between virus and synthetic biology.</p>
-						<p>During this supporting education, our goal was to promote synthetic biology, developing new opportunities to encourage more people to learn about synthetic biology and to shape it. Oncolytic virus is also an important part we wanted to promote, since this kind of therapy was not as widespread and popular as other biotherapies. Therefore, we aimed to change the way people think about oncolytic virus and we fortunately got the positive feedback.</p>
 					</div>
+					<!--<div  class="clearfix" style="padding-bottom: 100px;"></div>-->
+					<h3 id="step-1-s"><i>1.	Conduct a survey</i></h3>
+					<p></p>
+					<h3 id="step-2-s"><i>2.	deciding to study directed evolution of oncolytic virus
+				 Interview Professor Yan Guangmei; Public survey
+				</i></h3>
+					<p></p>
+					<h3><i>3.	interview Professor Zhou Penghui</i></h3>
+					<p>Q1: professor Zhou, you are an expert in the field of immunotherapy. We would like to know the advantages of immunotherapy over other classical tumor treatments.</p>
+					<p>Professor Zhou: As a kind of tumor therapy that has been developed, tumor immunotherapy has the potential to completely cure malignant tumors, especially some patients with advanced malignant tumors. The side effects of immunotherapy are also much smaller and more manageable than conventional cancer treatments such as chemotherapy and radiation.</p>
+					<p>Q2：At present, we are also committed to publicizing oncolytic virus to the public by spreading scientific knowledge and eliminating everyone's confusion, so that the public will not be afraid of the word "virus". What’s your views and Suggestions?</p>
+					<p>Professor Zhou：The key to make the public not afraid of virus is the curative effect. If the modified oncolytic virus can play a good therapeutic effect or adjuvant therapeutic effect, the public's "fear" will disappear naturally. </p>
+					<p>Q3: We know that one of the mechanisms of oncolytic virus is the activation of the immune system. What do you think are the main differences between oncolytic virus and other popular immunotherapy?</p>
+					<p>Professor Zhou: Presently, oncolytic virus is more of an auxiliary means and plays a role of a "trigger". The effect of oncolytic virus alone is relatively low. More often than not, the role of the oncolytic virus is to initiate the body's initial immune response to maximize the effectiveness of subsequent immunotherapy.</p>
+					<p>Q4: It has been decades since the development of oncolytic virus, but it has not become the main force of tumor therapy. What do you think of it?</p>
+					<p>Professor Zhou: The current oncolytic virus cannot stimulate a strong enough tumor immune response from the perspective of tumor immune activation. From the point of view of direct oncolytic effect, the unmodified oncolytic virus can not kill 100% of the tumor tissue in the body. Oncolytic virus can carry tumor antigens to enhance the killing effect and anti-tumor immunity of the body, but its main functional part is the virus, so the immune response of the body cannot be too strong, otherwise, oncolytic virus will be killed by the immune system of the body before it reaches the tumor site. At the same time, it cannot be too weak, or it will not play a very good role in tumor killing. Perhaps we could consider inducing the expression of tumor antigens carried by oncolytic viruses to be highly expressed in the right place to enhance the tumor killing effect.</p>
+					<p>Q5: Could you comment on the current safety of immunotherapy or the potential risk of oncolytic virus?</p>
+					<p>Professor Zhou: The safety of an immunotherapy needs to be tested clinically. The main purpose of existing immunotherapy and oncolytic virus is to activate the tumor immune system to kill tumor tissues. Therefore, the most likely potential risk is that the overresponse of the immune system will lead to an overreaction which may cause damage to the patient's body. But now, there is a complete set of guidelines and methods, both at home and abroad, to deal with the body damage caused by the possible immune overreaction.</p>
+					<h3><i>4.	Dinner talk</i></h3>
+					<p>Q1：At present, we are also committed to publicizing oncolytic virus to the public by spreading scientific knowledge and eliminating everyone's confusion, so that the public will not be afraid of the word "virus". What’s your views and Suggestions?</p>
+					<p>Professor Sun: That’s a good question. Our lab is also making oncolytic virus, but we call it “immunoenhancer”, which can avoid the word “virus” and emphasize the function of our product. </p>
+					<p>Q2: What are the current barriers to the development of oncolytic viruses</p>
+					<p>Professor Sun: So far, oncolytic viruses have been making no major breakthroughs for decades. A reason is that we often use protozoan viruses or only change one gene of the virus. However, such changes are very limited and cannot achieve the goal of curing tumors effectively. Secondly, there is no technical breakthrough to reconstruct the virus, and each of these oncolytic viruses has a great limitation for tumors. The other thing is that the limited market funds, funding for oncolytic viruses is very limited. Last but not the least, there is the dispersion of resources. Each oncolytic virus has very few people working on it, only a few teams or none, which greatly limits the breakthrough of oncolytic virus.</p>
+					<p>Q3: So where should the oncolytic virus go in the future?</p>
+					<p>A: In my opinion, in the future, oncolytic virus should seek a major breakthrough in virus engineering. How to completely kill different kinds of tumor cells is a problem that oncolyic virus need to solve. Another key is how to get the virus to activate the body's anti-tumor immunity and enhance the body's own immune system's ability to kill tumor cells.</p>
+					<h3><i>5.	collaboration with other igem teams</i></h3>
+					<p>Written by team members: “IGEM is a community”, our instructor, second-time iGEMer often tells us. The first time I had a feeling of a community was around the beginning of November 2018. When the 2018 iGEMers finished their run and came home. Four teams, including the best in high school group and the second runner-up in undergraduates group, held an after-iGEM conference in Shenzhen to share their experience and. Three of us attended the conference and had our first actual impression about iGEM. We realized that this wasn’t just a contest, but a place where we share exciting thoughts and do amazing things. And we realized that being a part of iGEM, we need to stretch out to other iGEMers as well. Attending Southern China’s biggest iGEMers get-together was our first thought of collaboration. We shared our project and gave some suggestions to other projects as well. “</p>
+					<p>“Summer vocation in 2019 for us was quite frustrating. We had to move to plan B when plan A was out of option. Plan B required the choosing of drug we wanted to use on the system. At first, we wanted to create a pro-drug on our own based on other pro-drug creating methods. But when we attended CCIC, China’s largest iGEM conference, looking for help making the pro-drug, we found that creating a pro-drug on our own was impossible. So we quickly turned to a drug with an existing pro-drug. The one who gave us the advice was the adviser from CPU. Later, in gratitude of their help, we send them TLR4 plasmids to help them progress in their experiments.”</p>
+					<p>“The national holiday wasn’t a holiday for our members but was for the companies. That left us in an awkward situation where we used up all our primer but had no where to get more. Luckily, SCUT, also a member of iGEM society, lent us the primer we needed.”</p>
+					<p>“Our collaboration with other iGEMers not only promoted our decision-making at a turning point, but also drove our experiment schedules on. We all agree that we couldn’t make it without the help of the community. “</p>
+					<h3><i>6.	GCP Office (Good Clinical Practice)</i></h3>
+					<p>Q1: Article 5 “Before conducting a human trial, the expected benefits and risks to subjects and public health should be weighed, and the expected benefits should outweigh the possible damages.” How should the expected benefit outweigh the possible harm be assessed in actual clinical trials?</p>
+					<p>Professor Cao : This is a matter of principle. The treatment program provided by the doctor must be for the relief or cure of the disease. The clinical trial of the drug can be regarded as a special clinical treatment. At this time, the efficacy and safety of the drug have not been fully verified and it is expected to be effective against the tumor. But whether it will work in humans and its possible side effects are unknown. This is actually a clinical practice with a scientific research and high risk, and any clinical study is designed on the basis that we predict that the effect of treating the tumor outweighs the side effects and damage.</p>
+					<p>Q2: How important is the role of ethics committees?</p>
+					<p>Professor Cao: it is very important. The primary responsibility of ethics committees is to review whether the scheme will cause excessive risks to patients, weigh the proportion of risks and benefits, and check the readability of informed consent.</p>
+					<p>Q3: Do you know about oncolytic virus? have there been any application related to Oncolytic virus recently?</p>
+					<p>Professor Cao: Our hospital has done a research on oncolytic virus before, but the road was bumpy. Finally, the drug could not be made and marketed. There has also been a recent application of oncolytic virus in the field, but the concept of the treatment cannot really solve the problem of the disease. At present, oncolytic virus is mainly through local injection, so the scope of elimination of the virus is limited. It did not take into account the majority, resulting in metastatic cancer is difficult to eliminate.</p>
+					<p>Q4: The oncolytic virus we are currently studying is actually selectively recruited locally in the tumor through intravenous injection, which eliminates the previous limitations of oncolytic virus in local injection. What do you think of its prospect?</p>
+					<p>Professor Cao: It's worth trying.</p>
+					<p>Q5: What is the current trend in the clinical treatment of cancer?</p>
+					<p>Professor Cao: Currently, non-invasive treatment is preferred. Oral medicine is more suitable for promotion. Patients don't have to go to the hospital for injection every day. Nowadays, with the improvement of the technology, there are a lot of drugs that used to be used in injections and now a lot of companies are gradually developing it into oral medicine.</p>
 				</div>
 			</div>
 
-			<script>
-				var items = document.querySelectorAll(".timeline li");
+			<br />
+			<br />
+			<br />
+		</div>
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-sm-12">
+					<div class="row clearfix">
+						<div class="col-xs-10 column">
+							<div class="title-box">
+								<h2 class="title">
+							<span class="title-has-mask playing">Education and Public Engagement</span>
+							<span class="title-mask playing"></span>
+							</h2>
+							</div>
+						</div>
+					</div>
+					<h3><i>1.	Gongzhonghao</i></h3>
+					<p>Wechat has invaded the lives of Chinese since it’s invention. Nowadays, the quickest way to spread news and ideas is by Wechat Official Account. It’s just like twitter or facebook. We wanted to let more people into the realm of biological engineering, so we opened our own account igem2019. It’s intentions are to educate the public about biological engineering and for team propaganda. We put on articles about biological engineering introductions, introduction of oncolytic viruses, cancer chemical therapeutic drugs, modeling in biological engineering and even how bioengineering collaborates with food. It can also act as a team’s log, recording the twists and turns and historical moments of our team. Up to now, thousands of people have continued to follow us in order to learn the latest news of synthetic biology and our product.</p>
+					<h3><i>2.	YGA supporting education</i></h3>
+					<p>During the summer vocation, our team took the opportunity to participate in YGA program where we have supporting education for high school students in the remote regions. YGA is a summer camp held by Medical School of Sun Yat-sen University, which contains three weeks supporting education in Meizhou city, an undeveloped region. Students from The University of Hong Kong (HKU), the Chinese University of Hong Kong (CUHK), Peking University (PKU), University of Macau, Fudan University (FDU) and other 13 universities all came together to participate in YGA program. During the program, we had created lessons about synthetic biology for high school students. “What is synthetic biology?”,” How can synthetic biology change the world?”. Then we asked students to think about their ideal world filled with synthetic biology. The last part is the introduction of oncolytic virus. In this part, we hoped students can understand some simple questions of oncolytic virus. “What is oncolytic virus?”, “What’s the function of oncolytic virus?”, “How can oncolytic virus benefit to humans?” “How can we engineer the virus to make it more useful?”. During the class, students had been paying great attention to the content of the class. They showed great interest in synthetic biology and oncolytic virus. At break, some students brought their biology textbook to the platform, telling us that they had learnt some basic content of virus and ask for more details about oncolytic virus and the correlation between virus and synthetic biology.</p>
+					<p>During this supporting education, our goal was to promote synthetic biology, developing new opportunities to encourage more people to learn about synthetic biology and to shape it. Oncolytic virus is also an important part we wanted to promote, since this kind of therapy was not as widespread and popular as other biotherapies. Therefore, we aimed to change the way people think about oncolytic virus and we fortunately got the positive feedback.</p>
+				</div>
+			</div>
+		</div>
 
-				function isElementInViewport(el) {
-					var rect = el.getBoundingClientRect();
-					//&& 会被转义,无奈只能改用||
-					return !(
-						rect.top < 0 ||
-						rect.left < 0 ||
-						// 块太长会超出屏幕下方
-						//rect.bottom > (window.innerHeight || document.documentElement.clientHeight) ||
-						rect.right > (window.innerWidth || document.documentElement.clientWidth)
-					);
-				}
+		<script>
+			var items = document.querySelectorAll(".timeline li");
 
-				function inViewToggle() {
-					for(var i = 0; i < items.length; i++) {
-						if(isElementInViewport(items[i])) {
-							if(!items[i].classList.contains("in-view")) {
-								items[i].classList.add("in-view");
-							}
-						} else if(items[i].classList.contains("in-view")) {
-							items[i].classList.remove("in-view");
+			function isElementInViewport(el) {
+				var rect = el.getBoundingClientRect();
+				//&& 会被转义,无奈只能改用||
+				return !(
+					//						rect.top < 0 ||
+					rect.left < 0 ||
+					// 块太长会超出屏幕下方
+					rect.bottom > (window.innerHeight || document.documentElement.clientHeight) ||
+					rect.right > (window.innerWidth || document.documentElement.clientWidth)
+				);
+			}
+
+			function inViewToggle() {
+				for(var i = 0; i < items.length; i++) {
+					if(isElementInViewport(items[i])) {
+						if(!items[i].classList.contains("in-view")) {
+							items[i].classList.add("in-view");
 						}
+					} else if(items[i].classList.contains("in-view")) {
+						items[i].classList.remove("in-view");
 					}
 				}
+			}
 
-				window.addEventListener("load", inViewToggle);
-				window.addEventListener("scroll", inViewToggle);
-			</script>
+			window.addEventListener("load", inViewToggle);
+			window.addEventListener("scroll", inViewToggle);
+		</script>
 
 	</body>
 

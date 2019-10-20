@@ -101,7 +101,7 @@
 				border-radius: 5px;
 				display: flex;
 				align-items: initial;
-				visibility: hidden;
+				/*visibility: hidden;*/
 			}
 			/*圆圈*/
 			
@@ -123,14 +123,14 @@
 				justify-content: center;
 				align-items: center;
 				letter-spacing: 2px;
-				transition: all 0.5s ease-in-out;
+				
 				/*-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 				clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);*/
 				z-index: 10;
 				box-shadow: 0px 4px 5px 2px #192e4387;
 				/*动画 消失和出现*/
-				transition: all 0.5s ease-in-out;
-				visibility: hidden;
+				/*transition: all 0.5s ease-in-out;*/
+				/*visibility: hidden;*/
 			}
 			/*卡片内部的小框
 			
@@ -172,8 +172,8 @@
 				/*visibility: hidden;
 				opacity: 0;*/
 				/*控制所有卡片及其内部元素的动画速度*/
-				color: gray;
-				transition: all 0.5s ease-in-out;
+				/*color: gray;*/
+				/*transition: all 0.5s ease-in-out;*/
 			}
 			
 			.timeline ul li:nth-of-type(odd) div {
@@ -188,14 +188,14 @@
 			
 			.timeline ul li.in-view div {
 				/* 消除静态属性，或者修改属性值，就会发生动画transition */
-				visibility: visible;
-				transform: none;
-				-webkit-transform: none;
-				color: rgba(25, 46, 67, 1);
+				/*visibility: visible;*/
+				/*transform: none;*/
+				/*-webkit-transform: none;*/
+				/*color: rgba(25, 46, 67, 1);*/
 			}
 			
 			.timeline ul li.in-view time {
-				visibility: visible;
+				/*visibility: visible;*/
 			}
 			/*.timeline ul li.in-view div time {
 				color: white;
@@ -242,49 +242,66 @@
 									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
 									<ul class="navigation-dropdown-panel"></ul>
 								</li>
-								<li class="navigation-item dropdown ">
-									<a class="navigation-item-link " href="#">Team</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
-										</li>
-									</ul>
-								</li>
+
 								<li class="navigation-item dropdown">
 									<a class="navigation-item-link " href="#">Project</a>
 									<ul class="navigation-dropdown-panel ">
+
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Inspiration">Inspiration</a>
+										</li>
 										<li class="navigation-subitem">
 											<a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Design">Design</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Experiments">Experiments</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Notebook">Notebook</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Contribution">Contribution</a>
 										</li>
 										<li class="navigation-subitem">
 											<a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
 										</li>
 										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Demonstrate">Demonstrate</a>
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Contribution">Contribution</a>
 										</li>
 										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Improve">Improve</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions </a>
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Notebook">Notebook</a>
 										</li>
 									</ul>
 								</li>
+								<li class="navigation-item dropdown">
+									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Model">Model</a>
+									<ul class="navigation-dropdown-panel">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Model">Overview</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/M1_Cultivation">M1 Cultivation
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Injection_System">Injection System
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Safety_and_Effectiveness">Safety and Effectiveness</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Future">Future</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link" href="#">Human Practices</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Human Practices
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education & Engagement
+											</a>
+										</li>
+									</ul>
+								</li>
+
+							</div>
+							<div class="navigation-red navigation-div">
 								<li class="navigation-item dropdown ">
 									<a class="navigation-item-link " href="#">Parts</a>
 									<ul class="navigation-dropdown-panel ">
@@ -295,37 +312,32 @@
 											<a href="https://2019.igem.org/Team:SYSU-Medicine/Basic_Part">Basic Parts</a>
 										</li>
 										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Composite_Part">Composite Parts</a>
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Composite_Part">Composite Parts
+											</a>
 										</li>
 										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Part_Collection">Part Collection</a>
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Part_Collection">Part Collection
+											</a>
 										</li>
 									</ul>
 								</li>
-							</div>
-							<div class="navigation-red navigation-div">
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link " href="#">Team</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions</a>
+										</li>
+									</ul>
+								</li>
 								<li class="navigation-item ">
 									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
 									<ul class="navigation-dropdown-panel"></ul>
-								</li>
-								<li class="navigation-item dropdown ">
-									<a class="navigation-item-link" href="#">Human Practices</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Human Practices</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education & Engagement</a>
-										</li>
-									</ul>
-								</li>
-								<li class="navigation-item dropdown ">
-									<a class="navigation-item-link" href="/awards.html">Awards</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Model">Model</a>
-										</li>
-									</ul>
 								</li>
 								<li class="navigation-item ">
 									<a class="navigation-item-link" href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging Form</a>
@@ -338,6 +350,8 @@
 				</div>
 			</div>
 		</div>
+		
+		
 		<div class="container">
 			<div class="row clearfix">
 				<div class="col-xs-12">
@@ -349,32 +363,12 @@
 						<div class="col-xs-10">
 							<div class="title-box">
 								<h1 class="title">
-                        			<span class="title-has-mask playing">Human Practices</span>
+                        			<span class="title-has-mask playing">Experiment</span>
 									<span class="title-mask playing"></span>
 								</h1>
 							</div>
 						</div>
 					</div>
-					<div class="row clearfix">
-						<div class="col-xs-6">
-							<div class="title-box">
-								<h2 class="title">
-                        		<span class="title-has-mask playing">Overview</span>
-								<span class="title-mask playing"></span>
-								</h2>
-							</div>
-						</div>
-					</div>
-
-					<p>Because of the increasing need of individual health care in China, more and more people are looking for a better therapy to cure cancers. In order to get better acquainted with social need and to popularize advanced therapy as well as synthetic biology. The focus of our work on human social practices consist of three parts.</p>
-					<h3><i>Product design and improvement</i></h3>
-					<p>Through the public survey and the interviews with specialists, we decided to choose oncolytic virus therapy and improve it again and again in order to meet the needs of patients and society.</p>
-					<h3><i>Therapy promotion</i></h3>
-					<p>Limited by its deficiencies of oncolytic virus, this kind of therapy is not as widespread and popular as other biotherapies. For that reason, we make an effort to engineer the virus to make it more available and harmless for clinical treatment by having interview with specialists and patients, collaborating with other Igem teams and conducting public surveys.</p>
-					<h3><i>Biosynthesis publicity</i></h3>
-					<p>Our purpose for the public education part is to develop new opportunities to encourage more people to learn about synthetic biology and to shape it. In order to realize it, we took the opportunity to participate in YGA program where we have supporting education for high school students in the remote regions. We also establish our own WeChat Official Accounts Platform to propagandize oncolytic virus and synthetic biology.</p>
-					<h3><i></i></h3>
-					<p></p>
 				</div>
 			</div>
 		</div>
@@ -386,7 +380,7 @@
 						<div class="col-xs-5 column">
 							<div class="title-box">
 								<h2 class="title">
-		                        <span class="title-has-mask playing">Protocol</span>
+		                        <span class="title-has-mask playing"> Protocol</span>
 								<span class="title-mask playing"></span>
 								</h2>
 							</div>
@@ -397,45 +391,328 @@
 							<section class="timeline">
 								<ul>
 									<li>
-										<time>March</time>
+										<time></time>
 										<div>
-											<!--要给step-1加padding-->
-											<!--或者clearfix padding-bottom xxpx-->
 											<div class="panel-heading">
 												<h3 class="panel-title">
-														<a data-toggle="collapse" data-parent="#accordion" href="#step-1">
-														deciding to choose virus<br/> 
-														Public survey; Interview Professor Zhou Penghui
-														</a>
-													</h3>
+													<a data-toggle="collapse" data-parent="#accordion" href="#step-1">
+														Protocol for Agarose Gel Electrophoresis
+													</a>
+												</h3>
 											</div>
-											<div id="step-1" class="panel-collapse collapse in">
+											<div id="step-1" class="panel-collapse collapse">
 												<div class="panel-body">
-													Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+													<p>1.Weigh 0.8g (0.4g) agarose powder with Electronic scale, and get 80ml (40ml) 1X TAE buffer and put them together into a flask and mix them to get 1% solution; </p>
+													<p>2.Melt the mixture in a microwave with a middle-high heat for about 2 min until the solution becomes clear; </p>
+													<p>3.Put 8 (4) ul EB solution into the mixture prepared above; </p>
+													<p>4.Put the flask under the flowing water to cool it to about 40-50°C(it’s okay when you don’t feel hard to hold it）, and pour the whole solution into the gel casting tray with appreciate comb; </p>
+													<p>5.Let the gel cool until it is solid(it takes at least 30 min) </p>
+													<p>6.Pull out the comb carefully and avoid damaging the Gel; </p>
+													<p>7.Place the gel in the electrophoresis chamber; </p>
+													<p>8.Pipette DNA samples mixed with appreciate amount of loading buffer and dye (GeneFinder) into wells on the gel; </p>
+													<p>9.Run the gel at 120V for about half an hour;</p>
 												</div>
 											</div>
 										</div>
 									</li>
 									<li>
-										<time>March</time>
+										<time></time>
 										<div>
-											<!--要给step-1加padding-->
-											<!--或者clearfix padding-bottom xxpx-->
 											<div class="panel-heading">
 												<h3 class="panel-title">
-														<a data-toggle="collapse" data-parent="#accordion" href="#step-2">
-														deciding to choose virus<br/> 
-														Public survey; Interview Professor Zhou Penghui
-														</a>
-													</h3>
+													<a data-toggle="collapse" data-parent="#accordion" href="#step-2">
+														Protocol for cDNA RT reactions
+													</a>
+												</h3>
 											</div>
-											<div id="step-2" class="panel-collapse collapse in">
+											<div id="step-2" class="panel-collapse collapse">
 												<div class="panel-body">
-													Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+													<p>1.Pipette 10μL of RNA sample and 1.5μL oligo(dT)15 into each individual tube.</p>
+													<p>2.Put the heating block ready and set the temp to 70℃.And put the tube into the heating block for 5min.</p>
+													<p>3.Put the heated tube on the icebox and cool down quickly for another 5min.</p>
+													<p>4.Centrifuge for a short time to spin down the contents and to eliminate any air bubbles.</p>
+													<p>5.Pipette 4μL 5xBuffer、2μL Mgcl2、1μL dNTP Mix (10 mM)、0.5μL Ribonuclease Inhibitor、1μL RTase together into the tube. </p>
+													<p>6.Vortex for a short time to completely mix the sample.</p>
+													<p>7.Reset the heating blocker to 25℃ and put the tube in the blocker for 5 min. </p>
+													<p>8.Change the temp to 42℃ for an hour.</p>
 												</div>
 											</div>
 										</div>
 									</li>
+									<li>
+										<time></time>
+										<div>
+											<div class="panel-heading">
+												<h3 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#step-3">
+														Protocol for colony PCR
+													</a>
+												</h3>
+											</div>
+											<div id="step-3" class="panel-collapse collapse">
+												<div class="panel-body">
+													<p>1.Put Forward primer 2.5μl and Reverse primer 2.5μl into 18μl ddH2O2. </p>
+													<p>2.Put the system above into 25μl Q5 High-Fidelity DNA Polymerase.</p>
+													<p>3.Mix them all together.</p>
+													<p>4.After preparation of the reaction mix, pipette 2μl Bacterial liquid and dip in the mix. The reaction condition settings are as follows:</p>
+													<figure><table class="table table-bordered">
+													<thead>
+													<tr><th>Temperature</th><th>Time</th><th>Parameter</th></tr></thead>
+													<tbody><tr><td>98℃</td><td>30s</td><td>&nbsp;</td></tr><tr><td>98℃</td><td>10s</td><td>35</td></tr><tr><td>66℃</td><td>30s</td><td>35</td></tr><tr><td>72℃</td><td>2min</td><td>35</td></tr><tr><td>72℃</td><td>2min</td><td>&nbsp;</td></tr></tbody>
+													</table></figure>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<time></time>
+										<div>
+											<div class="panel-heading">
+												<h3 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#step-4">
+														Protocol for preparation of LB Agar plates
+													</a>
+												</h3>
+											</div>
+											<div id="step-4" class="panel-collapse collapse">
+												<div class="panel-body">
+													<h4>Materials</h4>
+													<p>LB Agar、Distilled water、Erlenmeyer</p>
+													<h4>Protocol</h4>
+													<p>1.Add LB agar 15g to 1L.  </p>
+													<p>2.Add 1L distilled water into Erlenmeyer </p>
+													<p>3.Cover Erlenmeyer with aluminum foil </p>
+													<p>4.Autoclave liquid program  </p>
+													<p>5.Wait until the LB cools down and add Ampicillin (1:1000 → if 500ml then add 500ul) </p>
+													<p>6.Pour the liquid into petri dishes (fill only ¾ of the plate and shake it until the liquid covers the surface) </p>
+													<p>7.Wait 15-20 min and put the plates upside down in 4℃</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<time></time>
+										<div>
+											<div class="panel-heading">
+												<h3 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#step-5">
+														Protocol for preparation of liquid LB
+													</a>
+												</h3>
+											</div>
+											<div id="step-5" class="panel-collapse collapse">
+												<div class="panel-body">
+													<h4>Materials</h4>
+													<p>LB broth and Distilled water </p>
+													<h4>Protocol</h4>
+													<p>1.Add 25g of LB broth to 1 Liter. </p>
+													<p>2.Add 1 Liter/ 100ml/ 200ml of distilled water.</p>
+													<p>3.Cover Erlenmeyer with aluminum foil.</p>
+													<p>4.Autoclave-liquid program.</p>
+													<p>5.Add antibiotic only after cold down.</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<time></time>
+										<div>
+											<div class="panel-heading">
+												<h3 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#step-6">
+														Protocol for total RNA Isolation
+													</a>
+												</h3>
+											</div>
+											<div id="step-6" class="panel-collapse collapse">
+												<div class="panel-body">
+													<p>1.Prepare M1 virus samples for isolation of RNA.  </p>
+													<p>2.pipette 100μL samples to a 1.5ml centrifuge tube. </p>
+													<p>3.Add 300μL of lysis solution (added with 800μL 1-thioglycerol already) to each sample. Mix the samples by vigorous shaking or vortexing for 30 seconds, and then centrifuge for 30s.</p>
+													<p>4.Stand for 5min at room temperature.</p>
+													<p>5.Add 300μL of RNA diluent to each sample. Mix the samples by vigorous shaking or vortexing for 30 seconds, and then centrifuge for 30s.</p>
+													<p>6.Stand for 5min at room temperature.</p>
+													<p>7.Add 350μL of Anhydrous ethanol to each sample. Mix the samples by vigorous shaking or vortexing for 30 seconds, and then centrifuge for 30s.</p>
+													<p>8.Stand for 5min at room temperature.</p>
+													<p>9.Transfer the mixture (700μL at most per time) to the Centrifugal column (provided with kit), centrifuge at 12000rpm for 1min and discard filtrate.</p>
+													<p>10.Add 600μL RNA lotion (added with 70ml Anhydrous ethanol already), centrifuge at 12000rpm for 1min and discard filtrate.</p>
+													<p>11.Add 50μL DNA enzyme I incubation solution (5μL DNA enzymeⅠand DNA enzymeⅠbuffer added into 40μL nuclease-free water) to the center of the adsorption film, sand for 15 min at room temp.</p>
+													<p>12.Add 600μL RNA lotion (added with 70ml Anhydrous ethanol already), centrifuge at 12000rpm for 1min and discard filtrate.</p>
+													<p>13.Repeat step12</p>
+													<p>14.Empty the collection tube and recentrifuged the column for 2min at 12000rpm.</p>
+													<p>15.Transfer the centrifuge column to the Elution tube, add 50μL nuclease-free water to the center of the adsorption film and stand for 2min at room temperature.</p>
+													<p>16.Centrifuge the tube at 12000 rpm for 1min and stored the eluted RNA at -80℃.</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<time></time>
+										<div>
+											<div class="panel-heading">
+												<h3 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#step-7">
+														Protocol for transformation
+													</a>
+												</h3>
+											</div>
+											<div id="step-7" class="panel-collapse collapse">
+												<div class="panel-body">
+													<p>1.Take out the competent cell dh5α from -80℃ and thaw it on the ice for 15min.</p>
+													<p>2.Add the target plasmid into competent cell (total amount greater than 1ng) and put it on the ice for 30min.</p>
+													<p>3.Set the heating block to 42℃ and put the sample on the heating block for 30-90s.</p>
+													<p>4.Put the sample on the ice for 5min and then coated plate.</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<time></time>
+										<div>
+											<div class="panel-heading">
+												<h3 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#step-8">
+														Protocol for Gel and PCR Clean-Up
+													</a>
+												</h3>
+											</div>
+											<div id="step-8" class="panel-collapse collapse">
+												<div class="panel-body">
+													<h4>Materials</h4>
+													<p>•1.5ml microcentrifuge tubes </p>
+													<p>•ethanol (95%) </p>
+													<p>•agarose gel (standard or low-melt; only for gel puriﬁcation) </p>
+													<p>•1X TAE or TBE electrophoresis buﬀer (only for gel puriﬁcation) </p>
+													<p>•50–65°C heating block (only for gel puriﬁcation)</p>
+													<h4>Protocol</h4>
+													<p>1.Place one SV Minicolumn in a Collection Tube for each dissolved gel slice or PCR ampliﬁcation. </p>
+													<p>2.Transfer the dissolved gel mixture or prepared PCR product to the SV Minicolumn assembly and incubate for 1 minute at room temperature. </p>
+													<p>3.Centrifuge the SV Minicolumn assembly in a microcentrifuge at 16,000 × g (14,000rpm) for 1 minute. Remove the SV Minicolumn from the Spin Column assembly, and discard the liquid in the Collection Tube. Return the SV Minicolumn to the Collection Tube. </p>
+													<p>4.Wash the column by adding 700µl of Membrane Wash Solution, previously diluted with 95% ethanol (Section 4.A), to the SV Minicolumn. Centrifuge the SV Minicolumn assembly for 1 minute at 16,000 × g (14,000rpm). Empty the Collection Tube as before, and place the SV Minicolumn back in the Collection Tube. Repeat the wash with 500µl of Membrane Wash Solution, and centrifuge the SV Minicolumn assembly for 5 minutes at 16,000 × g. </p>
+													<p>5.Remove the SV Minicolumn assembly from the centrifuge, being careful not to wet the bottom of the column with the ﬂowthrough. Empty the Collection Tube, and recentrifuge the column assembly for 1 minute with the microcentrifuge lid open (or oﬀ) to allow evaporation of any residual ethanol. </p>
+													<p>6.Carefully transfer the SV Minicolumn to a clean 1.5ml microcentrifuge tube. Apply 50µl of Nuclease-Free Water directly to the center of the column without touching the membrane with the pipette tip. Incubate at room temperature for 1 minute. Centrifuge for 1 minute at 16,000 × g (14,000rpm). </p>
+													<p>7.Discard the SV Minicolumn, and store the microcentrifuge tube containing the eluted DNA at 4°C or –20°C.</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<time></time>
+										<div>
+											<div class="panel-heading">
+												<h3 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#step-9">
+														Protocol for plasmid linearization
+													</a>
+												</h3>
+											</div>
+											<div id="step-9" class="panel-collapse collapse">
+												<div class="panel-body">
+													<p>1.Get the system ready as follows:</p>
+													<figure><table class="table table-bordered">
+													<thead>
+													<tr><th>   Reagent   </th><th>   Amount(μL)</th></tr></thead>
+													<tbody><tr><td>   10× FastDigest Buffer   </td><td>   10   </td></tr><tr><td>   XbaI   </td><td>   10   </td></tr><tr><td>   pBR-M1-c6v2-XXXXX   </td><td>   80   </td></tr></tbody>
+													</table></figure>
+													<p>2.Divide the system into two tubes equally.</p>
+													<p>3.Put those tubes into PCR instrument and set the temp to 37℃ to incubate for 1h.</p>
+													<p>4.Add 2.5μL 1xProteinase k and 5μL 10% SDS to each tube and put them at 50 ℃ to react for 30min.</p>
+
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<time></time>
+										<div>
+											<div class="panel-heading">
+												<h3 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#step-10">
+														Protocol for transcription in vitro
+													</a>
+												</h3>
+											</div>
+											<div id="step-10" class="panel-collapse collapse">
+												<div class="panel-body">
+													<p>1.Prepare the transcription system as follows:</p>
+													<figure><table class="table table-bordered">
+													<thead>
+													<tr><th>   Reagent   </th><th>   Amount（μl）   </th></tr></thead>
+													<tbody><tr><td>   SP6   Transcription 5X Buffer   </td><td>   8   </td></tr><tr><td>   rNTPs（100 mM）（A+C+U+G）   </td><td>   2+2+2+1.2   </td></tr><tr><td>   Linearized DNA   template (1~2 μg）+ ddH2O   </td><td>   16.8   </td></tr><tr><td>   Ribo m7G   Cap Analog，40 mM   </td><td>   4   </td></tr><tr><td>   Enzyme   Mix   </td><td>   4   </td></tr><tr><td>   Total Volume   </td><td>   40   </td></tr></tbody>
+													</table></figure>
+													<p>2.React at 37℃ for 1h.</p>
+													<p>3.Add 2μL RQ1 RNase-Free DNase（1U/ul）and react at 37℃ for 15min.</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<time></time>
+										<div>
+											<div class="panel-heading">
+												<h3 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#step-11">
+														Protocol for Virus Transduction to Vero cells
+													</a>
+												</h3>
+											</div>
+											<div id="step-11" class="panel-collapse collapse">
+												<div class="panel-body">
+													<p>1.Prepare Vero cells one day in advance (T25，400,000 cells/well).</p>
+													<p>2.Add 125μL Opti-MEM Culture medium and 3.75μL MessengerMAX in a centrifuge tube. Then prepare another centrifuge tube added with 125μL and RNA sample.</p>
+													<p>3.Fully mix these two tubes solution and drip onto Vero cells.</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<time></time>
+										<div>
+											<div class="panel-heading">
+												<h3 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#step-12">
+														Protocol for MTT assay
+													</a>
+												</h3>
+											</div>
+											<div id="step-12" class="panel-collapse collapse">
+												<div class="panel-body">
+													<p>1.Prepare a 12 mM MTT stock solution by adding 1 mL of sterile PBS to one 5 mg vial of MTT (Component A). Mix by vortexing or sonication until dissolved.</p>
+													<p>2.Add 10 mL of 0.01 M HCl to one tube containing 1 gm of SDS (Component B).  Mix the solution gently by inversion or sonication until the SDS dissolves.</p>
+													<p>3.For adherent cells, remove the medium and replace it with 100 µL of fresh culture medium. For non-adherent cells, centrifuge the microplate, pellet the cells, carefully remove as much medium as possible and replace it with 100 µL of fresh medium. </p>
+													<p>4.Add 10 µL of the 12 mM MTT stock solution (prepared in step 1) to each well. Include a negative control of 10 µL of the MTT stock solution added to 100 µL of medium alone. </p>
+													<p>5.Incubate at 37°C for 4 hours. At high cell densities (&gt;100,000 cells per well) the incubation time can be shortened to 2 hours. </p>
+													<p>6.Add 100 µL of the SDS-HCl solution (prepared in step 2) to each well and mix thoroughly using the pipette. </p>
+													<p>7.Incubate the microplate at 37°C for 4 hours in a humidified chamber. Longer incubations will decrease the sensitivity of the assay.</p>
+													<p>8.Mix each sample again using a pipette and read absorbance at 570 nm.</p>
+													<p>9.After labeling the cells with MTT, as described above, remove all but 25 µL of medium from the wells. For non-adherent cells it may be necessary to first centrifuge the plates to sediment the cells. </p>
+													<p>10.Add 50 µL of DMSO to each well and mix thoroughly with the pipette. </p>
+													<p>11.Incubate at 37°C for 10 minutes.</p>
+													<p>12.Mix each sample again and read absorbance at 540 nm not 570 nm, as above.</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<time></time>
+										<div>
+											<div class="panel-heading">
+												<h3 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#step-13">
+														Protocol for Animal experiment
+													</a>
+												</h3>
+											</div>
+											<div id="step-13" class="panel-collapse collapse">
+												<div class="panel-body">
+													<p>1.Prepare c57 mice and balb/c nude mice by implanting tumor subcutaneously and injecting engineered virus through tail vein.</p>
+													<p>2.Observing the distribution of the virus in vivo through in vivo imaging system.</p>
+													<p>3.Observing body weight and tumor size of mice after continuous administration.</p>
+												</div>
+											</div>
+										</div>
+									</li>
+
 								</ul>
 							</section>
 						</div>
@@ -446,53 +723,6 @@
 		<br />
 		<br />
 		<br />
-		<div class="container">
-			<div class="row clearfix">
-				<div class="col-sm-12">
-					<div class="row clearfix">
-						<div class="col-xs-8 column">
-							<div class="title-box">
-								<h2 class="title">
-	                       			 <span class="title-has-mask playing">Human Practice</span>
-									<span class="title-mask playing"></span>
-									</h2>
-							</div>
-						</div>
-					</div>
-					<!--<div  class="clearfix" style="padding-bottom: 100px;"></div>-->
-					<h3 id=""><i>1.	Conduct a survey</i></h3>
-					<p></p>
-					<h3 id=""><i>2.	deciding to study directed evolution of oncolytic virus
-						 Interview Professor Yan Guangmei; Public survey
-						</i></h3>
-					<p></p>
-				</div>
-			</div>
-		</div>
-		<br />
-		<br />
-		<br />
-		<div class="container">
-			<div class="row clearfix">
-				<div class="col-sm-12">
-					<div class="row clearfix">
-						<div class="col-xs-10 column">
-							<div class="title-box">
-								<h2 class="title">
-			                        <span class="title-has-mask playing">Education and Public Engagement</span>
-									<span class="title-mask playing"></span>
-									</h2>
-							</div>
-						</div>
-					</div>
-					<h3><i>1.	Gongzhonghao</i></h3>
-					<p>Wechat has invaded the lives of Chinese since it’s invention. Nowadays, the quickest way to spread news and ideas is by Wechat Official Account. It’s just like twitter or facebook. We wanted to let more people into the realm of biological engineering, so we opened our own account igem2019. It’s intentions are to educate the public about biological engineering and for team propaganda. We put on articles about biological engineering introductions, introduction of oncolytic viruses, cancer chemical therapeutic drugs, modeling in biological engineering and even how bioengineering collaborates with food. It can also act as a team’s log, recording the twists and turns and historical moments of our team. Up to now, thousands of people have continued to follow us in order to learn the latest news of synthetic biology and our product.</p>
-					<h3><i>2.	YGA supporting education</i></h3>
-					<p>During the summer vocation, our team took the opportunity to participate in YGA program where we have supporting education for high school students in the remote regions. YGA is a summer camp held by Medical School of Sun Yat-sen University, which contains three weeks supporting education in Meizhou city, an undeveloped region. Students from The University of Hong Kong (HKU), the Chinese University of Hong Kong (CUHK), Peking University (PKU), University of Macau, Fudan University (FDU) and other 13 universities all came together to participate in YGA program. During the program, we had created lessons about synthetic biology for high school students. “What is synthetic biology?”,” How can synthetic biology change the world?”. Then we asked students to think about their ideal world filled with synthetic biology. The last part is the introduction of oncolytic virus. In this part, we hoped students can understand some simple questions of oncolytic virus. “What is oncolytic virus?”, “What’s the function of oncolytic virus?”, “How can oncolytic virus benefit to humans?” “How can we engineer the virus to make it more useful?”. During the class, students had been paying great attention to the content of the class. They showed great interest in synthetic biology and oncolytic virus. At break, some students brought their biology textbook to the platform, telling us that they had learnt some basic content of virus and ask for more details about oncolytic virus and the correlation between virus and synthetic biology.</p>
-					<p>During this supporting education, our goal was to promote synthetic biology, developing new opportunities to encourage more people to learn about synthetic biology and to shape it. Oncolytic virus is also an important part we wanted to promote, since this kind of therapy was not as widespread and popular as other biotherapies. Therefore, we aimed to change the way people think about oncolytic virus and we fortunately got the positive feedback.</p>
-				</div>
-			</div>
-		</div>
 
 		<script>
 			var items = document.querySelectorAll(".timeline li");

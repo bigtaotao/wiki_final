@@ -267,7 +267,13 @@ a,p {
 	color: white;
 	font-size: 16px;
 	font-weight: 400;
+	
+	/*居中占满*/
+	width: 100%;
+	text-align: center;
+	overflow: hidden;
 }
+
 
 .navigation-item-link {
 	display: flex;
@@ -661,7 +667,7 @@ p {
 #HQ_page p {
     /*font-family:  'Open Sans', sans-serif,"Arial",Helvetica,sans-serif !important;*/
     font-family: inherit;
-    font-size: 18px !important;
+    font-size: 18px ;
     text-align: inherit ;
 	/* text-align:left  这会导致所有p元素不能居中，外部的text-center对其无用*/
 }

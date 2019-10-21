@@ -1,0 +1,620 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>SYSU-Medicine</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
+		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
+		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/home&action=raw&ctype=text/javascript"></script>
+		<link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
+		<script src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
+		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
+
+		<style>
+			/**,
+			*::before,
+			*::after 在Wiki上会给contianer前面加一个伪元素，所以container会被选中.
+			*/
+			/*暗锚*/
+			/*:target
+			{
+				position: relative;
+				padding-top:92px;
+				/*visibility: hidden;*/
+			/*}*/
+			
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			
+			.panel,
+			.panel-default {
+				border: none;
+				box-shadow: none;
+			}
+			
+			body {
+				/*background: linear-gradient(54deg, #9164ff, #8bfff4);*/
+				color: #3c3f64;
+				overflow-x: hidden;
+				padding-bottom: 50px;
+			}
+			
+			.std-content h1 {
+				font-size: 58px;
+			}
+			
+			.std-content h2 {
+				font-size: 48px;
+			}
+			
+			.std-content h3 {
+				font-size: 36px;
+			}
+			
+			.std-content h4 {
+				font-size: 26px;
+			}
+			
+			.std-content h5 {
+				font-size: 22px;
+			}
+			
+			.std-content p {
+				font-size: 18px;
+			}
+			/*去掉ul默认的点*/
+			
+			.timeline ul {
+				list-style: none;
+			}
+			/*时间轴的线条*/
+			
+			.timeline ul li {
+				list-style-type: none;
+				position: relative;
+				width: 12px;
+				margin: 0 auto;
+				padding-top: 50px;
+				background: rgba(255, 55, 68, 1);
+				/*background: linear-gradient(180deg, rgba(255, 55, 68, 0), rgba(255, 55, 68, 0.5));*/
+				/*动画*/
+				transition: all 0.5s ease-in-out;
+			}
+			/* 时间轴旁边的卡片 */
+			
+			.timeline ul li>div {
+				position: relative;
+				bottom: 0;
+				width: 500px;
+				width: calc(40vw - 15px);
+				width: -webkit-calc(40vw - 15px);
+				flex-direction: column;
+				padding: 20px;
+				background: #fff;
+				box-shadow: 4px 6px 12px 1px rgba(252, 56, 56, 0.2);
+				border-radius: 5px;
+				display: flex;
+				align-items: initial;
+				/*visibility: hidden;*/
+			}
+			/*卡片顶部的时间*/
+			
+			.timeline ul li time {
+				/*绝对定位*/
+				position: absolute;
+				/*background: #f5af19;*/
+				font-size: 100%;
+				width: 100px;
+				height: 100px;
+				/*top: -50px;*/
+				left: -43.5px;
+				/*border-style:solid;
+				border-color: rgba(252, 56, 56, 0.2);*/
+				background: rgba(252, 56, 56, 1);
+				color: white;
+				font-weight: bold;
+				border-radius: 5px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				letter-spacing: 2px;
+				transition: all 0.5s ease-in-out;
+				-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+				clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+				z-index: 10;
+			}
+			/*卡片内部的小框*/
+			/*.timeline ul li div>div {
+				display: flex;
+				width: 95%;
+				/*内部的弹性盒元素的排列方向
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}*/
+			/*卡片内部的框内部的段落*/
+			
+			.timeline ul li div div p {
+				text-align: left;
+			}
+			
+			.timeline ul li a {
+				color: black;
+				text-align: left;
+			}
+			/*卡片内部的小框的外间距*/
+			
+			.timeline ul li div>div {
+				margin-top: 10px;
+				margin-bottom: 10px;
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+			/* 奇数编号的卡片 相对于时间轴的位置（relative） */
+			
+			.timeline ul li:nth-of-type(odd)>div {
+				left: 80px;
+			}
+			/* 偶数编号的卡片在左边 */
+			
+			.timeline ul li:nth-of-type(even)>div {
+				/*left: -439px;*/
+				/*交叉重叠*/
+				/*margin-top: -500px;*/
+				/*margin-bottom: -500px;*/
+				/*更好的处理办法是在对面贴图*/
+				right: calc(40vw + 60px);
+			}
+			/*变色动画部分开始*/
+			/*变色动画部分开始*/
+			
+			.timeline ul li div {
+				/*opacity: 0;*/
+				/*控制所有卡片及其内部元素的动画速度*/
+				color: gray;
+				/*visibility: hidden;*/
+				opacity: 0.5;
+				transition: all 0.5s ease-in-out;
+			}
+			
+			.timeline ul li time {
+				transition: all 0.5s ease-in-out;
+				color: rgb(255, 55, 68);
+			}
+			
+			.timeline ul li.in-view {
+				/*background: rgba(255, 55, 68, 0.8);*/
+				/*background: linear-gradient(180deg, rgba(255, 55, 68, 0.5), rgba(255, 55, 68, 1));*/
+			}
+			
+			.timeline ul li.in-view div {
+				/* 消除静态属性，或者修改属性值，就会发生动画transition */
+				visibility: visible;
+				opacity: 1;
+				transform: none;
+				-webkit-transform: none;
+				color: rgba(25, 46, 67, 1);
+			}
+			
+			.timeline ul li.in-view time {
+				color: white;
+			}
+			/*.timeline ul li.in-view div time {
+				color: white;
+			}*/
+			/*变色动画部分结束*/
+			/*移动适配*/
+			
+			@media screen and (max-width: 900px) {
+				.timeline ul li div {
+					width: 250px;
+					flex-direction: column;
+				}
+				.timeline ul li div div {
+					width: 95%;
+					margin: 10px;
+				}
+				.timeline ul li:nth-of-type(even)>div {
+					left: -300px;
+				}
+			}
+			
+			@media screen and (max-width: 600px) {
+				.timeline ul li {
+					margin-left: 15px;
+				}
+				.timeline ul li div {
+					width: 300px;
+					width: calc(100vw - 100px);
+				}
+				.timeline ul li:nth-of-type(even)>div {
+					left: 80px;
+					margin-top: 20px;
+					margin-bottom: 0px;
+				}
+			}
+			/*排版*/
+			
+			.my-vertical-align {
+				display: flex;
+				align-items: center;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 column">
+					<nav class="navigation" id="nav-top">
+						<ul class="navigation-list nav-justified">
+							<div class="navigation-blue navigation-div">
+								<li class="navigation-item activate ">
+									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
+									<ul class="navigation-dropdown-panel"></ul>
+								</li>
+								<li class="navigation-item dropdown">
+									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine/Description">Project</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Design">Design</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Experiments">Experiments</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Inspiration">Inspiration</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item dropdown">
+									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Model">Model</a>
+									<ul class="navigation-dropdown-panel">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Model_Overview">Overview</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/M1_Cultivation">M1 Cultivation
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Injection_System">Injection System
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/TES">T. E. S.</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Future">Future</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Human Practices</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices_Overview">Overview
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Integrated_Practices">Integrated Practices
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education & Engagement
+											</a>
+										</li>
+									</ul>
+								</li>
+
+							</div>
+							<div class="navigation-red navigation-div">
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts Overview</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Basic_Part">Basic Parts</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Composite_Part">Composite Parts
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Part_Collection">Part Collection
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item ">
+									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
+									<ul class="navigation-dropdown-panel"></ul>
+								</li>
+								<li class="navigation-item ">
+									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Medal">Awards</a>
+									<ul class="navigation-dropdown-panel">
+										<li class="navigation-subitem">
+											<a href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging</a>
+										</li>
+									</ul>
+								</li>
+							</div>
+
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+		<div class="container std-content">
+			<div class="row clearfix">
+				<div class="col-xs-12">
+					<br />
+					<br />
+					<br />
+					<br />
+					<div class="row clearfix">
+						<div class="col-xs-10">
+							<div class="title-box">
+								<h1 class="title">
+                        			<span class="title-has-mask playing">Human Practices</span>
+									<span class="title-mask playing"></span>
+								</h1>
+							</div>
+						</div>
+					</div>
+					<div class="row clearfix">
+						<div class="col-xs-6">
+							<div class="title-box">
+								<h2 class="title">
+                        		<span class="title-has-mask playing">Overview</span>
+								<span class="title-mask playing"></span>
+								</h2>
+							</div>
+						</div>
+					</div>
+					<p>Because of the increasing need of individual health care in China, more and more people are looking for a better therapy to cure cancers. In order to get better acquainted with social need and to popularize advanced therapy as well as synthetic biology. The focus of our work on human social practices consist of three parts.</p>
+					<div class="clearfix" style="margin-bottom: 5em;"></div>
+					<div class="row clearfix">
+						<div class="col-xs-4">
+							<h3>Product design and improvement</h3>
+							<br />
+							<p>Through the public survey and the interviews with specialists, we decided to choose oncolytic virus therapy and improve it again and again in order to meet the needs of patients and society.</p>
+						</div>
+						<div class="col-xs-4">
+							<h3>Therapy promotion</h3>
+							<br /><br /><br />
+							<p>Limited by its deficiencies of oncolytic virus, this kind of therapy is not as widespread and popular as other biotherapies. For that reason, we make an effort to engineer the virus to make it more available and harmless for clinical treatment by having interview with specialists, collaborating with other Igem teams and conducting public surveys.</p>
+						</div>
+						<div class="col-xs-4">
+							<h3>Biosynthesis publicity</h3>
+							<br />
+							<p>Our purpose for the public education part is to develop new opportunities to encourage more people to learn about synthetic biology and to shape it. In order to realize it, we took the opportunity to participate in YGA program where we have supporting education for high school students in the remote regions. We also establish our own WeChat Official Accounts Platform to propagandize oncolytic virus and synthetic biology.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container std-content">
+			<div class="clearfix" style="margin-bottom: 5em;"></div>
+			<div class="row clearfix">
+				<div class="col-xs-12 column">
+					<div class="row clearfix">
+						<div class="col-xs-5 column">
+							<div class="title-box">
+								<h2 class="title">
+		                        <span class="title-has-mask playing">Timeline</span>
+								<span class="title-mask playing"></span>
+								</h2>
+							</div>
+						</div>
+					</div>
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<section class="timeline">
+								<ul>
+									<li>
+										<time>Step 1</time>
+										<div>
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#step-1">
+														Public survey, Interviewing Professor Zhou (deciding our project aim)
+													</a>
+												</h4>
+											</div>
+											<div id="step-1" class="panel-collapse collapse in">
+												<div class="panel-body">
+													<p>
+														After we harnessed our initial idea, we conducted a survey and found that the overwhelming majority of the participants put more importance in curing malignant tumor, which was consistent with our project, improving oncolytic virus therapy. Then we paid a visit to professor Zhou who was engaged in tumor immunotherapy. He advised us about the advantages and disadvantages of oncolytic virus.
+													</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<time>Step 2</time>
+										<div>
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#step-2">
+														Interviewing Professor Yan (deciding to improve M1)
+													</a>
+												</h4>
+											</div>
+											<div id="step-2" class="panel-collapse collapse in">
+												<div class="panel-body">
+													<p>
+														We focused on M1 virus. It was seen mostly in the tropical areas and in southern China. We then consulted with Professor Yan, who first identified M1 as an oncolytic virus, about the features of M1. We then decided to do research on improving the anticancer spectrum and lethality of M1.
+													</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<time>Step 3</time>
+										<div>
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#step-3">
+														Team discussion (turning point)
+													</a>
+												</h4>
+											</div>
+											<div id="step-3" class="panel-collapse collapse in">
+												<div class="panel-body">
+													<p>
+														We soon ran into many difficulties in our experiments. But after communicating with professors from the college of pharmacy and the college of chemistry. We focused on the path with the most application prospect, the pro-drug system.
+													</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<time>Step 4</time>
+										<div>
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#step-4">
+														Collaboration with other iGEM teams (improving experiments)
+													</a>
+												</h4>
+											</div>
+											<div id="step-4" class="panel-collapse collapse ">
+												<div class="panel-body">
+													<p>
+														We attended the after-iGEM conference in Shenzhen and listened to stories 2018 iGEMers told about their iGEM journey. We realized that this wasn’t just a contest, but a place where we share exciting thoughts and do amazing things. Later, we attended Southern China’s biggest iGEMers get-together and shared our project. During summer, we attended CCIC, China’s largest iGEM conference, looking forward to improve our project and communicate with other teams. What’s more, we also had collaborations with other iGEM teams and helped each other when we had troubles in the experiments.
+													</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<time>Step 5</time>
+										<div>
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#step-5">
+														YGA supporting education (spreading and learning)
+													</a>
+												</h4>
+											</div>
+											<div id="step-5" class="panel-collapse collapse in">
+												<div class="panel-body">
+													<p>
+														During summer vocation, our team took the opportunity to participate in YGA program where we had supporting education for high school students in the remote regions. We designed lessons about synthetic biology for high school students. “What is synthetic biology?”,” How can synthetic biology change the world?”. Then we asked students to think about their ideal world filled with synthetic biology. The last part is the introduction of Oncolytic virus.
+													</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<time>Step 6</time>
+										<div>
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#step-6">
+														Visiting GCP Office (exploring clinical application values)
+													</a>
+												</h4>
+											</div>
+											<div id="step-6" class="panel-collapse collapse ">
+												<div class="panel-body">
+													<p>
+														The ultimate aim for scientific research is the benefit of human society. Therefore, we surveyed the general public and consulted some experts. However, there is a very important link in the pharmaceutical industry chain, which is the department that manages clinical trials of drugs. In order to know the status quo of clinical drug trials and their evaluation and recommendations on our project, we visited to the GCP office of the Cancer Center of Sun Yat-Sen University and consulted the office administrator.
+													</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<time>Step 7</time>
+										<div>
+											<div class="panel-heading">
+												<h4 class="panel-title">
+													<a data-toggle="collapse" data-parent="#accordion" href="#step-7">
+														Dinner party with virologists (improving the experiment) 
+													</a>
+												</h4>
+											</div>
+											<div id="step-7" class="panel-collapse collapse in">
+												<div class="panel-body">
+													<p>
+														We invited many virologists to have dinner together in order to have a deep conversation about virus. We started with their respective stories about their virus research. Then we talked about the current situation of oncolytic virus. Finally, we asked for their advice on our project.
+													</p>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		<script>
+			var items = document.querySelectorAll(".timeline li");
+
+			function isElementInViewport(el) {
+				var rect = el.getBoundingClientRect();
+				//&& 会被转义,无奈只能改用||
+				return !(
+					//						rect.top < 0 ||
+					rect.left < 0 ||
+					// 块太长会超出屏幕下方
+					rect.bottom > (window.innerHeight || document.documentElement.clientHeight) ||
+					rect.right > (window.innerWidth || document.documentElement.clientWidth)
+				);
+			}
+
+			function inViewToggle() {
+				for(var i = 0; i < items.length; i++) {
+					if(isElementInViewport(items[i])) {
+						if(!items[i].classList.contains("in-view")) {
+							items[i].classList.add("in-view");
+						}
+					} else if(items[i].classList.contains("in-view")) {
+						items[i].classList.remove("in-view");
+					}
+				}
+			}
+
+			window.addEventListener("load", inViewToggle);
+			window.addEventListener("scroll", inViewToggle);
+		</script>
+
+	</body>
+
+</html>

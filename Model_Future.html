@@ -1,0 +1,463 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
+		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
+		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/home&action=raw&ctype=text/javascript"></script>
+		<link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
+		<script src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
+		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
+		<title>SYSU-Medicine</title>
+
+		<script type="text/x-mathjax-config">
+			$(function(){ MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} }); });
+		</script>
+		<script src="https://2019.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		<style>
+			#model-content>div {
+				/*for <h1> , figure, table */
+				counter-reset: counter1 counter7 counter8;
+			}
+			
+			#model-content {
+				/*for fig*/
+				/*counter-reset: counter7;*/
+			}
+			
+			#model-head h1 {
+				font-size: 48px;
+			}
+			
+			#model-head h3 {
+				font-size: 32px;
+			}
+			
+			#model-content {
+				counter-reset: counter7;
+			}
+			
+			#model-content h1 {
+				font-size: 48px !important;
+				counter-reset: counter2;
+				margin-top: 48px;
+				margin-bottom: 48px;
+			}
+			
+			#model-content h1:before {
+				counter-increment: counter1;
+				content: counter(counter1) ". ";
+			}
+			
+			#model-content h2 {
+				font-size: 40px !important;
+				counter-reset: counter3;
+				margin-top: 40px;
+				margin-bottom: 40px;
+			}
+			
+			#model-content h2:before {
+				counter-increment: counter2;
+				content: counter(counter1) "." counter(counter2) "  ";
+			}
+			
+			#model-content h3 {
+				font-size: 32px !important;
+				counter-reset: counter4;
+				margin-top: 32px;
+				margin-bottom: 32px;
+			}
+			
+			#model-content h3:before {
+				counter-increment: counter3;
+				content: counter(counter1) "." counter(counter2) "." counter(counter3) "  ";
+			}
+			
+			#model-content h4 {
+				font-size: 28px !important;
+				counter-reset: counter5;
+				margin-top: 28px;
+				margin-bottom: 28px;
+			}
+			
+			#model-content h4:before {
+				counter-increment: counter4;
+				content: counter(counter1) "." counter(counter2) "." counter(counter3) "." counter(counter4) "  ";
+			}
+			
+			#model-content h5 {
+				font-size: 24px !important;
+				counter-reset: counter6;
+				margin-top: 24px;
+				margin-bottom: 24px;
+			}
+			
+			#model-content h5:before {
+				counter-increment: counter5;
+				content: counter(counter1) "." counter(counter2) "." counter(counter3) "." counter(counter4) "." counter(counter5) "  ";
+			}
+			
+			#model-content p {
+				font-size: 18px !important;
+				line-height: 180%;
+				text-indent: 2em;
+			}
+			
+			#model-content figure {
+				text-align: center;
+				margin-top: 48px;
+				margin-bottom: 48px;
+			}
+			
+			#model-content img {
+				width:100%;
+			}
+			
+			#model-content figure>figcaption:before {
+				counter-increment: counter7;
+				content: "Fig." counter(counter7) ": ";
+			}
+			
+			#model-content caption {
+				text-align: center;
+				font-size: 18px;
+				color: black;
+			}
+			
+			#model-content caption:before {
+				counter-increment: counter8;
+				content: "Table " counter(counter8) ": ";
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 column">
+					<nav class="navigation" id="nav-top">
+						<ul class="navigation-list nav-justified">
+							<div class="navigation-blue navigation-div">
+								<li class="navigation-item activate ">
+									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
+									<ul class="navigation-dropdown-panel"></ul>
+								</li>
+								<li class="navigation-item dropdown">
+									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine/Description">Project</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Design">Design</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Experiments">Experiments</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Inspiration">Inspiration</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item dropdown">
+									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Model">Model</a>
+									<ul class="navigation-dropdown-panel">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Model_Overview">Overview</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/M1_Cultivation">M1 Cultivation
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Injection_System">Injection System
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/TES">T. E. S.</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Future">Future</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Human Practices</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices_Overview">Overview
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Integrated_Practices">Integrated Practices
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education & Engagement
+											</a>
+										</li>
+									</ul>
+								</li>
+
+							</div>
+							<div class="navigation-red navigation-div">
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts Overview</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Basic_Part">Basic Parts</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Composite_Part">Composite Parts
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Part_Collection">Part Collection
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item ">
+									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
+									<ul class="navigation-dropdown-panel"></ul>
+								</li>
+								<li class="navigation-item dropdown">
+									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Medal">Awards</a>
+									<ul class="navigation-dropdown-panel">
+										<li class="navigation-subitem">
+											<a href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging</a>
+										</li>
+									</ul>
+								</li>
+							</div>
+
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-xs-8 col-xs-offset-2" id="model-head" style="text-align:center;">
+					<h1 class="title">Modeling</h1>
+				</div>
+			</div>
+			<div class="row clearfix" id="model-content">
+				<div class="col-xs-12 col-md-8 col-md-offset-2 ">
+					<h1 id="future">Future*</h1>
+					<p>In the future, our method may be of clinical application. As we know, an excellent medical method is hoped to solve the problem that can not be solved nowadays in the future. However, clinical issue is very long. In addition, during the issue, some patients may exit the experiment or try other methods when he/she notice the low validity of this regime. Thus we want to think a little farther.</p>
+					<p>In this section, we will give the predicted survival situation of patients who receive our method. And we also try to provide the method of Dynamic Treatment Regime. All models in this section are based on Machine Learning. Because in the research of human body, the situation become so complex that we could not just use the main paramter to predict what will happen. And in many situation, fixed models can not fit the data well. So the method of Machine Learning is very significant.</p>
+					<h2 id="survival-time-prediction-and-effect-prediction">Survival Time Prediction And Effect Prediction</h2>
+					<h3 id="regression">Regression</h3>
+					<p>In medical research, survival time and effect size are significant in judging a method successful or unsuccessful. In the experiment on mouse, we have the survival time and effect size of mice. In the clinical research, we have the survival time and effect size of patients. How does these two survival time relate with each other? There is no doubt that mouse have similarity with human, because we often use mouse for experiment. (it’s not only easy to experiment but cheap) Thus, how can we measure this similarity? And can we apply this similarity to our prediction?</p>
+					<p>Actually, a lot of mice theraputic experiments fail in the clinical trials on human. Thus, a research of cross-species difference by Rachelly Normand and his team provide us a statistical model FIT to measure this similarity.</p>
+					<p>We collect the mouse-to-man data on the website provided by Rachelly Normand and his team. After cleaning the data, we obtain 14757 samples. After trying a lot of time, we find that the BP neural network in regression is better than other traditional methods. So we use the BP neural network regression.</p>
+					<p>In our data analysis, we find that the number of neuron can not greatly influence the fitting. We try the neural network fitting from 10 neurons to 30 neurons, and get a conclusion that the MSE is approximately 0.1 and the <span class="math inline"><em>R</em><sup>2</sup></span> is approximately 0.8, which shows that our model fit the data well.</p>
+					<p>We finally decide to use 10 neurons, because it can decrease the cost of internal storage without a lost of accuracy. We also choose the Levenberg-Marquardt Algorithm for our training, and choose <span class="math inline">70%</span> data for training, <span class="math inline">15%</span> data for validation, and <span class="math inline">15%</span> data for testing. Finally, we get the fitting figure and regression figure below.</p>
+					<figure>
+						<img src="https://2019.igem.org/wiki/images/c/c3/T--SYSU-Medicine--BPfit.png"  alt="" />
+						<figcaption>
+							Fitting
+						</figcaption>
+					</figure>
+					<figure>
+						<img  src="https://2019.igem.org/wiki/images/5/59/T--SYSU-Medicine--R.png" alt="" />
+						<figcaption>
+							Regression
+						</figcaption>
+					</figure>
+					<p>In the experiment of M1, we got a conclusion that 29 lines showed a more than <span class="math inline">30%</span> decrease in viability 48h after exposure. In those lines, our prediction on human body is about <span class="math inline">60%</span>. That is to say, our method got a positive result based on the data.</p>
+					<h3 id="whether-the-method-would-be-a-success">Whether the method would be a success?</h3>
+					<p>Survival time is hard to collect because it always takes a long time. Can we just predict the clinical research a success or failure based on the survival time of mouse? Because of limited time, we haven’t recorded enough data for survival time. However, we tried to provide a probable success or failure label for different kinds of cancer.</p>
+					<p>And we consider that some survival data may have deletion in the actual research, We simulate doctors’ judging rules. Doctors’ judgements are often subjective, which means, in our simulation, the threshold is often random around a fixed value. Thus, we choose the mean of the distribution to be that fixed value. And we use the random values created in the distribution <span class="math inline"><em>N</em>(<em>μ</em>, <em>σ</em><sup>2</sup>)</span> as the thresholds in every judgement. When the actual value is bigger than the threshold, we consider it successful. Otherwise, we judge it as unsuccessful. Then we use our Classification Model to make judgements according to every data from mouse. Next we could judge whether our method is successful or not when we get a new survival time difference in the control group and experiment group. The ROC is shown below. The total set AUC is approximately 0.7.</p>
+					<figure>
+						<img src="https://2019.igem.org/wiki/images/b/b9/T--SYSU-Medicine--NPR.png" alt="" />
+						<figcaption>
+							ROC in Classification
+						</figcaption>
+					</figure>
+					<h2 id="dtr">DTR*</h2>
+					<p>To optimize the sequence of specific treatments for specific patients is a significant question of precision medicine. DTR (Dynamic Treatment Regime) is such a method that can explore and examine the best strategies. In this part, we will give a brief introduction of DTR model based on our method.</p>
+					<p>To be brief, we choose 2 stages of treatment and 2 treatments at each stage (for example, conservative treatment(<span class="math inline"><em>A</em> =  − 1</span>) and multiple treatment of M1 and actinomycin D (A=1)). We use <span class="math inline"><em>O</em><sub><em>i</em></sub>, <em>i</em> = 1, 2</span> to describe the observation, which can be -1 or 1. <span class="math inline"><em>O</em><sub><em>i</em></sub> = 1</span> can mean the growth of the tumor, while -1 means the shrink of the tumor.</p>
+					<p>The model is described as follows:<br />
+						<span class="math display">$$\begin{array}{lcl} 1.\;O_i \in \{-1,1\},A_i\in\{-1,1\},for\;i=1,2;\\ 2.\;P(A_1=1)=P(A_1=-1)=0.5,P(A_2=1)=P(A_2=-1)=0.5;\\ 3.\;O_1\sim Bernoulli(0.5);\;O_2|O_1,A_1\sim Bernoilli(expit(\delta O_1+\delta A_1));\\ 4.\;Stage\;1\;outcome\;Y_1 \equiv 0;\; \\ 5.\;Stage\;2\;outcome\;Y_2=\gamma_1+\gamma_2 O_1+\gamma_3 A_1+\gamma_4 O_1 A_1+\gamma_5 A_2+\gamma_6 O_2 A_2+\gamma_7 A_1 A_2 +\varepsilon . \end{array}$$</span><br /> In the model above, <span class="math inline">$expit(x)=\frac{e^x}{1+e^x}$</span>. And <span class="math inline"><em>ε</em> ∼ <em>N</em>(0, 1)</span>. The parameters <span class="math inline"><em>γ</em><sub><em>i</em></sub>, <em>i</em> = 1 ∼ 7</span> and <span class="math inline"><em>δ</em><sub><em>i</em></sub>, <em>i</em> = 1, 2</span> can be estimated by the method of nonfitting or neural network. Thus, we can estimate the best combination of regimes as follows.(for simpleness we choose 9 parameters for our simulation, and choose the best regime based on the observation)</p>
+					<table class="table table-bordered">
+						<caption>
+							Simulation with <span class="math inline"><em>γ</em> = (0, 0,  − 0.5, 0, 0.25, 0.5, 0.5)</span>
+						</caption>
+						<thead>
+							<tr class="header">
+								<th style="text-align: left;"><span class="math inline">(<em>O</em><sub>1</sub>, <em>O</em><sub>2</sub>)</span></th>
+								<th style="text-align: left;"><span class="math inline">(<em>A</em><sub>1</sub>, <em>A</em><sub>2</sub>)</span></th>
+								<th style="text-align: left;">Outcome <span class="math inline"><em>Y</em><sub>2</sub></span></th>
+								<th style="text-align: left;">Remark</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="odd">
+								<td style="text-align: left;"><span class="math inline">( − 1,  − 1)</span></td>
+								<td style="text-align: left;"><span class="math inline">( − 1,  − 1)</span></td>
+								<td style="text-align: left;">1.25</td>
+								<td style="text-align: left;">Best</td>
+							</tr>
+							<tr class="even">
+								<td style="text-align: left;"><span class="math inline">( − 1,  − 1)</span></td>
+								<td style="text-align: left;"><span class="math inline">( − 1, 1)</span></td>
+								<td style="text-align: left;">-0.25</td>
+								<td style="text-align: left;"></td>
+							</tr>
+							<tr class="odd">
+								<td style="text-align: left;"><span class="math inline">( − 1,  − 1)</span></td>
+								<td style="text-align: left;"><span class="math inline">(1,  − 1)</span></td>
+								<td style="text-align: left;">-0.75</td>
+								<td style="text-align: left;"></td>
+							</tr>
+							<tr class="even">
+								<td style="text-align: left;"><span class="math inline">( − 1,  − 1)</span></td>
+								<td style="text-align: left;"><span class="math inline">(1, 1)</span></td>
+								<td style="text-align: left;">-0.25</td>
+								<td style="text-align: left;"></td>
+							</tr>
+							<tr class="odd">
+								<td style="text-align: left;"><span class="math inline">( − 1, 1)</span></td>
+								<td style="text-align: left;"><span class="math inline">( − 1,  − 1)</span></td>
+								<td style="text-align: left;">0.25</td>
+								<td style="text-align: left;"></td>
+							</tr>
+							<tr class="even">
+								<td style="text-align: left;"><span class="math inline">( − 1, 1)</span></td>
+								<td style="text-align: left;"><span class="math inline">( − 1, 1)</span></td>
+								<td style="text-align: left;">0.75</td>
+								<td style="text-align: left;">Best</td>
+							</tr>
+							<tr class="odd">
+								<td style="text-align: left;"><span class="math inline">( − 1, 1)</span></td>
+								<td style="text-align: left;"><span class="math inline">(1,  − 1)</span></td>
+								<td style="text-align: left;">-1.75</td>
+								<td style="text-align: left;"></td>
+							</tr>
+							<tr class="even">
+								<td style="text-align: left;"><span class="math inline">( − 1, 1)</span></td>
+								<td style="text-align: left;"><span class="math inline">(1, 1)</span></td>
+								<td style="text-align: left;">0.75</td>
+								<td style="text-align: left;"></td>
+							</tr>
+							<tr class="odd">
+								<td style="text-align: left;"><span class="math inline">(1,  − 1)</span></td>
+								<td style="text-align: left;"><span class="math inline">( − 1,  − 1)</span></td>
+								<td style="text-align: left;">1.25</td>
+								<td style="text-align: left;">Best</td>
+							</tr>
+							<tr class="even">
+								<td style="text-align: left;"><span class="math inline">(1,  − 1)</span></td>
+								<td style="text-align: left;"><span class="math inline">( − 1, 1)</span></td>
+								<td style="text-align: left;">-0.25</td>
+								<td style="text-align: left;"></td>
+							</tr>
+							<tr class="odd">
+								<td style="text-align: left;"><span class="math inline">(1,  − 1)</span></td>
+								<td style="text-align: left;"><span class="math inline">(1,  − 1)</span></td>
+								<td style="text-align: left;">-0.75</td>
+								<td style="text-align: left;"></td>
+							</tr>
+							<tr class="even">
+								<td style="text-align: left;"><span class="math inline">(1,  − 1)</span></td>
+								<td style="text-align: left;"><span class="math inline">(1, 1)</span></td>
+								<td style="text-align: left;">-0.25</td>
+								<td style="text-align: left;"></td>
+							</tr>
+							<tr class="odd">
+								<td style="text-align: left;"><span class="math inline">(1, 1)</span></td>
+								<td style="text-align: left;"><span class="math inline">( − 1,  − 1)</span></td>
+								<td style="text-align: left;">0.25</td>
+								<td style="text-align: left;"></td>
+							</tr>
+							<tr class="even">
+								<td style="text-align: left;"><span class="math inline">(1, 1)</span></td>
+								<td style="text-align: left;"><span class="math inline">( − 1, 1)</span></td>
+								<td style="text-align: left;">0.75</td>
+								<td style="text-align: left;">Best</td>
+							</tr>
+							<tr class="odd">
+								<td style="text-align: left;"><span class="math inline">(1, 1)</span></td>
+								<td style="text-align: left;"><span class="math inline">(1,  − 1)</span></td>
+								<td style="text-align: left;">-1.75</td>
+								<td style="text-align: left;"></td>
+							</tr>
+							<tr class="even">
+								<td style="text-align: left;"><span class="math inline">(1, 1)</span></td>
+								<td style="text-align: left;"><span class="math inline">(1, 1)</span></td>
+								<td style="text-align: left;">0.75</td>
+								<td style="text-align: left;"></td>
+							</tr>
+						</tbody>
+					</table>
+					<p>And we can choose the best regime based on the current observation. In this case, we use the Q-function:<br />
+						<span class="math display">$$\left \{ \begin{array}{lcl} Q_2^{opt}(H_2,A_2;\beta_2,\psi_2)=H_{20}^T\beta_2+H_{21}^T\psi_2 A_2\\ Q_1^{opt}(H_1,A_1;\beta_1,\psi_1)=H_{10}^T\beta_1+H_{1}^T\psi_1 A_1 \end{array} \right .$$</span><br /></p>
+					<p>In Q-function above, parameters are given by<br />
+						<span class="math display">$$\left \{ \begin{array}{lcl} H_{20}=(1,O_1,A_1,O_1A_1),\\ H_{21}=(1,O_2,A_1),\\ H_{10}=(1,O_1)^T,\\ H_{11}=(1,O_1)^T,\\ \psi_1=\gamma_3+q_1|f_1|-q_2|f_2|+q_3|f_3|-q_4|f_4|,\\ \psi_2=\gamma_4+q_1'|f_1|-q_2'|f_2|-q_3'|f_3|+q_4'|f_4|,\\ \end{array} \right.$$</span><br /> where <span class="math inline">$q_1'=q_3'=\frac{1}{4}(expit(\delta_1+\delta_2)-expit(-\delta_1+\delta_2))$</span>,and <span class="math inline">$q_2'=q_4'=\frac{1}{4}(expit(\delta_1-\delta_2)-expit(-\delta_1-\delta_2))$</span>.</p>
+					<p>Thus we could compare the effect of different regimes based on every history. The contrast is below:<br />
+						<span class="math display">$$\left \{ \begin{array}{lcl} \Delta_1=Q_1^{opt}(H_1,1;\hat{\beta_1},\hat{\psi_1})-Q_1^{opt}(H_1,-1;\hat{\beta_1},\hat{\psi_1})\\ \Delta_2=Q_2^{opt}(H_2,1;\hat{\beta_2},\hat{\psi_2})-Q_2^{opt}(H_2,-1;\hat{\beta_2},\hat{\psi_2})\\ \end{array} \right.$$</span><br /></p>
+					<p>And we simulate the stage 2 mean outcome slope<span class="math inline"><em></em><sup>[</sup>]</span>. We can see that while patients prefer different treatments in stage 1, there will be probably opposite best regime for patients.</p>
+					<figure>
+						<img src="https://2019.igem.org/wiki/images/b/b0/T--SYSU-Medicine--team-Model-Decision_Slope.png"  alt="" />
+						<figcaption>
+							Decision Slope
+						</figcaption>
+					</figure>
+					<h1 id="conclusion">Conclusion</h1>
+					<p>In this section, we will review our modeling detailedly. Our models have some advantages. But in the same time, the disadvantages of them are obvious. We will have a discussion about them in this section. Finally we will describe what can we do in the future.</p>
+					<h2 id="advantage">Advantage</h2>
+					<p>In the part of M1 Cultivation, Poisson Process is proper and it is with a low quantity of culculation, and the best times for collecting targeted virus are actually convincing because it is confirmed by the experimental results.</p>
+					<p>In the part of Injection System, Improved Michaelis-Menten Equation considers the variation of concentration of nitroreductase and the best time interval for injection is convincing, confirmed by experiment as well.Integrated Injection combined the parial process and injection process together, successfully describe the relationship of microorganism and medicine; Gaussian Mixture Model realize the variation of <span class="math inline"><em>β</em></span> with the position.</p>
+					<p>In the part of Targeting Ability, Effectiveness and Safety, based on the growth mechanism of M1 and the immunological effect in animals, we established an ordinary differential equation system about the number of M1, tumor cells and the time of dosing. Using ode15s and ode45s functions in MATLAB, we obtained the change curve of the number of M1, infected and uninfected tumor cells with the time of dosing, which verified the effectiveness of our system. In additional, We combined the process and results of other classical experiments to further verify the targeting ability, effectiveness and stability of our system, and used mathematical methods such as function fitting and hypothesis testing to obtain convincing results.</p>
+					<p>In the final part of our model, with the help of the popular BP neural network, we predicted the effect of our system in human body, making the whole project more comprehensive and in-depth.</p>
+					<h2 id="disadvantage">Disadvantage</h2>
+					<p>In ODE model of part 1, the descent of concentration of uninfected tumor cells is too quick;</p>
+					<p>The initial conditions of our ODE model are not correct enough. Our data is not enough, and the curve only show the trend of concentration.</p>
+					<p>The time-varying distribution of <span class="math inline"><em>β</em></span> had not been added to the ODE model.</p>
+					<p>Due to the difficulty of the experiment, our results can still be improved. Therefore, we have resorted to many experiments done by others to obtain our desired conclusion.</p>
+					<h2 id="expectation">Expectation</h2>
+					<p>It is possible to mutate M1 through directed evolution to increase its lethality and range of action while still being safe. We can improve the targeting ability, effectiveness and safety of M1 through our dosing system model and testing model. By optimizing our neural network model, we can reliably predict the effect of m1-based oncolytic virus therapy in the human body, thus accelerating the development of oncolytic virus therapy in medicine. Reference:   </p>
+					<h1 id="renference">Renference</h1>
+					<p>Part 4: Future</p>
+					<p>[1]Normand Rachelly,Du Wenfei,Briller Mayan,Gaujoux Renaud,Starosvetsky Elina,Ziv-Kenet Amit,Shalev-Malul Gali,Tibshirani Robert J,Shen-Orr Shai S. Found In Translation: a machine learning model for mouse-to-human inference.[J]. Nature methods,2018.</p>
+					<p>[2]Bibhas Chakraborty, Erica E.M. Moodie (2013). Statistical Methods for Dynamic Treatment Regimes. New York: Springer 154-164.</p>
+				</div>
+			</div>
+
+			<script>
+			</script>
+	</body>
+
+</html>

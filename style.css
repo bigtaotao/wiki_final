@@ -611,7 +611,7 @@ p {
 }*/
 
 * {
-	font-family: 'Open Sans';
+	font-family: 'Open Sans', sans-serif;
 }
 
 .std-content h1 {
@@ -644,4 +644,24 @@ p {
 
 #bodyContent a[href ^="https://"], .link-https {
     padding-right: 0px !important;
+}
+
+/*.my-vertical-align {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}*/
+
+.my-vertical-middle {
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#HQ_page p {
+    /*font-family:  'Open Sans', sans-serif,"Arial",Helvetica,sans-serif !important;*/
+    font-family: inherit;
+    font-size: 18px !important;
+    text-align: inherit ;
+	/* text-align:left  这会导致所有p元素不能居中，外部的text-center对其无用*/
 }

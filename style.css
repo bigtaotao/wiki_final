@@ -1,8 +1,5 @@
 @charset "utf-8";
-/*@font-face {
-	font-family: "Myanmar Text";
-	src: url(https://2019.igem.org/wiki/images/e/eb/T--SYSU-Medicine--mmrtext.ttf) format('truetype');
-}*/
+
 
 @keyframes jump-left {
 	0% {
@@ -641,6 +638,10 @@ p {
 	font-size: 18px;
 }
 
-tr,td {
+.std-content tr,td {
 	font-size: 18px;
+}
+
+#bodyContent a[href ^="https://"], .link-https {
+    padding-right: 0px !important;
 }

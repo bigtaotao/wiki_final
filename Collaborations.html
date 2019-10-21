@@ -1,46 +1,5 @@
+<!doctype html>
 <html>
-	<style type="text/css">
-		.title-box-new {
-			position: relative;
-			width: 100%;
-		}
-		
-		.title-box-mask {
-			position: absolute;
-			height: 100%;
-			background-color: rgb(255, 55, 68);
-		}
-		
-		.title-box-mask-left {
-			left: 0;
-		}
-		
-		.title-box-mask-right {
-			right: 0;
-		}
-		
-		.title-box-title {
-			justify-content: center;
-			height: inherit;
-			border-left-style: solid;
-			border-color: rgb(255, 55, 68);
-			/* border 的粗细！！！ */
-			border-left-width: 0.25rem;
-			opacity: 0;
-			display: flex;
-			align-items: center !important;
-		}
-		
-		.title-box-title>h1 {
-			margin: 0;
-			vertical-align: middle;
-			/* 距离border的距离！！！ */
-			padding: 0 4rem !important;
-			margin: 0 !important;
-			color: rgb(25, 46, 67);
-		}
-		/* title end */
-	</style>
 
 	<head>
 		<meta charset="utf-8">
@@ -53,14 +12,13 @@
 		<script src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
 		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
 		<title>SYSU-Medicine</title>
+
+		<style>
+
+		</style>
 	</head>
 
 	<body>
-		
-		
-		
-		
-		
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 column">
@@ -185,83 +143,44 @@
 				</div>
 			</div>
 		</div>
-		
-		
-		
-		
-		
 
-		<div class="title-box-new title-0">
-			<div class="title-box-mask"></div>
-			<div class="title-box-title">
-				<h1>Introduction</h1>
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+
+		<div class="container std-content">
+			<div class="row clearfix">
+				<div class="col-xs-12">
+					<h1 class="text-center">Collaborations</h1>
+					<br />
+				</div>
+			</div>
+			<div class="row clearfix">
+				<div class="col-xs-10 col-xs-offset-1">
+
+					<h3>1. SUSTech_Shenzhen</h3>
+					<p>They raised three essentials as a &quot;controlling hoop&quot; on the mammalian cells to better understand their network of gene expression regulation and protein transportation and actualized precise manipulation. </p>
+					<p>&nbsp;</p>
+					<h3>2. CPU_China</h3>
+					<p>They put forward a new therapeutic strategy for treating Mycobacterium Tuberculosis (Mtb) infection based on Immune-like cells. They replace TLRs and downstream effectors in their &quot;immune-like cells&quot;, which then could target different pathogens, thereby serving as a novel infectious disease treatment strategy in post-antibiotic era.</p>
+					<p>&nbsp;</p>
+					<h3>3. Fudan-TSI</h3>
+					<p>They present to us a toolbox for in vivo continuous mutation library construction. Their construction steps will be carried out iteratively, generating a random mutation library of the target with high efficiency as mutations accumulate along with bacterial growth. </p>
+					<p>Their members shared their experience in poster making and literature that they used in their modeling. We shared some of our results and modeling. For our project was very alike at that time, we both used differential equations.</p>
+					<p>&nbsp;</p>
+					<h3>4. SCUT_China</h3>
+					<p>Their project has developed a method to optimize the adaptability of multi-gene system in E. coli, with only one library so-called Promoter-Toehold Switches pool. This pool can simultaneously optimize up to four genes in a system. Particularly, this versatile library can be applied to fast optimization in different systems without having to build ad hoc libraries, which can greatly reduce manpower and costs. Here, they demonstrate the versatility of this approach by using the pool for fine regulation of four genes to enhance the acid tolerant of E. coli.</p>
+					<p>The BP neural network their model team shared with us has greatly enlighten us on our modeling. We shared experience on how to prevent over-fitting when constructing models with limited data and how to create new models. </p>
+					<p>&nbsp;</p>
+				</div>
 			</div>
 		</div>
+
+		<script>
+		</script>
 	</body>
-	<script type="text/javascript">
-		// title
-		$(document).ready(function() {
-			speed = 250; //出现时间！！！
-			$(".title-box-new").each(function(titlebox_i, title_box) {
-				var last = $(title_box).offset().top - $(window).scrollTop();
-				var viewheight = window.innerHeight / 5 * 3;
-				if(last < viewheight) {
-					if($(title_box).hasClass("played")) {} else {
-						$(title_box).addClass("played");
-
-						$(title_box).children(".title-box-mask").addClass("title-box-mask-left");
-						$(title_box).children(".title-box-mask").animate({
-							width: $(title_box).find("h1").outerWidth()
-						}, speed, "swing", function() {
-							$(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
-
-							var cache = $(title_box).width() - $(title_box).find("h1").outerWidth();
-							$(title_box).children(".title-box-mask").css("right", cache);
-
-							$(title_box).children(".title-box-title").animate({
-								opacity: "100"
-							}, speed / 2);
-						});
-						$(title_box).children(".title-box-mask").animate({
-							width: "0"
-						}, speed, "swing");
-					}
-
-				}
-			});
-		})
-		$(document).scroll(function() {
-			speed = 250;
-			$(".title-box-new").each(function(titlebox_i, title_box) {
-				var last = $(title_box).offset().top - $(window).scrollTop();
-				var viewheight = window.innerHeight / 5 * 3;
-				if(last < viewheight) {
-					if($(title_box).hasClass("played")) {} else {
-						$(title_box).addClass("played");
-
-						$(title_box).children(".title-box-mask").addClass("title-box-mask-left");
-						$(title_box).children(".title-box-mask").animate({
-							width: $(title_box).find("h1").outerWidth()
-						}, speed, "swing", function() {
-							$(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
-
-							var cache = $(title_box).width() - $(title_box).find("h1").outerWidth();
-							$(title_box).children(".title-box-mask").css("right", cache);
-
-							$(title_box).children(".title-box-title").animate({
-								opacity: "100"
-							}, speed / 2);
-						});
-						$(title_box).children(".title-box-mask").animate({
-							width: "0"
-						}, speed, "swing");
-					}
-
-				}
-			});
-		})
-
-		// title end
-	</script>
 
 </html>

@@ -430,6 +430,80 @@ $(function () {
     })
 });
 
+//content-3 悬停+点击
+$(function () {
+    //悬停
+
+    $("#content-4 .switch").hover(function () {
+        
+        var $mask = $($(this).nextAll(".mask"));
+        if ($mask.hasClass("hover_flag")) { } else {
+            $mask.addClass("hover_flag");
+            var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+            $mask.children().each(function () {
+
+                $(this).animate({ width: "80vw" }, hover_speed, "swing");
+                $(this).animate({ width: "90vw" }, hover_speed, "swing",function(){
+                    $mask.removeClass("hover_flag");
+                });
+            })
+        }
+
+    }, function () {
+        // var $mask = $($(this).nextAll(".mask"));
+        // if ($mask.hasClass("open-flag")) { } else {
+        //     var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+        //     $mask.children().each(function () {
+
+        //         $(this).animate({ width: "90vw" }, hover_speed, "swing");
+        //     })
+        // }
+    });
+    //点击
+    // $("#content-3 .switch").click(function () {
+    //     speed = 700;
+    //     var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+    //     if ($mask.hasClass("open-flag")) {
+    //         $mask.removeClass("open-flag");
+    //         $mask.children().each(function () {
+    //             $(this).animate({ opacity: "100" }, 1, "swing");
+    //             $(this).animate({ width: $(".mask-3-box").width() }, speed, "swing");
+
+    //         });
+    //         $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "100" }, speed);
+    //     } else {
+    //         $mask.children().each(function () {
+    //             $(this).attr("old-width", $(this).width());
+    //             $(this).animate({ width: "0" }, speed, "swing");
+    //             $(this).animate({ opacity: "0" }, 1, "swing");
+
+    //         });
+    //         $mask.addClass("open-flag");
+    //         hover_flag = 0;
+    //         $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "0" }, speed);
+    //     }
+
+    // })
+    $("#content-4 .switch").click(function () {
+        speed = 700;
+        var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+        $mask.children().each(function () {
+            $(this).attr("old-width", $(this).width());
+            $(this).animate({ width: "0" }, speed, "swing");
+            $(this).animate({ opacity: "0" }, 1, "swing",function(){
+                $(".mask-4-box").css({"width":"0","height":"0"});
+            });
+
+        });
+        $mask.addClass("open-flag");
+        hover_flag = 0;
+        $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "0" }, speed,function(){
+            $(this).css({"width":"0","height":"0"});
+        });
+        $("#content-4 .switch").css({"width":"0","height":"0"});
+    })
+});
+
 
 
 

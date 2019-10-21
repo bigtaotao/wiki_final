@@ -33,11 +33,11 @@
             opacity: 50;
             z-index: -100;
             
-background-size: auto 100%;  
-background-position: center; 
-background-repeat: no-repeat;
-background-origin: border-box; 
-background-clip: border-box;  
+			background-size: auto 100%;  
+			background-position: center; 
+			background-repeat: no-repeat;
+			background-origin: border-box; 
+			background-clip: border-box;  
         } */
 
 		.title-big h1 {
@@ -352,6 +352,97 @@ background-clip: border-box;
 			display: flex;
 			align-items: center;
 		}
+		
+		/*卡片*/
+		.card {
+            height: 100%;
+            border-left: 10px solid;
+            /* display: -webkit-flex; */
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+            align-content: stretch;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: row;
+            text-align: center;
+            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+            padding: 1em 2em;
+            
+            /*面包*/
+            border-radius: 5em 8em;
+        }
+
+        .card-blue {
+            border-left-color: rgb(25, 46, 67);
+        }
+
+        .card-red {
+            border-left-color: rgb(255, 55, 68);
+        }
+
+		.card-pink {
+		    border-left-color: rgb(225, 117, 149);
+		}
+
+        .card-img-top {
+            width: 60%;
+        }
+
+        .card-body {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-button {
+            cursor: pointer;
+            align-self: flex-end;
+            -webkit-align-self: flex-end;
+            width: 100%;
+            padding: 1em;
+            margin-bottom: 1em;
+
+        }
+
+        .card-button-blue {
+            background-color: rgb(25, 46, 67);
+        }
+
+        .card-button-red {
+            background-color: rgb(255, 55, 68);
+        }
+
+        .card-text {
+            text-align: justify;
+            line-height: 1.8em;
+            font-family: 'Open Sans';
+            font-size: 15px !important;
+
+
+        }
+
+
+
+        .card-button-link {
+
+            color: rgb(255, 255, 255);
+            font-size: 2.8em;
+            /* margin: 2em; */
+        }
+
+        .card-button-link:visited {
+            color: rgb(255, 255, 255);
+        }
+
+        .card-button-link:hover {
+            text-decoration: none;
+            color: rgb(210, 210, 210);
+        }
+		
+		
 	</style>
 </head>
 
@@ -527,7 +618,7 @@ background-clip: border-box;
 					popularize advanced therapy as well as synthetic biology. The focus of our work on human social
 					practices consist of three parts.</p>
 				<div class="clearfix" style="margin-bottom: 5em;"></div>
-				<div class="row clearfix">
+				<!--<div class="row clearfix">
 					<div class="col-xs-4">
 						<h3>Product design and improvement</h3>
 						<br />
@@ -552,7 +643,45 @@ background-clip: border-box;
 							students in the remote regions. We also establish our own WeChat Official Accounts Platform
 							to propagandize oncolytic virus and synthetic biology.</p>
 					</div>
-				</div>
+				</div>-->
+				<div class="row equal-height">
+		            <div class="col-xs-12 col-sm-4 add-padding">
+		                <div class="card card-pink">
+		                	<img class="card-img-top"
+		                        src="https://2019.igem.org/wiki/images/e/e9/T--SYSU-Medicine--drug1.gif">
+		                    <div class="card-body">
+		                        <h3 class="card-title">Product design and improvement</h3>
+		                        <p class="card-text">
+		                            Through the public survey and the interviews with specialists, we decided to choose oncolytic virus therapy and improve it again and again in order to meet the needs of patients and society.
+		                        </p>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="col-xs-12 col-sm-4 add-padding">
+		                <div class="card card-pink">
+		                	<img class="card-img-top"
+		                        src="https://2019.igem.org/wiki/images/c/cf/T--SYSU-Medicine--m2.gif">
+		                    <div class="card-body">
+		                        <h3 class="card-title">Therapy promotion</h3>
+		                        <p class="card-text">
+		                        	Limited by its deficiencies of oncolytic virus, this kind of therapy is not as widespread and popular as other biotherapies. For that reason, we make an effort to engineer the virus to make it more available and harmless for clinical treatment by having interview with specialists, collaborating with other Igem teams and conducting public surveys.
+		                        </p>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="col-xs-12 col-sm-4 add-padding">
+		                <div class="card card-pink">
+		                	<img class="card-img-top"
+		                        src="https://2019.igem.org/wiki/images/a/ac/T--SYSU-Medicine--drug3.gif">
+		                    <div class="card-body">
+		                        <h3 class="card-title">Biosynthesis publicity</h3>
+		                        <p class="card-text">
+		                        	Our purpose for the public education part is to develop new opportunities to encourage more people to learn about synthetic biology and to shape it. In order to realize it, we took the opportunity to participate in YGA program where we have supporting education for high school students in the remote regions. We also establish our own WeChat Official Accounts Platform to propagandize oncolytic virus and synthetic biology.
+		                        </p>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
 			</div>
 		</div>
 	</div>
@@ -591,7 +720,7 @@ background-clip: border-box;
 												</a>
 											</h4>
 										</div>
-										<div id="step-1" class="panel-collapse collapse in">
+										<div id="step-1" class="panel-collapse collapse">
 											<div class="panel-body">
 												<p>
 													After we harnessed our initial idea, we conducted a survey and found
@@ -615,7 +744,7 @@ background-clip: border-box;
 												</a>
 											</h4>
 										</div>
-										<div id="step-2" class="panel-collapse collapse in">
+										<div id="step-2" class="panel-collapse collapse">
 											<div class="panel-body">
 												<p>
 													We focused on M1 virus. It was seen mostly in the tropical areas and
@@ -638,7 +767,7 @@ background-clip: border-box;
 												</a>
 											</h4>
 										</div>
-										<div id="step-3" class="panel-collapse collapse in">
+										<div id="step-3" class="panel-collapse collapse">
 											<div class="panel-body">
 												<p>
 													We soon ran into many difficulties in our experiments. But after
@@ -687,7 +816,7 @@ background-clip: border-box;
 												</a>
 											</h4>
 										</div>
-										<div id="step-5" class="panel-collapse collapse in">
+										<div id="step-5" class="panel-collapse collapse">
 											<div class="panel-body">
 												<p>
 													During summer vocation, our team took the opportunity to participate
@@ -738,7 +867,7 @@ background-clip: border-box;
 												</a>
 											</h4>
 										</div>
-										<div id="step-7" class="panel-collapse collapse in">
+										<div id="step-7" class="panel-collapse collapse">
 											<div class="panel-body">
 												<p>
 													We invited many virologists to have dinner together in order to have

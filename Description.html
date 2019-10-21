@@ -1,6 +1,783 @@
 <!DOCTYPE html>
 <html>
 <style type="text/css">
+    /* all in one */
+    /* 初始化钢琴动画 */
+
+    @keyframes piano-init {}
+
+    @-webkit-keyframes piano-init {}
+
+    /* 钢琴键激活 */
+
+    @keyframes key-activate {
+        0% {
+            width: 100%;
+            height: 2rem;
+        }
+
+        100% {
+            width: 150%;
+            height: 3rem;
+        }
+    }
+
+    @-webkit-keyframes key-activate {
+        0% {
+            width: 100%;
+            height: 100%;
+        }
+
+        100% {
+            width: 150%;
+            height: 150%;
+        }
+    }
+
+    @keyframes key-kernel-activate {
+        0% {
+            background-color: rgb(186, 186, 186);
+        }
+
+        100% {
+            background-color: rgb(255, 55, 68);
+        }
+    }
+
+    @-webkit-keyframes key-kernel-activate {
+        0% {
+            background-color: rgb(255, 55, 68);
+        }
+
+        100% {
+            background-color: rgb(186, 186, 186);
+        }
+    }
+
+    /* 钢琴键取消激活 */
+
+    @keyframes key-deactivate {
+        0% {
+            background-color: rgb(255, 55, 68);
+        }
+
+        100% {
+            background-color: rgb(186, 186, 186);
+        }
+    }
+
+    @-webkit-keyframes key-deactivate {}
+
+    /* 钢琴键内部字体淡入 */
+
+    @keyframes key-title-in {}
+
+    @-webkit-keyframes key-title-in {}
+
+    /* 钢琴内部字体淡出 */
+
+    @keyframes key-title-out {}
+
+    @-webkit-keyframes key-title-out {}
+
+    /* 鼠标悬停在content */
+
+    @keyframes content-hover-2item {
+        0% {
+            width: 50%;
+        }
+
+        100% {
+            width: 40%;
+        }
+    }
+
+    @-webkit-keyframes content-hover-2item {
+        0% {
+            width: 50%;
+        }
+
+        100% {
+            width: 40%;
+        }
+    }
+
+    /* @keyframes {}
+@-webkit-keyframes{} */
+
+    .piano-subpage {
+        background-color: rgba(0, 0, 0, 0);
+        position: fixed;
+        z-index: 200;
+        float: left;
+        top: 20rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    /* demo继承的子类piano */
+
+    .piano-subpage-demo {
+        width: 16rem;
+        /* height: 44rem; */
+    }
+
+    .piano-subpage-key {
+        /* margin: 1rem 0rem 1rem 0; */
+        width: 8vw;
+        height: 1vh;
+        background-color: rgba(0, 0, 0, 0);
+        /*  */
+        animation-name: key-activate;
+        -webkit-animation-name: key-activate;
+    }
+
+    .animation {
+        animation-duration: 0.4s;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+        -webkit-animation-duration: 0.4s;
+        -webkit-animation-timing-function: ease;
+        -webkit-animation-fill-mode: forwards;
+    }
+
+    .piano-subpage .key-kernel {
+        /* background-color: rgb(255,55,68); */
+        background-color: rgb(186, 186, 186);
+        height: 100%;
+        border-radius: 0rem 0.3rem 0.3rem 0rem;
+        -moz-border-radius: 0.3rem;
+        /* Old Firefox */
+        box-shadow: 0.4rem 0.4rem 0.2rem rgba(180, 180, 180, 50%);
+        /*  */
+        animation-name: key-kernel-activate;
+        -webkit-animation-name: key-kernel-activate;
+        animation-play-state: running;
+        -webkit-animation-play-state: running;
+    }
+
+    .key-kernel-0 {
+        width: 80%;
+    }
+
+    .key-kernel-1 {
+        width: 85;
+    }
+
+    .key-kernel-2 {
+        width: 50%;
+    }
+
+    .key-kernel-3 {
+        width: 62%;
+    }
+
+    .key-kernel-4 {
+        width: 90%;
+    }
+
+    .key-kernel-5 {
+        width: 48%;
+    }
+
+    /* 下面是页面内容css */
+
+    .sub-content {
+        width: 90vw;
+        /* background-color: rgb(186,186,186); */
+        margin: 0 5vw 0 5vw;
+    }
+
+    .switch {
+        background-color: brown;
+        opacity: 0;
+        position: absolute;
+        height: inherit;
+        width: inherit;
+        float: left;
+        z-index: 10;
+    }
+
+    .mask-0,
+    .mask-1,
+    .mask-2,
+    .mask-3,
+    .mask-4 {
+        /* Safari for macOS & iOS */
+        -webkit-backdrop-filter: blur(5px);
+        /* Google Chrome */
+        backdrop-filter: blur(5px);
+    }
+
+    .m00,
+    .m10,
+    .m13,
+    .m21,
+    .m30,
+    .m32,
+    .m40,
+    .m42 {
+        background-color: rgb(25, 46, 67, 0.7) !important;
+    }
+
+    .m01,
+    .m11,
+    .m12,
+    .m20,
+    .m31,
+    .m41 {
+        background-color: rgba(255, 55, 68, 0.7) !important;
+    }
+
+    .mask-front-content-box {
+        position: absolute;
+        height: inherit;
+        width: inherit;
+        float: left;
+        z-index: 9;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .mask-front-content-10,
+    .mask-front-content-11,
+    .mask-front-content-12,
+    .mask-front-content-13 {
+        width: 50%;
+        height: 50%;
+    }
+
+    .mask-front-content-10>p,
+    .mask-front-content-11>p,
+    .mask-front-content-12>p,
+    .mask-front-content-13>p {
+        font-size: 2vw !important;
+    }
+
+    .mask-front-content-00,
+    .mask-front-content-01 {
+        width: 50%;
+        height: initial;
+    }
+
+    .mask-front-content-00>p,
+    .mask-front-content-01>p {
+        font-size: 6vw !important;
+    }
+
+    .mask-front-content-20,
+    .mask-front-content-21 {
+        width: 50%;
+        height: initial;
+    }
+
+    .mask-front-content-20>p,
+    .mask-front-content-21>p {
+        font-size: 3.5vw !important;
+    }
+
+    .mask-front-content-30,
+    .mask-front-content-31,
+    .mask-front-content-32 {
+        width: 100%;
+        height: 50%;
+    }
+
+    .mask-front-content-40,
+    .mask-front-content-41,
+    .mask-front-content-42 {
+        width: 100%;
+        height: 50%;
+    }
+
+    .mask-front-content-40>p,
+    .mask-front-content-41>p,
+    .mask-front-content-42>p {
+        font-size: 3.5vw !important;
+    }
+
+    p {
+        color: rgb(255, 255, 255);
+        font-size: 1vw;
+    }
+
+    .mask-front-content {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .mask-front-content>p {
+        /* font-size: 6vw !important; */
+    }
+
+    .mask>div {
+        display: center;
+    }
+
+    /* content-0 */
+
+    /* #content-0{
+    height: 75vw;
+} */
+
+    #content-0 .mask {
+        height: inherit;
+        width: inherit;
+        /* display: flex; */
+        position: absolute;
+        float: left;
+        z-index: 5;
+    }
+
+    .mask-0 {
+        height: inherit;
+        width: 45vw;
+        position: relative;
+    }
+
+    .m00 {
+        background-color: rgb(25, 46, 67, 0.7);
+        /* flex-grow: 1; */
+        left: 0;
+        float: left;
+    }
+
+    .m01 {
+        background-color: rgb(255, 55, 68);
+        /* flex-grow: 1; */
+        float: right;
+        right: 0;
+        /* animation: content-hover-2item 0.2s ease 0s 1 normal forwards; */
+    }
+
+    /* content-1 */
+
+    #content-1 {
+        height: 36vw;
+    }
+
+    #content-1 .mask {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        grid-template-columns: 1fr 1fr;
+        width: 90vw;
+        height: 36vw;
+        position: absolute;
+        float: left;
+        z-index: 5;
+    }
+
+    .content-1s {
+        width: 90vw;
+        height: 15vw;
+    }
+
+    .mask-1 {
+        width: 45vw;
+        height: 18vw;
+        /* == #content-1 height/2 */
+        position: absolute;
+    }
+
+    .m10 {
+        background-color: rgb(25, 46, 67);
+        left: 0;
+        float: left;
+    }
+
+    .m11 {
+        background-color: rgb(255, 55, 68);
+        float: right;
+        right: 0;
+    }
+
+    .m12 {
+        background-color: rgb(255, 55, 68);
+        left: 0;
+        float: left;
+        bottom: 0;
+    }
+
+    .m13 {
+        background-color: rgb(25, 46, 67);
+        float: right;
+        right: 0;
+        bottom: 0;
+    }
+
+    /* content-2 */
+
+    #content-2 {
+        height: 16vw;
+    }
+
+    #content-2 .mask {
+        height: inherit;
+        width: inherit;
+        /* display: flex; */
+        position: absolute;
+        float: left;
+        z-index: 5;
+    }
+
+    .mask-2 {
+        height: inherit;
+        width: 45vw;
+        position: relative;
+    }
+
+    .m20 {
+        background-color: rgb(255, 55, 68);
+        /* flex-grow: 1; */
+        left: 0;
+        float: left;
+    }
+
+    .m21 {
+        background-color: rgb(25, 46, 67);
+        /* flex-grow: 1; */
+        float: right;
+        right: 0;
+        /* animation: content-hover-2item 0.2s ease 0s 1 normal forwards; */
+    }
+
+    /* content-3 */
+
+    #content-3 {
+        height: 60vw;
+    }
+
+    #content-3 .mask {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr 1fr;
+        width: 90vw;
+        height: 75vw;
+        position: absolute;
+        float: left;
+        z-index: 5;
+    }
+
+    .mask-3 {
+        width: 90vw;
+        height: 30vw;
+        /* == #content-1 height/2 */
+        position: absolute;
+    }
+
+    .m30 {
+        background-color: rgb(25, 46, 67);
+        left: 0;
+        float: left;
+    }
+
+    .m31 {
+        background-color: rgb(255, 55, 68);
+        top: 0;
+        float: right;
+        right: 0;
+    }
+
+    .m32 {
+        background-color: rgb(25, 46, 67);
+        left: 0;
+        top: 30vw;
+        float: left;
+    }
+
+    /* content-4 */
+    #content-4 {
+        height: 60vw;
+    }
+
+    #content-4 .mask {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr 1fr;
+        width: 90vw;
+        height: 75vw;
+        position: absolute;
+        float: left;
+        z-index: 5;
+    }
+
+    .mask-4 {
+        width: 90vw;
+        height: 30vw;
+        /* == #content-1 height/2 */
+        position: absolute;
+    }
+
+    .m40 {
+        background-color: rgb(25, 46, 67);
+        left: 0;
+        float: left;
+    }
+
+    .m41 {
+        background-color: rgb(255, 55, 68);
+        top: 0;
+        float: right;
+        right: 0;
+    }
+
+    .m42 {
+        background-color: rgb(25, 46, 67);
+        left: 0;
+        top: 30vw;
+        float: left;
+    }
+
+    /* title */
+
+    .title-box-new {
+        margin: 5vw 5vw 2vw 5vw;
+        position: relative;
+    }
+
+    .title-big {
+        margin: 5vw 25vw;
+        width: 50vw;
+        height: 10vw;
+    }
+
+    .title-big h1 {
+        font-size: 6vw !important;
+        line-height: 10vw;
+    }
+
+    .title-big>.title-box-title {
+        border-left-style: none !important;
+        border-bottom-style: solid;
+        border-color: rgb(255, 55, 68);
+        border-bottom-width: 0.2vw;
+    }
+
+    .title-0 {
+        width: 24vw;
+        height: 5vw;
+    }
+
+    .title-1 {
+        width: 35vw;
+        height: 5vw;
+    }
+
+    .title-2 {
+        width: 16vw;
+        height: 5vw;
+    }
+
+    .title-3 {
+        width: 35vw;
+        height: 5vw;
+    }
+
+    .title-4 {
+        width: 34vw;
+        height: 6.8vw;
+    }
+
+    .reference-title {
+        font-size: 5vw !important;
+    }
+
+    .reference-content {
+        margin: 5vw;
+    }
+
+    .reference-content>p {
+        color: rgb(120, 120, 120) !important;
+    }
+
+    .title-box-mask {
+        position: absolute;
+        /* width: 40px; */
+        height: inherit;
+        background-color: rgb(255, 55, 68);
+    }
+
+    .title-box-mask-left {
+        left: 0;
+    }
+
+    .title-box-mask-right {
+        right: 0;
+    }
+
+    .title-box-title {
+        width: inherit;
+        height: inherit;
+        border-left-style: solid;
+        border-color: rgb(255, 55, 68);
+        border-left-width: 0.2vw;
+        opacity: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center !important;
+    }
+
+    .title-box-title>h1 {
+        vertical-align: middle;
+        text-align: center;
+        /* margin: 0; */
+        font-size: 3vw;
+        color: rgb(25, 46, 67);
+        margin: 0 !important;
+
+    }
+
+    /* rich-content */
+
+    .rich-content-box {
+        display: flex;
+        flex-direction: row;
+        width: inherit;
+        height: inherit;
+        flex-wrap: wrap;
+    }
+
+    .rich-content {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    .rich-content-00,
+    .rich-content-01 {
+        flex-grow: 1;
+    }
+
+    .rich-content-00>p,
+    .rich-content-01>p {
+
+        font-size: 1.5vw !important;
+        color: rgb(25, 46, 67) !important;
+        text-align: justify !important;
+    }
+
+    .rich-content>p {
+        font-size: 1.5vw !important;
+        color: rgb(25, 46, 67) !important;
+        text-align: justify !important;
+    }
+
+    .rich-content-10,
+    .rich-content-11,
+    .rich-content-12,
+    .rich-content-13 {
+        width: 45%;
+        flex-grow: 1;
+        height: 50%;
+        padding: 0% 2.5%;
+    }
+
+    .rich-content-00,
+    .rich-content-01 {
+        width: 45%;
+        padding: 0% 2.5%;
+        height: 100%;
+    }
+
+    .rich-content-20,
+    .rich-content-21 {
+        width: 45%;
+        padding: 0% 2.5%;
+        height: 100%;
+    }
+
+    .rich-content-30,
+    .rich-content-31,
+    .rich-content-32 {
+        width: 100%;
+        height: 50%;
+        ;
+    }
+
+    .rich-content-40,
+    .rich-content-41,
+    .rich-content-42 {
+        width: 100%;
+        height: 50%;
+        ;
+    }
+
+    .introduction {
+        margin: 4vw 25vw 3vw 25vw;
+    }
+
+    .introduction>p {
+        font-size: 1.5vw !important;
+        color: rgb(120, 120, 120) !important;
+    }
+
+    .img-bg-0,
+    .img-bg-1 {
+        width: 10vw;
+        float: left;
+    }
+
+    .img-pd-0,
+    .img-pd-1,
+    .img-pd-2,
+    .img-pd-3 {
+        width: 8vw;
+        float: left;
+    }
+
+    .img-approach-0,
+    .img-approach-1 {
+        width: 10vw;
+        float: left;
+    }
+
+    .img-fp-0,
+    .img-fp-1,
+    .img-fp-2 {
+        width: 10vw;
+        float: left;
+    }
+
+    /* content-0 scale */
+    .need-scale-0 {}
+
+    .need-scale-rich-0 {
+        /* height: 30vw; */
+        /* transform: scaleY(0.3); */
+        opacity: 0;
+    }
+
+    .rich-content-box-shadow {
+        position: absolute;
+        width: 90vw;
+        display: flex;
+        flex-direction: row;
+        height: inherit;
+        flex-wrap: wrap;
+    }
+
+    /* .title-margin{
+    margin: 5vw 5vw 2vw 5vw;
+}
+.left-block{
+    width: 0.2vw;
+}
+.title-mask{
+    position: absolute;
+    height: 1%;
+    width: 16vw;
+    background-color: lightcoral;
+} */
+
+
+    /* new css */
+
+    /* all in one end */
     .b_have_border {
         border-left-style: solid;
         border-left-width: 2px;
@@ -27,13 +804,13 @@
     <link type="text/css" rel="stylesheet"
         href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
     <!-- standard head end -->
-    <script type="text/javascript"
+    <!-- <script type="text/javascript"
         src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/description&action=raw&ctype=text/javascript"></script>
-    <!-- <link type="text/css" rel="stylesheet"
+    <link type="text/css" rel="stylesheet"
         href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/description&action=raw&ctype=text/css" /> -->
 
 
-    <link type="text/css" rel="stylesheet" href="./Description.css">
+    <!-- <link type="text/css" rel="stylesheet" href="./Description.css"> -->
 
 
     <!-- <script src="./Description.js"></script> -->
@@ -210,7 +987,7 @@
     <div class="title-box-new title-0">
         <div class="title-box-mask"></div>
         <div class="title-box-title">
-            <h1>BACKGROUND</h1>
+            <h1>Background</h1>
         </div>
     </div>
     <div class="introduction">
@@ -312,13 +1089,7 @@
                         of
                         tumor-specific cell lysis together with immune stimulation, are emerging as important agents in
                         cancer treatment.</p>
-                    <p>Oncolytic virus (OV) immunotherapy is a therapeutic approach to cancer treatment that utilizes
-                        native or genetically modified viruses that selectively replicate within tumor cells. OVs
-                        mediate
-                        antitumor activity through two distinct mechanisms of action: selective replication within
-                        neoplastic cells, resulting in a direct lytic effect on tumor cells and induction of systemic
-                        antitumor immunity [1].
-                    </p>
+
 
 
 
@@ -333,18 +1104,18 @@
                     <p><b class="b_have_border">M1</b><br>M1 is a strain of Getah-like alphavirus that was isolated from
                         culicine mosquitoes
                         collected on Hainan Island of China which possesses selective and potent antitumor activity
-                        through intravenous administration [2].</p>
+                        through intravenous administration [1].</p>
                     <p>Compared with other oncolytic virus, the most significant advantage of M1 is that it is highly
                         safe
                         and can be injected intravenously. Getah virus is transmitted mainly among horses and pigs, and
                         it
-                        has not been linked to human illness [3]. <a
+                        has not been linked to human illness [2]. <a
                             href="https://2019.igem.org/Team:SYSU-Medicine/Safety">[See more in our Safety part]</a></p>
                     <p>At the same time, studies have shown that M1 has a broad anti-cancer spectrum. It can selectively
                         infect and kill 13 kinds of refractory high-incidence malignant tumor cells through triple
                         mechanism
                         of direct oncolytic, peripheral cell killing and immune activation, but has no killing effect on
-                        normal cells[4].</p>
+                        normal cells[3].</p>
                     <p>To sum up, oncolytic virus M1 has the advantages of broad anti-tumor spectrum, safety,
                         effectiveness, precision treatment, etc. It has a good potential for cancer treatment and could
                         serve as a good foundation and platform for further synthetic biology research.</p>
@@ -366,242 +1137,643 @@
     </div>
 
 
-
+    <div class="title-box-new title-0">
+        <div class="title-box-mask"></div>
+        <div class="title-box-title">
+            <h1>Mechanism</h1>
+        </div>
+    </div>
     <div class="container-fluid">
+        <style type="text/css">
+            .panel-title {
+                font-size: 2em !important;
+                color: rgb(25, 46, 67);
+            }
+
+            .panel-body {
+                border-top: 1px solid #ddd;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+            }
+
+            .panel-body img {
+                width: 90%;
+            }
+
+            .panel-body p {
+                color: rgb(25, 46, 67);
+                font-size: 1.5em;
+
+                text-indent: 1em;
+                text-align: justify !important;
+            }
+
+            /*去掉ul默认的点*/
+
+            .timeline ul {
+                list-style: none;
+            }
+
+            /*时间轴的线条*/
+
+            .timeline ul li {
+                list-style-type: none;
+                position: relative;
+                width: 24px;
+                margin: 0 100px;
+                padding-top: 50px;
+                background: rgba(36, 59, 82, 0.38);
+                /*background: linear-gradient(180deg, rgba(255, 55, 68, 0), rgba(255, 55, 68, 0.5));*/
+                /*动画*/
+                transition: all 0.5s ease-in-out;
+
+            }
+
+            /*时间轴最后的箭头*/
+
+            .timeline ul li:last-of-type:after {
+                /*-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);*/
+                content: '';
+                /*隐藏了*/
+                /*visibility: hidden;*/
+                position: absolute;
+                /*bottom: -4%;*/
+                width: 0px;
+                height: 0px;
+                left: -24px;
+                border-width: 36px;
+                border-style: solid;
+                border-color: rgba(36, 59, 82, 0.38) white white white;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                z-index: 2;
+                color: white;
+
+            }
+
+            /* 时间轴旁边的卡片 */
+
+            .timeline ul li>div {
+                position: relative;
+                bottom: 0;
+                width: 700px;
+                width: calc(70vw - 15px);
+                width: -webkit-calc(70vw - 15px);
+                flex-direction: column;
+                padding: 20px;
+                background: #fff;
+                box-shadow: 4px 6px 12px 1px rgba(25, 46, 67, 0.2);
+                border-radius: 5px;
+                display: flex;
+                align-items: initial;
+                /*visibility: hidden;*/
+            }
+
+            /*圆圈*/
+
+            .timeline ul li time {
+                /*绝对定位*/
+                position: absolute;
+                /*background: #f5af19;*/
+                font-size: 100%;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                /*top: -50px;*/
+                left: -38px;
+                /*border-style:solid;
+        border-color: rgba(252, 56, 56, 0.2);*/
+                background: rgb(66, 95, 123);
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                letter-spacing: 2px;
+
+                /*-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);*/
+                z-index: 10;
+                box-shadow: 0px 4px 5px 2px #192e4387;
+                /*动画 消失和出现*/
+                /*transition: all 0.5s ease-in-out;*/
+                /*visibility: hidden;*/
+
+
+            }
+
+            /*卡片内部的小框
+    
+    .timeline ul li div>div {
+        display: flex;
+        width: 95%;
+        /*内部的弹性盒元素的排列方向
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }*/
+            /*卡片内部的框内部的段落*/
+
+            .timeline ul li div div p {
+                text-align: left;
+            }
+
+            .timeline ul li a {
+                color: black;
+                text-align: left;
+            }
+
+            /*卡片内部的小框的外间距*/
+
+            .timeline ul li div>div {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            /* 奇数编号的卡片 相对于时间轴的位置（relative） */
+
+            .timeline ul li>div {
+                left: 100px;
+            }
+
+            /*变色动画部分开始*/
+            /*变色动画部分开始*/
+
+            .timeline ul li div {
+                /*visibility: hidden;
+        opacity: 0;*/
+                /*控制所有卡片及其内部元素的动画速度*/
+                /*color: gray;*/
+                /*transition: all 0.5s ease-in-out;*/
+            }
+
+            .timeline ul li:nth-of-type(odd) div {
+                /*transform: translate3d(100px, -10px, 0) rotate(10deg);
+        -webkit-transform: translate3d(100px, -10px, 0) rotate(10deg);*/
+            }
+
+            .timeline ul li.in-view {
+                /*background: rgba(255, 55, 68, 0.8);*/
+                /*background: linear-gradient(180deg, rgba(255, 55, 68, 0.5), rgba(255, 55, 68, 1));*/
+            }
+
+            .timeline ul li.in-view div {
+                /* 消除静态属性，或者修改属性值，就会发生动画transition */
+                /*visibility: visible;*/
+                /*transform: none;*/
+                /*-webkit-transform: none;*/
+                /*color: rgba(25, 46, 67, 1);*/
+            }
+
+            .timeline ul li.in-view time {
+                /*visibility: visible;*/
+            }
+
+            /*.timeline ul li.in-view div time {
+        color: white;
+    }*/
+            /*变色动画部分结束*/
+            /*移动适配*/
+
+            @media screen and (max-width: 900px) {
+                .timeline ul li div {
+                    width: 350px;
+                    width: calc(80vw - 200px);
+                    width: -webkit-calc(80vw - 200px);
+                    flex-direction: column;
+                }
+
+                .timeline ul li div div {
+                    width: 95%;
+                    margin: 10px;
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                .timeline ul li {
+                    margin-left: 15px;
+                    left: 40px;
+                }
+
+                .timeline ul li div {
+                    left: 80px;
+                    width: 300px;
+                    width: calc(100vw - 200px);
+                    width: -webkit-calc(100vw - 200px);
+                }
+            }
+        </style>
         <div class="row">
-            <div class="col-xs-3"></div>
-            <div class="col-xs-9">
+            <div class="col-xs-12">
+                <section class="timeline">
+                    <ul>
 
-                <div class="row">
-                    <div class="col-xs-6 col-xs-offset-3">
-                        <div class="title-box-new title-0">
-                            <div class="title-box-mask"></div>
-                            <div class="title-box-title">
-                                <h1>Mechanism</h1>
+                        <li>
+                            <time> </time>
+                            <div>
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        【Therapies】
+                                    </h3>
+                                </div>
+                                <div class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <p>During the past two decades, the paradigm for cancer treatment has evolved
+                                            from relatively
+                                            non-specific cytotoxic agents to selective, mechanism-based therapeutics.
+                                        </p>
+                                        <p>Cancer chemotherapies were initially identified through screens for compounds
+                                            that killed
+                                            rapidly
+                                            dividing cells. Take actinomycin as an example, antibiotics of actinomycin
+                                            series are
+                                            classic
+                                            drugs
+                                            for tumor chemotherapy. This application is based on the ability of
+                                            actinomycins to form
+                                            specific
+                                            stable complexes with DNA, leading to inhibition of RNA polymerase reaction
+                                            and resulting in
+                                            suppression of protein synthesis and cell division [4]. These drugs remain a
+                                            backbone of
+                                            current
+                                            treatment, but are limited by a narrow therapeutic index, significant
+                                            toxicities, and
+                                            frequently
+                                            acquired resistance.
+                                        </p>
+                                        <p> More recently, an improved understanding of cancer pathogenesis has given
+                                            rise to new
+                                            treatment
+                                            options, including targeted agents and cancer immunotherapy. Targeted
+                                            approaches aim to
+                                            inhibit
+                                            molecular pathways that are critical to tumor growth and maintenance,
+                                            whereas immunotherapy
+                                            endeavors to stimulate a host response that effectuates long-lived tumor
+                                            destruction [5].
+                                        </p>
+                                        <p>The integration of these potentially complementary research fields provides
+                                            new opportunities
+                                            to
+                                            improve cancer treatments. Additional insights into the effects of targeted
+                                            therapies, along
+                                            with
+                                            conventional chemotherapy and radiation therapy, on the induction of
+                                            antitumor immunity will
+                                            help to
+                                            advance the design of combination strategies that increase the rate of
+                                            complete and durable
+                                            clinical
+                                            response in patients [6].</p>
+                                        <img src="https://2019.igem.org/wiki/images/4/4d/T--SYSU-Medicine--des_2.png">
+                                        <p style="font-size: 1em;" class="fig-text">Figure 1.Fukuhara, H., Y. Ino and T.
+                                            Todo, Oncolytic virus therapy: A new era of cancer treatment at dawn. Cancer
+                                            Sci, 2016. 107(10): p. 1373-1379. </p>
+
+                                    </div>
+                                </div>
+
                             </div>
-                        </div>
-                    </div>
-                    <div class="clearfix" style="margin-bottom: 4em;"></div>
-                    <style type="text/css">
-                        .Mechanism-text p {
-                            color: rgb(25, 46, 67);
-                            font-size: 1.5em;
-                            text-indent: 1em;
-                            text-align: justify;
+                        </li>
+                        <li>
+                            <time> </time>
+                            <div>
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        【Oncolytic Virus】
+                                    </h3>
+                                </div>
+                                <div class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <p>Oncolytic virus (OV) immunotherapy is a therapeutic approach to cancer
+                                            treatment that
+                                            utilizes
+                                            native or genetically modified viruses that selectively replicate within
+                                            tumor cells. OVs
+                                            mediate antitumor activity through two distinct mechanisms of action:
+                                            selective replication
+                                            within neoplastic cells, resulting in a direct lytic effect on tumor cells
+                                            and induction of
+                                            systemic antitumor immunity [7].</p>
+                                        <p>The tumor selectivity of OVs is largely conferred by tumor-specific
+                                            aberrations in signaling
+                                            pathways that normally sense and block viral replication [8]. It is now well
+                                            established
+                                            that
+                                            cancer-specific aberrations in RAS, TP53, RB1, PTEN, genes encoding proteins
+                                            involved in the
+                                            WNT
+                                            signaling pathway and other cancer-related genes can predispose cancer cells
+                                            to virus
+                                            infection
+                                            [9]. This is due to crosstalk between oncogenic signaling and antiviral
+                                            pathways, which
+                                            creates
+                                            a permissive environment for viral replication.</p>
+                                        <p>The immune response to oncolytic viruses appears to be a more important
+                                            component of the
+                                            antitumor effect. In nature, viruses have evolved multiple strategies to
+                                            overcome immune
+                                            attack,
+                                            enabling OVs to promote an immune response against the tumor cells by
+                                            allowing tumor antigen
+                                            presentation in the context of an active viral infection.</p>
+                                        <img src="https://2019.igem.org/wiki/images/a/aa/T--SYSU-Medicine--des_3.png">
+                                        <p style="font-size: 1em;" class="fig-text">Figure 2.Fukuhara, H., Y. Ino and T.
+                                            Todo, Oncolytic virus therapy: A new era of cancer treatment at dawn. Cancer
+                                            Sci, 2016. 107(10): p. 1373-1379. </p>
+                                        <img src="https://2019.igem.org/wiki/images/5/5d/T--SYSU-Medicine--des_4.png">
+                                        <p style="font-size: 1em;" class="fig-text">Figure 3.Fukuhara, H., Y. Ino and T.
+                                            Todo, Oncolytic virus therapy: A new era of cancer treatment at dawn. Cancer
+                                            Sci, 2016. 107(10): p. 1373-1379. </p>
+                                        <p>As we gain a more complete understanding of the molecular interplay between
+                                            viruses and our
+                                            immune systems, it becomes increasingly possible to design therapeutic
+                                            strategies that turn
+                                            viruses from stealth pathogens to finely tuned ‘viroceuticals’ that initiate
+                                            both
+                                            viral-mediated
+                                            and immune-mediated attacks against cancers [10].</p>
+                                        <p>The effectiveness of OVs has been demonstrated in many preclinical studies
+                                            and recently in
+                                            humans, with US Food and Drug Administration approval of the oncolytic
+                                            herpesvirus
+                                            Talimogene
+                                            laherparepvec (T-Vec) in advanced melanoma, a breakthrough for the field
+                                            [11]. Moreover,
+                                            some of
+                                            the cancer-targeted multimechanistic oncolytic viruses have been proven to
+                                            be well-tolerated
+                                            in
+                                            clinical trials, with patients exhibiting only mild flu-like symptoms,
+                                            offering great
+                                            potential
+                                            for increasing efficacy while eliminating the side effects [12]. Thus, the
+                                            OV approach to
+                                            cancer
+                                            therapy is becoming more interesting for scientists, clinicians, and the
+                                            public.
+                                        </p>
+                                    </div>
+                                </div>
 
-                        }
-                    </style>
-                    <div class="col-xs-8 col-xs-offset-3 Mechanism-text">
-                        <h3>【Therapies】</h3>
-                        <p>During the past two decades, the paradigm for cancer treatment has evolved from relatively
-                            non-specific cytotoxic agents to selective, mechanism-based therapeutics.</p>
-                        <p>Cancer chemotherapies were initially identified through screens for compounds that killed
-                            rapidly
-                            dividing cells. Take actinomycin as an example, antibiotics of actinomycin series are
-                            classic
-                            drugs
-                            for tumor chemotherapy. This application is based on the ability of actinomycins to form
-                            specific
-                            stable complexes with DNA, leading to inhibition of RNA polymerase reaction and resulting in
-                            suppression of protein synthesis and cell division [4]. These drugs remain a backbone of
-                            current
-                            treatment, but are limited by a narrow therapeutic index, significant toxicities, and
-                            frequently
-                            acquired resistance.
-                        </p>
-                        <p> More recently, an improved understanding of cancer pathogenesis has given rise to new
-                            treatment
-                            options, including targeted agents and cancer immunotherapy. Targeted approaches aim to
-                            inhibit
-                            molecular pathways that are critical to tumor growth and maintenance, whereas immunotherapy
-                            endeavors to stimulate a host response that effectuates long-lived tumor destruction [5].
-                        </p>
-                        <p>The integration of these potentially complementary research fields provides new opportunities
-                            to
-                            improve cancer treatments. Additional insights into the effects of targeted therapies, along
-                            with
-                            conventional chemotherapy and radiation therapy, on the induction of antitumor immunity will
-                            help to
-                            advance the design of combination strategies that increase the rate of complete and durable
-                            clinical
-                            response in patients [6].</p>
+                            </div>
+                        </li>
+                        <li>
+                            <time> </time>
+                            <div>
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        【M1】
+                                    </h3>
+                                </div>
+                                <div class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <P>As mentioned above, M1 virus was first isolated from culicine mosquitoes in
+                                            Baoting Li and
+                                            Miao
+                                            autonomous county, Hainan island in 1964. Phylogenetic analysis showed that
+                                            M-1 grouped with
+                                            GETV first and then grouped together with SAGV. The genome of M1 is
+                                            single-plus RNA, with a
+                                            total length of 11,696 nt, encoding 4 non-structural proteins (NS1, NS2, NS3
+                                            and RdRP) and 5
+                                            structural proteins (E1, E2, E3, C and 6K) [13].</P>
+                                        <P> Compared with the oncolytic virus (including modified poxvirus, herpes
+                                            virus, measles virus,
+                                            Newcastle disease virus, etc.) currently in clinical trials and the approved
+                                            H101 and T-Vec
+                                            viruses, the most significant advantage of M1 is that it is highly safe and
+                                            can be injected
+                                            intravenously. Getah virus, which is highly similar to M1 virus, mainly
+                                            infects horses and
+                                            pigs,
+                                            causing mild symptoms such as fever, rash, edema of hind limbs and enlarged
+                                            lymph nodes, and
+                                            generally recovered within 1 week, presenting a benign course [14]. Although
+                                            Getah virus is
+                                            widely distributed in southeast Asia, Australia, Japan, Mongolia, Russia and
+                                            China, no human
+                                            diseases caused by Getah virus have been reported so far. Domestic and
+                                            foreign
+                                            epidemiological
+                                            studies have shown that Getah virus antibody can be detected in normal
+                                            people, which
+                                            explains
+                                            the advantages of a virus with lower risk of disease from another
+                                            perspective [15].</P>
+                                        <img src="https://2019.igem.org/wiki/images/5/56/T--SYSU-Medicine--des_5.png">
+                                        <p style="font-size: 1em;" class="fig-text">Figure 4.Taguchi, S., et al.,
+                                            Current status of clinical trials assessing oncolytic virus therapy for
+                                            urological cancers. International Journal of Urology, 2017. 24(5): p.
+                                            342-351. </p>
+                                        <P>At the same time, studies have shown that oncolytic virus M1 has a broad
+                                            anti-cancer
+                                            spectrum.
+                                            It can selectively infect and kill 13 kinds of refractory high-incidence
+                                            malignant tumor
+                                            cells
+                                            through triple mechanism of direct oncolytic, peripheral cell killing and
+                                            immune activation,
+                                            but
+                                            has no killing effect on normal cells. Studies have shown [16-18] that key
+                                            molecular
+                                            mechanisms
+                                            of oncolytic virus M1 targeting tumor cells include zinc finger antiviral
+                                            protein ZAP, RHO
+                                            family protein TC10, and UPR signaling molecule IRE1α. These three proteins
+                                            play an
+                                            antiviral
+                                            role in the intracellular life history of M1: ZAP binds and degrades viral
+                                            RNA; TC10
+                                            inhibits
+                                            virus transport; IRE1α removes viral proteins by activating autophagy. Their
+                                            low expression
+                                            in
+                                            tumors allows M1 virus to selectively replicate in large numbers of tumor
+                                            cells and play a
+                                            role
+                                            in its oncolytic effect.</P>
+                                        <img src="https://2019.igem.org/wiki/images/c/c7/T--SYSU-Medicine--des_6.png">
+                                        <p style="font-size: 1em;" class="fig-text">Figure 5. Y. Lin, H. Zhang, J.
+                                            Lianget al. Identification and characterization of alphavirus M1 as a
+                                            selective oncolytic virus targeting ZAP-defective human cancers. Proceedings
+                                            of the National Academy of Sciences of the United States of
+                                            America，2014;111（42）：E4504-E4512. </p>
+                                        <P>Overall animal experiments showed that M1 injected by caudal vein and
+                                            intratumoral injection
+                                            could significantly accumulate in tumor tissues and inhibit tumor growth,
+                                            while normal
+                                            organs
+                                            were not affected. In addition to cell and animal experiments, the oncolytic
+                                            effect of
+                                            oncolytic
+                                            virus M1 ex vivo was further confirmed [16]</P>
+                                        <P>Despite all those advantages of M1, however, results from normal and tumor
+                                            cell models,
+                                            immunodeficient and immunohealthy tumor-bearing mice models, and ex vivo
+                                            clinical tumor
+                                            culture
+                                            models have revealed its drawbacks. The sensitivity rate of the cell model
+                                            was 48% (32/67
+                                            tumor
+                                            cells) and that of the ex vivo model was 36% (17/47 tumor samples) [3].
+                                            Obviously, the
+                                            existing
+                                            oncolytic virus M1 still has the necessary and development space to enhance
+                                            the anti-tumor
+                                            spectrum and anti-cancer activity.</P>
+                                        <img src="https://2019.igem.org/wiki/images/9/92/T--SYSU-Medicine--des_1.jpg">
 
-                    </div>
-                    <div class="clearfix" style="margin-bottom: 3em;"></div>
-                    <div class="col-xs-8 col-xs-offset-3 Mechanism-text">
-                        <h3>【Oncolytic Virus】</h3>
-                        <p>Oncolytic virus (OV) immunotherapy is a therapeutic approach to cancer treatment that
-                            utilizes
-                            native or genetically modified viruses that selectively replicate within tumor cells. OVs
-                            mediate antitumor activity through two distinct mechanisms of action: selective replication
-                            within neoplastic cells, resulting in a direct lytic effect on tumor cells and induction of
-                            systemic antitumor immunity [7].</p>
-                        <p>The tumor selectivity of OVs is largely conferred by tumor-specific aberrations in signaling
-                            pathways that normally sense and block viral replication [8]. It is now well established
-                            that
-                            cancer-specific aberrations in RAS, TP53, RB1, PTEN, genes encoding proteins involved in the
-                            WNT
-                            signaling pathway and other cancer-related genes can predispose cancer cells to virus
-                            infection
-                            [9]. This is due to crosstalk between oncogenic signaling and antiviral pathways, which
-                            creates
-                            a permissive environment for viral replication.</p>
-                        <p>The immune response to oncolytic viruses appears to be a more important component of the
-                            antitumor effect. In nature, viruses have evolved multiple strategies to overcome immune
-                            attack,
-                            enabling OVs to promote an immune response against the tumor cells by allowing tumor antigen
-                            presentation in the context of an active viral infection.</p>
-                        <p>As we gain a more complete understanding of the molecular interplay between viruses and our
-                            immune systems, it becomes increasingly possible to design therapeutic strategies that turn
-                            viruses from stealth pathogens to finely tuned ‘viroceuticals’ that initiate both
-                            viral-mediated
-                            and immune-mediated attacks against cancers [10].</p>
-                        <p>The effectiveness of OVs has been demonstrated in many preclinical studies and recently in
-                            humans, with US Food and Drug Administration approval of the oncolytic herpesvirus
-                            Talimogene
-                            laherparepvec (T-Vec) in advanced melanoma, a breakthrough for the field [11]. Moreover,
-                            some of
-                            the cancer-targeted multimechanistic oncolytic viruses have been proven to be well-tolerated
-                            in
-                            clinical trials, with patients exhibiting only mild flu-like symptoms, offering great
-                            potential
-                            for increasing efficacy while eliminating the side effects [12]. Thus, the OV approach to
-                            cancer
-                            therapy is becoming more interesting for scientists, clinicians, and the public.
-                        </p>
+                                        <p style="font-size: 1em;" class="fig-text">Figure 6. Sensitivity of tumor cells
+                                            and in vitro
+                                            living tissue to oncolytic
+                                            virus M1. A) of the 67 tumor cells, 32 were sensitive to M1, with A
+                                            sensitivity rate of 48%.
+                                            B) among the 47 clinical tumor specimens, 17 were sensitive to M1, with a
+                                            sensitivity rate
+                                            of 36%. Sensitive cells or cases are shown in red. [3] </p>
+                                    </div>
+                                </div>
 
+                            </div>
+                        </li>
+                        <li>
+                            <time> </time>
+                            <div>
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#step-1">
+                                            【Improvement】
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <p>It is generally believed that the limited application of M1 virus is mainly
+                                            attributed to
+                                            pathways involved by ZAP, RHOQ, IRE1α and MXRA8 in insensitive tumor cells,
+                                            lead to the
+                                            impairment of invasion and replication of the virus [18]. Research shows
+                                            that using
+                                            inhibitors
+                                            to reduce those protein levels can to some extent improve the curative
+                                            effect of oncolytic
+                                            viruses in several tumors, which may be a clue to further research.</p>
+                                        <p>However, since the underlying genesis and development mechanism of tumor
+                                            itself is still far
+                                            from being thoroughly studied, it is unrealistic to increase M1 infection
+                                            rate by studying
+                                            the
+                                            pathway of tumor cells one by one. <b>It is more reasonable to find a
+                                                solution
+                                                so that the
+                                                anti-cancer spectrum of M1 can no longer be restricted by the
+                                                limitations of
+                                                the pathways in
+                                                tumor cells.</b> In other words, could we find a pathway more upstream
+                                            than ZAP,
+                                            TC10 and IRE1α,
+                                            that is common to all tumor cells, to be utilized by M1?</p>
 
-                    </div>
-                    <div class="clearfix" style="margin-bottom: 3em;"></div>
-                    <div class="col-xs-8 col-xs-offset-3 Mechanism-text">
-                        <h3>【M1】</h3>
-                        <P>As mentioned above, M1 virus was first isolated from culicine mosquitoes in Baoting Li and
-                            Miao
-                            autonomous county, Hainan island in 1964. Phylogenetic analysis showed that M-1 grouped with
-                            GETV first and then grouped together with SAGV. The genome of M1 is single-plus RNA, with a
-                            total length of 11,696 nt, encoding 4 non-structural proteins (NS1, NS2, NS3 and RdRP) and 5
-                            structural proteins (E1, E2, E3, C and 6K) [13].</P>
-                        <P> Compared with the oncolytic virus (including modified poxvirus, herpes virus, measles virus,
-                            Newcastle disease virus, etc.) currently in clinical trials and the approved H101 and T-Vec
-                            viruses, the most significant advantage of M1 is that it is highly safe and can be injected
-                            intravenously. Getah virus, which is highly similar to M1 virus, mainly infects horses and
-                            pigs,
-                            causing mild symptoms such as fever, rash, edema of hind limbs and enlarged lymph nodes, and
-                            generally recovered within 1 week, presenting a benign course [14]. Although Getah virus is
-                            widely distributed in southeast Asia, Australia, Japan, Mongolia, Russia and China, no human
-                            diseases caused by Getah virus have been reported so far. Domestic and foreign
-                            epidemiological
-                            studies have shown that Getah virus antibody can be detected in normal people, which
-                            explains
-                            the advantages of a virus with lower risk of disease from another perspective [15].</P>
-                        <P>At the same time, studies have shown that oncolytic virus M1 has a broad anti-cancer
-                            spectrum.
-                            It can selectively infect and kill 13 kinds of refractory high-incidence malignant tumor
-                            cells
-                            through triple mechanism of direct oncolytic, peripheral cell killing and immune activation,
-                            but
-                            has no killing effect on normal cells. Studies have shown [16-18] that key molecular
-                            mechanisms
-                            of oncolytic virus M1 targeting tumor cells include zinc finger antiviral protein ZAP, RHO
-                            family protein TC10, and UPR signaling molecule IRE1α. These three proteins play an
-                            antiviral
-                            role in the intracellular life history of M1: ZAP binds and degrades viral RNA; TC10
-                            inhibits
-                            virus transport; IRE1α removes viral proteins by activating autophagy. Their low expression
-                            in
-                            tumors allows M1 virus to selectively replicate in large numbers of tumor cells and play a
-                            role
-                            in its oncolytic effect.</P>
-                        <P>Overall animal experiments showed that M1 injected by caudal vein and intratumoral injection
-                            could significantly accumulate in tumor tissues and inhibit tumor growth, while normal
-                            organs
-                            were not affected. In addition to cell and animal experiments, the oncolytic effect of
-                            oncolytic
-                            virus M1 ex vivo was further confirmed [16]</P>
-                        <P>Despite all those advantages of M1, however, results from normal and tumor cell models,
-                            immunodeficient and immunohealthy tumor-bearing mice models, and ex vivo clinical tumor
-                            culture
-                            models have revealed its drawbacks. The sensitivity rate of the cell model was 48% (32/67
-                            tumor
-                            cells) and that of the ex vivo model was 36% (17/47 tumor samples) [3]. Obviously, the
-                            existing
-                            oncolytic virus M1 still has the necessary and development space to enhance the anti-tumor
-                            spectrum and anti-cancer activity.</P>
+                                        <img src="https://2019.igem.org/wiki/images/b/bd/T--SYSU-Medicine--des_8.jpg">
 
-                        <img>
-                        <p style="font-size: 1em;" class="fig-text">Figure 1. Sensitivity of tumor cells and in vitro
-                            living tissue to oncolytic
-                            virus M1. A) of the 67 tumor cells, 32 were sensitive to M1, with A sensitivity rate of 48%.
-                            B) among the 47 clinical tumor specimens, 17 were sensitive to M1, with a sensitivity rate
-                            of 36%. Sensitive cells or cases are shown in red. [3] </p>
-                    </div>
-                    <div class="clearfix" style="margin-bottom: 3em;"></div>
-                    <div class="col-xs-8 col-xs-offset-3 Mechanism-text">
-                        <h3>【Improvement】</h3>
-                        <p>It is generally believed that the limited application of M1 virus is mainly attributed to
-                            pathways involved by ZAP, RHQQ, IRE1α and MXRA8 in insensitive tumor cells, lead to the
-                            impairment of invasion and replication of the virus [18]. Research shows that using
-                            inhibitors
-                            to reduce those protein levels can to some extent improve the curative effect of oncolytic
-                            viruses in several tumors, which may be a clue to further research.</p>
-                        <p>However, since the underlying genesis and development mechanism of tumor itself is still far
-                            from being thoroughly studied, it is unrealistic to increase M1 infection rate by studying
-                            the
-                            pathway of tumor cells one by one. It is more reasonable to find a solution so that the
-                            anti-cancer spectrum of M1 can no longer be restricted by the limitations of the pathways in
-                            tumor cells. In other words, could we find a pathway more upstream than ZAP, TC10 and IRE1α,
-                            that is common to all tumor cells, to be utilized by M1?</p>
-                        <p>One of the most remarkable features of tumors is their limitless replicative potential which
-                            was
-                            acquired during tumor progression and was essential for the development of their malignant
-                            growth state [19]. The ability of unlimited proliferation is reflected in the hyperactive
-                            transcription process at the cellular level. Therefore, we want to find a means to interfere
-                            with tumor cells at the transcriptional level and then enhance the infection rate and
-                            lethality
-                            of M1.</p>
-                        <p>Surprisingly, many chemotherapy drugs work through this mechanism. Actinomycin D, as a
-                            typical
-                            representative among actinomycins, has been widely used in clinical practice since 1954 as
-                            an
-                            anticancer drug for treating many tumors. The two main mechanisms of its anti-tumor ability
-                            are
-                            intercalation to DNA and the stabilization of cleavable complexes of topoisomerases I and II
-                            with DNA, which interferes with cell transcription, but does not affect alphavirus
-                            replication
-                            or cytopathic vacuoles formation [20].
-                        </p>
-                        <p> As early as 1963, a study suggested that actinomycin D could enhance the growth of
-                            Chikungunya
-                            virus, which is also an alphavirus, within tumor cells through some cellular mechanism [21].
-                            Also, the yield of SFV could be increased at least 50% in the cells pretreated with
-                            actinomycin
-                            D [20]. More studies have also confirmed that actinomycin D promotes the replication of
-                            alphavirus in tumor cells significantly, for it can help to suppress cellular functions
-                            which
-                            inhibit production of infectious virus particles. Those possible mechanism may include
-                            interferon and cyclopentenone prostaglandin A1 (PGA1) [21-23].</p>
-                        <p> These chemotherapies, which act on the transcription process, could effectively increase the
-                            infection rate of M1 against a variety of tumor cells, however, the broad-spectrum effect
-                            also
-                            causes serious side effects. All this suggests that there might be a feasible way to expand
-                            the
-                            anti-cancer profile of M1 while reducing the side effects of chemotherapy drugs by combining
-                            the
-                            therapies together, fostering their strengths and circumventing the weaknesses.</p>
+                                        <p style="font-size: 1em;" class="fig-text">Figure 7. Diagram of the growth
+                                            signaling circuitry of the mammalian cell, which may serve as potential
+                                            anti-tumor targets [20]. </p>
+                                        <p>One of the most remarkable features of tumors is their limitless replicative
+                                            potential which
+                                            was
+                                            acquired during tumor progression and was essential for the development of
+                                            their malignant
+                                            growth state [19]. The ability of unlimited proliferation is reflected in
+                                            the hyperactive
+                                            transcription process at the cellular level. Therefore, we want to find a
+                                            means to interfere
+                                            with tumor cells at the transcriptional level and then enhance the infection
+                                            rate and
+                                            lethality
+                                            of M1.</p>
+                                        <p>Surprisingly, many chemotherapy drugs work through this mechanism.
+                                            Actinomycin D, as a
+                                            typical
+                                            representative among actinomycins, has been widely used in clinical practice
+                                            since 1954 as
+                                            an
+                                            anticancer drug for treating many tumors. The two main mechanisms of its
+                                            anti-tumor ability
+                                            are
+                                            intercalation to DNA and the stabilization of cleavable complexes of
+                                            topoisomerases I and II
+                                            with DNA, which interferes with cell transcription, but does not affect
+                                            alphavirus
+                                            replication
+                                            or cytopathic vacuoles formation [20].
+                                        </p>
+                                        <p> As early as 1963, a study suggested that actinomycin D could enhance the
+                                            growth of
+                                            Chikungunya
+                                            virus, which is also an alphavirus, within tumor cells through some cellular
+                                            mechanism [21].
+                                            Also, the yield of SFV could be increased at least 50% in the cells
+                                            pretreated with
+                                            actinomycin
+                                            D [20]. More studies have also confirmed that actinomycin D promotes the
+                                            replication of
+                                            alphavirus in tumor cells significantly, for it can help to suppress
+                                            cellular functions
+                                            which
+                                            inhibit production of infectious virus particles. Those possible mechanism
+                                            may include
+                                            interferon and cyclopentenone prostaglandin A1 (PGA1) [21-23].</p>
+                                        <p> These chemotherapies, which act on the transcription process, could
+                                            effectively increase the
+                                            infection rate of M1 against a variety of tumor cells, however, the
+                                            broad-spectrum effect
+                                            also
+                                            causes serious side effects. All this suggests that there might be a
+                                            feasible way to expand
+                                            the
+                                            anti-cancer profile of M1 while reducing the side effects of chemotherapy
+                                            drugs by combining
+                                            the
+                                            therapies together, fostering their strengths and circumventing the
+                                            weaknesses.</p>
+                                    </div>
+                                </div>
 
+                            </div>
+                        </li>
+                        <!-- <li>
+                            <time> </time>
+                            <div>
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#step-1">
+                                            []]
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <p></p>
+                                    </div>
+                                </div>
 
+                            </div>
+                        </li> -->
 
-                    </div>
-                    
-
-
-
-
-
-
-                </div>
-
+                    </ul>
+                </section>
             </div>
+
         </div>
     </div>
 
@@ -778,13 +1950,13 @@
             </div> -->
             <div class="mask-front-content mask-front-content-31">
                 <p>
-                    Drug screening
+                    Ideal M1-Prodrug Enzyme System
 
                 </p>
             </div>
             <div class="mask-front-content mask-front-content-32">
                 <p>
-                    Clinical Application
+                    Drug Screening
 
                 </p>
             </div>
@@ -816,13 +1988,14 @@
             </div> -->
             <div class="rich-content rich-content-31">
 
-                <p><b class="b_have_border">Drug screening</b><br>
-                    In our project, we proved that the efficacy of M1-directed nitroreductase system in combination with
-                    CB1954, which made it possible to use M1 vector to combine with other chemotherapy drugs. Previous
-                    studies have shown that there are many side effects of chemotherapy, such as myelosuppression,
-                    gastrointestinal reactions, liver function impairment etc. So it is necessary to improve the target
-                    of these drugs. Therefore, we plan to screen for more effective chemotherapy drugs, such as
-                    Etoposide, Daunorubicin etc., to combine with M1-directed enzyme prodrug system.
+                <p><b class="b_have_border">Ideal M1-Prodrug Enzyme System</b><br>
+                    As described in the experimental results, we first verified the significant effect of prodrug enzyme
+                    system and M1 combination on the reduction of side effects of chemotherapy drugs with CB1954.
+                    Furthermore, we verified that the chemotherapy drug actinomycin D can in turn promote M1 infection
+                    on a variety of tumor cells. Therefore, if we can combine the advantages of the two, this would be
+                    an ideal M1 prodrug enzyme system. To this end, we designed the prodrug structure of actinomycin D
+                    (see design for details) and screened a variety of drugs with similar mechanism of action to
+                    actinomycin D. We plan to carry out further experimental verification soon.
                 </p>
                 <img src="https://2019.igem.org/wiki/images/thumb/6/60/T--SYSU-Medicine--approach_1.png/1600px-T--SYSU-Medicine--approach_1.png"
                     class="img-fp-1">
@@ -830,9 +2003,80 @@
             <div class="rich-content rich-content-32">
                 <img src="https://2019.igem.org/wiki/images/thumb/c/c9/T--SYSU-Medicine--future_perspectives_3.png/1600px-T--SYSU-Medicine--future_perspectives_3.png"
                     class="img-fp-2">
+                <p><b class="b_have_border">Drug Screening</b><br>
+                    In our project, we proved that the efficacy of M1-directed nitroreductase system in combination with
+                    CB1954, which made it possible to use M1 vector to combine with other chemotherapy drugs. Previous
+                    studies have shown that there are many side effects of chemotherapy, such as myelosuppression,
+                    gastrointestinal reactions, liver function impairment etc. So it is necessary to improve the target
+                    of these drugs. Therefore, we plan to screen for more effective chemotherapy drugs, such as
+                    Etoposide, Daunorubicin etc., to combine with M1-directed enzyme prodrug system.
+
+
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="sub-content" id="content-4">
+        <div class="switch"></div>
+        <div class="mask-front-content-box">
+            <!-- <div class="mask-front-content mask-front-content-30">
+                    <p>Building better oncolytic virus
+                    </p>
+                </div> -->
+            <div class="mask-front-content mask-front-content-41">
+                <p>
+                    Directed Evolution
+
+                </p>
+            </div>
+            <div class="mask-front-content mask-front-content-42">
+                <p>
+                    Clinical Application
+
+                </p>
+            </div>
+        </div>
+        <div class="mask mask-4-box">
+            <!-- <div class="mask-3 m30"></div> -->
+            <div class="mask-4 m41"></div>
+            <div class="mask-4 m42"></div>
+
+        </div>
+        <div class="rich-content-box">
+            <!-- <div class="rich-content rich-content-30">
+                    <img src="https://2019.igem.org/wiki/images/thumb/2/2d/T--SYSU-Medicine--future_perspectives_1.png/1600px-T--SYSU-Medicine--future_perspectives_1.png"
+                        class="img-fp-0">
+                    <p>
+                        &nbsp&nbsp&nbsp&nbspIn our study, we expand the anti-cancer spectrum of oncolytic virus M1 by
+                        directed evolution. We
+                        plan to explore the characteristics of each mutation site and standardize it as parts, so that
+                        we
+                        could be combined different mutation according to different purposes. Taking advantages of each
+                        mutations, we could obtain the boarder anti-cancer spectrum M1 virus. Further, we can enhance
+                        other
+                        oncolytic alphavirus through the same method. In addition, through in combination with
+                        Actinomycin
+                        D, M1 has a great lethality to insensitive cancer cells. M1 armed with nitroreductase could be
+                        used
+                        to combine with other chemotherapy drugs.
+                    </p>
+                </div> -->
+            <div class="rich-content rich-content-41">
+
+                <p><b class="b_have_border">Directed Evolution</b><br>
+                    In the experiment, we observed that the expression level of nitroreductase in the cell itself would
+                    affect the transformation of prodrug, and at the same time, actinomycin D played a role in promoting
+                    M1 virus infection. It is reasonable to speculate that this feature can be used to exert selective
+                    pressure on the evolution of M1, and to give drugs to tumor cells with low expression level of
+                    nitroreductase for targeted evolutionary screening of M1.
+                </p>
+                <img src="https://2019.igem.org/wiki/images/c/cf/T--SYSU-Medicine--des_f1.png" class="img-fp-1">
+            </div>
+            <div class="rich-content rich-content-42">
+                <img src="https://2019.igem.org/wiki/images/c/c0/T--SYSU-Medicine--des_f2.png" class="img-fp-2">
                 <p><b class="b_have_border">Clinical Application</b><br>
                     Virus-directed enzyme prodrug therapy is one of the major strategy of the targeted delivery of
-                    cytotoxic compounds to tumor tissue, increasing cytotoxicity of bioreductive agents[6]. The vitro
+                    cytotoxic compounds to tumor tissue, increasing cytotoxicity of bioreductive agents [24]. The vitro
                     experiment of the prodrug system has demonstrated the effectiveness of the combined therapy. The
                     5-(aziridin-1-yl)-2,4-dinitrobenzamide (CB1954) is a mature anticancer prodrug that is efficiently
                     reduced by nitroreductase, requiring reduction to the 2-and 4-hydroxylamines to be cytotoxic CB1954.
@@ -856,20 +2100,71 @@
             </div>
         </div>
         <div class="reference-content">
-            <p> [1] Kaufman, H. L., Kohlhapp, F. J., & Zloza, A. Oncolytic viruses: a new class of immunotherapy drugs.
-                Nature Reviews Drug Discovery. 2015;14(9), 642-662.</p>
-            <p>[2] Hu J, Cai XF, Yan G. Alphavirus M1 induces apoptosis of malignant glioma cells via downregulation and
+            <p>[1] Hu J, Cai XF, Yan G. Alphavirus M1 induces apoptosis of malignant glioma cells via downregulation and
                 nucleolar translocation of p21WAF1/CIP1 protein. Cell Cycle. 2009;8(20):3328–3339.</p>
-            <p> [3] Fukunaga Y, Kumanomido T, Kamada M. Getah virus as an equine pathogen. Vet Clin North Am Equine
-                Pract.
-                2000;16(3):605–617.</p>
-            <p>
-                [4] Lin, Y., et al., Identification and characterization of alphavirus M1 as a selective oncolytic virus
+            <p>[2] Fukunaga Y, Kumanomido T, Kamada M. Getah virus as an equine pathogen. Vet Clin North Am Equine
+                Pract. 2000;16(3):605–617.</p>
+            <p>[3] Lin, Y., et al., Identification and characterization of alphavirus M1 as a selective oncolytic virus
                 targeting ZAP-defective human cancers. Proc Natl Acad Sci U S A, 2014. 111(42): p. E4504-12.</p>
-            <p> [5] Christofferson, A., & Wilkie, J. Mechanism of CB1954 reduction byEscherichia colinitroreductase.
-                Biochemical Society Transactions. 2009;37(2), 413–418. doi:10.1042/bst0370413</p>
-            <p>[6]. Szewczuk, M., et al., Virus-directed enzyme prodrug therapy and the assessment of the cytotoxic
+            <p>[4] Vekshin, N. Actinomycins Like Anti-Cancer Photo-Sensitizers. Journal of Fluorescence, 2011;21(4),
+                1417–1420. doi:10.1007/s10895-010-0825-8.</p>
+            <p>[5] Vanneman M, Dranoff G. Combining immunotherapy and targeted therapies in cancer treatment. Nat Rev
+                Cancer. 2012;12(4):237–251. Published 2012 Mar 22. </p>
+            <p>
+                [6] Gotwals, P., Cameron, S., Cipolletta, D., Cremasco, V., Crystal, A., Hewes, B., … Dranoff, G.
+                Prospects for combining targeted and conventional cancer therapy with immunotherapy. Nat Rev Cancer.
+                2017;17(5), 286–301. </p>
+            <p>[7] Kaufman, H. L., Kohlhapp, F. J., & Zloza, A. Oncolytic viruses: a new class of immunotherapy drugs.
+                Nature Reviews Drug Discovery. 2015;14(9), 642-662. </p>
+            <p> [8] Hanahan, D. & Weinberg, R. A. Hallmarks of cancer: the next generation. Cell 144, 646–674 (2011).
+            </p>
+            <p>[9] Pikor, L. A., Bell, J. C., & Diallo, J.-S. Oncolytic Viruses: Exploiting Cancer’s Deal with the
+                Devil. Trends in Cancer. 2015;1(4), 266–277. doi:10.1016/j.trecan.2015.10.004 </p>
+            <p>[10] Twumasi-Boateng, K., Pettigrew, J. L., Kwok, Y. Y. E., Bell, J. C., & Nelson, B. H. (2018).
+                Oncolytic viruses as engineering platforms for combination immunotherapy. Nature Reviews Cancer, 18(7),
+                419–432. </p>
+            <p> [11] US Food and Drug Administration. FDA approves first-of-its-kind product for the treatment of
+                melanoma. Published October 27, 2015. Accessed December 6, 2015.</p>
+            <p>[12] Russell SJ, Peng KW, Bell JC. Oncolytic virotherapy. Nat Biotechnol. 2012;30(7):658–670. Published
+                2012 Jul 10. </p>
+            <p>[13] Wen, J.S., et al., Genomic analysis of a Chinese isolate of Getah-like virus and its phylogenetic
+                relationship with other Alphaviruses. Virus Genes, 2007. 35(3): p. 597-603.</p>
+            <p>[14] Li, Y.Y., et al., From discovery to spread: The evolution and phylogeny of Getah virus. Infect Genet
+                Evol, 2017. 55: p. 48-55.</p>
+            <p> [15] Wang, H.Q., et al., [Isolation and identification of arboviruses in Hebei Province]. Zhonghua Shi
+                Yan He Lin Chuang Bing Du Xue Za Zhi, 2006. 20(1): p. 52-5.</p>
+            <p> [16] Y. Lin, H. Zhang, J. Lianget al. Identification and characterization of alphavirus M1 as a
+                selective oncolytic virus targeting ZAP-defective human cancers. Proceedings of the National Academy of
+                Sciences of the United States of America，2014;111（42）：E4504-E4512.</p>
+            <p>[17] J. Liang, L. Guo, K. Liet al. Inhibition of the mevalonate pathway enhances cancer cell oncolysis
+                mediated by M1 virus. Nature Communications，2018;9（1）</p>
+            <p> [18] K. Li, C. Hu, F. Xinget al. Deficiency of the IRE1α-Autophagy Axis Enhances the Antitumor Effects
+                of the Oncolytic Virus M1. J Virol，2018;92（6）</p>
+            <p>[19] Grimley, P.M., et al., Specific membranous structures associated with the replication of group A
+                arboviruses. J Virol, 1972. 10(3): p. 492-503.</p>
+            <p>[20] Douglas Hanahan, Robert A Weinberg, The Hallmarks of Cancer, Cell, Volume 100, Issue 1, 2000, Pages
+                57-70, ISSN 0092-8674.</p>
+            <p>[21] GIFFORD, G.E. and E. HELLER, EFFECT OF ACTINOMYCIN D ON INTERFERON PRODUCTION BY 'ACTIVE' AND
+                'INACTIVE' CHIKUNGUNYA VIRUS IN CHICK CELLS. Nature, 1963. 200: p. 50-1.</p>
+            <p> [22] Carter, M.F., et al., Effects of actinomycin D and ultraviolet and ionizing radiation on Pichinde
+                virus. J Virol, 1973. 12(1): p. 33-8.</p>
+            <p>
+                [23] Burlandy, F.M. and M.A. Rebello, Inhibition of Mayaro virus replication by prostaglandin A(1) in
+                Vero cells. Intervirology, 2001. 44(6): p. 344-9.
+            </p>
+            <p>[24] Szewczuk, M., et al., Virus-directed enzyme prodrug therapy and the assessment of the cytotoxic
                 impact of some benzimidazole derivatives. Tumour Biol, 2017. 39(7): p. 1010428317713675.</p>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -881,6 +2176,566 @@
 </body>
 <script>
     $(function () { $(".navigation").css("width", window.innerWidth); });
+    // all in one
+
+    // $(function () {
+    //     $(".piano-subpage-key").addClass("stop-animation");
+    //     $(".piano-subpage-key").addClass("animation");
+    //     $(".key-kernel").addClass("animation");
+    // });
+    // var piano_flag = [];
+    // $(function () {
+    //     $(".sub-content").each(function () {
+    //         piano_flag.push(1);
+    //         $(".test").text(piano_flag);
+    //     });
+    // });
+
+    // $(document).scroll(function () {
+    //     debug = []
+    //     playing_flag = 1;
+    //     $(".sub-content").each(function (i, each_0) {
+    //         var content_top = $(each_0).offset().top - $(window).scrollTop();
+    //         var content_bottom = content_top + $(each_0).outerHeight();
+    //         debug.push(content_bottom);
+    //         var judge = window.innerHeight / 3 * 2;
+    //         $(".test").text(piano_flag);
+    //         if (content_top < judge) {
+    //             if (playing_flag) {
+    //                 piano_flag[i] = 0;
+    //                 var key_id = $(each_0).attr("id");
+    //                 key_id += "-key";//找到钢琴键
+    //                 playing_flag = 1;
+    //                 $(document.getElementById(key_id)).animate({
+    //                     width: "12vw",
+    //                     height: "2vh"
+    //                 }, 200,function(){
+    //                     playing_flag = 1;
+    //                 });//钢琴放大
+    //             }
+    //             //    $(document.getElementById(key_id)).children().animate({background-color: "rgb(255,55,68)"})
+    //         }
+    //         if (content_bottom < judge) {
+
+    //             piano_flag[i] = 1;
+    //             var key_id = $(each_0).attr("id");
+    //             key_id += "-key";//找到钢琴键
+    //             $(document.getElementById(key_id)).animate({
+    //                 width: "8vw",
+    //                 height: "1vh"
+    //             }, 200)//钢琴缩小
+    //             //    $(document.getElementById(key_id)).children().animate({background-color: "rgb(255,55,68)"})
+    //         }
+    //         console.log(debug);
+    //     }
+
+    //     );
+    //     // var scrollBox = $(document);
+    //     //     //调用throttle函数，传入相应的方法和规定的时间;
+    //     //     var thro = throttle(throFun,300);
+    //     //     //触发事件;
+    //     //     scrollBox.on('scroll' , function(){
+    //     //         //调用执行函数;
+    //     //         thro();
+    //     //     })
+
+    //     //     // 封装函数;    
+    //     //     function throttle(method,time){
+    //     //         var timer = null;
+    //     //         var startTime = new Date();
+    //     //         return function(){
+    //     //             var context = this;
+    //     //             var endTime = new Date();
+    //     //             var resTime = endTime - startTime;
+    //     //             //判断大于等于我们给的时间采取执行函数;
+    //     //             if(resTime >= time){
+    //     //                 method.call(context);
+    //     //                 //执行完函数之后重置初始时间，等于最后一次触发的时间
+    //     //                 startTime = endTime;
+    //     //             }
+    //     //         }
+    //     //     }
+    //     //     function throFun(){
+    //     //         $(".sub-content").each(function(i,each_0){
+    //     //             var content_top = $(each_0).offset().top - $(window).scrollTop();
+    //     //             var content_bottom = content_top + $(each_0).outerHeight();
+
+    //     //             var judge = window.innerHeight/3*2;
+    //     //             $(".test").text(content_bottom-judge);
+    //     //             if (content_top<judge){
+    //     //                 if (piano_flag){
+    //     //                     piano_flag = 0;
+    //     //                     var key_id =  $(each_0).attr("id");
+    //     //                     key_id += "-key";//找到钢琴键
+    //     //                     $(document.getElementById(key_id)).animate({width:"12vw",
+    //     //                      height: "2vh"},200);//钢琴放大
+    //     //                 }    
+    //     //             //    $(document.getElementById(key_id)).children().animate({background-color: "rgb(255,55,68)"})
+    //     //             }
+    //     //             if (content_bottom<judge){
+    //     //                 // 
+    //     //                 piano_flag = 1;
+    //     //                 var key_id =  $(each_0).attr("id");
+    //     //                 key_id += "-key";//找到钢琴键
+    //     //                 $(document.getElementById(key_id)).animate({width:"8vw",
+    //     //                  height: "1vh"},200)//钢琴缩小
+    //     //              //    $(document.getElementById(key_id)).children().animate({background-color: "rgb(255,55,68)"})
+    //     //              }
+
+    //     //         });
+    //     //     }
+
+
+
+    // });
+
+    $(function () {
+        $("#content-0").css("height", "30vw");
+    });
+    var hover_speed = 300;
+    //content-0 悬停+点击
+    $(function () {
+        //悬停
+
+        $("#content-0 .switch").hover(function () {
+
+            var $mask = $($(this).nextAll(".mask"));
+            if ($mask.hasClass("hover_flag")) { } else {
+                $mask.addClass("hover_flag");
+                var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+                $mask.children().each(function () {
+                    var fuck = $(this).width() * 0.9;
+                    $(this).animate({ width: "42vw" }, hover_speed, "swing");
+                    $(this).animate({ width: "45vw" }, hover_speed, "swing", function () {
+                        $mask.removeClass("hover_flag");
+                    });
+
+                })
+
+            }
+
+
+        }, function () {
+            // var $mask = $($(this).nextAll(".mask"));
+            // if ($mask.hasClass("open-flag")) { } else {
+            //     var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+            //     $mask.children().each(function () {
+            //         var fuck = $(this).width() / 0.9;
+            //         $(this).animate({ width: "45vw" }, 150, "swing");
+            //     })
+            // }
+        });
+        //点击
+        $("#content-0 .switch").click(function () {
+            // var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+            // if ($mask.hasClass("open-flag")) {
+            //     $mask.removeClass("open-flag");
+            //     $mask.children().each(function () {
+            //         $(this).animate({ opacity: "100" }, 1);
+            //         $(this).animate({ width: $(".mask-0-box").width()/2 }, 1000);
+
+            //     });
+            //     $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "100" }, 1000,);
+            // } else {
+            //     $("#content-0").animate({ height: "75vw" }, 750, function () {
+            //         var $mask = $($("#content-0 .switch").nextAll(".mask"));
+            //         // $("#content-0").find(".need-scale-rich-0").removeClass("need-scale-rich-0");
+            //         $(".rich-content-box-shadow").css("display","none");
+            //         $mask.children().each(function () {
+            //             $(this).attr("old-width", $(this).width());
+            //             $(this).animate({ width: "0" }, 750, "swing");
+            //             $(this).animate({ opacity: "0" }, 1, "swing");
+            //         });
+
+
+            //     });
+            //     $("#content-0").find(".need-scale-rich-0").animate({opacity: "100"},1500);
+            //     // $("#content-0").find(".need-scale-rich-0").animate({transform: "scaleY(1)"},750);
+            //     $mask.addClass("open-flag");
+            //     hover_flag = 0;
+            //     $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "0" }, 1000);
+            // }
+            $("#content-0").animate({ height: "75vw" }, 750, function () {
+                var $mask = $($("#content-0 .switch").nextAll(".mask"));
+                // $("#content-0").find(".need-scale-rich-0").removeClass("need-scale-rich-0");
+                $(".rich-content-box-shadow").css("display", "none");
+                $mask.children().each(function () {
+                    $(this).attr("old-width", $(this).width());
+                    $(this).animate({ width: "0" }, 750, "swing");
+                    $(this).animate({ opacity: "0" }, 1, "swing", function () {
+                        $(".mask-0-box").css({ "width": "0", "height": "0" });
+                    });
+                });
+
+
+            });
+            $("#content-0").find(".need-scale-rich-0").animate({ opacity: "100" }, 1500);
+            // $("#content-0").find(".need-scale-rich-0").animate({transform: "scaleY(1)"},750);
+
+            hover_flag = 0;
+            $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "0" }, 1000, function () {
+                $(this).css({ "width": "0", "height": "0" });
+            });
+            $("#content-0 .switch").css({ "width": "0", "height": "0" });
+
+        });
+        //
+
+    });
+
+
+
+    //content-1 悬停+点击
+    $(function () {
+        //悬停
+
+        $("#content-1 .switch").hover(function () {
+            var $mask = $($(this).nextAll(".mask"));
+            if ($mask.hasClass("hover_flag")) { } else {
+                $mask.addClass("hover_flag");
+                var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+                $mask.find(".mask-1").each(function () {
+
+                    $(this).animate({ width: "43vw", height: "15vw" }, hover_speed, "swing");
+                    $(this).animate({ width: "45vw", height: "18vw" }, hover_speed, "swing", function () {
+                        $mask.removeClass("hover_flag");
+                    });
+                    // $(this).animate({ height: "13vw" }, hover_speed, "swing");
+
+                })
+            }
+        }, function () {
+            // var $mask = $($(this).nextAll(".mask"));
+            // if ($mask.hasClass("open-flag")) { } else {
+            //     var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+            //     $mask.find(".mask-1").each(function () {
+
+            //         $(this).animate({ width: "45vw",height: "18vw" }, hover_speed, "swing");
+            //         // $(this).animate({  }, hover_speed, "swing");
+            //     })
+            // }
+        });
+        //点击
+        $("#content-1 .switch").click(function () {
+            // speed = 700;
+            // var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+            // if ($mask.hasClass("open-flag")) {
+            //     $mask.removeClass("open-flag");
+            //     $mask.find(".mask-1").each(function () {
+            //         $(this).animate({ opacity: "100" }, 1, "swing");
+            //         $(this).animate({ width: $(".mask-1-box").width()/2, height: $(".mask-1-box").height()/2 }, speed, "swing");
+
+
+            //     });
+            //     $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "100" }, speed);
+            // } else {
+            //     $mask.find(".mask-1").each(function () {
+            //         $(this).attr("old-width", $(this).width());
+            //         $(this).attr("old-height", $(this).height());
+            //         $(this).animate({ width: "0", height: "0" }, speed, "swing");
+            //         $(this).animate({ opacity: "0" }, 1, "swing");
+
+            //     });
+            //     $mask.addClass("open-flag");
+            //     hover_flag = 0;
+            //     $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "0" }, speed);
+            // }
+            speed = 700;
+            var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+            $mask.find(".mask-1").each(function () {
+                $(this).attr("old-width", $(this).width());
+                $(this).attr("old-height", $(this).height());
+                $(this).animate({ width: "0", height: "0" }, speed, "swing");
+                $(this).animate({ opacity: "0" }, 1, "swing", function () {
+                    $(".mask-1-box").css({ "width": "0", "height": "0" });
+                });
+
+            });
+            $mask.addClass("open-flag");
+            hover_flag = 0;
+            $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "0" }, speed, function () {
+                $(this).css({ "width": "0", "height": "0" });
+            });
+            $("#content-1 .switch").css({ "width": "0", "height": "0" });
+
+        })
+    });
+
+
+    //content-2 悬停+点击
+    $(function () {
+        //悬停
+
+        $("#content-2 .switch").hover(function () {
+            var $mask = $($(this).nextAll(".mask"));
+            if ($mask.hasClass("hover_flag")) { } else {
+                $mask.addClass("hover_flag");
+                var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+                $mask.children().each(function () {
+
+                    $(this).animate({ width: "40vw" }, hover_speed, "swing");
+                    $(this).animate({ width: "45vw" }, hover_speed, "swing", function () {
+                        $mask.removeClass("hover_flag");
+                    });
+                })
+            }
+
+        }, function () {
+            // var $mask = $($(this).nextAll(".mask"));
+            // if ($mask.hasClass("open-flag")) { } else {
+            //     var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+            //     $mask.children().each(function () {
+
+            //         $(this).animate({ width: "45vw" }, hover_speed, "swing");
+            //     })
+            // }
+        });
+        //点击
+        // $("#content-2 .switch").click(function () {
+        //     speed = 700;
+        //     var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+        //     if ($mask.hasClass("open-flag")) {
+        //         $mask.removeClass("open-flag");
+        //         $mask.children().each(function () {
+        //             $(this).animate({ opacity: "100" }, 1, "swing");
+        //             $(this).animate({ width: $(".mask-2-box").width()/2 }, speed, "swing");
+
+        //         });
+        //         $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "100" }, speed);
+        //     } else {
+        //         $mask.children().each(function () {
+        //             $(this).attr("old-width", $(this).width());
+        //             $(this).animate({ width: "0" }, speed, "swing");
+        //             $(this).animate({ opacity: "0" }, 1, "swing");
+
+        //         });
+        //         $mask.addClass("open-flag");
+        //         hover_flag = 0;
+        //         $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "0" }, speed);
+        //     }
+
+        // })
+        $("#content-2 .switch").click(function () {
+            speed = 700;
+            var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+            $mask.children().each(function () {
+                $(this).attr("old-width", $(this).width());
+                $(this).animate({ width: "0" }, speed, "swing");
+                $(this).animate({ opacity: "0" }, 1, "swing", function () {
+                    $(".mask-2-box").css({ "width": "0", "height": "0" });
+                });
+
+            });
+            $mask.addClass("open-flag");
+            hover_flag = 0;
+            $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "0" }, speed, function () {
+                $(this).css({ "width": "0", "height": "0" });
+            });
+            $("#content-2 .switch").css({ "width": "0", "height": "0" });
+
+        })
+    });
+
+    //content-3 悬停+点击
+    $(function () {
+        //悬停
+
+        $("#content-3 .switch").hover(function () {
+
+            var $mask = $($(this).nextAll(".mask"));
+            if ($mask.hasClass("hover_flag")) { } else {
+                $mask.addClass("hover_flag");
+                var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+                $mask.children().each(function () {
+
+                    $(this).animate({ width: "80vw" }, hover_speed, "swing");
+                    $(this).animate({ width: "90vw" }, hover_speed, "swing", function () {
+                        $mask.removeClass("hover_flag");
+                    });
+                })
+            }
+
+        }, function () {
+            // var $mask = $($(this).nextAll(".mask"));
+            // if ($mask.hasClass("open-flag")) { } else {
+            //     var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+            //     $mask.children().each(function () {
+
+            //         $(this).animate({ width: "90vw" }, hover_speed, "swing");
+            //     })
+            // }
+        });
+        //点击
+        // $("#content-3 .switch").click(function () {
+        //     speed = 700;
+        //     var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+        //     if ($mask.hasClass("open-flag")) {
+        //         $mask.removeClass("open-flag");
+        //         $mask.children().each(function () {
+        //             $(this).animate({ opacity: "100" }, 1, "swing");
+        //             $(this).animate({ width: $(".mask-3-box").width() }, speed, "swing");
+
+        //         });
+        //         $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "100" }, speed);
+        //     } else {
+        //         $mask.children().each(function () {
+        //             $(this).attr("old-width", $(this).width());
+        //             $(this).animate({ width: "0" }, speed, "swing");
+        //             $(this).animate({ opacity: "0" }, 1, "swing");
+
+        //         });
+        //         $mask.addClass("open-flag");
+        //         hover_flag = 0;
+        //         $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "0" }, speed);
+        //     }
+
+        // })
+        $("#content-3 .switch").click(function () {
+            speed = 700;
+            var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+            $mask.children().each(function () {
+                $(this).attr("old-width", $(this).width());
+                $(this).animate({ width: "0" }, speed, "swing");
+                $(this).animate({ opacity: "0" }, 1, "swing", function () {
+                    $(".mask-3-box").css({ "width": "0", "height": "0" });
+                });
+
+            });
+            $mask.addClass("open-flag");
+            hover_flag = 0;
+            $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "0" }, speed, function () {
+                $(this).css({ "width": "0", "height": "0" });
+            });
+            $("#content-3 .switch").css({ "width": "0", "height": "0" });
+        })
+    });
+
+    //content-3 悬停+点击
+    $(function () {
+        //悬停
+
+        $("#content-4 .switch").hover(function () {
+
+            var $mask = $($(this).nextAll(".mask"));
+            if ($mask.hasClass("hover_flag")) { } else {
+                $mask.addClass("hover_flag");
+                var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+                $mask.children().each(function () {
+
+                    $(this).animate({ width: "80vw" }, hover_speed, "swing");
+                    $(this).animate({ width: "90vw" }, hover_speed, "swing", function () {
+                        $mask.removeClass("hover_flag");
+                    });
+                })
+            }
+
+        }, function () {
+            // var $mask = $($(this).nextAll(".mask"));
+            // if ($mask.hasClass("open-flag")) { } else {
+            //     var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+            //     $mask.children().each(function () {
+
+            //         $(this).animate({ width: "90vw" }, hover_speed, "swing");
+            //     })
+            // }
+        });
+        //点击
+        // $("#content-3 .switch").click(function () {
+        //     speed = 700;
+        //     var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+        //     if ($mask.hasClass("open-flag")) {
+        //         $mask.removeClass("open-flag");
+        //         $mask.children().each(function () {
+        //             $(this).animate({ opacity: "100" }, 1, "swing");
+        //             $(this).animate({ width: $(".mask-3-box").width() }, speed, "swing");
+
+        //         });
+        //         $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "100" }, speed);
+        //     } else {
+        //         $mask.children().each(function () {
+        //             $(this).attr("old-width", $(this).width());
+        //             $(this).animate({ width: "0" }, speed, "swing");
+        //             $(this).animate({ opacity: "0" }, 1, "swing");
+
+        //         });
+        //         $mask.addClass("open-flag");
+        //         hover_flag = 0;
+        //         $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "0" }, speed);
+        //     }
+
+        // })
+        $("#content-4 .switch").click(function () {
+            speed = 700;
+            var $mask = $($(this).nextAll(".mask"));//获取遮罩层
+            $mask.children().each(function () {
+                $(this).attr("old-width", $(this).width());
+                $(this).animate({ width: "0" }, speed, "swing");
+                $(this).animate({ opacity: "0" }, 1, "swing", function () {
+                    $(".mask-4-box").css({ "width": "0", "height": "0" });
+                });
+
+            });
+            $mask.addClass("open-flag");
+            hover_flag = 0;
+            $($(this).nextAll(".mask-front-content-box")).animate({ opacity: "0" }, speed, function () {
+                $(this).css({ "width": "0", "height": "0" });
+            });
+            $("#content-4 .switch").css({ "width": "0", "height": "0" });
+        })
+    });
+
+
+
+
+
+
+
+    // title 出现  后期吧subpage和homepage合并
+    $(document).ready(function () {
+        speed = 250
+        $(".title-box-new").each(function (titlebox_i, title_box) {
+            var last = $(title_box).offset().top - $(window).scrollTop();
+            var viewheight = window.innerHeight / 5 * 3;
+            if (last < viewheight) {
+                if ($(title_box).hasClass("played")) { } else {
+                    $(title_box).addClass("played");
+
+                    $(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+                    $(title_box).children(".title-box-mask").animate({ width: $(title_box).width() }, speed, "swing", function () {
+                        $(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
+                        $(title_box).children(".title-box-mask").addClass("title-box-mask-right");
+                        $(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
+                    });
+                    $(title_box).children(".title-box-mask").animate({ width: "0" }, speed, "swing");
+                }
+
+
+            }
+        });
+    })
+    $(document).scroll(function () {
+        speed = 250
+        $(".title-box-new").each(function (titlebox_i, title_box) {
+            var last = $(title_box).offset().top - $(window).scrollTop();
+            var viewheight = window.innerHeight / 5 * 3;
+            if (last < viewheight) {
+                if ($(title_box).hasClass("played")) { } else {
+                    $(title_box).addClass("played");
+
+                    $(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+                    $(title_box).children(".title-box-mask").animate({ width: $(title_box).width() }, speed, "swing", function () {
+                        $(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
+                        $(title_box).children(".title-box-mask").addClass("title-box-mask-right");
+                        $(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
+                    });
+                    $(title_box).children(".title-box-mask").animate({ width: "0" }, speed, "swing");
+                }
+
+
+            }
+        });
+    })
+    //all in one end
 </script>
 
 </html>

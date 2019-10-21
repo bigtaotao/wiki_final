@@ -1,292 +1,475 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
-		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
-		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/home&action=raw&ctype=text/javascript"></script>
-		<link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
-		<script src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
-		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript"
+		src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
+	<link type="text/css" rel="stylesheet"
+		href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
+	<script type="text/javascript"
+		src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/home&action=raw&ctype=text/javascript"></script>
+	<link rel="stylesheet"
+		href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
+	<script
+		src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
+	<link type="text/css" rel="stylesheet"
+		href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
 
-		<title>Team</title>
+	<title>Team</title>
 
-		<style>
-			.col-xs-12,
-			.col-xs-6,
-			.row {
-				align-content: space-around;
-			}
-			
-			/*#Team-content 
+	<style>
+		.col-xs-12,
+		.col-xs-6,
+		.row {
+			align-content: space-around;
+		}
+
+		/*#Team-content 
 			video {
 				margin-top: 15%;
 				margin-bottom: 15%;
 			}*/
-			
-			#Team-content h1 {
-				font-size: 56px;
-			}
-			
-			#Team-content h2 {
-				font-size: 35px;
-			}
-			
-			#Team-content h3 {
-				font-size: 29px;
-			}
-			
-			#Team-content h4 {
-				font-size: 22px;
-			}
-			
-			#Team-content h5 {
-				font-size: 19px;
-			}
-			
-			#Team-content p {
-				font-size: 16px;
-				/*font-size:1.75rem;*/
-			}
-			
-			.single-member {
-				width: 280px;
-				float: left;
-				margin: 30px 2.5%;
-				background-color: #fff;
-				text-align: center;
-				position: relative;
-			}
-			
-			.member-image img {
-				max-width: 100%;
-				vertical-align: middle;
-			}
-			
-			.effect-3 h3 {
-				font-size: 24px;
-				font-weight: normal;
-				margin: 10px 0 0;
-				text-transform: uppercase;
-			}
-			
-			.effect-3 h5 {
-				font-size: 16px;
-				font-weight: 300;
-				margin: 0 0 15px;
-				line-height: 24px;
-			}
-			
-			.effect-3 p {
-				font-size: 14px;
-				font-weight: 300;
-				line-height: 22px;
-				padding: 0 30px;
-				margin-bottom: 10px;
-			}
-			/*= effect-3 css =*/
-			
-			.effect-3 {
-				max-height: 302px;
-				min-height: 302px;
-				overflow: hidden;
-			}
-			
-			.effect-3 h3 {
-				padding-top: 7px;
-				line-height: 35px;
-			}
-			
-			.effect-3 .member-image {
-				border-bottom: 5px solid rgb(255, 55, 68);
-				transition: 0.4s;
-				height: 212px;
-				width: 100%;
-				display: inline-block;
-				float: none;
-				vertical-align: middle;
-				overflow: hidden;
-			}
-			
-			.effect-3 .member-info {
-				transition: 0.4s;
-			}
-			
-			.effect-3 .member-image img {
-				width: 100%;
-				vertical-align: bottom;
-			}
-			
-			.effect-3 .member-bottom-bar {
-				background-color: rgb(255, 55, 68);
-				float: left;
-				left: 0;
-				bottom: 0;
-				/*溢出隐藏*/
-				overflow: hidden;
-				padding: 5px 0;
-				width: 100%;
-				height: 36px;
-				transition: 0.4s;
-			}
-			
-			.effect-3:hover .member-bottom-bar {
-				/*height: 80%;*/
-			}
-			
-			.effect-3:hover .member-image {
-				/*border-bottom: 0;*/
-				/*border-radius: 50px 50px 50px 50px;*/
-				border-radius: 0%;
-				height: 100px;
-				display: inline-block;
-				overflow: hidden;
-				/*width: 109px;*/
-				transition: 0.4s;
-			}
-			/*= effect-3 css end =*/
-			
-			.myicon-right-arrow {
-				width: 7px;
-				height: 7px;
-				border-top: 2px solid red;
-				border-right: 2px solid red;
-				transform: rotate(45deg);
-				-webkit-transform: rotate(45deg);
-			}
-		</style>
-	</head>
 
-	<body>
-		<!-- <div class="debug" style= "position:fixed;top:6rem">
+		#Team-content h1 {
+			font-size: 56px;
+		}
+
+		#Team-content h2 {
+			font-size: 35px;
+		}
+
+		#Team-content h3 {
+			font-size: 29px;
+		}
+
+		#Team-content h4 {
+			font-size: 22px;
+		}
+
+		#Team-content h5 {
+			font-size: 19px;
+		}
+
+		#Team-content p {
+			font-size: 16px;
+			/*font-size:1.75rem;*/
+		}
+
+		.single-member {
+			width: 280px;
+			float: left;
+			margin: 30px 2.5%;
+			background-color: #fff;
+			text-align: center;
+			position: relative;
+		}
+
+		.member-image img {
+			max-width: 100%;
+			vertical-align: middle;
+		}
+
+		.effect-3 h3 {
+			font-size: 24px;
+			font-weight: normal;
+			margin: 10px 0 0;
+			text-transform: uppercase;
+		}
+
+		.effect-3 h5 {
+			font-size: 16px;
+			font-weight: 300;
+			margin: 0 0 15px;
+			line-height: 24px;
+		}
+
+		.effect-3 p {
+			font-size: 14px;
+			font-weight: 300;
+			line-height: 22px;
+			padding: 0 30px;
+			margin-bottom: 10px;
+		}
+
+		/*= effect-3 css =*/
+
+		.effect-3 {
+			max-height: 302px;
+			min-height: 302px;
+			overflow: hidden;
+		}
+
+		.effect-3 h3 {
+			padding-top: 7px;
+			line-height: 35px;
+		}
+
+		.effect-3 .member-image {
+			border-bottom: 5px solid rgb(255, 55, 68);
+			transition: 0.4s;
+			height: 212px;
+			width: 100%;
+			display: inline-block;
+			float: none;
+			vertical-align: middle;
+			overflow: hidden;
+		}
+
+		.effect-3 .member-info {
+			transition: 0.4s;
+		}
+
+		.effect-3 .member-image img {
+			width: 100%;
+			vertical-align: bottom;
+		}
+
+		.effect-3 .member-bottom-bar {
+			background-color: rgb(255, 55, 68);
+			float: left;
+			left: 0;
+			bottom: 0;
+			/*溢出隐藏*/
+			overflow: hidden;
+			padding: 5px 0;
+			width: 100%;
+			height: 36px;
+			transition: 0.4s;
+		}
+
+		.effect-3:hover .member-bottom-bar {
+			/*height: 80%;*/
+		}
+
+		.effect-3:hover .member-image {
+			/*border-bottom: 0;*/
+			/*border-radius: 50px 50px 50px 50px;*/
+			border-radius: 0%;
+			height: 100px;
+			display: inline-block;
+			overflow: hidden;
+			/*width: 109px;*/
+			transition: 0.4s;
+		}
+
+		/*= effect-3 css end =*/
+
+		.myicon-right-arrow {
+			width: 7px;
+			height: 7px;
+			border-top: 2px solid red;
+			border-right: 2px solid red;
+			transform: rotate(45deg);
+			-webkit-transform: rotate(45deg);
+		}
+
+		/* title */
+		/* .title-box-title h1 {
+            font-family: Georgia, 'Times New Roman', Times, serif !important;
+        } */
+
+		/* title */
+		.title-box-new {
+			/* margin: 5vw 5vw 2vw 5vw; */
+			position: relative;
+			width: 100%;
+
+		}
+
+		/* .title-big {
+            background-image: url("../title.jpg");
+            opacity: 50;
+            z-index: -100;
+            
+background-size: auto 100%;  
+background-position: center; 
+background-repeat: no-repeat;
+background-origin: border-box; 
+background-clip: border-box;  
+        } */
+
+		.title-big h1 {
+			font-size: 10vw !important;
+			/* line-height:14vw; */
+
+		}
+
+		.title-big>.title-box-title {
+			padding: 0 !important;
+			justify-content: center;
+			border-left-style: none !important;
+			border-bottom-style: solid;
+			border-color: rgb(255, 55, 68);
+			border-bottom-width: 0.2vw;
+
+		}
+
+		.title-box-mask {
+			position: absolute;
+
+			height: 100%;
+
+			background-color: rgb(255, 55, 68);
+		}
+
+		.title-box-mask-left {
+			left: 0;
+		}
+
+		.title-box-mask-right {
+			right: 0;
+		}
+
+		.title-box-title {
+			/* justify-content: center; */
+			/* width: 100%; */
+			height: inherit;
+			border-left-style: solid;
+			border-color: rgb(255, 55, 68);
+			border-left-width: 0.25rem;
+			opacity: 0;
+			display: flex;
+			/* justify-content-safety: center; */
+
+
+		}
+
+		.title-big h1 {
+			flex-grow: 1;
+			vertical-align: middle;
+			text-align: center;
+			margin: 0;
+			font-size: 8rem;
+			color: rgb(25, 46, 67);
+		}
+
+		.title-box-title>h1 {
+			/* flex-grow: 1; */
+			vertical-align: middle;
+			/* text-align:center; */
+			padding: 0 4rem;
+			margin: 0;
+			/* font-size: 8rem; */
+			color: rgb(25, 46, 67);
+		}
+
+		/* title end */
+	</style>
+</head>
+
+<body>
+	<!-- <div class="debug" style= "position:fixed;top:6rem">
         <a class="a">a</a>
     </div> -->
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 column">
-					<nav class="navigation" id="nav-top">
-						<ul class="navigation-list nav-justified">
-							<div class="navigation-blue navigation-div">
-								<li class="navigation-item activate ">
-									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
-									<ul class="navigation-dropdown-panel"></ul>
-								</li>
-								<li class="navigation-item dropdown ">
-									<a class="navigation-item-link " href="#">Team</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
-										</li>
-									</ul>
-								</li>
-								<li class="navigation-item dropdown">
-									<a class="navigation-item-link " href="#">Project</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Design">Design</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Experiments">Experiments</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Notebook">Notebook</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Contribution">Contribution</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Demonstrate">Demonstrate</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Improve">Improve</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions </a>
-										</li>
-									</ul>
-								</li>
-								<li class="navigation-item dropdown ">
-									<a class="navigation-item-link " href="#">Parts</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts Overview</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Basic_Part">Basic Parts</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Composite_Part">Composite Parts</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Part_Collection">Part Collection</a>
-										</li>
-									</ul>
-								</li>
-							</div>
-							<div class="navigation-red navigation-div">
-								<li class="navigation-item ">
-									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
-									<ul class="navigation-dropdown-panel"></ul>
-								</li>
-								<li class="navigation-item dropdown ">
-									<a class="navigation-item-link" href="#">Human Practices</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Human Practices</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education & Engagement</a>
-										</li>
-									</ul>
-								</li>
-								<li class="navigation-item dropdown ">
-									<a class="navigation-item-link" href="/awards.html">Awards</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Model">Model</a>
-										</li>
-									</ul>
-								</li>
-								<li class="navigation-item ">
-									<a class="navigation-item-link" href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging Form</a>
-									<ul class="navigation-dropdown-panel"></ul>
-								</li>
-							</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 column">
+				<nav class="navigation" id="nav-top">
+					<ul class="navigation-list nav-justified">
+						<div class="navigation-blue navigation-div">
+							<li class="navigation-item activate ">
+								<a class="navigation-item-link "
+									href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
+								<ul class="navigation-dropdown-panel"></ul>
+							</li>
+							<li class="navigation-item dropdown ">
+								<a class="navigation-item-link " href="#">Team</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
+									</li>
+									<li class="navigation-subitem">
+										<a
+											href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
+									</li>
+								</ul>
+							</li>
+							<li class="navigation-item dropdown">
+								<a class="navigation-item-link " href="#">Project</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Design">Design</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Experiments">Experiments</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Notebook">Notebook</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Contribution">Contribution</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Demonstrate">Demonstrate</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Improve">Improve</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions
+										</a>
+									</li>
+								</ul>
+							</li>
+							<li class="navigation-item dropdown ">
+								<a class="navigation-item-link " href="#">Parts</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts Overview</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Basic_Part">Basic Parts</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Composite_Part">Composite
+											Parts</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Part_Collection">Part
+											Collection</a>
+									</li>
+								</ul>
+							</li>
+						</div>
+						<div class="navigation-red navigation-div">
+							<li class="navigation-item ">
+								<a class="navigation-item-link"
+									href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
+								<ul class="navigation-dropdown-panel"></ul>
+							</li>
+							<li class="navigation-item dropdown ">
+								<a class="navigation-item-link" href="#">Human Practices</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Human
+											Practices</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education &
+											Engagement</a>
+									</li>
+								</ul>
+							</li>
+							<li class="navigation-item dropdown ">
+								<a class="navigation-item-link" href="/awards.html">Awards</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Model">Model</a>
+									</li>
+								</ul>
+							</li>
+							<li class="navigation-item ">
+								<a class="navigation-item-link"
+									href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging Form</a>
+								<ul class="navigation-dropdown-panel"></ul>
+							</li>
+						</div>
 
-						</ul>
-					</nav>
-				</div>
+					</ul>
+				</nav>
 			</div>
 		</div>
-
-		<div class="container" id="Team-content">
-			<div class="row clearfix">
-				<div class="col-xs-8 col-sm-8">
-					<br />
-					<br />
-					<br />
-					<br />
-					<div class="title-box">
-						<h1 class="title">
-        					<span class="title-has-mask playing">Team</span>
-        					<span class="title-mask playing"></span>
-        				</h1>
+	</div>
+	<!-- 菜单栏在上面 -->
+	<div class="container" id="Team-content">
+		<div class="clearfix" style="margin-bottom: 18em;"></div>
+		<div class="row">
+			<div class="col-xs-6 col-xs-offset-3">
+				<div class="title-box-new title-big">
+					<div class="title-big-bg"></div>
+					<div class="title-box-mask"></div>
+					<div class="title-box-title">
+						<h1>TEAM</h1>
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="clearfix" style="margin-bottom: 10em;"></div>
+		<div class="container-fluid">
+
+			<!-- <div class="row clearfix">
+					<div class="col-xs-12 col-sm-6">
+						<div class="content-white">
+							<div class="row clearfix">
+								<div class="col-xs-10 col-sm-10">
+									<p>This is our team.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> -->
 			<div class="row clearfix">
+
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="single-member effect-3">
+						<div class="member-image">
+							<img src="https://2019.igem.org/wiki/images/a/a2/T--SYSU-Medicine--team_ygm.jpg" alt="Member">
+						</div>
+						<div class="member-info">
+							<h3>Guangmei Yan</h3>
+							<h5>Prof. </h5>
+							<p>Primary PI</p>
+							<div class="member-bottom-bar"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="single-member effect-3">
+						<div class="member-image">
+							<img src="https://2019.igem.org/wiki/images/a/a7/T--SYSU-Medicine--team_ly1.jpg" alt="Member">
+						</div>
+						<div class="member-info">
+							<h3>Yuan Lin</h3>
+							<h5>Prof.</h5>
+							<p>Secondary PI</p>
+							<div class="member-bottom-bar"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="single-member effect-3">
+						<div class="member-image">
+							<img src="https://2019.igem.org/wiki/images/5/58/T--SYSU-Medicine--team_zzq.jpg" alt="Member">
+						</div>
+						<div class="member-info">
+							<h3>Zhiqian Zhang</h3>
+							<h5>Student</h5>
+							<p>Instructor</p>
+							<div class="member-bottom-bar"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="single-member effect-3">
+						<div class="member-image">
+							<img src="https://2019.igem.org/wiki/images/4/49/T--SYSU-Medicine--team_wge.jpg" alt="Member">
+						</div>
+						<div class="member-info">
+							<h3>Guangen Wu</h3>
+							<h5>PhD</h5>
+							<p>Instructor</p>
+							<div class="member-bottom-bar"></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+		<div class="clearfix" style="margin-bottom: 10em;"></div>
+		<div class="container-fluid">
+
+			<!-- <div class="row clearfix">
 				<div class="col-xs-12 col-sm-6">
 					<div class="content-white">
 						<div class="row clearfix">
@@ -296,22 +479,205 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<div class="row clearfix">
 				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
 					<div class="single-member effect-3">
 						<div class="member-image">
-							<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg" alt="Member">
+							<img src="https://2019.igem.org/wiki/images/d/d2/T--SYSU-Medicine--team_hzb.jpg"
+								alt="Member">
 						</div>
 						<div class="member-info">
-							<h3>Name</h3>
+							<h3>Zibin Huang</h3>
 							<h5>Student</h5>
-							<p>-wiki -art -model</p>
+							<p>-HP -Model</p>
 							<div class="member-bottom-bar"></div>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="single-member effect-3">
+						<div class="member-image">
+							<img src="https://2019.igem.org/wiki/images/3/3b/T--SYSU-Medicine--team_lxh.jpg"
+								alt="Member">
+						</div>
+						<div class="member-info">
+							<h3>Xiaohang Liang</h3>
+							<h5>Student</h5>
+							<p>-Wiki -HP -model -Pre</p>
+							<div class="member-bottom-bar"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="single-member effect-3">
+						<div class="member-image">
+							<img src="https://2019.igem.org/wiki/images/0/0f/T--SYSU-Medicine--team_lxy.jpg"
+								alt="Member">
+						</div>
+						<div class="member-info">
+							<h3>Xingyu Li</h3>
+							<h5>Student</h5>
+							<p>-Wet Lab -HP -Wiki -Art -Pre </p>
+							<div class="member-bottom-bar"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="single-member effect-3">
+						<div class="member-image">
+							<img src="https://2019.igem.org/wiki/images/7/73/T--SYSU-Medicine--team_lxx.jpg"
+								alt="Member">
+						</div>
+						<div class="member-info">
+							<h3>Xiangxue Li</h3>
+							<h5>Student</h5>
+							<p>-HP -Wiki -Art</p>
+							<div class="member-bottom-bar"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="single-member effect-3">
+						<div class="member-image">
+							<img src="https://2019.igem.org/wiki/images/a/a0/T--SYSU-Medicine--team_glz.jpg"
+								alt="Member">
+						</div>
+						<div class="member-info">
+							<h3>Lizhi Guan</h3>
+							<h5>Student</h5>
+							<p>-Wet Lab -HP -Wiki </p>
+							<div class="member-bottom-bar"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="single-member effect-3">
+						<div class="member-image">
+							<img src="https://2019.igem.org/wiki/images/8/8e/T--SYSU-Medicine--team_lyt.jpg"
+								alt="Member">
+						</div>
+						<div class="member-info">
+							<h3>Yuantao Liu</h3>
+							<h5>Student</h5>
+							<p>-Wet Lab -HP -Wiki -Art</p>
+							<div class="member-bottom-bar"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="single-member effect-3">
+						<div class="member-image">
+							<img src="https://2019.igem.org/wiki/images/c/c3/T--SYSU-Medicine--team_ssj.jpg"
+								alt="Member">
+						</div>
+						<div class="member-info">
+							<h3>Shijian Song</h3>
+							<h5>Student</h5>
+							<p>-Wet Lab -HP -Wiki -Parts -Art -Pre</p>
+							<div class="member-bottom-bar"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="single-member effect-3">
+						<div class="member-image">
+							<img src="https://2019.igem.org/wiki/images/4/45/T--SYSU-Medicine--team_yfm.jpg"
+								alt="Member">
+						</div>
+						<div class="member-info">
+							<h3>Fengmin Yang</h3>
+							<h5>Student</h5>
+							<p>-Wet Lab -Wiki -Parts</p>
+							<div class="member-bottom-bar"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="single-member effect-3">
+						<div class="member-image">
+							<img src="https://2019.igem.org/wiki/images/f/f5/T--SYSU-Medicine--team_lws.jpg"
+								alt="Member">
+						</div>
+						<div class="member-info">
+							<h3>Weisheng Lu</h3>
+							<h5>Student</h5>
+							<p>-Wiki -Model</p>
+							<div class="member-bottom-bar"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="single-member effect-3">
+						<div class="member-image">
+							<img src="https://2019.igem.org/wiki/images/f/fc/T--SYSU-Medicine--team_zjy.jpg"
+								alt="Member">
+						</div>
+						<div class="member-info">
+							<h3>Jiayi Zeng</h3>
+							<h5>Student</h5>
+							<p>-Web Lab -HP -Wiki -Art</p>
+							<div class="member-bottom-bar"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="single-member effect-3">
+						<div class="member-image">
+							<img src="https://2019.igem.org/wiki/images/6/60/T--SYSU-Medicine--team_css.jpg"
+								alt="Member">
+						</div>
+						<div class="member-info">
+							<h3>Shanshan Chen</h3>
+							<h5>Student</h5>
+							<p>-Web Lab -HP -Wiki -Art</p>
+							<div class="member-bottom-bar"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="single-member effect-3">
+						<div class="member-image">
+							<img src="https://2019.igem.org/wiki/images/a/ac/T--SYSU-Medicine--team_wyh.jpg"
+								alt="Member">
+						</div>
+						<div class="member-info">
+							<h3>Yihui Wang</h3>
+							<h5>Student</h5>
+							<p>-Web Lab -Wiki -Parts</p>
+							<div class="member-bottom-bar"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="single-member effect-3">
+						<div class="member-image">
+							<img src="https://2019.igem.org/wiki/images/6/69/T--SYSU-Medicine--team_hsj.jpg"
+								alt="Member">
+						</div>
+						<div class="member-info">
+							<h3>Shunjie Hu</h3>
+							<h5>Student</h5>
+							<p>-Web Lab -HP -Wiki -Parts</p>
+							<div class="member-bottom-bar"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="single-member effect-3">
+						<div class="member-image">
+							<img src="https://2019.igem.org/wiki/images/c/c7/T--SYSU-Medicine--team_wx.jpg"
+								alt="Member">
+						</div>
+						<div class="member-info">
+							<h3>Xi Wang</h3>
+							<h5>Student</h5>
+							<p>-Web Lab -HP -Wiki</p>
+							<div class="member-bottom-bar"></div>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
 					<div class="single-member effect-3">
 						<div class="member-image">
 							<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg" alt="Member">
@@ -336,176 +702,7 @@
 							<div class="member-bottom-bar"></div>
 						</div>
 					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-					<div class="single-member effect-3">
-						<div class="member-image">
-							<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h3>Name</h3>
-							<h5>Student</h5>
-							<p>-wiki -art -model</p>
-							<div class="member-bottom-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-					<div class="single-member effect-3">
-						<div class="member-image">
-							<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h3>Name</h3>
-							<h5>Student</h5>
-							<p>-wiki -art -model</p>
-							<div class="member-bottom-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-					<div class="single-member effect-3">
-						<div class="member-image">
-							<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h3>Name</h3>
-							<h5>Student</h5>
-							<p>-wiki -art -model</p>
-							<div class="member-bottom-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-					<div class="single-member effect-3">
-						<div class="member-image">
-							<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h3>Name</h3>
-							<h5>Student</h5>
-							<p>-wiki -art -model</p>
-							<div class="member-bottom-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-					<div class="single-member effect-3">
-						<div class="member-image">
-							<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h3>Name</h3>
-							<h5>Student</h5>
-							<p>-wiki -art -model</p>
-							<div class="member-bottom-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-					<div class="single-member effect-3">
-						<div class="member-image">
-							<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h3>Name</h3>
-							<h5>Student</h5>
-							<p>-wiki -art -model</p>
-							<div class="member-bottom-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-					<div class="single-member effect-3">
-						<div class="member-image">
-							<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h3>Name</h3>
-							<h5>Student</h5>
-							<p>-wiki -art -model</p>
-							<div class="member-bottom-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-					<div class="single-member effect-3">
-						<div class="member-image">
-							<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h3>Name</h3>
-							<h5>Student</h5>
-							<p>-wiki -art -model</p>
-							<div class="member-bottom-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-					<div class="single-member effect-3">
-						<div class="member-image">
-							<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h3>Name</h3>
-							<h5>Student</h5>
-							<p>-wiki -art -model</p>
-							<div class="member-bottom-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-					<div class="single-member effect-3">
-						<div class="member-image">
-							<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h3>Name</h3>
-							<h5>Student</h5>
-							<p>-wiki -art -model</p>
-							<div class="member-bottom-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-					<div class="single-member effect-3">
-						<div class="member-image">
-							<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h3>Name</h3>
-							<h5>Student</h5>
-							<p>-wiki -art -model</p>
-							<div class="member-bottom-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-					<div class="single-member effect-3">
-						<div class="member-image">
-							<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h3>Name</h3>
-							<h5>Student</h5>
-							<p>-wiki -art -model</p>
-							<div class="member-bottom-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-					<div class="single-member effect-3">
-						<div class="member-image">
-							<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h3>Name</h3>
-							<h5>Student</h5>
-							<p>-wiki -art -model</p>
-							<div class="member-bottom-bar"></div>
-						</div>
-					</div>
-				</div>
+				</div> -->
 
 			</div>
 			<div class="row clearfix">
@@ -515,16 +712,78 @@
 			</div>
 
 		</div>
+	</div>
+</body>
 
-	</body>
-	<footer>
-		<div class="container clearfix">
-			<div class="row">
-				<div class="col-xs-12">
-					<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg" style="width:10%;margin-left:45%;">
-				</div>
+<footer>
+	<div class="container clearfix">
+		<div class="row">
+			<div class="col-xs-12">
+				<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg"
+					style="width:10%;margin-left:45%;">
 			</div>
 		</div>
-	</footer>
+	</div>
+</footer>
+<script type="text/javascript">
+	// title
+	$(document).ready(function () {
+		speed = 250;
+		$(".title-box-new").each(function (titlebox_i, title_box) {
+			var last = $(title_box).offset().top - $(window).scrollTop();
+			var viewheight = window.innerHeight / 5 * 3;
+			if (last < viewheight) {
+				if ($(title_box).hasClass("played")) { } else {
+					$(title_box).addClass("played");
+
+					$(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+					$(title_box).children(".title-box-mask").animate({ width: $(title_box).find("h1").outerWidth() }, speed, "swing", function () {
+						$(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
+						// console.log($(title_box).width());
+						// console.log($(title_box).find("h1").width());
+						console.log(parseInt($(title_box).find(".title-box-title").css("border-left-width")));
+						var cache = $(title_box).width() - $(title_box).find("h1").outerWidth();
+						$(title_box).children(".title-box-mask").css("right", cache);
+						// $(title_box).children(".title-box-mask").addClass("title-box-mask-right");
+						$(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
+					});
+					$(title_box).children(".title-box-mask").animate({ width: "0" }, speed, "swing");
+				}
+
+
+			}
+		});
+	})
+	$(document).scroll(function () {
+		speed = 250;
+		$(".title-box-new").each(function (titlebox_i, title_box) {
+			var last = $(title_box).offset().top - $(window).scrollTop();
+			var viewheight = window.innerHeight / 5 * 3;
+			if (last < viewheight) {
+				if ($(title_box).hasClass("played")) { } else {
+					$(title_box).addClass("played");
+
+					$(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+					$(title_box).children(".title-box-mask").animate({ width: $(title_box).find("h1").outerWidth() }, speed, "swing", function () {
+						$(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
+						// console.log($(title_box).width());
+						// console.log($(title_box).find("h1").width());
+						console.log(parseInt($(title_box).find(".title-box-title").css("border-left-width")));
+						var cache = $(title_box).width() - $(title_box).find("h1").outerWidth();
+						$(title_box).children(".title-box-mask").css("right", cache);
+						// $(title_box).children(".title-box-mask").addClass("title-box-mask-right");
+						$(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
+					});
+					$(title_box).children(".title-box-mask").animate({ width: "0" }, speed, "swing");
+				}
+
+
+			}
+		});
+	})
+
+// title end
+
+</script>
 
 </html>

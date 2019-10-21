@@ -1,507 +1,684 @@
 <!doctype html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
-		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
-		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/home&action=raw&ctype=text/javascript"></script>
-		<link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
-		<script src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
-		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
-		<title>SYSU-Medicine</title>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript"
+		src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
+	<link type="text/css" rel="stylesheet"
+		href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
+	<script type="text/javascript"
+		src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/home&action=raw&ctype=text/javascript"></script>
+	<link rel="stylesheet"
+		href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
+	<script
+		src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
+	<link type="text/css" rel="stylesheet"
+		href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
+	<title>SYSU-Medicine</title>
 
-		<script type="text/x-mathjax-config">
+	<script type="text/x-mathjax-config">
 			$(function(){ MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} }); });
 		</script>
-		<script src="https://2019.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-		<style>
-			
-			#model-content>div {
-				/*for <h1> , figure, table */
-				counter-reset: counter1 counter7 counter8;
-			}
-			
-			#model-content {
-				/*for fig*/
-				/*counter-reset: counter7;*/
-			}
-			
-			
-			#model-head h1 {
-				font-size: 48px;
-			}
-			
-			#model-head h3 {
-				font-size: 32px;
-			}
-			
-			#model-content {
-				counter-reset: counter7;
-			}
-			
-			#model-content h1 {
-				font-size: 48px !important;
-				counter-reset: counter2;
-				margin-top: 48px;
-				margin-bottom: 48px;
-			}
-			
-			#model-content h1:before {
-				counter-increment: counter1;
-				content: counter(counter1) ". ";
-			}
-			
-			#model-content h2 {
-				font-size: 40px !important;
-				counter-reset: counter3;
-				margin-top: 40px;
-				margin-bottom: 40px;
-			}
-			
-			#model-content h2:before {
-				counter-increment: counter2;
-				content: counter(counter1) "." counter(counter2) "  ";
-			}
-			
-			#model-content h3 {
-				font-size: 32px !important;
-				counter-reset: counter4;
-				margin-top: 32px;
-				margin-bottom: 32px;
-			}
-			
-			#model-content h3:before {
-				counter-increment: counter3;
-				content: counter(counter1) "." counter(counter2) "." counter(counter3) "  ";
-			}
-			
-			#model-content h4 {
-				font-size: 28px !important;
-				counter-reset: counter5;
-				margin-top: 28px;
-				margin-bottom: 28px;
-			}
-			
-			#model-content h4:before {
-				counter-increment: counter4;
-				content: counter(counter1) "." counter(counter2) "." counter(counter3) "." counter(counter4) "  ";
-			}
-			
-			#model-content h5 {
-				font-size: 24px !important;
-				counter-reset: counter6;
-				margin-top: 24px;
-				margin-bottom: 24px;
-			}
-			
-			#model-content h5:before {
-				counter-increment: counter5;
-				content: counter(counter1) "." counter(counter2) "." counter(counter3) "." counter(counter4) "." counter(counter5) "  ";
-			}
-			
-			#model-content p {
-				font-size: 18px !important;
-				line-height: 180%;
-				text-indent: 2em;
-			}
-			
-			#model-content figure {
-				text-align: center;
-				margin-top: 48px;
-				margin-bottom: 48px;
-			}
-			
-			#model-content img {
-				width:100%;
-			}
-			
-			#model-content figure>figcaption:before {
-				counter-increment: counter7;
-				content: "Fig." counter(counter7) ": ";
-			}
-			
-			#model-content caption {
-				text-align: center;
-				font-size: 18px;
-				color: black;
-			}
-			
-			#model-content caption:before {
-				counter-increment: counter8;
-				content: "Table " counter(counter8) ": ";
-			}
-		</style>
-	</head>
+	<script src="https://2019.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<style>
+		#model-content>div {
+			/*for <h1> , figure, table */
+			counter-reset: counter1 counter7 counter8;
+		}
 
-	<body>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 column">
-					<nav class="navigation" id="nav-top">
-						<ul class="navigation-list nav-justified">
-							<div class="navigation-blue navigation-div">
-								<li class="navigation-item activate ">
-									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
-									<ul class="navigation-dropdown-panel"></ul>
-								</li>
-								<li class="navigation-item dropdown">
-									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine/Description">Project</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Design">Design</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Experiments">Experiments</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Inspiration">Inspiration</a>
-										</li>
-									</ul>
-								</li>
-								<li class="navigation-item dropdown">
-									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Model">Model</a>
-									<ul class="navigation-dropdown-panel">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Model_Overview">Overview</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/M1_Cultivation">M1 Cultivation
-											</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Injection_System">Injection System
-											</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/TES">T. E. S.</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Future">Future</a>
-										</li>
-									</ul>
-								</li>
-								<li class="navigation-item dropdown ">
-									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Human Practices</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices_Overview">Overview
-											</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Integrated_Practices">Integrated Practices
-											</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education & Engagement
-											</a>
-										</li>
-									</ul>
-								</li>
+		#model-content {
+			/*for fig*/
+			/*counter-reset: counter7;*/
+		}
 
-							</div>
-							<div class="navigation-red navigation-div">
-								<li class="navigation-item dropdown ">
-									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts Overview</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Basic_Part">Basic Parts</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Composite_Part">Composite Parts
-											</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Part_Collection">Part Collection
-											</a>
-										</li>
-									</ul>
-								</li>
-								<li class="navigation-item dropdown ">
-									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions</a>
-										</li>
-									</ul>
-								</li>
-								<li class="navigation-item ">
-									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
-									<ul class="navigation-dropdown-panel"></ul>
-								</li>
-								<li class="navigation-item dropdown">
-									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Medal">Awards</a>
-									<ul class="navigation-dropdown-panel">
-										<li class="navigation-subitem">
-											<a href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging</a>
-										</li>
-									</ul>
-								</li>
-							</div>
 
-						</ul>
-					</nav>
-				</div>
+		#model-head h1 {
+			font-size: 48px;
+		}
+
+		#model-head h3 {
+			font-size: 32px;
+		}
+
+		#model-content {
+			counter-reset: counter7;
+		}
+
+		#model-content h1 {
+			font-size: 48px !important;
+			counter-reset: counter2;
+			margin-top: 48px;
+			margin-bottom: 48px;
+		}
+
+		#model-content h1:before {
+			counter-increment: counter1;
+			content: counter(counter1) ". ";
+		}
+
+		#model-content h2 {
+			font-size: 40px !important;
+			counter-reset: counter3;
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
+
+		#model-content h2:before {
+			counter-increment: counter2;
+			content: counter(counter1) "."counter(counter2) "  ";
+		}
+
+		#model-content h3 {
+			font-size: 32px !important;
+			counter-reset: counter4;
+			margin-top: 32px;
+			margin-bottom: 32px;
+		}
+
+		#model-content h3:before {
+			counter-increment: counter3;
+			content: counter(counter1) "."counter(counter2) "."counter(counter3) "  ";
+		}
+
+		#model-content h4 {
+			font-size: 28px !important;
+			counter-reset: counter5;
+			margin-top: 28px;
+			margin-bottom: 28px;
+		}
+
+		#model-content h4:before {
+			counter-increment: counter4;
+			content: counter(counter1) "."counter(counter2) "."counter(counter3) "."counter(counter4) "  ";
+		}
+
+		#model-content h5 {
+			font-size: 24px !important;
+			counter-reset: counter6;
+			margin-top: 24px;
+			margin-bottom: 24px;
+		}
+
+		#model-content h5:before {
+			counter-increment: counter5;
+			content: counter(counter1) "."counter(counter2) "."counter(counter3) "."counter(counter4) "."counter(counter5) "  ";
+		}
+
+		#model-content p {
+			font-size: 18px !important;
+			line-height: 180%;
+			text-indent: 2em;
+		}
+
+		#model-content figure {
+			text-align: center;
+			margin-top: 48px;
+			margin-bottom: 48px;
+		}
+
+		#model-content img {
+			width: 100%;
+		}
+
+		#model-content figure>figcaption:before {
+			counter-increment: counter7;
+			content: "Fig."counter(counter7) ": ";
+		}
+
+		#model-content caption {
+			text-align: center;
+			font-size: 18px;
+			color: black;
+		}
+
+		#model-content caption:before {
+			counter-increment: counter8;
+			content: "Table "counter(counter8) ": ";
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 column">
+				<nav class="navigation" id="nav-top">
+					<ul class="navigation-list nav-justified">
+						<div class="navigation-blue navigation-div">
+							<li class="navigation-item activate ">
+								<a class="navigation-item-link "
+									href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
+								<ul class="navigation-dropdown-panel"></ul>
+							</li>
+							<li class="navigation-item dropdown">
+								<a class="navigation-item-link ">Project</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Design">Design</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Experiments">Experiments</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Inspiration">Inspiration</a>
+									</li>
+								</ul>
+							</li>
+							<li class="navigation-item dropdown">
+								<a class="navigation-item-link">Model</a>
+								<ul class="navigation-dropdown-panel">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Model_Overview">Overview</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/M1_Cultivation">M1 Cultivation
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Injection_System">Injection
+											System
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/TES">T. E. S.</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Future">Future</a>
+									</li>
+								</ul>
+							</li>
+							<li class="navigation-item dropdown ">
+								<a class="navigation-item-link">Human Practices</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices_Overview">Overview
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Integrated_Practices">Integrated
+											Practices
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education &
+											Engagement
+										</a>
+									</li>
+								</ul>
+							</li>
+
+						</div>
+						<div class="navigation-red navigation-div">
+							<li class="navigation-item dropdown ">
+								<a class="navigation-item-link ">Parts</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts Overview</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts#Basic_Part">Basic
+											Parts</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts#Composite_Part">Composite
+											Parts
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts#Part_Collection">Part
+											Collection
+										</a>
+									</li>
+								</ul>
+							</li>
+
+							<li class="navigation-item ">
+								<a class="navigation-item-link"
+									href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
+								<ul class="navigation-dropdown-panel"></ul>
+							</li>
+							<li class="navigation-item ">
+								<a class="navigation-item-link"
+									href="https://2019.igem.org/Team:SYSU-Medicine/Medal">Awards</a>
+								<ul class="navigation-dropdown-panel">
+									<li class="navigation-subitem">
+										<a href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging</a>
+									</li>
+								</ul>
+							</li>
+							<li class="navigation-item dropdown ">
+								<a class="navigation-item-link ">Team</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
+									</li>
+									<li class="navigation-subitem">
+										<a
+											href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions</a>
+									</li>
+								</ul>
+							</li>
+						</div>
+
+					</ul>
+				</nav>
 			</div>
 		</div>
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
 
-		<div class="container">
-			<div class="row clearfix">
-				<div class="col-xs-8 col-xs-offset-2" id="model-head" style="text-align:center;">
-					<h1 class="title">Modeling</h1>
-				</div>
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-xs-8 col-xs-offset-2" id="model-head" style="text-align:center;">
+				<h1 class="title">Modeling</h1>
 			</div>
-			<div class="row clearfix" id="model-content">
-				<div class="col-xs-12 col-md-8 col-md-offset-2 ">
-					<h1 id="injection-system">Injection System</h1>
-					<p>In this section, our experiment focused on the medicine effect on the mouse. How can we measure the complex relationship between actinomycin D and M1? How does the concentration of nitroreductase grow with time? What is the best time and best prodrug volume for injection? Our models tried to solve these problems.</p>
-					<p>The process of our treatment is complex. Because it contains the microcosmic process, in which M1, uninfected and infected tumor cells interact with each other. Besides it is related with macroscopic process, in which the prodrug quantity of injection has a complex relationship with the initial concentration of prodrug in partial area. So we separate the whole process into partial process and injection process, and then we analyze them detailedly.</p>
-					<h2 id="partial-process">Partial Process</h2>
-					<p>Tumor cells often gather in the specific area, that is why we choose the partial process for our research.</p>
-					<p>In the partial process, the initial condition is the specific concentration of M1 and actinomycin D prodrug as the pro-medicine, along with the initial concentration of tumer cells. So we have the initial condition<br />
-						<span class="math display"><em>U</em>(0) = <em>φ</em><sub><em>U</em></sub>, <em>I</em>(0) = 0, <em>M</em>(0) = <em>φ</em><sub><em>M</em></sub>, <em>c</em><sub><em>m</em></sub>(0) = <em>φ</em><sub><em>m</em></sub>, <em>c</em><sub><em>E</em></sub>(0) = 0</span><br /></p>
-					<p>Then M1 will infect the tumor cells specifically. While in the tumor cells, M1 not only makes self replication but also translate the nitroreductase. The nitroreductase is so big that it can not be transported outsides. Luckily, our prodrug can enter the tumor cells due to its special perssad. So prodrug can be restored to actinomycin D under the help of nitroreductase. Actinomycin D producted could damage the tumor cells and at the same time, boost the production of nitroreductase.</p>
-					<h3 id="tumor-and-m1">Tumor And M1</h3>
-					<p>The process of tumor cells with M1 is similar to the process of veros with M1, so we obtain the ODE Model in the section 1. But we improve the model considering the effect of actinomycin D:<br />
-						<span class="math display">$$\left\{ \begin{array}{lcl} \frac{dU(t)}{dt}=rU(t)(1-\frac{U(t)+I(t)}{K})-\beta U(t)M(t)-k_1 c_m(t)U(t)\\ \frac{dI(t)}{dt}=\beta U(t)M(t)-\alpha I(t)-k_2c_m(t)I(t)\\ \frac{dM(t)}{dt}=\sigma I(t)-uM(t)+\delta c_m(t) \end{array} \right.$$</span><br /></p>
-					<p>In the improved ODE model, <span class="math inline"><em>k</em><sub>1</sub></span> is the coefficient of actinomycin D killing uninfected veros, while <span class="math inline"><em>k</em><sub>2</sub></span> is the coefficient of actinomycin D killing infected veros. In addition, let <span class="math inline"><em>δ</em></span> be the coefficient of actinomycin D boosting the growth of M1. The other coefficients are the same as in Section 1.</p>
-					<h3 id="traditional-michaelis-menten-equation">Traditional Michaelis-Menten Equation</h3>
-					<p>Now for the harder part. Our aim is to find out the influence of the changing concentration of the nitroreductase to the partial process. To find out the relationship of enzyme and reactant, we obtain the Michaelis-Menten Equation. In our experiment, the enzymatic reaction condition is suitable for the Michaelis-Menten Equation, especially for the assumption of Briggs-Haldane improved model.</p>
-					<p><br />
-						<span class="math display"><em>E</em> + <em>S</em> ↔︎ <em>E</em><em>S</em> → <em>E</em> + <em>P</em></span><br /> So there is convincing to use the Michaelis-Menten Model.</p>
-					<p>Let <span class="math inline"><em>c</em><sub><em>p</em></sub></span> be the concentration of prodrug, while <span class="math inline"><em>c</em><sub><em>m</em></sub></span> is the concentration of actinomycin D. <span class="math inline"><em>c</em><sub><em>p</em></sub></span> and <span class="math inline"><em>c</em><sub><em>m</em></sub></span> are the total concentration <span class="math inline"><em>c</em><sub><em>t</em><em>o</em><em>t</em><em>a</em><em>l</em></sub></span>,<br />
-						<span class="math display"><em>c</em><sub><em>t</em><em>o</em><em>t</em><em>a</em><em>l</em></sub> = <em>c</em><sub><em>m</em></sub> + <em>c</em><sub><em>p</em></sub></span><br /> for the ratio of reactant and product in our chemical equation is one to one. First we assume that the concentration of nitroreductase is constant, so the model is<br />
-						<span class="math display">$$\frac{dc_p}{dt}=-\frac{dc_m}{dt}=-\frac{\beta_1 c_p}{\beta_2+c_p}$$</span><br /> .
-					</p>
-					<p>The integral of the equation is below (we have considered the initial condition of our model).<br />
-						<span class="math display">$$\left\{ \begin{array}{lcl} c^{\beta_2}_p e^{c_p}=e^{-\beta_1(t+c^*)}\\ (c_{total}-c_m)^{\beta_2}e^{c_{total}-c_m}=e^{-\beta_1 (t+c^*)}\\ c^*=-\frac{\beta_2 ln c_{total}+c_{total}}{\beta_1} \end{array} \right .$$</span><br /> then we get the figure of traditional Michaelis-Menten Equation that</p>
-					<figure>
-						<img src="https://2019.igem.org/wiki/images/1/11/T--SYSU-Medicine--S2P1.png" alt="" />
-						<figcaption>
-							The Concentration of Prodrug And the Rate of Actinomycin D Production
-						</figcaption>
-					</figure>
-					<h3 id="improved-michaelis-menten-equation">Improved Michaelis-Menten Equation</h3>
-					<p>However, the concentration of nitroreductase is time-varying because it can be produced by the M1-infected tumor cells. Based on the usual method of Michaelis-Menten Equation and for the convenience as well, we assume that the coefficients of Traditional Michaelis-Menten Equation <span class="math inline"><em>β</em><sub>1</sub></span> and <span class="math inline"><em>β</em><sub>2</sub></span> are the affine transformation of the concentration of nitroreductase <span class="math inline"><em>c</em><sub><em>E</em></sub></span>. So the differential form of our improved Michaelis-Menten Equation is<br />
-						<span class="math display">$$\frac{dc_p}{dt}=-\frac{dc_m}{dt}=-\frac{(\beta_1+\gamma_1 c_E) c_p}{(\beta_2+\gamma_2 c_E)+c_p} .$$</span><br /></p>
-					<p>Then we obtain the integral form of the improved Michaelis-Menten Equation as</p>
-					<p><br />
-						<span class="math display">$$\left\{ \begin{array}{lcl} c^{\beta_2+\gamma_2 c_E}_p e^{c_p}=e^{-(\beta_1+\gamma_1 c_E)(t+c^*)}\\ (c_{total}-c_m)^{\beta_2+\gamma_2 c_E}e^{c_{total}-c_m}=e^{(-\beta_1+\gamma_1 c_E) (t+c^*)}\\ c^*=-\frac{(\beta_2+\gamma_2 c_E) ln c_{total}+c_{total}}{\beta_1+\gamma_1 c_E} \end{array} \right .$$</span><br /></p>
-					<p>The figure of the equation is below.</p>
-					<figure>
-						<img src="https://2019.igem.org/wiki/images/5/5c/T--SYSU-Medicine--IMME1.png" alt="" />
-						<figcaption>
-							The Concentration of Nitroreductase, Time and Concentration of Actinomycin D
-						</figcaption>
-					</figure>
-					<h3 id="integrated-partial-process-ode-model">Integrated Partial Process ODE Model</h3>
-					<p>Now, we have to consider the influence of the time-varying concentration of nitroreductase to the process.</p>
-					<p>We know that the concentration of nitroreductase can rise up just due to the M1 infection. And it will decrease because of the death of infected tumor cells. These are two main ways to influence the concentration of nitroreductase.</p>
-					<p>Finally, we get the ODE model of partial process as follows.</p>
-					<p><br />
-						<span class="math display">$$\left\{ \begin{array}{lcl} \frac{dU(t)}{dt}=rU(t)(1-\frac{U(t)+I(t)}{K})-\beta U(t)M(t)-k_1 c_m(t)U(t)\\ \frac{dI(t)}{dt}=\beta U(t)M(t)-\alpha I(t)-k_2c_m(t)I(t)\\ \frac{dM(t)}{dt}=\sigma I(t)-uM(t)+\delta c_m(t)\\ \frac{dc_m}{dt}=\frac{(\beta_1+\gamma_1 c_E) (c_{total}-c_m)}{(\beta_2+\gamma_2 c_E)+ (c_{total}-c_m)}\\ \frac{dc_E(t)}{dt}=k_3M(t)-k_4(\alpha I(t)+k_2 c_m(t)I(t)) \end{array} \right .$$</span><br /></p>
-					<p>In our equation group, the first equation ends with the element containing <span class="math inline"><em>U</em>(<em>t</em>)</span> to avoid the situation that the rate is under zero. It is the same in the second equation. The initial condition of our equation group is<br />
-						<span class="math display"><em>U</em>(0) = <em>φ</em><sub><em>U</em></sub>, <em>I</em>(0) = 0, <em>M</em>(0) = <em>φ</em><sub><em>M</em></sub>, <em>c</em><sub><em>m</em></sub>(0) = <em>φ</em><sub><em>m</em></sub>, <em>c</em><sub><em>E</em></sub>(0) = 0.</span><br /></p>
-					<p>Thus, we obtain the ode45 or ode15s to solve the equation group numerically.</p>
-					<h3 id="parameter-estimation">Parameter Estimation</h3>
-					<p>The number of our equation group is big in some way. Some of the parameters can be estimated by other methods (such as measurement), but some of them can only be estimated by fitting the data.</p>
-					<p>In the Improved Michaelis-Menten Equation, <span class="math inline"><em>β</em><sub>1</sub></span> and <span class="math inline"><em>β</em><sub>2</sub></span> are related with the concentration of nitroreductase linearly. So we use the linear regression model to fit the data. We should first measure the 5 min rate under different concentration of nitroreductase and then fit the data with traditional model in section 2.1.2, in order to get the estimated parameters <span class="math inline"><em>β</em><sub>1</sub></span> and <span class="math inline"><em>β</em><sub>2</sub></span> that exist in the traditional Michaelis-Menten Equation. Next we use linear regression model to find out the relationship between <span class="math inline"><em>c</em><sub><em>E</em></sub></span> and <span class="math inline"><em>β</em><sub>1</sub></span>, <span class="math inline"><em>β</em><sub>2</sub></span>. Besides our method, there are Lineweaver-Buck Method and Wilkinson Method. However, the error in our method is the lowest among three.</p>
-					<p>In our experiment, the prodrug production is low. We haven’t measured the concentration of drug under different concentration of nitroreductase. However, we will finish the parameters estimation of our model based on the method we used above. We analyse the model based on different paramter values. We first analyse the effect of <span class="math inline"><em>β</em><sub>1</sub></span>, and find that it only affects the maximum of the curve. <span class="math inline"><em>β</em><sub>2</sub></span> affects the rate of getting to the maximum.</p>
-					<figure>
-						<img src="https://2019.igem.org/wiki/images/0/05/T--SYSU-Medicine--team-Model-MME_Parameter.png"  alt="" />
-						<figcaption>
-							Parameter Estimation of Michaelis-Menten Equation
-						</figcaption>
-					</figure>
-					<h2 id="injection-process">Injection Process</h2>
-					<p>In this section, we will take the process of prodrug from injection to targeting area into consideration. In addition, we only consider the situation in immune-free mouse in the one-injection curve.</p>
-					<h3 id="indicator">Indicator</h3>
-					<p>To measure the degree of pesticide effect, kill rate is an indicator that is often used in the medicine research. In our research, instantaneous kill rate is more important, for it can change greatly, catching our attention. So we all consider instantaneous kill rate as our index. We assume that kill rate is related with the concentration of M1 and actinomycin D. Theoretically, M1 and actinomycin D kill tumor cells independently. However, they influence each other actually. So we have to add the method of Elastic Net or interation term to eliminate the autocorrelation of them (we choose the latter one). Furthermore, kill rate has positive correlation with the concentration of tumor cells (in our model we use ratio of survived tumor cells), so we finally show that</p>
-					<p><br />
-						<span class="math display"><em>R̂</em><sub><em>k</em><em>i</em><em>l</em><em>l</em></sub> = (<em>β</em><sub>1</sub><em>c</em><sub><em>a</em><em>c</em><em>t</em><em>i</em><em>n</em></sub> + <em>β</em><sub>2</sub><em>c</em><sub><em>M</em>1</sub> + <em>β</em><sub>3</sub><em>c</em><sub><em>a</em><em>c</em><em>t</em><em>i</em><em>n</em></sub><em>c</em><sub><em>M</em>1</sub> + <em>β</em><sub>4</sub>)<em>R</em><sub><em>t</em><em>u</em><em>m</em><em>o</em><em>r</em></sub><sup><em>α</em></sup>, 0 &lt; <em>α</em> &lt; 1</span><br /></p>
-					<p>To guarantee value of kill rate in <span class="math inline">[0, 1]</span>, we use the function <span class="math inline"><em>ϕ</em>(<em>x</em>) = 1 − <em>e</em><sup> − <em>x</em></sup></span>. In our experiment, the parameters are estimated by the data in confirming the validity of actinomycin D boosting the therapy of M1. The parameters are <span class="math inline"><em>β</em><sub>1</sub> = 0.6615</span>, <span class="math inline"><em>β</em><sub>2</sub> = 0.3418</span>, <span class="math inline"><em>β</em><sub>3</sub> = 1.9844</span>, <span class="math inline"><em>β</em><sub>4</sub> = 0</span> and <span class="math inline"><em>α</em> = 1</span>. Then we get the kill rate function and the figure.</p>
-					<p><br />
-						<span class="math display"><em>R</em><sub><em>k</em><em>i</em><em>l</em><em>l</em></sub> = 1 − <em>e</em><sup> − (0.6615<em>c</em><sub><em>a</em><em>c</em><em>t</em><em>i</em><em>n</em><em>o</em><em>m</em><em>y</em><em>c</em><em>i</em><em>n</em> <em>D</em></sub> + 0.3418<em>c</em><sub><em>M</em>1</sub> + 1.9844<em>c</em><sub><em>a</em><em>c</em><em>t</em><em>i</em><em>n</em><em>o</em><em>m</em><em>y</em><em>c</em><em>i</em><em>n</em><em>D</em></sub><em>c</em><sub><em>M</em>1</sub>)<em>R</em><sub><em>c</em><em>a</em><em>n</em><em>c</em><em>e</em><em>r</em></sub></sup></span><br /></p>
-					<figure>
-						<img src="https://2019.igem.org/wiki/images/7/77/T--SYSU-Medicine--KillRate.png" alt="" />
-						<figcaption>
-							The Kill Rate Function
-						</figcaption>
-					</figure>
-					<h3 id="compartment-model">Compartment Model</h3>
-					<p>To estimate the time-varying distribution of prodrug, we obtain the compartment model. A very important assumption in our compartment model is that medicine follows the uniform distribution in a room.</p>
-					<figure>
-						<img src="https://2019.igem.org/wiki/images/4/41/T--SYSU-Medicine--P1.png" alt="" />
-						<figcaption>
-							The Concentration of Prodrug And the Rate of Actinomycin D Prodution
-						</figcaption>
-					</figure>
-					<p>Thus we also use the ODE model according to the relationship in the process.</p>
-					<p><br />
-						<span class="math display">$$\left\{ \begin{array}{lcl} \dot{x}_1(t)=-k_{12}x_1-k_{13}x_1+k_{21}x_2+f_0(t)\\ \dot{x}_2(t)=k_{12}x_1-k_{21}x_2 \end{array} \right.$$</span><br /></p>
-					<p>We know that the concentration <span class="math inline"><em>c</em>(<em>t</em>)</span> multipling the volume <span class="math inline"><em>V</em></span> is the quantity <span class="math inline"><em>x</em>(<em>t</em>)</span>.<br />
-						<span class="math display"><em>x</em><sub><em>i</em></sub>(<em>t</em>) = <em>V</em><sub><em>i</em></sub><em>c</em><sub><em>i</em></sub>(<em>t</em>), <em>i</em> = 1, 2</span><br /></p>
-					<p>And then we can get that<br />
-						<span class="math display">$$\left \{ \begin{array}{lcl} \dot{c}_1(t)=-(k_{12}+k_{13})c_1+\frac{V_2}{V_1}k_{21}c_2+\frac{f_0(t)}{V_1}\\ \dot{c}_2(t)=\frac{V_1}{V_2}k_{12}c_1-k_{21}c_2 \end{array} \right.$$</span><br /></p>
-					<p>In our experiment, the type of injection is rapid intravenous injection. So <span class="math inline"><em>f</em><sub>0</sub>(<em>t</em>)</span> and the initial condition is</p>
-					<p><br />
-						<span class="math display">$$\left \{ \begin{array}{lcl} f_0(t)=0\\ c_1(0)=\frac{D_0}{V_1}\\ c_2(0)=0 \end{array} \right .$$</span><br /></p>
-					<p>Then we could get the solution of our equation that<br />
-						<span class="math display">$$\left \{ \begin{array}{lcl} c_1(t)=Ae^{-\alpha t}+Be^{-\beta t}\\ c_2(t)=\frac{D_0 k_12}{V_2 (\beta-\alpha)}(e^{-\alpha t}-e^{\beta}) \end{array} \right .$$</span><br /></p>
-					<p>The parameters in the model are<br />
-						<span class="math display">$$\left \{ \begin{array}{lcl} A=\frac{D_0(k_{21}-\alpha)}{V_1(\beta-\alpha)}\\ B=\frac{D_0(\beta-k_{21})}{V_1(\beta-\alpha)}\\ \alpha+\beta=k_{12}+k_{21}+k_{13}\\ \alpha \beta=k_{21}k_{13} \end{array} \right .$$</span><br /></p>
-					<p>Then we can get the time-varying concentration of total medicine.</p>
-					<h3 id="parameter-estimation-1">Parameter Estimation</h3>
-					<p>In our experiment, the concentration of actinomycin D is measured under different time. We can see the data in the table.</p>
-					<table class="table table-bordered">
-						<caption>
-							Prodrug Concentration in Blood System
-						</caption>
-						<thead>
-							<tr class="header">
-								<th style="text-align: left;"><span class="math inline"><em>t</em><sub><em>i</em></sub></span></th>
-								<th style="text-align: left;">1</th>
-								<th style="text-align: left;">2</th>
-								<th style="text-align: left;">4</th>
-								<th style="text-align: left;">8</th>
-								<th style="text-align: left;">16</th>
-								<th style="text-align: left;">24</th>
-								<th style="text-align: left;">36</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="odd">
-								<td style="text-align: left;"><span class="math inline"><em>c</em>(<em>t</em><sub><em>i</em></sub>)<em>μ</em><em>g</em>/<em>m</em><em>L</em></span></td>
-								<td style="text-align: left;">0.1005</td>
-								<td style="text-align: left;">0.0845</td>
-								<td style="text-align: left;">0.0638</td>
-								<td style="text-align: left;">0.0349</td>
-								<td style="text-align: left;">0.0136</td>
-								<td style="text-align: left;">0.0044</td>
-								<td style="text-align: left;">0.0020</td>
-							</tr>
-						</tbody>
-					</table>
-					<p>Then we use the former 4 iterations and latter 4 iterations to suit the model <span class="math inline">ln <em>c</em>(<em>t</em>) = ln <em>P</em><sub>1</sub> − <em>P</em><sub>2</sub><em>t</em></span> and we finally get that <span class="math inline"><em>A</em> = 0.09154</span>, <span class="math inline"><em>α</em> = 0.1204</span>, <span class="math inline"><em>B</em>=</span> and <span class="math inline"><em>β</em> =  − 0.009719</span>. And we calculate other parameters that are shown in the coming table.</p>
-					<table class="table table-bordered">
-						<caption>
-							Parameter Estimation
-						</caption>
-						<thead>
-							<tr class="header">
-								<th style="text-align: left;">A</th>
-								<th style="text-align: left;">0.09154</th>
-								<th style="text-align: left;"><span class="math inline"><em>k</em><sub>21</sub></span></th>
-								<th style="text-align: left;">0.1337</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="odd">
-								<td style="text-align: left;"><span class="math inline"><em>α</em></span></td>
-								<td style="text-align: left;">0.1204</td>
-								<td style="text-align: left;"><span class="math inline"><em>k</em><sub>13</sub></span></td>
-								<td style="text-align: left;">0.1356</td>
-							</tr>
-							<tr class="even">
-								<td style="text-align: left;">B</td>
-								<td style="text-align: left;">0.1159</td>
-								<td style="text-align: left;"><span class="math inline"><em>k</em><sub>12</sub></span></td>
-								<td style="text-align: left;">0.0017</td>
-							</tr>
-							<tr class="odd">
-								<td style="text-align: left;"><span class="math inline"><em>β</em></span></td>
-								<td style="text-align: left;">0.1506</td>
-								<td style="text-align: left;"></td>
-								<td style="text-align: left;"></td>
-							</tr>
-						</tbody>
-					</table>
-					<p>The figure that contains the nonlinear fitting method is below.</p>
-					<figure>
-						<img src="https://2019.igem.org/wiki/images/4/4e/T--SYSU-Medicine--team-Model-PE1.png" alt="" />
-						<figcaption>
-							The Concentration of Prodrug And Nonlinear Fitting
-						</figcaption>
-					</figure>
-					<p>Then we could see that the concentration of mixed prodrug changes as time goes by. If we only inject the mouse once, the time-varying concentration of mixed prodrug and Half-Life Period are provided in the figure. We also provide the concentration of M1 both in the serum and tumor area. Compared with the data, our model curve is suitable for our research.</p>
-					<figure>
-						<img src="https://2019.igem.org/wiki/images/f/ff/T--SYSU-Medicine--team-Model-hl111.png" alt="" />
-						<figcaption>
-							The Actual Data and the Concentration of Mixed Prodrug in Blood System and Tumor Area
-						</figcaption>
-					</figure>
-					<h2 id="integrated-injection-model">Integrated Injection Model</h2>
-					<p>Now we have the Partial Process and Injection Process, and then we want to mix them into one process. The concentration of total medicine in the tumor area is only related to the Compartment Model, and limits the time-varying partial process. Thus we could get the curve of concentration of tumor cells, titer of M1, concentration of nitroreductase, and concentration of actinomycin D in blood system and in tumor area as follows.</p>
-					<figure>
-						<img src="https://2019.igem.org/wiki/images/b/b9/T--SYSU-Medicine--team-Model-CI.png" alt="" />
-						<figcaption>
-							Integrated Injection Model with One Injection
-						</figcaption>
-					</figure>
-					<p>As for the instantaneous kill rate, we first analyse the data we got. Here is the relationship matrix of the concentration of uninfected tumor cells, infected tumor cells, titer of M1 and the concentration of actinomycin D. The data is from our model. Searching for the relationship between two variable just based on our model can not be convincing. However, there is rule between them which can be confirmed not just from references but from our experiment. Thus, we consider the possible error in our model by adding Gaussian noise.</p>
-					<figure>
-						<img src="https://2019.igem.org/wiki/images/1/1a/T--SYSU-Medicine--team-Model-Relationship_Matrix.png"  alt="" />
-						<figcaption>
-							Relationship Analysis
-						</figcaption>
-					</figure>
-					<p>We can see that there are strong relationship between variables. The relationship above confirm our assumption. Thus, the index Instantaneous Kill Rate is reasonable. And we get the time-varying Instantaneous Kill Rate as follow.</p>
-					<figure>
-						<img src="https://2019.igem.org/wiki/images/b/b9/T--SYSU-Medicine--team-Model-Decision_Instantaneous_Kill_Rate.png"  alt="" />
-						<figcaption>
-							Instantaneous Kill Rate
-						</figcaption>
-					</figure>
-					<p>Finally, we could get the injection regime by adapting the curve to the upper and lower boundary. After trying a lot of times, we find that <span class="math inline">0.58<em>μ</em><em>g</em>/<em>m</em><em>L</em></span> is the best injection quantity in the experiment. (The value of best injection time is a little different in this figure compared to the above figure, because we use the Runge Kutta Algorithm to solve the impulsive differential equation, which can be less complex than the exact solution in coding.)</p>
-					<figure>
-						<img src="https://2019.igem.org/wiki/images/a/ab/T--SYSU-Medicine--team-Model-injectionRegime.png" alt="" />
-						<figcaption>
-							Integrated Injection Model with One Injection
-						</figcaption>
-					</figure>
-					<h2 id="video-of-2-dimentional-distribution">Video of 2-dimentional Distribution</h2>
-					<p>To see the time-varying distribution of M1 inside mouse, we select 6 photos of 2 mice with fluorescent and a photo of these 2 mice without fluorescent. We convert every image into an RGB matrix. Then we try to transform the 6 matrixs and reduce the target dimension. Next we try to use BP neural network to fit the time-varying image and create 121 photos. Finally we make these images into movie.</p>
-					<div class="row clearfix">
-						<div class="col text-center">
-							<video controls="controls center-block">
-								<source src="https://2019.igem.org/wiki/images/1/1c/T--SYSU-Medicine--model_video.mp4" type="video/mp4">
-							</video>
-							<p>Video of 2-dimentional Distribution</p>
-						</div>
+		</div>
+		<div class="row clearfix" id="model-content">
+			<div class="col-xs-12 col-md-8 col-md-offset-2 ">
+				<h1 id="injection-system">Injection System</h1>
+				<p>In this section, our experiment focused on the medicine effect on the mouse. How can we measure the
+					complex relationship between actinomycin D and M1? How does the concentration of nitroreductase grow
+					with time? What is the best time and best prodrug volume for injection? Our models tried to solve
+					these problems.</p>
+				<p>The process of our treatment is complex. Because it contains the microcosmic process, in which M1,
+					uninfected and infected tumor cells interact with each other. Besides it is related with macroscopic
+					process, in which the prodrug quantity of injection has a complex relationship with the initial
+					concentration of prodrug in partial area. So we separate the whole process into partial process and
+					injection process, and then we analyze them detailedly.</p>
+				<h2 id="partial-process">Partial Process</h2>
+				<p>Tumor cells often gather in the specific area, that is why we choose the partial process for our
+					research.</p>
+				<p>In the partial process, the initial condition is the specific concentration of M1 and actinomycin D
+					prodrug as the pro-medicine, along with the initial concentration of tumer cells. So we have the
+					initial condition<br />
+					<span
+						class="math display"><em>U</em>(0) = <em>φ</em><sub><em>U</em></sub>, <em>I</em>(0) = 0, <em>M</em>(0) = <em>φ</em><sub><em>M</em></sub>, <em>c</em><sub><em>m</em></sub>(0) = <em>φ</em><sub><em>m</em></sub>, <em>c</em><sub><em>E</em></sub>(0) = 0</span><br />
+				</p>
+				<p>Then M1 will infect the tumor cells specifically. While in the tumor cells, M1 not only makes self
+					replication but also translate the nitroreductase. The nitroreductase is so big that it can not be
+					transported outsides. Luckily, our prodrug can enter the tumor cells due to its special perssad. So
+					prodrug can be restored to actinomycin D under the help of nitroreductase. Actinomycin D producted
+					could damage the tumor cells and at the same time, boost the production of nitroreductase.</p>
+				<h3 id="tumor-and-m1">Tumor And M1</h3>
+				<p>The process of tumor cells with M1 is similar to the process of veros with M1, so we obtain the ODE
+					Model in the section 1. But we improve the model considering the effect of actinomycin D:<br />
+					<span class="math display">$$\left\{ \begin{array}{lcl}
+						\frac{dU(t)}{dt}=rU(t)(1-\frac{U(t)+I(t)}{K})-\beta U(t)M(t)-k_1 c_m(t)U(t)\\
+						\frac{dI(t)}{dt}=\beta U(t)M(t)-\alpha I(t)-k_2c_m(t)I(t)\\ \frac{dM(t)}{dt}=\sigma
+						I(t)-uM(t)+\delta c_m(t) \end{array} \right.$$</span><br /></p>
+				<p>In the improved ODE model, <span class="math inline"><em>k</em><sub>1</sub></span> is the coefficient
+					of actinomycin D killing uninfected veros, while <span
+						class="math inline"><em>k</em><sub>2</sub></span> is the coefficient of actinomycin D killing
+					infected veros. In addition, let <span class="math inline"><em>δ</em></span> be the coefficient of
+					actinomycin D boosting the growth of M1. The other coefficients are the same as in Section 1.</p>
+				<h3 id="traditional-michaelis-menten-equation">Traditional Michaelis-Menten Equation</h3>
+				<p>Now for the harder part. Our aim is to find out the influence of the changing concentration of the
+					nitroreductase to the partial process. To find out the relationship of enzyme and reactant, we
+					obtain the Michaelis-Menten Equation. In our experiment, the enzymatic reaction condition is
+					suitable for the Michaelis-Menten Equation, especially for the assumption of Briggs-Haldane improved
+					model.</p>
+				<p><br />
+					<span
+						class="math display"><em>E</em> + <em>S</em> ↔︎ <em>E</em><em>S</em> → <em>E</em> + <em>P</em></span><br />
+					So there is convincing to use the Michaelis-Menten Model.</p>
+				<p>Let <span class="math inline"><em>c</em><sub><em>p</em></sub></span> be the concentration of prodrug,
+					while <span class="math inline"><em>c</em><sub><em>m</em></sub></span> is the concentration of
+					actinomycin D. <span class="math inline"><em>c</em><sub><em>p</em></sub></span> and <span
+						class="math inline"><em>c</em><sub><em>m</em></sub></span> are the total concentration <span
+						class="math inline"><em>c</em><sub><em>t</em><em>o</em><em>t</em><em>a</em><em>l</em></sub></span>,<br />
+					<span
+						class="math display"><em>c</em><sub><em>t</em><em>o</em><em>t</em><em>a</em><em>l</em></sub> = <em>c</em><sub><em>m</em></sub> + <em>c</em><sub><em>p</em></sub></span><br />
+					for the ratio of reactant and product in our chemical equation is one to one. First we assume that
+					the concentration of nitroreductase is constant, so the model is<br />
+					<span class="math display">$$\frac{dc_p}{dt}=-\frac{dc_m}{dt}=-\frac{\beta_1
+						c_p}{\beta_2+c_p}$$</span><br /> .
+				</p>
+				<p>The integral of the equation is below (we have considered the initial condition of our model).<br />
+					<span class="math display">$$\left\{ \begin{array}{lcl} c^{\beta_2}_p e^{c_p}=e^{-\beta_1(t+c^*)}\\
+						(c_{total}-c_m)^{\beta_2}e^{c_{total}-c_m}=e^{-\beta_1 (t+c^*)}\\ c^*=-\frac{\beta_2 ln
+						c_{total}+c_{total}}{\beta_1} \end{array} \right .$$</span><br /> then we get the figure of
+					traditional Michaelis-Menten Equation that</p>
+				<figure>
+					<img src="https://2019.igem.org/wiki/images/1/11/T--SYSU-Medicine--S2P1.png" alt="" />
+					<figcaption>
+						The Concentration of Prodrug And the Rate of Actinomycin D Production
+					</figcaption>
+				</figure>
+				<h3 id="improved-michaelis-menten-equation">Improved Michaelis-Menten Equation</h3>
+				<p>However, the concentration of nitroreductase is time-varying because it can be produced by the
+					M1-infected tumor cells. Based on the usual method of Michaelis-Menten Equation and for the
+					convenience as well, we assume that the coefficients of Traditional Michaelis-Menten Equation <span
+						class="math inline"><em>β</em><sub>1</sub></span> and <span
+						class="math inline"><em>β</em><sub>2</sub></span> are the affine transformation of the
+					concentration of nitroreductase <span class="math inline"><em>c</em><sub><em>E</em></sub></span>. So
+					the differential form of our improved Michaelis-Menten Equation is<br />
+					<span class="math display">$$\frac{dc_p}{dt}=-\frac{dc_m}{dt}=-\frac{(\beta_1+\gamma_1 c_E)
+						c_p}{(\beta_2+\gamma_2 c_E)+c_p} .$$</span><br /></p>
+				<p>Then we obtain the integral form of the improved Michaelis-Menten Equation as</p>
+				<p><br />
+					<span class="math display">$$\left\{ \begin{array}{lcl} c^{\beta_2+\gamma_2 c_E}_p
+						e^{c_p}=e^{-(\beta_1+\gamma_1 c_E)(t+c^*)}\\ (c_{total}-c_m)^{\beta_2+\gamma_2
+						c_E}e^{c_{total}-c_m}=e^{(-\beta_1+\gamma_1 c_E) (t+c^*)}\\ c^*=-\frac{(\beta_2+\gamma_2 c_E) ln
+						c_{total}+c_{total}}{\beta_1+\gamma_1 c_E} \end{array} \right .$$</span><br /></p>
+				<p>The figure of the equation is below.</p>
+				<figure>
+					<img src="https://2019.igem.org/wiki/images/5/5c/T--SYSU-Medicine--IMME1.png" alt="" />
+					<figcaption>
+						The Concentration of Nitroreductase, Time and Concentration of Actinomycin D
+					</figcaption>
+				</figure>
+				<h3 id="integrated-partial-process-ode-model">Integrated Partial Process ODE Model</h3>
+				<p>Now, we have to consider the influence of the time-varying concentration of nitroreductase to the
+					process.</p>
+				<p>We know that the concentration of nitroreductase can rise up just due to the M1 infection. And it
+					will decrease because of the death of infected tumor cells. These are two main ways to influence the
+					concentration of nitroreductase.</p>
+				<p>Finally, we get the ODE model of partial process as follows.</p>
+				<p><br />
+					<span class="math display">$$\left\{ \begin{array}{lcl}
+						\frac{dU(t)}{dt}=rU(t)(1-\frac{U(t)+I(t)}{K})-\beta U(t)M(t)-k_1 c_m(t)U(t)\\
+						\frac{dI(t)}{dt}=\beta U(t)M(t)-\alpha I(t)-k_2c_m(t)I(t)\\ \frac{dM(t)}{dt}=\sigma
+						I(t)-uM(t)+\delta c_m(t)\\ \frac{dc_m}{dt}=\frac{(\beta_1+\gamma_1 c_E)
+						(c_{total}-c_m)}{(\beta_2+\gamma_2 c_E)+ (c_{total}-c_m)}\\
+						\frac{dc_E(t)}{dt}=k_3M(t)-k_4(\alpha I(t)+k_2 c_m(t)I(t)) \end{array} \right .$$</span><br />
+				</p>
+				<p>In our equation group, the first equation ends with the element containing <span
+						class="math inline"><em>U</em>(<em>t</em>)</span> to avoid the situation that the rate is under
+					zero. It is the same in the second equation. The initial condition of our equation group is<br />
+					<span
+						class="math display"><em>U</em>(0) = <em>φ</em><sub><em>U</em></sub>, <em>I</em>(0) = 0, <em>M</em>(0) = <em>φ</em><sub><em>M</em></sub>, <em>c</em><sub><em>m</em></sub>(0) = <em>φ</em><sub><em>m</em></sub>, <em>c</em><sub><em>E</em></sub>(0) = 0.</span><br />
+				</p>
+				<p>Thus, we obtain the ode45 or ode15s to solve the equation group numerically.</p>
+				<h3 id="parameter-estimation">Parameter Estimation</h3>
+				<p>The number of our equation group is big in some way. Some of the parameters can be estimated by other
+					methods (such as measurement), but some of them can only be estimated by fitting the data.</p>
+				<p>In the Improved Michaelis-Menten Equation, <span class="math inline"><em>β</em><sub>1</sub></span>
+					and <span class="math inline"><em>β</em><sub>2</sub></span> are related with the concentration of
+					nitroreductase linearly. So we use the linear regression model to fit the data. We should first
+					measure the 5 min rate under different concentration of nitroreductase and then fit the data with
+					traditional model in section 2.1.2, in order to get the estimated parameters <span
+						class="math inline"><em>β</em><sub>1</sub></span> and <span
+						class="math inline"><em>β</em><sub>2</sub></span> that exist in the traditional Michaelis-Menten
+					Equation. Next we use linear regression model to find out the relationship between <span
+						class="math inline"><em>c</em><sub><em>E</em></sub></span> and <span
+						class="math inline"><em>β</em><sub>1</sub></span>, <span
+						class="math inline"><em>β</em><sub>2</sub></span>. Besides our method, there are Lineweaver-Buck
+					Method and Wilkinson Method. However, the error in our method is the lowest among three.</p>
+				<p>In our experiment, the prodrug production is low. We haven’t measured the concentration of drug under
+					different concentration of nitroreductase. However, we will finish the parameters estimation of our
+					model based on the method we used above. We analyse the model based on different paramter values. We
+					first analyse the effect of <span class="math inline"><em>β</em><sub>1</sub></span>, and find that
+					it only affects the maximum of the curve. <span class="math inline"><em>β</em><sub>2</sub></span>
+					affects the rate of getting to the maximum.</p>
+				<figure>
+					<img src="https://2019.igem.org/wiki/images/0/05/T--SYSU-Medicine--team-Model-MME_Parameter.png"
+						alt="" />
+					<figcaption>
+						Parameter Estimation of Michaelis-Menten Equation
+					</figcaption>
+				</figure>
+				<h2 id="injection-process">Injection Process</h2>
+				<p>In this section, we will take the process of prodrug from injection to targeting area into
+					consideration. In addition, we only consider the situation in immune-free mouse in the one-injection
+					curve.</p>
+				<h3 id="indicator">Indicator</h3>
+				<p>To measure the degree of pesticide effect, kill rate is an indicator that is often used in the
+					medicine research. In our research, instantaneous kill rate is more important, for it can change
+					greatly, catching our attention. So we all consider instantaneous kill rate as our index. We assume
+					that kill rate is related with the concentration of M1 and actinomycin D. Theoretically, M1 and
+					actinomycin D kill tumor cells independently. However, they influence each other actually. So we
+					have to add the method of Elastic Net or interation term to eliminate the autocorrelation of them
+					(we choose the latter one). Furthermore, kill rate has positive correlation with the concentration
+					of tumor cells (in our model we use ratio of survived tumor cells), so we finally show that</p>
+				<p><br />
+					<span
+						class="math display"><em>R̂</em><sub><em>k</em><em>i</em><em>l</em><em>l</em></sub> = (<em>β</em><sub>1</sub><em>c</em><sub><em>a</em><em>c</em><em>t</em><em>i</em><em>n</em></sub> + <em>β</em><sub>2</sub><em>c</em><sub><em>M</em>1</sub> + <em>β</em><sub>3</sub><em>c</em><sub><em>a</em><em>c</em><em>t</em><em>i</em><em>n</em></sub><em>c</em><sub><em>M</em>1</sub> + <em>β</em><sub>4</sub>)<em>R</em><sub><em>t</em><em>u</em><em>m</em><em>o</em><em>r</em></sub><sup><em>α</em></sup>, 0 &lt; <em>α</em> &lt; 1</span><br />
+				</p>
+				<p>To guarantee value of kill rate in <span class="math inline">[0, 1]</span>, we use the function <span
+						class="math inline"><em>ϕ</em>(<em>x</em>) = 1 − <em>e</em><sup> − <em>x</em></sup></span>. In
+					our experiment, the parameters are estimated by the data in confirming the validity of actinomycin D
+					boosting the therapy of M1. The parameters are <span
+						class="math inline"><em>β</em><sub>1</sub> = 0.6615</span>, <span
+						class="math inline"><em>β</em><sub>2</sub> = 0.3418</span>, <span
+						class="math inline"><em>β</em><sub>3</sub> = 1.9844</span>, <span
+						class="math inline"><em>β</em><sub>4</sub> = 0</span> and <span
+						class="math inline"><em>α</em> = 1</span>. Then we get the kill rate function and the figure.
+				</p>
+				<p><br />
+					<span
+						class="math display"><em>R</em><sub><em>k</em><em>i</em><em>l</em><em>l</em></sub> = 1 − <em>e</em><sup> − (0.6615<em>c</em><sub><em>a</em><em>c</em><em>t</em><em>i</em><em>n</em><em>o</em><em>m</em><em>y</em><em>c</em><em>i</em><em>n</em> <em>D</em></sub> + 0.3418<em>c</em><sub><em>M</em>1</sub> + 1.9844<em>c</em><sub><em>a</em><em>c</em><em>t</em><em>i</em><em>n</em><em>o</em><em>m</em><em>y</em><em>c</em><em>i</em><em>n</em><em>D</em></sub><em>c</em><sub><em>M</em>1</sub>)<em>R</em><sub><em>c</em><em>a</em><em>n</em><em>c</em><em>e</em><em>r</em></sub></sup></span><br />
+				</p>
+				<figure>
+					<img src="https://2019.igem.org/wiki/images/7/77/T--SYSU-Medicine--KillRate.png" alt="" />
+					<figcaption>
+						The Kill Rate Function
+					</figcaption>
+				</figure>
+				<h3 id="compartment-model">Compartment Model</h3>
+				<p>To estimate the time-varying distribution of prodrug, we obtain the compartment model. A very
+					important assumption in our compartment model is that medicine follows the uniform distribution in a
+					room.</p>
+				<figure>
+					<img src="https://2019.igem.org/wiki/images/4/41/T--SYSU-Medicine--P1.png" alt="" />
+					<figcaption>
+						The Concentration of Prodrug And the Rate of Actinomycin D Prodution
+					</figcaption>
+				</figure>
+				<p>Thus we also use the ODE model according to the relationship in the process.</p>
+				<p><br />
+					<span class="math display">$$\left\{ \begin{array}{lcl}
+						\dot{x}_1(t)=-k_{12}x_1-k_{13}x_1+k_{21}x_2+f_0(t)\\ \dot{x}_2(t)=k_{12}x_1-k_{21}x_2
+						\end{array} \right.$$</span><br /></p>
+				<p>We know that the concentration <span class="math inline"><em>c</em>(<em>t</em>)</span> multipling the
+					volume <span class="math inline"><em>V</em></span> is the quantity <span
+						class="math inline"><em>x</em>(<em>t</em>)</span>.<br />
+					<span
+						class="math display"><em>x</em><sub><em>i</em></sub>(<em>t</em>) = <em>V</em><sub><em>i</em></sub><em>c</em><sub><em>i</em></sub>(<em>t</em>), <em>i</em> = 1, 2</span><br />
+				</p>
+				<p>And then we can get that<br />
+					<span class="math display">$$\left \{ \begin{array}{lcl}
+						\dot{c}_1(t)=-(k_{12}+k_{13})c_1+\frac{V_2}{V_1}k_{21}c_2+\frac{f_0(t)}{V_1}\\
+						\dot{c}_2(t)=\frac{V_1}{V_2}k_{12}c_1-k_{21}c_2 \end{array} \right.$$</span><br /></p>
+				<p>In our experiment, the type of injection is rapid intravenous injection. So <span
+						class="math inline"><em>f</em><sub>0</sub>(<em>t</em>)</span> and the initial condition is</p>
+				<p><br />
+					<span class="math display">$$\left \{ \begin{array}{lcl} f_0(t)=0\\ c_1(0)=\frac{D_0}{V_1}\\
+						c_2(0)=0 \end{array} \right .$$</span><br /></p>
+				<p>Then we could get the solution of our equation that<br />
+					<span class="math display">$$\left \{ \begin{array}{lcl} c_1(t)=Ae^{-\alpha t}+Be^{-\beta t}\\
+						c_2(t)=\frac{D_0 k_12}{V_2 (\beta-\alpha)}(e^{-\alpha t}-e^{\beta}) \end{array} \right
+						.$$</span><br /></p>
+				<p>The parameters in the model are<br />
+					<span class="math display">$$\left \{ \begin{array}{lcl}
+						A=\frac{D_0(k_{21}-\alpha)}{V_1(\beta-\alpha)}\\ B=\frac{D_0(\beta-k_{21})}{V_1(\beta-\alpha)}\\
+						\alpha+\beta=k_{12}+k_{21}+k_{13}\\ \alpha \beta=k_{21}k_{13} \end{array} \right
+						.$$</span><br /></p>
+				<p>Then we can get the time-varying concentration of total medicine.</p>
+				<h3 id="parameter-estimation-1">Parameter Estimation</h3>
+				<p>In our experiment, the concentration of actinomycin D is measured under different time. We can see
+					the data in the table.</p>
+				<table class="table table-bordered">
+					<caption>
+						Prodrug Concentration in Blood System
+					</caption>
+					<thead>
+						<tr class="header">
+							<th style="text-align: left;"><span
+									class="math inline"><em>t</em><sub><em>i</em></sub></span></th>
+							<th style="text-align: left;">1</th>
+							<th style="text-align: left;">2</th>
+							<th style="text-align: left;">4</th>
+							<th style="text-align: left;">8</th>
+							<th style="text-align: left;">16</th>
+							<th style="text-align: left;">24</th>
+							<th style="text-align: left;">36</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="odd">
+							<td style="text-align: left;"><span
+									class="math inline"><em>c</em>(<em>t</em><sub><em>i</em></sub>)<em>μ</em><em>g</em>/<em>m</em><em>L</em></span>
+							</td>
+							<td style="text-align: left;">0.1005</td>
+							<td style="text-align: left;">0.0845</td>
+							<td style="text-align: left;">0.0638</td>
+							<td style="text-align: left;">0.0349</td>
+							<td style="text-align: left;">0.0136</td>
+							<td style="text-align: left;">0.0044</td>
+							<td style="text-align: left;">0.0020</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>Then we use the former 4 iterations and latter 4 iterations to suit the model <span
+						class="math inline">ln <em>c</em>(<em>t</em>) = ln <em>P</em><sub>1</sub> − <em>P</em><sub>2</sub><em>t</em></span>
+					and we finally get that <span class="math inline"><em>A</em> = 0.09154</span>, <span
+						class="math inline"><em>α</em> = 0.1204</span>, <span class="math inline"><em>B</em>=</span> and
+					<span class="math inline"><em>β</em> =  − 0.009719</span>. And we calculate other parameters that
+					are shown in the coming table.</p>
+				<table class="table table-bordered">
+					<caption>
+						Parameter Estimation
+					</caption>
+					<thead>
+						<tr class="header">
+							<th style="text-align: left;">A</th>
+							<th style="text-align: left;">0.09154</th>
+							<th style="text-align: left;"><span class="math inline"><em>k</em><sub>21</sub></span></th>
+							<th style="text-align: left;">0.1337</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="odd">
+							<td style="text-align: left;"><span class="math inline"><em>α</em></span></td>
+							<td style="text-align: left;">0.1204</td>
+							<td style="text-align: left;"><span class="math inline"><em>k</em><sub>13</sub></span></td>
+							<td style="text-align: left;">0.1356</td>
+						</tr>
+						<tr class="even">
+							<td style="text-align: left;">B</td>
+							<td style="text-align: left;">0.1159</td>
+							<td style="text-align: left;"><span class="math inline"><em>k</em><sub>12</sub></span></td>
+							<td style="text-align: left;">0.0017</td>
+						</tr>
+						<tr class="odd">
+							<td style="text-align: left;"><span class="math inline"><em>β</em></span></td>
+							<td style="text-align: left;">0.1506</td>
+							<td style="text-align: left;"></td>
+							<td style="text-align: left;"></td>
+						</tr>
+					</tbody>
+				</table>
+				<p>The figure that contains the nonlinear fitting method is below.</p>
+				<figure>
+					<img src="https://2019.igem.org/wiki/images/4/4e/T--SYSU-Medicine--team-Model-PE1.png" alt="" />
+					<figcaption>
+						The Concentration of Prodrug And Nonlinear Fitting
+					</figcaption>
+				</figure>
+				<p>Then we could see that the concentration of mixed prodrug changes as time goes by. If we only inject
+					the mouse once, the time-varying concentration of mixed prodrug and Half-Life Period are provided in
+					the figure. We also provide the concentration of M1 both in the serum and tumor area. Compared with
+					the data, our model curve is suitable for our research.</p>
+				<figure>
+					<img src="https://2019.igem.org/wiki/images/f/ff/T--SYSU-Medicine--team-Model-hl111.png" alt="" />
+					<figcaption>
+						The Actual Data and the Concentration of Mixed Prodrug in Blood System and Tumor Area
+					</figcaption>
+				</figure>
+				<h2 id="integrated-injection-model">Integrated Injection Model</h2>
+				<p>Now we have the Partial Process and Injection Process, and then we want to mix them into one process.
+					The concentration of total medicine in the tumor area is only related to the Compartment Model, and
+					limits the time-varying partial process. Thus we could get the curve of concentration of tumor
+					cells, titer of M1, concentration of nitroreductase, and concentration of actinomycin D in blood
+					system and in tumor area as follows.</p>
+				<figure>
+					<img src="https://2019.igem.org/wiki/images/b/b9/T--SYSU-Medicine--team-Model-CI.png" alt="" />
+					<figcaption>
+						Integrated Injection Model with One Injection
+					</figcaption>
+				</figure>
+				<p>As for the instantaneous kill rate, we first analyse the data we got. Here is the relationship matrix
+					of the concentration of uninfected tumor cells, infected tumor cells, titer of M1 and the
+					concentration of actinomycin D. The data is from our model. Searching for the relationship between
+					two variable just based on our model can not be convincing. However, there is rule between them
+					which can be confirmed not just from references but from our experiment. Thus, we consider the
+					possible error in our model by adding Gaussian noise.</p>
+				<figure>
+					<img src="https://2019.igem.org/wiki/images/1/1a/T--SYSU-Medicine--team-Model-Relationship_Matrix.png"
+						alt="" />
+					<figcaption>
+						Relationship Analysis
+					</figcaption>
+				</figure>
+				<p>We can see that there are strong relationship between variables. The relationship above confirm our
+					assumption. Thus, the index Instantaneous Kill Rate is reasonable. And we get the time-varying
+					Instantaneous Kill Rate as follow.</p>
+				<figure>
+					<img src="https://2019.igem.org/wiki/images/b/b9/T--SYSU-Medicine--team-Model-Decision_Instantaneous_Kill_Rate.png"
+						alt="" />
+					<figcaption>
+						Instantaneous Kill Rate
+					</figcaption>
+				</figure>
+				<p>Finally, we could get the injection regime by adapting the curve to the upper and lower boundary.
+					After trying a lot of times, we find that <span
+						class="math inline">0.58<em>μ</em><em>g</em>/<em>m</em><em>L</em></span> is the best injection
+					quantity in the experiment. (The value of best injection time is a little different in this figure
+					compared to the above figure, because we use the Runge Kutta Algorithm to solve the impulsive
+					differential equation, which can be less complex than the exact solution in coding.)</p>
+				<figure>
+					<img src="https://2019.igem.org/wiki/images/a/ab/T--SYSU-Medicine--team-Model-injectionRegime.png"
+						alt="" />
+					<figcaption>
+						Integrated Injection Model with One Injection
+					</figcaption>
+				</figure>
+				<h2 id="video-of-2-dimentional-distribution">Video of 2-dimentional Distribution</h2>
+				<p>To see the time-varying distribution of M1 inside mouse, we select 6 photos of 2 mice with
+					fluorescent and a photo of these 2 mice without fluorescent. We convert every image into an RGB
+					matrix. Then we try to transform the 6 matrixs and reduce the target dimension. Next we try to use
+					BP neural network to fit the time-varying image and create 121 photos. Finally we make these images
+					into movie.</p>
+				<div class="row clearfix">
+					<div class="col text-center">
+						<video controls="controls center-block">
+							<source src="https://2019.igem.org/wiki/images/1/1c/T--SYSU-Medicine--model_video.mp4"
+								type="video/mp4">
+						</video>
+						<p>Video of 2-dimentional Distribution</p>
 					</div>
-					<h1 id="renference">Renference</h1>
-					<p>[1]Jiang Qiyuan, Xie Jinxing, Ye Jun (2010). Mathematical model (4th ed.). Beijing: China Higher Education Press, 338-346</p>
-					<p>[2]Yang bowen, liu ping. Pharmacokinetics two-compartment model [J]. Journal of natural science of Harbin normal university,2016,32(01):13-15+66.</p>
-					<p>[3]Yuan jin, Shi Lei, Zhao Shujin. Pharmacokinetics and Compartment Model Parameters of the Two-Compartment Model for External Vascular Administration Based on Excel Function [J]. China Pharmacy,2008(02):106-108.</p>
-					<p>[4]http://2016.igem.org/Team:SYSU-MEDICINE/Modeling</p>
 				</div>
+				<h1 id="renference">Renference</h1>
+				<p>[1]Jiang Qiyuan, Xie Jinxing, Ye Jun (2010). Mathematical model (4th ed.). Beijing: China Higher
+					Education Press, 338-346</p>
+				<p>[2]Yang bowen, liu ping. Pharmacokinetics two-compartment model [J]. Journal of natural science of
+					Harbin normal university,2016,32(01):13-15+66.</p>
+				<p>[3]Yuan jin, Shi Lei, Zhao Shujin. Pharmacokinetics and Compartment Model Parameters of the
+					Two-Compartment Model for External Vascular Administration Based on Excel Function [J]. China
+					Pharmacy,2008(02):106-108.</p>
+				<p>[4]http://2016.igem.org/Team:SYSU-MEDICINE/Modeling</p>
 			</div>
+		</div>
 
-			<script>
-			</script>
-	</body>
+		<script>
+		</script>
+</body>
 
 </html>

@@ -1,141 +1,240 @@
 <!doctype html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<title>SYSU-Medicine</title>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
-		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
-		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/home&action=raw&ctype=text/javascript"></script>
-		<link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
-		<script src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
-		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
+<head>
+	<meta charset="utf-8">
+	<title>SYSU-Medicine</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript"
+		src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
+	<link type="text/css" rel="stylesheet"
+		href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
+	<script type="text/javascript"
+		src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/home&action=raw&ctype=text/javascript"></script>
+	<link rel="stylesheet"
+		href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
+	<script
+		src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
+	<link type="text/css" rel="stylesheet"
+		href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
 
-		<style>
-			/**,
+	<style>
+		/* title */
+		.title-box-new {
+			/* margin: 5vw 5vw 2vw 5vw; */
+			position: relative;
+			width: 100%;
+
+		}
+
+		/* .title-big {
+            background-image: url("../title.jpg");
+            opacity: 50;
+            z-index: -100;
+            
+background-size: auto 100%;  
+background-position: center; 
+background-repeat: no-repeat;
+background-origin: border-box; 
+background-clip: border-box;  
+        } */
+
+		.title-big h1 {
+			font-size: 6vw !important;
+			/* line-height:14vw; */
+
+		}
+
+		.title-big>.title-box-title {
+			padding: 0 !important;
+			justify-content: center;
+			border-left-style: none !important;
+			border-bottom-style: solid;
+			border-color: rgb(255, 55, 68);
+			border-bottom-width: 0.2vw;
+
+		}
+
+		.title-box-mask {
+			position: absolute;
+
+			height: 100%;
+
+			background-color: rgb(255, 55, 68);
+		}
+
+		.title-box-mask-left {
+			left: 0;
+		}
+
+		.title-box-mask-right {
+			right: 0;
+		}
+
+		.title-box-title {
+			/* justify-content: center; */
+			/* width: 100%; */
+			height: inherit;
+			border-left-style: solid;
+			border-color: rgb(255, 55, 68);
+			border-left-width: 0.25rem;
+			opacity: 0;
+			display: flex;
+			/* justify-content-safety: center; */
+
+
+		}
+
+		.title-big h1 {
+			flex-grow: 1;
+			vertical-align: middle;
+			text-align: center;
+			margin: 0;
+			font-size: 8rem;
+			color: rgb(25, 46, 67);
+		}
+
+		.title-box-title>h1 {
+			/* flex-grow: 1; */
+			vertical-align: middle;
+			/* text-align:center; */
+			padding: 0 4rem;
+			margin: 0;
+			/* font-size: 8rem; */
+			color: rgb(25, 46, 67);
+		}
+
+		/* title end */
+		/**,
 			*::before,
 			*::after 在Wiki上会给contianer前面加一个伪元素，所以container会被选中.
 			*/
-			/*暗锚*/
-			/*:target
+		/*暗锚*/
+		/*:target
 			{
 				position: relative;
 				padding-top:92px;
 				/*visibility: hidden;*/
-			/*}*/
-			
-			* {
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-			}
-			
-			.panel,.panel-default {
-				border: none;
-				box-shadow: none;
-			}
-			
-			.container {}
-			
-			body {
-				/*background: linear-gradient(54deg, #9164ff, #8bfff4);*/
-				color: #3c3f64;
-				overflow-x: hidden;
-				padding-bottom: 50px;
-			}
-			/*去掉ul默认的点*/
-			
-			.timeline ul {
-				list-style: none;
-			}
-			/*时间轴的线条*/
-			
-			.timeline ul li {
-				list-style-type: none;
-				position: relative;
-				width: 24px;
-				margin: 0 100px;
-				padding-top: 50px;
-				background: rgba(36, 59, 82, 0.38);
-				/*background: linear-gradient(180deg, rgba(255, 55, 68, 0), rgba(255, 55, 68, 0.5));*/
-				/*动画*/
-				transition: all 0.5s ease-in-out;
-				
-			}
-			/*时间轴最后的箭头*/
-			
-			.timeline ul li:last-of-type:after {
-				/*-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+		/*}*/
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		.panel,
+		.panel-default {
+			border: none;
+			box-shadow: none;
+		}
+
+		.container {}
+
+		body {
+			/*background: linear-gradient(54deg, #9164ff, #8bfff4);*/
+			color: #3c3f64;
+			overflow-x: hidden;
+			padding-bottom: 50px;
+		}
+
+		/*去掉ul默认的点*/
+
+		.timeline ul {
+			list-style: none;
+		}
+
+		/*时间轴的线条*/
+
+		.timeline ul li {
+			list-style-type: none;
+			position: relative;
+			width: 24px;
+			margin: 0 100px;
+			padding-top: 50px;
+			background: rgba(36, 59, 82, 0.38);
+			/*background: linear-gradient(180deg, rgba(255, 55, 68, 0), rgba(255, 55, 68, 0.5));*/
+			/*动画*/
+			transition: all 0.5s ease-in-out;
+
+		}
+
+		/*时间轴最后的箭头*/
+
+		.timeline ul li:last-of-type:after {
+			/*-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 				clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);*/
-				content: '';
-				/*隐藏了*/
-				/*visibility: hidden;*/
-				position: absolute;
-				/*bottom: -4%;*/
-				width: 0px;
-				height: 0px;
-				left: -24px;
-				border-width: 36px;
-				border-style: solid;
-				border-color: rgba(36, 59, 82, 0.38) white white white;
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-				z-index: 2;
-				color: white;
-				
-			}
-			/* 时间轴旁边的卡片 */
-			
-			.timeline ul li>div {
-				position: relative;
-				bottom: 0;
-				width: 700px;
-				width: calc(70vw - 15px);
-				width: -webkit-calc(70vw - 15px);
-				flex-direction: column;
-				padding: 20px;
-				background: #fff;
-				box-shadow: 4px 6px 12px 1px rgba(25, 46, 67, 0.2);
-				border-radius: 5px;
-				display: flex;
-				align-items: initial;
-				/*visibility: hidden;*/
-			}
-			/*圆圈*/
-			
-			.timeline ul li time {
-				/*绝对定位*/
-				position: absolute;
-				/*background: #f5af19;*/
-				font-size: 100%;
-				width: 100px;
-				height: 100px;
-				border-radius: 50%;
-				/*top: -50px;*/
-				left: -38px;
-				/*border-style:solid;
+			content: '';
+			/*隐藏了*/
+			/*visibility: hidden;*/
+			position: absolute;
+			/*bottom: -4%;*/
+			width: 0px;
+			height: 0px;
+			left: -24px;
+			border-width: 36px;
+			border-style: solid;
+			border-color: rgba(36, 59, 82, 0.38) white white white;
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			z-index: 2;
+			color: white;
+
+		}
+
+		/* 时间轴旁边的卡片 */
+
+		.timeline ul li>div {
+			position: relative;
+			bottom: 0;
+			width: 700px;
+			width: calc(70vw - 15px);
+			width: -webkit-calc(70vw - 15px);
+			flex-direction: column;
+			padding: 20px;
+			background: #fff;
+			box-shadow: 4px 6px 12px 1px rgba(25, 46, 67, 0.2);
+			border-radius: 5px;
+			display: flex;
+			align-items: initial;
+			/*visibility: hidden;*/
+		}
+
+		/*圆圈*/
+
+		.timeline ul li time {
+			/*绝对定位*/
+			position: absolute;
+			/*background: #f5af19;*/
+			font-size: 100%;
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			/*top: -50px;*/
+			left: -38px;
+			/*border-style:solid;
 				border-color: rgba(252, 56, 56, 0.2);*/
-				background: rgb(66, 95, 123);
-				color: white;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				letter-spacing: 2px;
-				
-				/*-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+			background: rgb(66, 95, 123);
+			color: white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			letter-spacing: 2px;
+
+			/*-webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 				clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);*/
-				z-index: 10;
-				box-shadow: 0px 4px 5px 2px #192e4387;
-				/*动画 消失和出现*/
-				/*transition: all 0.5s ease-in-out;*/
-				/*visibility: hidden;*/
-				
-			    
-			}
-			/*卡片内部的小框
+			z-index: 10;
+			box-shadow: 0px 4px 5px 2px #192e4387;
+			/*动画 消失和出现*/
+			/*transition: all 0.5s ease-in-out;*/
+			/*visibility: hidden;*/
+
+
+		}
+
+		/*卡片内部的小框
 			
 			.timeline ul li div>div {
 				display: flex;
@@ -145,217 +244,240 @@
 				justify-content: center;
 				align-items: center;
 			}*/
-			/*卡片内部的框内部的段落*/
-			
-			.timeline ul li div div p {
-				text-align: left;
-			}
-			
-			.timeline ul li a {
-				color: black;
-				text-align: left;
-			}
-			/*卡片内部的小框的外间距*/
-			
-			.timeline ul li div>div {
-				margin-top: 10px;
-				margin-bottom: 10px;
-				margin-left: 10px;
-				margin-right: 10px;
-			}
-			/* 奇数编号的卡片 相对于时间轴的位置（relative） */
-			
-			.timeline ul li>div {
-				left: 100px;
-			}
-			/*变色动画部分开始*/
-			/*变色动画部分开始*/
-			
-			.timeline ul li div {
-				/*visibility: hidden;
+		/*卡片内部的框内部的段落*/
+
+		.timeline ul li div div p {
+			text-align: left;
+		}
+
+		.timeline ul li a {
+			color: black;
+			text-align: left;
+		}
+
+		/*卡片内部的小框的外间距*/
+
+		.timeline ul li div>div {
+			margin-top: 10px;
+			margin-bottom: 10px;
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+
+		/* 奇数编号的卡片 相对于时间轴的位置（relative） */
+
+		.timeline ul li>div {
+			left: 100px;
+		}
+
+		/*变色动画部分开始*/
+		/*变色动画部分开始*/
+
+		.timeline ul li div {
+			/*visibility: hidden;
 				opacity: 0;*/
-				/*控制所有卡片及其内部元素的动画速度*/
-				/*color: gray;*/
-				/*transition: all 0.5s ease-in-out;*/
-			}
-			
-			.timeline ul li:nth-of-type(odd) div {
-				/*transform: translate3d(100px, -10px, 0) rotate(10deg);
+			/*控制所有卡片及其内部元素的动画速度*/
+			/*color: gray;*/
+			/*transition: all 0.5s ease-in-out;*/
+		}
+
+		.timeline ul li:nth-of-type(odd) div {
+			/*transform: translate3d(100px, -10px, 0) rotate(10deg);
 				-webkit-transform: translate3d(100px, -10px, 0) rotate(10deg);*/
-			}
-			
-			.timeline ul li.in-view {
-				/*background: rgba(255, 55, 68, 0.8);*/
-				/*background: linear-gradient(180deg, rgba(255, 55, 68, 0.5), rgba(255, 55, 68, 1));*/
-			}
-			
-			.timeline ul li.in-view div {
-				/* 消除静态属性，或者修改属性值，就会发生动画transition */
-				/*visibility: visible;*/
-				/*transform: none;*/
-				/*-webkit-transform: none;*/
-				/*color: rgba(25, 46, 67, 1);*/
-			}
-			
-			.timeline ul li.in-view time {
-				/*visibility: visible;*/
-			}
-			/*.timeline ul li.in-view div time {
+		}
+
+		.timeline ul li.in-view {
+			/*background: rgba(255, 55, 68, 0.8);*/
+			/*background: linear-gradient(180deg, rgba(255, 55, 68, 0.5), rgba(255, 55, 68, 1));*/
+		}
+
+		.timeline ul li.in-view div {
+			/* 消除静态属性，或者修改属性值，就会发生动画transition */
+			/*visibility: visible;*/
+			/*transform: none;*/
+			/*-webkit-transform: none;*/
+			/*color: rgba(25, 46, 67, 1);*/
+		}
+
+		.timeline ul li.in-view time {
+			/*visibility: visible;*/
+		}
+
+		/*.timeline ul li.in-view div time {
 				color: white;
 			}*/
-			/*变色动画部分结束*/
-			/*移动适配*/
-			
-			@media screen and (max-width: 900px) {
-				.timeline ul li div {
-					width: 350px;
-					width: calc(80vw - 200px);
-					width: -webkit-calc(80vw - 200px);
-					flex-direction: column;
-				}
-				.timeline ul li div div {
-					width: 95%;
-					margin: 10px;
-				}
+		/*变色动画部分结束*/
+		/*移动适配*/
+
+		@media screen and (max-width: 900px) {
+			.timeline ul li div {
+				width: 350px;
+				width: calc(80vw - 200px);
+				width: -webkit-calc(80vw - 200px);
+				flex-direction: column;
 			}
-			
-			@media screen and (max-width: 600px) {
-				.timeline ul li {
-					margin-left: 15px;
-					left: 40px;
-				}
-				.timeline ul li div {
-					left: 80px;
-					width: 300px;
-					width: calc(100vw - 200px);
-					width: -webkit-calc(100vw - 200px);
-				}
+
+			.timeline ul li div div {
+				width: 95%;
+				margin: 10px;
 			}
-		</style>
-	</head>
+		}
 
-	<body>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 column">
-					<nav class="navigation" id="nav-top">
-						<ul class="navigation-list nav-justified">
-							<div class="navigation-blue navigation-div">
-								<li class="navigation-item activate ">
-									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
-									<ul class="navigation-dropdown-panel"></ul>
-								</li>
+		@media screen and (max-width: 600px) {
+			.timeline ul li {
+				margin-left: 15px;
+				left: 40px;
+			}
 
-								<li class="navigation-item dropdown">
-									<a class="navigation-item-link " href="#">Project</a>
-									<ul class="navigation-dropdown-panel ">
+			.timeline ul li div {
+				left: 80px;
+				width: 300px;
+				width: calc(100vw - 200px);
+				width: -webkit-calc(100vw - 200px);
+			}
+		}
+	</style>
+</head>
 
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Inspiration">Inspiration</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Contribution">Contribution</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Notebook">Notebook</a>
-										</li>
-									</ul>
-								</li>
-								<li class="navigation-item dropdown">
-									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Model">Model</a>
-									<ul class="navigation-dropdown-panel">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Model">Overview</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/M1_Cultivation">M1 Cultivation
-											</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Injection_System">Injection System
-											</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Safety_and_Effectiveness">Safety and Effectiveness</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Future">Future</a>
-										</li>
-									</ul>
-								</li>
-								<li class="navigation-item dropdown ">
-									<a class="navigation-item-link" href="#">Human Practices</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Human Practices
-											</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education & Engagement
-											</a>
-										</li>
-									</ul>
-								</li>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 column">
+				<nav class="navigation" id="nav-top">
+					<ul class="navigation-list nav-justified">
+						<div class="navigation-blue navigation-div">
+							<li class="navigation-item activate ">
+								<a class="navigation-item-link "
+									href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
+								<ul class="navigation-dropdown-panel"></ul>
+							</li>
+							<li class="navigation-item dropdown">
+								<a class="navigation-item-link ">Project</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Design">Design</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Experiments">Experiments</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Inspiration">Inspiration</a>
+									</li>
+								</ul>
+							</li>
+							<li class="navigation-item dropdown">
+								<a class="navigation-item-link">Model</a>
+								<ul class="navigation-dropdown-panel">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Model_Overview">Overview</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/M1_Cultivation">M1 Cultivation
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Injection_System">Injection
+											System
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/TES">T. E. S.</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Future">Future</a>
+									</li>
+								</ul>
+							</li>
+							<li class="navigation-item dropdown ">
+								<a class="navigation-item-link">Human Practices</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices_Overview">Overview
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Integrated_Practices">Integrated
+											Practices
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education &
+											Engagement
+										</a>
+									</li>
+								</ul>
+							</li>
 
-							</div>
-							<div class="navigation-red navigation-div">
-								<li class="navigation-item dropdown ">
-									<a class="navigation-item-link " href="#">Parts</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts Overview</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Basic_Part">Basic Parts</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Composite_Part">Composite Parts
-											</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Part_Collection">Part Collection
-											</a>
-										</li>
-									</ul>
-								</li>
-								<li class="navigation-item dropdown ">
-									<a class="navigation-item-link " href="#">Team</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions</a>
-										</li>
-									</ul>
-								</li>
-								<li class="navigation-item ">
-									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
-									<ul class="navigation-dropdown-panel"></ul>
-								</li>
-								<li class="navigation-item ">
-									<a class="navigation-item-link" href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging Form</a>
-									<ul class="navigation-dropdown-panel"></ul>
-								</li>
-							</div>
+						</div>
+						<div class="navigation-red navigation-div">
+							<li class="navigation-item dropdown ">
+								<a class="navigation-item-link ">Parts</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts Overview</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts#Basic_Part">Basic
+											Parts</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts#Composite_Part">Composite
+											Parts
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts#Part_Collection">Part
+											Collection
+										</a>
+									</li>
+								</ul>
+							</li>
 
-						</ul>
-					</nav>
-				</div>
+							<li class="navigation-item ">
+								<a class="navigation-item-link"
+									href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
+								<ul class="navigation-dropdown-panel"></ul>
+							</li>
+							<li class="navigation-item ">
+								<a class="navigation-item-link"
+									href="https://2019.igem.org/Team:SYSU-Medicine/Medal">Awards</a>
+								<ul class="navigation-dropdown-panel">
+									<li class="navigation-subitem">
+										<a href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging</a>
+									</li>
+								</ul>
+							</li>
+							<li class="navigation-item dropdown ">
+								<a class="navigation-item-link ">Team</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
+									</li>
+									<li class="navigation-subitem">
+										<a
+											href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions</a>
+									</li>
+								</ul>
+							</li>
+						</div>
+
+					</ul>
+				</nav>
 			</div>
 		</div>
-		
-		
-		<div class="container">
+	</div>
+
+
+	<!-- <div class="container">
 			<div class="row clearfix">
 				<div class="col-xs-12">
 					<br />
@@ -374,12 +496,12 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
-		<div class="container">
-			<div class="row clearfix">
-				<div class="col-xs-12 column">
-					<div class="row clearfix">
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-xs-12 column">
+				<!-- <div class="row clearfix">
 						<div class="col-xs-5 column">
 							<div class="title-box">
 								<h2 class="title">
@@ -388,7 +510,32 @@
 								</h2>
 							</div>
 						</div>
+					</div> -->
+				<div class="clearfix" style="margin-bottom: 18em;"></div>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-8 col-xs-offset-2">
+							<div class="title-box-new title-big">
+								<div class="title-big-bg"></div>
+								<div class="title-box-mask"></div>
+								<div class="title-box-title">
+									<h1>EXPERIMENT</h1>
+								</div>
+							</div>
+						</div>
 					</div>
+					<div class="clearfix" style="margin-bottom: 15em;"></div>
+					<div class="row">
+						<div class="col-xs-10 col-xs-offset-1">
+							<div class="title-box-new title-0">
+								<div class="title-box-mask"></div>
+								<div class="title-box-title">
+									<h1>Protocol</h1>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix" style="margin-bottom: 5em;"></div>
 					<div class="panel-group" id="accordion">
 						<div class="panel panel-default">
 							<section class="timeline">
@@ -405,14 +552,22 @@
 											</div>
 											<div id="step-1" class="panel-collapse collapse">
 												<div class="panel-body">
-													<p>1.Weigh 0.8g (0.4g) agarose powder with Electronic scale, and get 80ml (40ml) 1X TAE buffer and put them together into a flask and mix them to get 1% solution; </p>
-													<p>2.Melt the mixture in a microwave with a middle-high heat for about 2 min until the solution becomes clear; </p>
+													<p>1.Weigh 0.8g (0.4g) agarose powder with Electronic scale, and get
+														80ml (40ml) 1X TAE buffer and put them together into a flask and
+														mix them to get 1% solution; </p>
+													<p>2.Melt the mixture in a microwave with a middle-high heat for
+														about 2 min until the solution becomes clear; </p>
 													<p>3.Put 8 (4) ul EB solution into the mixture prepared above; </p>
-													<p>4.Put the flask under the flowing water to cool it to about 40-50°C(it’s okay when you don’t feel hard to hold it）, and pour the whole solution into the gel casting tray with appreciate comb; </p>
-													<p>5.Let the gel cool until it is solid(it takes at least 30 min) </p>
+													<p>4.Put the flask under the flowing water to cool it to about
+														40-50°C(it’s okay when you don’t feel hard to hold it）, and pour
+														the whole solution into the gel casting tray with appreciate
+														comb; </p>
+													<p>5.Let the gel cool until it is solid(it takes at least 30 min)
+													</p>
 													<p>6.Pull out the comb carefully and avoid damaging the Gel; </p>
 													<p>7.Place the gel in the electrophoresis chamber; </p>
-													<p>8.Pipette DNA samples mixed with appreciate amount of loading buffer and dye (GeneFinder) into wells on the gel; </p>
+													<p>8.Pipette DNA samples mixed with appreciate amount of loading
+														buffer and dye (GeneFinder) into wells on the gel; </p>
 													<p>9.Run the gel at 120V for about half an hour;</p>
 												</div>
 											</div>
@@ -429,13 +584,19 @@
 											</div>
 											<div id="step-2" class="panel-collapse collapse">
 												<div class="panel-body">
-													<p>1.Pipette 10μL of RNA sample and 1.5μL oligo(dT)15 into each individual tube.</p>
-													<p>2.Put the heating block ready and set the temp to 70℃.And put the tube into the heating block for 5min.</p>
-													<p>3.Put the heated tube on the icebox and cool down quickly for another 5min.</p>
-													<p>4.Centrifuge for a short time to spin down the contents and to eliminate any air bubbles.</p>
-													<p>5.Pipette 4μL 5xBuffer、2μL Mgcl2、1μL dNTP Mix (10 mM)、0.5μL Ribonuclease Inhibitor、1μL RTase together into the tube. </p>
+													<p>1.Pipette 10μL of RNA sample and 1.5μL oligo(dT)15 into each
+														individual tube.</p>
+													<p>2.Put the heating block ready and set the temp to 70℃.And put the
+														tube into the heating block for 5min.</p>
+													<p>3.Put the heated tube on the icebox and cool down quickly for
+														another 5min.</p>
+													<p>4.Centrifuge for a short time to spin down the contents and to
+														eliminate any air bubbles.</p>
+													<p>5.Pipette 4μL 5xBuffer、2μL Mgcl2、1μL dNTP Mix (10 mM)、0.5μL
+														Ribonuclease Inhibitor、1μL RTase together into the tube. </p>
 													<p>6.Vortex for a short time to completely mix the sample.</p>
-													<p>7.Reset the heating blocker to 25℃ and put the tube in the blocker for 5 min. </p>
+													<p>7.Reset the heating blocker to 25℃ and put the tube in the
+														blocker for 5 min. </p>
 													<p>8.Change the temp to 42℃ for an hour.</p>
 												</div>
 											</div>
@@ -452,15 +613,52 @@
 											</div>
 											<div id="step-3" class="panel-collapse collapse">
 												<div class="panel-body">
-													<p>1.Put Forward primer 2.5μl and Reverse primer 2.5μl into 18μl ddH2O2. </p>
-													<p>2.Put the system above into 25μl Q5 High-Fidelity DNA Polymerase.</p>
+													<p>1.Put Forward primer 2.5μl and Reverse primer 2.5μl into 18μl
+														ddH2O2. </p>
+													<p>2.Put the system above into 25μl Q5 High-Fidelity DNA Polymerase.
+													</p>
 													<p>3.Mix them all together.</p>
-													<p>4.After preparation of the reaction mix, pipette 2μl Bacterial liquid and dip in the mix. The reaction condition settings are as follows:</p>
-													<figure><table class="table table-bordered">
-													<thead>
-													<tr><th>Temperature</th><th>Time</th><th>Parameter</th></tr></thead>
-													<tbody><tr><td>98℃</td><td>30s</td><td>&nbsp;</td></tr><tr><td>98℃</td><td>10s</td><td>35</td></tr><tr><td>66℃</td><td>30s</td><td>35</td></tr><tr><td>72℃</td><td>2min</td><td>35</td></tr><tr><td>72℃</td><td>2min</td><td>&nbsp;</td></tr></tbody>
-													</table></figure>
+													<p>4.After preparation of the reaction mix, pipette 2μl Bacterial
+														liquid and dip in the mix. The reaction condition settings are
+														as follows:</p>
+													<figure>
+														<table class="table table-bordered">
+															<thead>
+																<tr>
+																	<th>Temperature</th>
+																	<th>Time</th>
+																	<th>Parameter</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>98℃</td>
+																	<td>30s</td>
+																	<td>&nbsp;</td>
+																</tr>
+																<tr>
+																	<td>98℃</td>
+																	<td>10s</td>
+																	<td>35</td>
+																</tr>
+																<tr>
+																	<td>66℃</td>
+																	<td>30s</td>
+																	<td>35</td>
+																</tr>
+																<tr>
+																	<td>72℃</td>
+																	<td>2min</td>
+																	<td>35</td>
+																</tr>
+																<tr>
+																	<td>72℃</td>
+																	<td>2min</td>
+																	<td>&nbsp;</td>
+																</tr>
+															</tbody>
+														</table>
+													</figure>
 												</div>
 											</div>
 										</div>
@@ -479,12 +677,14 @@
 													<h4>Materials</h4>
 													<p>LB Agar、Distilled water、Erlenmeyer</p>
 													<h4>Protocol</h4>
-													<p>1.Add LB agar 15g to 1L.  </p>
+													<p>1.Add LB agar 15g to 1L. </p>
 													<p>2.Add 1L distilled water into Erlenmeyer </p>
 													<p>3.Cover Erlenmeyer with aluminum foil </p>
-													<p>4.Autoclave liquid program  </p>
-													<p>5.Wait until the LB cools down and add Ampicillin (1:1000 → if 500ml then add 500ul) </p>
-													<p>6.Pour the liquid into petri dishes (fill only ¾ of the plate and shake it until the liquid covers the surface) </p>
+													<p>4.Autoclave liquid program </p>
+													<p>5.Wait until the LB cools down and add Ampicillin (1:1000 → if
+														500ml then add 500ul) </p>
+													<p>6.Pour the liquid into petri dishes (fill only ¾ of the plate and
+														shake it until the liquid covers the surface) </p>
 													<p>7.Wait 15-20 min and put the plates upside down in 4℃</p>
 												</div>
 											</div>
@@ -524,22 +724,40 @@
 											</div>
 											<div id="step-6" class="panel-collapse collapse">
 												<div class="panel-body">
-													<p>1.Prepare M1 virus samples for isolation of RNA.  </p>
+													<p>1.Prepare M1 virus samples for isolation of RNA. </p>
 													<p>2.pipette 100μL samples to a 1.5ml centrifuge tube. </p>
-													<p>3.Add 300μL of lysis solution (added with 800μL 1-thioglycerol already) to each sample. Mix the samples by vigorous shaking or vortexing for 30 seconds, and then centrifuge for 30s.</p>
+													<p>3.Add 300μL of lysis solution (added with 800μL 1-thioglycerol
+														already) to each sample. Mix the samples by vigorous shaking or
+														vortexing for 30 seconds, and then centrifuge for 30s.</p>
 													<p>4.Stand for 5min at room temperature.</p>
-													<p>5.Add 300μL of RNA diluent to each sample. Mix the samples by vigorous shaking or vortexing for 30 seconds, and then centrifuge for 30s.</p>
+													<p>5.Add 300μL of RNA diluent to each sample. Mix the samples by
+														vigorous shaking or vortexing for 30 seconds, and then
+														centrifuge for 30s.</p>
 													<p>6.Stand for 5min at room temperature.</p>
-													<p>7.Add 350μL of Anhydrous ethanol to each sample. Mix the samples by vigorous shaking or vortexing for 30 seconds, and then centrifuge for 30s.</p>
+													<p>7.Add 350μL of Anhydrous ethanol to each sample. Mix the samples
+														by vigorous shaking or vortexing for 30 seconds, and then
+														centrifuge for 30s.</p>
 													<p>8.Stand for 5min at room temperature.</p>
-													<p>9.Transfer the mixture (700μL at most per time) to the Centrifugal column (provided with kit), centrifuge at 12000rpm for 1min and discard filtrate.</p>
-													<p>10.Add 600μL RNA lotion (added with 70ml Anhydrous ethanol already), centrifuge at 12000rpm for 1min and discard filtrate.</p>
-													<p>11.Add 50μL DNA enzyme I incubation solution (5μL DNA enzymeⅠand DNA enzymeⅠbuffer added into 40μL nuclease-free water) to the center of the adsorption film, sand for 15 min at room temp.</p>
-													<p>12.Add 600μL RNA lotion (added with 70ml Anhydrous ethanol already), centrifuge at 12000rpm for 1min and discard filtrate.</p>
+													<p>9.Transfer the mixture (700μL at most per time) to the
+														Centrifugal column (provided with kit), centrifuge at 12000rpm
+														for 1min and discard filtrate.</p>
+													<p>10.Add 600μL RNA lotion (added with 70ml Anhydrous ethanol
+														already), centrifuge at 12000rpm for 1min and discard filtrate.
+													</p>
+													<p>11.Add 50μL DNA enzyme I incubation solution (5μL DNA enzymeⅠand
+														DNA enzymeⅠbuffer added into 40μL nuclease-free water) to the
+														center of the adsorption film, sand for 15 min at room temp.</p>
+													<p>12.Add 600μL RNA lotion (added with 70ml Anhydrous ethanol
+														already), centrifuge at 12000rpm for 1min and discard filtrate.
+													</p>
 													<p>13.Repeat step12</p>
-													<p>14.Empty the collection tube and recentrifuged the column for 2min at 12000rpm.</p>
-													<p>15.Transfer the centrifuge column to the Elution tube, add 50μL nuclease-free water to the center of the adsorption film and stand for 2min at room temperature.</p>
-													<p>16.Centrifuge the tube at 12000 rpm for 1min and stored the eluted RNA at -80℃.</p>
+													<p>14.Empty the collection tube and recentrifuged the column for
+														2min at 12000rpm.</p>
+													<p>15.Transfer the centrifuge column to the Elution tube, add 50μL
+														nuclease-free water to the center of the adsorption film and
+														stand for 2min at room temperature.</p>
+													<p>16.Centrifuge the tube at 12000 rpm for 1min and stored the
+														eluted RNA at -80℃.</p>
 												</div>
 											</div>
 										</div>
@@ -555,9 +773,12 @@
 											</div>
 											<div id="step-7" class="panel-collapse collapse">
 												<div class="panel-body">
-													<p>1.Take out the competent cell dh5α from -80℃ and thaw it on the ice for 15min.</p>
-													<p>2.Add the target plasmid into competent cell (total amount greater than 1ng) and put it on the ice for 30min.</p>
-													<p>3.Set the heating block to 42℃ and put the sample on the heating block for 30-90s.</p>
+													<p>1.Take out the competent cell dh5α from -80℃ and thaw it on the
+														ice for 15min.</p>
+													<p>2.Add the target plasmid into competent cell (total amount
+														greater than 1ng) and put it on the ice for 30min.</p>
+													<p>3.Set the heating block to 42℃ and put the sample on the heating
+														block for 30-90s.</p>
 													<p>4.Put the sample on the ice for 5min and then coated plate.</p>
 												</div>
 											</div>
@@ -577,17 +798,41 @@
 													<h4>Materials</h4>
 													<p>•1.5ml microcentrifuge tubes </p>
 													<p>•ethanol (95%) </p>
-													<p>•agarose gel (standard or low-melt; only for gel puriﬁcation) </p>
-													<p>•1X TAE or TBE electrophoresis buﬀer (only for gel puriﬁcation) </p>
+													<p>•agarose gel (standard or low-melt; only for gel puriﬁcation)
+													</p>
+													<p>•1X TAE or TBE electrophoresis buﬀer (only for gel puriﬁcation)
+													</p>
 													<p>•50–65°C heating block (only for gel puriﬁcation)</p>
 													<h4>Protocol</h4>
-													<p>1.Place one SV Minicolumn in a Collection Tube for each dissolved gel slice or PCR ampliﬁcation. </p>
-													<p>2.Transfer the dissolved gel mixture or prepared PCR product to the SV Minicolumn assembly and incubate for 1 minute at room temperature. </p>
-													<p>3.Centrifuge the SV Minicolumn assembly in a microcentrifuge at 16,000 × g (14,000rpm) for 1 minute. Remove the SV Minicolumn from the Spin Column assembly, and discard the liquid in the Collection Tube. Return the SV Minicolumn to the Collection Tube. </p>
-													<p>4.Wash the column by adding 700µl of Membrane Wash Solution, previously diluted with 95% ethanol (Section 4.A), to the SV Minicolumn. Centrifuge the SV Minicolumn assembly for 1 minute at 16,000 × g (14,000rpm). Empty the Collection Tube as before, and place the SV Minicolumn back in the Collection Tube. Repeat the wash with 500µl of Membrane Wash Solution, and centrifuge the SV Minicolumn assembly for 5 minutes at 16,000 × g. </p>
-													<p>5.Remove the SV Minicolumn assembly from the centrifuge, being careful not to wet the bottom of the column with the ﬂowthrough. Empty the Collection Tube, and recentrifuge the column assembly for 1 minute with the microcentrifuge lid open (or oﬀ) to allow evaporation of any residual ethanol. </p>
-													<p>6.Carefully transfer the SV Minicolumn to a clean 1.5ml microcentrifuge tube. Apply 50µl of Nuclease-Free Water directly to the center of the column without touching the membrane with the pipette tip. Incubate at room temperature for 1 minute. Centrifuge for 1 minute at 16,000 × g (14,000rpm). </p>
-													<p>7.Discard the SV Minicolumn, and store the microcentrifuge tube containing the eluted DNA at 4°C or –20°C.</p>
+													<p>1.Place one SV Minicolumn in a Collection Tube for each dissolved
+														gel slice or PCR ampliﬁcation. </p>
+													<p>2.Transfer the dissolved gel mixture or prepared PCR product to
+														the SV Minicolumn assembly and incubate for 1 minute at room
+														temperature. </p>
+													<p>3.Centrifuge the SV Minicolumn assembly in a microcentrifuge at
+														16,000 × g (14,000rpm) for 1 minute. Remove the SV Minicolumn
+														from the Spin Column assembly, and discard the liquid in the
+														Collection Tube. Return the SV Minicolumn to the Collection
+														Tube. </p>
+													<p>4.Wash the column by adding 700µl of Membrane Wash Solution,
+														previously diluted with 95% ethanol (Section 4.A), to the SV
+														Minicolumn. Centrifuge the SV Minicolumn assembly for 1 minute
+														at 16,000 × g (14,000rpm). Empty the Collection Tube as before,
+														and place the SV Minicolumn back in the Collection Tube. Repeat
+														the wash with 500µl of Membrane Wash Solution, and centrifuge
+														the SV Minicolumn assembly for 5 minutes at 16,000 × g. </p>
+													<p>5.Remove the SV Minicolumn assembly from the centrifuge, being
+														careful not to wet the bottom of the column with the ﬂowthrough.
+														Empty the Collection Tube, and recentrifuge the column assembly
+														for 1 minute with the microcentrifuge lid open (or oﬀ) to allow
+														evaporation of any residual ethanol. </p>
+													<p>6.Carefully transfer the SV Minicolumn to a clean 1.5ml
+														microcentrifuge tube. Apply 50µl of Nuclease-Free Water directly
+														to the center of the column without touching the membrane with
+														the pipette tip. Incubate at room temperature for 1 minute.
+														Centrifuge for 1 minute at 16,000 × g (14,000rpm). </p>
+													<p>7.Discard the SV Minicolumn, and store the microcentrifuge tube
+														containing the eluted DNA at 4°C or –20°C.</p>
 												</div>
 											</div>
 										</div>
@@ -604,14 +849,35 @@
 											<div id="step-9" class="panel-collapse collapse">
 												<div class="panel-body">
 													<p>1.Get the system ready as follows:</p>
-													<figure><table class="table table-bordered">
-													<thead>
-													<tr><th>   Reagent   </th><th>   Amount(μL)</th></tr></thead>
-													<tbody><tr><td>   10× FastDigest Buffer   </td><td>   10   </td></tr><tr><td>   XbaI   </td><td>   10   </td></tr><tr><td>   pBR-M1-c6v2-XXXXX   </td><td>   80   </td></tr></tbody>
-													</table></figure>
+													<figure>
+														<table class="table table-bordered">
+															<thead>
+																<tr>
+																	<th> Reagent </th>
+																	<th> Amount(μL)</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td> 10× FastDigest Buffer </td>
+																	<td> 10 </td>
+																</tr>
+																<tr>
+																	<td> XbaI </td>
+																	<td> 10 </td>
+																</tr>
+																<tr>
+																	<td> pBR-M1-c6v2-XXXXX </td>
+																	<td> 80 </td>
+																</tr>
+															</tbody>
+														</table>
+													</figure>
 													<p>2.Divide the system into two tubes equally.</p>
-													<p>3.Put those tubes into PCR instrument and set the temp to 37℃ to incubate for 1h.</p>
-													<p>4.Add 2.5μL 1xProteinase k and 5μL 10% SDS to each tube and put them at 50 ℃ to react for 30min.</p>
+													<p>3.Put those tubes into PCR instrument and set the temp to 37℃ to
+														incubate for 1h.</p>
+													<p>4.Add 2.5μL 1xProteinase k and 5μL 10% SDS to each tube and put
+														them at 50 ℃ to react for 30min.</p>
 
 												</div>
 											</div>
@@ -629,13 +895,45 @@
 											<div id="step-10" class="panel-collapse collapse">
 												<div class="panel-body">
 													<p>1.Prepare the transcription system as follows:</p>
-													<figure><table class="table table-bordered">
-													<thead>
-													<tr><th>   Reagent   </th><th>   Amount（μl）   </th></tr></thead>
-													<tbody><tr><td>   SP6   Transcription 5X Buffer   </td><td>   8   </td></tr><tr><td>   rNTPs（100 mM）（A+C+U+G）   </td><td>   2+2+2+1.2   </td></tr><tr><td>   Linearized DNA   template (1~2 μg）+ ddH2O   </td><td>   16.8   </td></tr><tr><td>   Ribo m7G   Cap Analog，40 mM   </td><td>   4   </td></tr><tr><td>   Enzyme   Mix   </td><td>   4   </td></tr><tr><td>   Total Volume   </td><td>   40   </td></tr></tbody>
-													</table></figure>
+													<figure>
+														<table class="table table-bordered">
+															<thead>
+																<tr>
+																	<th> Reagent </th>
+																	<th> Amount（μl） </th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td> SP6 Transcription 5X Buffer </td>
+																	<td> 8 </td>
+																</tr>
+																<tr>
+																	<td> rNTPs（100 mM）（A+C+U+G） </td>
+																	<td> 2+2+2+1.2 </td>
+																</tr>
+																<tr>
+																	<td> Linearized DNA template (1~2 μg）+ ddH2O </td>
+																	<td> 16.8 </td>
+																</tr>
+																<tr>
+																	<td> Ribo m7G Cap Analog，40 mM </td>
+																	<td> 4 </td>
+																</tr>
+																<tr>
+																	<td> Enzyme Mix </td>
+																	<td> 4 </td>
+																</tr>
+																<tr>
+																	<td> Total Volume </td>
+																	<td> 40 </td>
+																</tr>
+															</tbody>
+														</table>
+													</figure>
 													<p>2.React at 37℃ for 1h.</p>
-													<p>3.Add 2μL RQ1 RNase-Free DNase（1U/ul）and react at 37℃ for 15min.</p>
+													<p>3.Add 2μL RQ1 RNase-Free DNase（1U/ul）and react at 37℃ for 15min.
+													</p>
 												</div>
 											</div>
 										</div>
@@ -652,9 +950,13 @@
 											</div>
 											<div id="step-11" class="panel-collapse collapse">
 												<div class="panel-body">
-													<p>1.Prepare Vero cells one day in advance (T25，400,000 cells/well).</p>
-													<p>2.Add 125μL Opti-MEM Culture medium and 3.75μL MessengerMAX in a centrifuge tube. Then prepare another centrifuge tube added with 125μL and RNA sample.</p>
-													<p>3.Fully mix these two tubes solution and drip onto Vero cells.</p>
+													<p>1.Prepare Vero cells one day in advance (T25，400,000 cells/well).
+													</p>
+													<p>2.Add 125μL Opti-MEM Culture medium and 3.75μL MessengerMAX in a
+														centrifuge tube. Then prepare another centrifuge tube added with
+														125μL and RNA sample.</p>
+													<p>3.Fully mix these two tubes solution and drip onto Vero cells.
+													</p>
 												</div>
 											</div>
 										</div>
@@ -670,18 +972,39 @@
 											</div>
 											<div id="step-12" class="panel-collapse collapse">
 												<div class="panel-body">
-													<p>1.Prepare a 12 mM MTT stock solution by adding 1 mL of sterile PBS to one 5 mg vial of MTT (Component A). Mix by vortexing or sonication until dissolved.</p>
-													<p>2.Add 10 mL of 0.01 M HCl to one tube containing 1 gm of SDS (Component B).  Mix the solution gently by inversion or sonication until the SDS dissolves.</p>
-													<p>3.For adherent cells, remove the medium and replace it with 100 µL of fresh culture medium. For non-adherent cells, centrifuge the microplate, pellet the cells, carefully remove as much medium as possible and replace it with 100 µL of fresh medium. </p>
-													<p>4.Add 10 µL of the 12 mM MTT stock solution (prepared in step 1) to each well. Include a negative control of 10 µL of the MTT stock solution added to 100 µL of medium alone. </p>
-													<p>5.Incubate at 37°C for 4 hours. At high cell densities (&gt;100,000 cells per well) the incubation time can be shortened to 2 hours. </p>
-													<p>6.Add 100 µL of the SDS-HCl solution (prepared in step 2) to each well and mix thoroughly using the pipette. </p>
-													<p>7.Incubate the microplate at 37°C for 4 hours in a humidified chamber. Longer incubations will decrease the sensitivity of the assay.</p>
-													<p>8.Mix each sample again using a pipette and read absorbance at 570 nm.</p>
-													<p>9.After labeling the cells with MTT, as described above, remove all but 25 µL of medium from the wells. For non-adherent cells it may be necessary to first centrifuge the plates to sediment the cells. </p>
-													<p>10.Add 50 µL of DMSO to each well and mix thoroughly with the pipette. </p>
+													<p>1.Prepare a 12 mM MTT stock solution by adding 1 mL of sterile
+														PBS to one 5 mg vial of MTT (Component A). Mix by vortexing or
+														sonication until dissolved.</p>
+													<p>2.Add 10 mL of 0.01 M HCl to one tube containing 1 gm of SDS
+														(Component B). Mix the solution gently by inversion or
+														sonication until the SDS dissolves.</p>
+													<p>3.For adherent cells, remove the medium and replace it with 100
+														µL of fresh culture medium. For non-adherent cells, centrifuge
+														the microplate, pellet the cells, carefully remove as much
+														medium as possible and replace it with 100 µL of fresh medium.
+													</p>
+													<p>4.Add 10 µL of the 12 mM MTT stock solution (prepared in step 1)
+														to each well. Include a negative control of 10 µL of the MTT
+														stock solution added to 100 µL of medium alone. </p>
+													<p>5.Incubate at 37°C for 4 hours. At high cell densities
+														(&gt;100,000 cells per well) the incubation time can be
+														shortened to 2 hours. </p>
+													<p>6.Add 100 µL of the SDS-HCl solution (prepared in step 2) to each
+														well and mix thoroughly using the pipette. </p>
+													<p>7.Incubate the microplate at 37°C for 4 hours in a humidified
+														chamber. Longer incubations will decrease the sensitivity of the
+														assay.</p>
+													<p>8.Mix each sample again using a pipette and read absorbance at
+														570 nm.</p>
+													<p>9.After labeling the cells with MTT, as described above, remove
+														all but 25 µL of medium from the wells. For non-adherent cells
+														it may be necessary to first centrifuge the plates to sediment
+														the cells. </p>
+													<p>10.Add 50 µL of DMSO to each well and mix thoroughly with the
+														pipette. </p>
 													<p>11.Incubate at 37°C for 10 minutes.</p>
-													<p>12.Mix each sample again and read absorbance at 540 nm not 570 nm, as above.</p>
+													<p>12.Mix each sample again and read absorbance at 540 nm not 570
+														nm, as above.</p>
 												</div>
 											</div>
 										</div>
@@ -698,9 +1021,13 @@
 											</div>
 											<div id="step-13" class="panel-collapse collapse in">
 												<div class="panel-body">
-													<p>1.Prepare c57 mice and balb/c nude mice by implanting tumor subcutaneously and injecting engineered virus through tail vein.</p>
-													<p>2.Observing the distribution of the virus in vivo through in vivo imaging system.</p>
-													<p>3.Observing body weight and tumor size of mice after continuous administration.</p>
+													<p>1.Prepare c57 mice and balb/c nude mice by implanting tumor
+														subcutaneously and injecting engineered virus through tail vein.
+													</p>
+													<p>2.Observing the distribution of the virus in vivo through in vivo
+														imaging system.</p>
+													<p>3.Observing body weight and tumor size of mice after continuous
+														administration.</p>
 												</div>
 											</div>
 										</div>
@@ -733,12 +1060,12 @@
 			}
 
 			function inViewToggle() {
-				for(var i = 0; i < items.length; i++) {
-					if(isElementInViewport(items[i])) {
-						if(!items[i].classList.contains("in-view")) {
+				for (var i = 0; i < items.length; i++) {
+					if (isElementInViewport(items[i])) {
+						if (!items[i].classList.contains("in-view")) {
 							items[i].classList.add("in-view");
 						}
-					} else if(items[i].classList.contains("in-view")) {
+					} else if (items[i].classList.contains("in-view")) {
 						items[i].classList.remove("in-view");
 					}
 				}
@@ -746,8 +1073,65 @@
 
 			window.addEventListener("load", inViewToggle);
 			window.addEventListener("scroll", inViewToggle);
+			// title
+			$(document).ready(function () {
+				speed = 250;
+				$(".title-box-new").each(function (titlebox_i, title_box) {
+					var last = $(title_box).offset().top - $(window).scrollTop();
+					var viewheight = window.innerHeight / 5 * 3;
+					if (last < viewheight) {
+						if ($(title_box).hasClass("played")) { } else {
+							$(title_box).addClass("played");
+
+							$(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+							$(title_box).children(".title-box-mask").animate({ width: $(title_box).find("h1").outerWidth() }, speed, "swing", function () {
+								$(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
+								// console.log($(title_box).width());
+								// console.log($(title_box).find("h1").width());
+								console.log(parseInt($(title_box).find(".title-box-title").css("border-left-width")));
+								var cache = $(title_box).width() - $(title_box).find("h1").outerWidth();
+								$(title_box).children(".title-box-mask").css("right", cache);
+								// $(title_box).children(".title-box-mask").addClass("title-box-mask-right");
+								$(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
+							});
+							$(title_box).children(".title-box-mask").animate({ width: "0" }, speed, "swing");
+						}
+
+
+					}
+				});
+			})
+			$(document).scroll(function () {
+				speed = 250;
+				$(".title-box-new").each(function (titlebox_i, title_box) {
+					var last = $(title_box).offset().top - $(window).scrollTop();
+					var viewheight = window.innerHeight / 5 * 3;
+					if (last < viewheight) {
+						if ($(title_box).hasClass("played")) { } else {
+							$(title_box).addClass("played");
+
+							$(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+							$(title_box).children(".title-box-mask").animate({ width: $(title_box).find("h1").outerWidth() }, speed, "swing", function () {
+								$(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
+								// console.log($(title_box).width());
+								// console.log($(title_box).find("h1").width());
+								console.log(parseInt($(title_box).find(".title-box-title").css("border-left-width")));
+								var cache = $(title_box).width() - $(title_box).find("h1").outerWidth();
+								$(title_box).children(".title-box-mask").css("right", cache);
+								// $(title_box).children(".title-box-mask").addClass("title-box-mask-right");
+								$(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
+							});
+							$(title_box).children(".title-box-mask").animate({ width: "0" }, speed, "swing");
+						}
+
+
+					}
+				});
+			})
+
+// title end
 		</script>
 
-	</body>
+</body>
 
 </html>

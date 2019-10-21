@@ -1,471 +1,546 @@
 <!doctype html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
-		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
-		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/home&action=raw&ctype=text/javascript"></script>
-		<link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
-		<script src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
-		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
-		<title>SYSU-Medicine</title>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript"
+		src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
+	<link type="text/css" rel="stylesheet"
+		href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
+	<script type="text/javascript"
+		src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/home&action=raw&ctype=text/javascript"></script>
+	<link rel="stylesheet"
+		href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
+	<script
+		src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
+	<link type="text/css" rel="stylesheet"
+		href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
+	<title>SYSU-Medicine</title>
 
-		<script type="text/x-mathjax-config">
+	<script type="text/x-mathjax-config">
 			$(function(){ MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} }); });
 		</script>
-		<script src="https://2019.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-		<style>
-			#model-content>div {
-				/*for <h1> , figure, table */
-				counter-reset: counter1 counter7 counter8;
-			}
-			
-			#model-content {
-				/*for fig*/
-				/*counter-reset: counter7;*/
-			}
-			
-			
-			#model-head h1 {
-				font-size: 48px;
-			}
-			
-			#model-head h3 {
-				font-size: 32px;
-			}
-			
-			#model-content {
-				counter-reset: counter7;
-			}
-			
-			#model-content h1 {
-				font-size: 48px !important;
-				counter-reset: counter2;
-				margin-top: 48px;
-				margin-bottom: 48px;
-			}
-			
-			#model-content h1:before {
-				counter-increment: counter1;
-				content: counter(counter1) ". ";
-			}
-			
-			#model-content h2 {
-				font-size: 40px !important;
-				counter-reset: counter3;
-				margin-top: 40px;
-				margin-bottom: 40px;
-			}
-			
-			#model-content h2:before {
-				counter-increment: counter2;
-				content: counter(counter1) "." counter(counter2) "  ";
-			}
-			
-			#model-content h3 {
-				font-size: 32px !important;
-				counter-reset: counter4;
-				margin-top: 32px;
-				margin-bottom: 32px;
-			}
-			
-			#model-content h3:before {
-				counter-increment: counter3;
-				content: counter(counter1) "." counter(counter2) "." counter(counter3) "  ";
-			}
-			
-			#model-content h4 {
-				font-size: 28px !important;
-				counter-reset: counter5;
-				margin-top: 28px;
-				margin-bottom: 28px;
-			}
-			
-			#model-content h4:before {
-				counter-increment: counter4;
-				content: counter(counter1) "." counter(counter2) "." counter(counter3) "." counter(counter4) "  ";
-			}
-			
-			#model-content h5 {
-				font-size: 24px !important;
-				counter-reset: counter6;
-				margin-top: 24px;
-				margin-bottom: 24px;
-			}
-			
-			#model-content h5:before {
-				counter-increment: counter5;
-				content: counter(counter1) "." counter(counter2) "." counter(counter3) "." counter(counter4) "." counter(counter5) "  ";
-			}
-			
-			#model-content p {
-				font-size: 18px !important;
-				line-height: 180%;
-				text-indent: 2em;
-			}
-			
-			#model-content figure {
-				text-align: center;
-				margin-top: 48px;
-				margin-bottom: 48px;
-			}
-			
-			#model-content img {
-				width:100%;
-			}
-			
-			#model-content figure>figcaption:before {
-				counter-increment: counter7;
-				content: "Fig." counter(counter7) ": ";
-			}
-			
-			#model-content caption {
-				text-align: center;
-				font-size: 18px;
-				color: black;
-			}
-			
-			#model-content caption:before {
-				counter-increment: counter8;
-				content: "Table " counter(counter8) ": ";
-			}
-		</style>
-	</head>
+	<script src="https://2019.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+	<style>
+		#model-content>div {
+			/*for <h1> , figure, table */
+			counter-reset: counter1 counter7 counter8;
+		}
 
-	<body>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 column">
-					<nav class="navigation" id="nav-top">
-						<ul class="navigation-list nav-justified">
-							<div class="navigation-blue navigation-div">
-								<li class="navigation-item activate ">
-									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
-									<ul class="navigation-dropdown-panel"></ul>
-								</li>
-								<li class="navigation-item dropdown">
-									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine/Description">Project</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Design">Design</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Experiments">Experiments</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Inspiration">Inspiration</a>
-										</li>
-									</ul>
-								</li>
-								<li class="navigation-item dropdown">
-									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Model">Model</a>
-									<ul class="navigation-dropdown-panel">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Model_Overview">Overview</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/M1_Cultivation">M1 Cultivation
-											</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Injection_System">Injection System
-											</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/TES">T. E. S.</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Future">Future</a>
-										</li>
-									</ul>
-								</li>
-								<li class="navigation-item dropdown ">
-									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Human Practices</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices_Overview">Overview
-											</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Integrated_Practices">Integrated Practices
-											</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education & Engagement
-											</a>
-										</li>
-									</ul>
-								</li>
+		#model-content {
+			/*for fig*/
+			/*counter-reset: counter7;*/
+		}
 
-							</div>
-							<div class="navigation-red navigation-div">
-								<li class="navigation-item dropdown ">
-									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts Overview</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Basic_Part">Basic Parts</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Composite_Part">Composite Parts
-											</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Part_Collection">Part Collection
-											</a>
-										</li>
-									</ul>
-								</li>
-								<li class="navigation-item dropdown ">
-									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions</a>
-										</li>
-									</ul>
-								</li>
-								<li class="navigation-item ">
-									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
-									<ul class="navigation-dropdown-panel"></ul>
-								</li>
-								<li class="navigation-item dropdown">
-									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Medal">Awards</a>
-									<ul class="navigation-dropdown-panel">
-										<li class="navigation-subitem">
-											<a href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging</a>
-										</li>
-									</ul>
-								</li>
-							</div>
 
-						</ul>
-					</nav>
-				</div>
+		#model-head h1 {
+			font-size: 48px;
+		}
+
+		#model-head h3 {
+			font-size: 32px;
+		}
+
+		#model-content {
+			counter-reset: counter7;
+		}
+
+		#model-content h1 {
+			font-size: 48px !important;
+			counter-reset: counter2;
+			margin-top: 48px;
+			margin-bottom: 48px;
+		}
+
+		#model-content h1:before {
+			counter-increment: counter1;
+			content: counter(counter1) ". ";
+		}
+
+		#model-content h2 {
+			font-size: 40px !important;
+			counter-reset: counter3;
+			margin-top: 40px;
+			margin-bottom: 40px;
+		}
+
+		#model-content h2:before {
+			counter-increment: counter2;
+			content: counter(counter1) "."counter(counter2) "  ";
+		}
+
+		#model-content h3 {
+			font-size: 32px !important;
+			counter-reset: counter4;
+			margin-top: 32px;
+			margin-bottom: 32px;
+		}
+
+		#model-content h3:before {
+			counter-increment: counter3;
+			content: counter(counter1) "."counter(counter2) "."counter(counter3) "  ";
+		}
+
+		#model-content h4 {
+			font-size: 28px !important;
+			counter-reset: counter5;
+			margin-top: 28px;
+			margin-bottom: 28px;
+		}
+
+		#model-content h4:before {
+			counter-increment: counter4;
+			content: counter(counter1) "."counter(counter2) "."counter(counter3) "."counter(counter4) "  ";
+		}
+
+		#model-content h5 {
+			font-size: 24px !important;
+			counter-reset: counter6;
+			margin-top: 24px;
+			margin-bottom: 24px;
+		}
+
+		#model-content h5:before {
+			counter-increment: counter5;
+			content: counter(counter1) "."counter(counter2) "."counter(counter3) "."counter(counter4) "."counter(counter5) "  ";
+		}
+
+		#model-content p {
+			font-size: 18px !important;
+			line-height: 180%;
+			text-indent: 2em;
+		}
+
+		#model-content figure {
+			text-align: center;
+			margin-top: 48px;
+			margin-bottom: 48px;
+		}
+
+		#model-content img {
+			width: 100%;
+		}
+
+		#model-content figure>figcaption:before {
+			counter-increment: counter7;
+			content: "Fig."counter(counter7) ": ";
+		}
+
+		#model-content caption {
+			text-align: center;
+			font-size: 18px;
+			color: black;
+		}
+
+		#model-content caption:before {
+			counter-increment: counter8;
+			content: "Table "counter(counter8) ": ";
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 column">
+				<nav class="navigation" id="nav-top">
+					<ul class="navigation-list nav-justified">
+						<div class="navigation-blue navigation-div">
+							<li class="navigation-item activate ">
+								<a class="navigation-item-link "
+									href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
+								<ul class="navigation-dropdown-panel"></ul>
+							</li>
+							<li class="navigation-item dropdown">
+								<a class="navigation-item-link ">Project</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Design">Design</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Experiments">Experiments</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Inspiration">Inspiration</a>
+									</li>
+								</ul>
+							</li>
+							<li class="navigation-item dropdown">
+								<a class="navigation-item-link">Model</a>
+								<ul class="navigation-dropdown-panel">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Model_Overview">Overview</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/M1_Cultivation">M1 Cultivation
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Injection_System">Injection
+											System
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/TES">T. E. S.</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Future">Future</a>
+									</li>
+								</ul>
+							</li>
+							<li class="navigation-item dropdown ">
+								<a class="navigation-item-link">Human Practices</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices_Overview">Overview
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Integrated_Practices">Integrated
+											Practices
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education &
+											Engagement
+										</a>
+									</li>
+								</ul>
+							</li>
+
+						</div>
+						<div class="navigation-red navigation-div">
+							<li class="navigation-item dropdown ">
+								<a class="navigation-item-link ">Parts</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts Overview</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts#Basic_Part">Basic
+											Parts</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts#Composite_Part">Composite
+											Parts
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts#Part_Collection">Part
+											Collection
+										</a>
+									</li>
+								</ul>
+							</li>
+
+							<li class="navigation-item ">
+								<a class="navigation-item-link"
+									href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
+								<ul class="navigation-dropdown-panel"></ul>
+							</li>
+							<li class="navigation-item ">
+								<a class="navigation-item-link"
+									href="https://2019.igem.org/Team:SYSU-Medicine/Medal">Awards</a>
+								<ul class="navigation-dropdown-panel">
+									<li class="navigation-subitem">
+										<a href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging</a>
+									</li>
+								</ul>
+							</li>
+							<li class="navigation-item dropdown ">
+								<a class="navigation-item-link ">Team</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
+									</li>
+									<li class="navigation-subitem">
+										<a
+											href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions</a>
+									</li>
+								</ul>
+							</li>
+						</div>
+
+					</ul>
+				</nav>
 			</div>
 		</div>
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
+	</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
 
-		<div class="container">
-			<div class="row clearfix">
-				<div class="col-xs-8 col-xs-offset-2" id="model-head" style="text-align:center;">
-					<h1 class="title">Modeling</h1>
-				</div>
+	<div class="container">
+		<div class="row clearfix">
+			<div class="col-xs-8 col-xs-offset-2" id="model-head" style="text-align:center;">
+				<h1 class="title">Modeling</h1>
 			</div>
-			<div class="row clearfix" id="model-content">
-				<div class="col-xs-12 col-md-8 col-md-offset-2 ">
-					<h1 id="targeting-ability-effectiveness-and-safety">Targeting Ability, Effectiveness and Safety</h1>
-					<h2 id="targeting-ability">Targeting Ability</h2>
-					<p>To evaluate the in vivo antitumor potential of M1, we established a preclinical tumor model.</p>
-					<p>We selected several groups of male and female mice and gave them a rapid intravenous injection of M1.The concentration of M1 was collected in different parts of the mouse body, and the mean value was taken to plot the results, as shown in the figure below.</p>
-					<figure>
-						<img src="https://2019.igem.org/wiki/images/e/e7/T--SYSU-Medicine--team-Model-12.png" alt="" />
-						<figcaption>
-							The concentration of M1 was collected in different parts of the male mouse body
-						</figcaption>
-					</figure>
-					<figure>
-						<img src="https://2019.igem.org/wiki/images/f/ff/T--SYSU-Medicine--team-Model-13.png" alt="" />
-						<figcaption>
-							The concentration of M1 was collected in different parts of the female mouse body
-						</figcaption>
-					</figure>
-					<p>From the experimental results, we can see that M1 is enriched in the tumor area in mice.In other parts of the mice, the concentration level of M1 was low, which was close to the level of normal mice, which reflected the targeted effect of M1 and thus ensured the targeted effect of combined therapy.</p>
-					<h2 id="effectiveness">Effectiveness</h2>
-					<h3 id="fitness">Fitness</h3>
-					<p>Meanwhile, the mean value of Tumor Volumn in both control and experimental mice was obtained, as shown in the table below.<span class="math inline"><em></em><sup>[1]</sup></span></p>
-					<table class="table table-bordered">
-						<caption>
-							Tumor Volumn in both control and experimental mice<span label="table"></span>
-						</caption>
-						<thead>
-							<tr class="header">
-								<th style="text-align: center;"></th>
-								<th style="text-align: center;">3</th>
-								<th style="text-align: center;">6</th>
-								<th style="text-align: center;">9</th>
-								<th style="text-align: center;">12</th>
-								<th style="text-align: center;">15</th>
-								<th style="text-align: center;">18</th>
-								<th style="text-align: center;">21</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="odd">
-								<td style="text-align: center;">M1</td>
-								<td style="text-align: center;">0.12</td>
-								<td style="text-align: center;">0.20</td>
-								<td style="text-align: center;">0.28</td>
-								<td style="text-align: center;">0.40</td>
-								<td style="text-align: center;">0.68</td>
-								<td style="text-align: center;">0.88</td>
-								<td style="text-align: center;">0.95</td>
-							</tr>
-							<tr class="even">
-								<td style="text-align: center;">Control</td>
-								<td style="text-align: center;">0.10</td>
-								<td style="text-align: center;">0.11</td>
-								<td style="text-align: center;">0.14</td>
-								<td style="text-align: center;">0.15</td>
-								<td style="text-align: center;">0.18</td>
-								<td style="text-align: center;">0.28</td>
-								<td style="text-align: center;">0.42</td>
-							</tr>
-						</tbody>
-					</table>
-					<p>We used Fourier and Gaussian functions to fit the images of M1 and the control group, the table is as below:</p>
-					<figure>
-						<img src="https://2019.igem.org/wiki/images/e/ef/T--SYSU-Medicine--team-Model-15.png" alt="" />
-						<figcaption>
-							Tumor Volumn in both control and experWe know this from experiments on ten primate cynomolgus monkeysimental mice
-						</figcaption>
-					</figure>
-					<p>Consistent with the in vitro experiments, evident antitumor effects were observed in M1-treated animals.</p>
-					<h3 id="improved-ode-model">Improved ODE Model</h3>
-					<p>Considering the different environment in human body because of the immune effect and the limitation of the number of uninfected tumour cells <span class="math inline"><em>U</em>(<em>t</em>)</span>, infected tumour cells <span class="math inline"><em>I</em>(<em>t</em>)</span>, we decided to change our model:<span class="math inline"><em></em><sup>[2]</sup></span><br />
-						<span class="math display">$$\left\{ \begin{aligned} \frac{dU(t)}{dt}&amp;=r*U(t)*\frac{1}{\varphi*U(t)+\psi*I(t)}-\beta U(t)M(t)\\ \frac{dI(t)}{dt}&amp;=r*I(t)*\frac{1}{\varphi*U(t)+\psi*I(t)}+\beta U(t)M(t)-\alpha I(t)-\frac{I(t)}{I(t)+U(t)}\\ \frac{dM(t)}{dt}&amp;=\sigma I(t)-uM(t)-M(t)*\frac{I(t)}{I(t)+U(t)}\\ \end{aligned} \right.$$</span><br /> In the equations above, <span class="math inline"><em>M</em>(<em>t</em>)</span>is the titer of the M1. The proportion of infected tumour cells among all the tumor cells as <span class="math inline">$\frac{I(t)}{I(t)+U(t)}$</span> means the immune effect on the titer of the infected tumour, meanwhile, in order to take the limitation of tumour cells to themselves into consideration, we add <span class="math inline">$\frac{1}{\varphi*U(t)+\psi*I(t)}$</span> to show the counteraction to its own growth with a large amount of tumour.</p>
-					<p>The solution of the equations is showed below:</p>
-					<figure>
-						<img src="https://2019.igem.org/wiki/images/9/92/T--SYSU-Medicine--team-Model-ImprovedODE.png" alt="" />
-						<figcaption>
-							text
-						</figcaption>
-					</figure>
-					<p>This solution is more reasonable. It proves the effectiveness of M1 with the reduction of the uninfected tumour cells. Obviously the solution tends to be stable and the infected tumour cells will gradually become zero. In addition, the remain of the tumour cells also prove that the second dose is necessary.</p>
-					<h2 id="safety">Safety</h2>
-					<p>As for the safety of our system, we know this from experiments on ten primate cynomolgus monkeys. In this experiment, Ten captive-bred 4 to 6-year-old male- or female- specific pathogen-free cynomolgus macaques (M. fascicularis) weighing between 3.5 and 6 kg were obtained and Five randomly selected macaques were treated with oncolytic virus M1; the left five ones were subjected to the control group–receiving vehicle after the same schedule as the virus injections in the test group. All animals were bled 2 days before viral injection to confirm the absence of neutralizing antibodies.<span class="math inline"><em></em><sup>[3]</sup></span></p>
-					<p>During the experiment, the body weight and body temperature of experimental macaques and control macaques were measured weekly. In addtional, the count of white blood cells, lymphocyte,monocyte, albumin(ALB), globulin(GLB), aspartate amino-transferase (AST) , alanine transaminase (ALT), alkaline phosphatase (ALP) Were examined and counted. The results are listed as below:</p>
-					<table class="table table-bordered">
-						<caption>
-							Tumor Volumn in both control and experimental mice<span label="table"></span>
-						</caption>
-						<thead>
-							<tr class="header">
-								<th style="text-align: center;">Diagnosis</th>
-								<th style="text-align: center;">Control</th>
-								<th style="text-align: center;">Test</th>
-								<th style="text-align: center;">p value</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="odd">
-								<td style="text-align: center;">Body weight</td>
-								<td style="text-align: center;">5.26 <span class="math inline">±</span> 1.39</td>
-								<td style="text-align: center;">5.81 <span class="math inline">±</span> 0.8</td>
-								<td style="text-align: center;">0.2099752 <span class="math inline">≥</span> 0.05</td>
-								
-							</tr>
-							<tr class="even">
-								<td style="text-align: center;">Body temperature</td>
-								<td style="text-align: center;">38.42 <span class="math inline">±</span> 0.48</td>
-								<td style="text-align: center;">38.22 <span class="math inline">±</span> 0.52</td>
-								<td style="text-align: center;">0.2536536 <span class="math inline">≥</span> 0.05</td>
-							</tr>
-							<tr class="odd">
-								<td style="text-align: center;">WBC,cells/nl</td>
-								<td style="text-align: center;">11.12 <span class="math inline">±</span> 4.31</td>
-								<td style="text-align: center;">9.54 <span class="math inline">±</span> 4.01</td>
-								<td style="text-align: center;">0.2640504 <span class="math inline">≥</span> 0.05</td>
-							</tr>
-							<tr class="even">
-								<td style="text-align: center;">LY,%</td>
-								<td style="text-align: center;">34.72 <span class="math inline">±</span> 9.62</td>
-								<td style="text-align: center;">51.16 <span class="math inline">±</span> 12.14</td>
-								<td style="text-align: center;">0.006704666</td>
-							</tr>
-							<tr class="odd">
-								<td style="text-align: center;">MONO,%</td>
-								<td style="text-align: center;">4.86 <span class="math inline">±</span> 2.32</td>
-								<td style="text-align: center;">5.2 <span class="math inline">±</span> 3.17</td>
-								<td style="text-align: center;">0.3722814 <span class="math inline">≥</span> 0.05</td>
-							</tr>
-							<tr class="even">
-								<td style="text-align: center;">AST,U/liter</td>
-								<td style="text-align: center;">28 <span class="math inline">±</span> 5.24</td>
-								<td style="text-align: center;">28.2 <span class="math inline">±</span> 4.55</td>
-								<td style="text-align: center;">0.3862507 <span class="math inline">≥</span> 0.05</td>
-							</tr>
-							<tr class="odd">
-								<td style="text-align: center;">ALT,U/liter</td>
-								<td style="text-align: center;">32.4 <span class="math inline">±</span> 16.77</td>
-								<td style="text-align: center;">26.4 <span class="math inline">±</span> 3.78</td>
-								<td style="text-align: center;">0.2056938 <span class="math inline">≥</span> 0.05</td>
-							</tr>
-							<tr class="even">
-								<td style="text-align: center;">ALB,g/liter</td>
-								<td style="text-align: center;">44.66 <span class="math inline">±</span> 2.79</td>
-								<td style="text-align: center;">46.22 <span class="math inline">±</span> 1.81</td>
-								<td style="text-align: center;">0.1300045 <span class="math inline">≥</span> 0.05</td>
-							</tr>
-							<tr class="odd">
-								<td style="text-align: center;">GLB,g/liter</td>
-								<td style="text-align: center;">32 <span class="math inline">±</span> 3.50</td>
-								<td style="text-align: center;">30.26 <span class="math inline">±</span> 4.11</td>
-								<td style="text-align: center;">0.2247176 <span class="math inline">≥</span> 0.05</td>
-							</tr>
-							<tr class="even">
-								<td style="text-align: center;">ALP,U/liter</td>
-								<td style="text-align: center;">175 <span class="math inline">±</span> 76</td>
-								<td style="text-align: center;">181.8 <span class="math inline">±</span> 70.48</td>
-								<td style="text-align: center;">0.3788848 <span class="math inline">≥</span> 0.05</td>
-							</tr>
-						</tbody>
-					</table>
-					<p>We run hypothesis tests on the data:</p>
-					<p><span class="math inline"><em>H</em><sub>0</sub></span>: No statistically significant differences</p>
-					<p><span class="math inline"><em>H</em><sub>1</sub></span>: There are statistically significant differences</p>
-					<p>All the examinations mentioned above were performed to evaluate the potential comprehensive long-term effects of multiple rounds of injections on macaques. As shown in Table, no significant differences can be found in the test group compared withthe control, except for the increased percentage of lymphocytes in the white blood cells, which is a common phenomenon during virus infection.</p>
-					<p>That is to say we should accept the <span class="math inline"><em>H</em><sub>0</sub></span>, and our system is safe and dependable in a way.</p>
-					<p>The details of this experiment can be seen in the reference.</p>
-					<h2 id="the-contact-ratio-beta-and-spatial-distribution">*The Contact Ratio <span class="math inline"><em>β</em></span> and Spatial Distribution</h2>
-					<p>Actually, in the research, the contact ratio <span class="math inline"><em>β</em></span> is different due to the position. The uninfected tumor cells tend to have a higher contact ratio when they are around an infected tumor cell. And as we can see, <span class="math inline"><em>β</em></span> decreases as the cells move away from the infected one. Thus, we should consider the distribution of infected tumor cells.</p>
-					<p>We could collect the fluorescent figure of different time, and regard the fluorescent points as points in the plot. Then we could use k-means to cluster. And we can get the mean and variance of each cluster. Thus we can use Gaussian Mixture Model to make an approximate distribution based on the clustering. That is because the gaussian mixture distribution can approximate the non - negative integrable function with arbitrary precision. Then we could get the figure below.</p>
-					<figure>
-						<img src="https://2019.igem.org/wiki/images/4/4b/T--SYSU-Medicine--team-Model-GMM.png" alt="" />
-						<figcaption>
-							Clustering and Gaussian Mixture Model
-						</figcaption>
-					</figure>
-					<p>Basee on the GMM, we could finally get the distribution of infected tumor cells. It is the distribution of the contact ratio <span class="math inline"><em>β</em></span> as well.</p>
-					<figure>
-						<img src="https://2019.igem.org/wiki/images/0/09/T--SYSU-Medicine--team-Model-beta.png"  alt="" />
-						<figcaption>
-							<span class="math inline"><em>β</em></span> Distribution
-						</figcaption>
-					</figure>
-					<p>The similar method can be applied into 3-dimensional human body. There is a little difficult in adapting the time-varying distribution to the ODE. But we will try to finish it in the future.</p>
-					
-					<h1 id="renference">Renference</h1>
-					<p>[1]Rafael Sanjuán,Valery Z Grdzelishvili. Evolution of oncolytic viruses[J]. Current Opinion in Virology,2015,13.</p>
-					<p>[2]Zizi Wang,Zhiming Guo,Huaqin Peng. A mathematical model verifying potent oncolytic efficacy of M1 virus[J]. Mathematical Biosciences,2016,276.</p>
-					<p>[3]Haipeng Zhang, Yuan Lin, Kai Li, Jiankai Liang, Xiao Xiao, Jing Cai, Yaqian Tan, Fan Xing, Jialuo Mai, Yuan Li, Wenli Chen, Longxiang Sheng, Jiayu Gu, Wenbo Zhu, Wei Yin, Pengxin Qiu, Xingwen Su, Bingzheng Lu, Xuyan Tian, Jinhui Liu, Wanjun Lu, Yunling Dou, Yijun Huang, Bing Hu, Zhuang Kang, Guangping Gao, Zixu Mao, Shi-Yuan Cheng, Ling Lu, Xue-Tao Bai, Shoufang Gong, Guangmei Yan, and Jun Hu. Naturally Existing Oncolytic Virus M1 Is Nonpathogenic for the Nonhuman Primates After Multiple Rounds of Repeated Intravenous Injections. Human Gene Therapy 2016 27:9, 700-711</p>
-					<p>  </p>
-				</div>
-			</div>
+		</div>
+		<div class="row clearfix" id="model-content">
+			<div class="col-xs-12 col-md-8 col-md-offset-2 ">
+				<h1 id="targeting-ability-effectiveness-and-safety">Targeting Ability, Effectiveness and Safety</h1>
+				<h2 id="targeting-ability">Targeting Ability</h2>
+				<p>To evaluate the in vivo antitumor potential of M1, we established a preclinical tumor model.</p>
+				<p>We selected several groups of male and female mice and gave them a rapid intravenous injection of
+					M1.The concentration of M1 was collected in different parts of the mouse body, and the mean value
+					was taken to plot the results, as shown in the figure below.</p>
+				<figure>
+					<img src="https://2019.igem.org/wiki/images/e/e7/T--SYSU-Medicine--team-Model-12.png" alt="" />
+					<figcaption>
+						The concentration of M1 was collected in different parts of the male mouse body
+					</figcaption>
+				</figure>
+				<figure>
+					<img src="https://2019.igem.org/wiki/images/f/ff/T--SYSU-Medicine--team-Model-13.png" alt="" />
+					<figcaption>
+						The concentration of M1 was collected in different parts of the female mouse body
+					</figcaption>
+				</figure>
+				<p>From the experimental results, we can see that M1 is enriched in the tumor area in mice.In other
+					parts of the mice, the concentration level of M1 was low, which was close to the level of normal
+					mice, which reflected the targeted effect of M1 and thus ensured the targeted effect of combined
+					therapy.</p>
+				<h2 id="effectiveness">Effectiveness</h2>
+				<h3 id="fitness">Fitness</h3>
+				<p>Meanwhile, the mean value of Tumor Volumn in both control and experimental mice was obtained, as
+					shown in the table below.<span class="math inline"><em></em><sup>[1]</sup></span></p>
+				<table class="table table-bordered">
+					<caption>
+						Tumor Volumn in both control and experimental mice<span label="table"></span>
+					</caption>
+					<thead>
+						<tr class="header">
+							<th style="text-align: center;"></th>
+							<th style="text-align: center;">3</th>
+							<th style="text-align: center;">6</th>
+							<th style="text-align: center;">9</th>
+							<th style="text-align: center;">12</th>
+							<th style="text-align: center;">15</th>
+							<th style="text-align: center;">18</th>
+							<th style="text-align: center;">21</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="odd">
+							<td style="text-align: center;">M1</td>
+							<td style="text-align: center;">0.12</td>
+							<td style="text-align: center;">0.20</td>
+							<td style="text-align: center;">0.28</td>
+							<td style="text-align: center;">0.40</td>
+							<td style="text-align: center;">0.68</td>
+							<td style="text-align: center;">0.88</td>
+							<td style="text-align: center;">0.95</td>
+						</tr>
+						<tr class="even">
+							<td style="text-align: center;">Control</td>
+							<td style="text-align: center;">0.10</td>
+							<td style="text-align: center;">0.11</td>
+							<td style="text-align: center;">0.14</td>
+							<td style="text-align: center;">0.15</td>
+							<td style="text-align: center;">0.18</td>
+							<td style="text-align: center;">0.28</td>
+							<td style="text-align: center;">0.42</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>We used Fourier and Gaussian functions to fit the images of M1 and the control group, the table is as
+					below:</p>
+				<figure>
+					<img src="https://2019.igem.org/wiki/images/e/ef/T--SYSU-Medicine--team-Model-15.png" alt="" />
+					<figcaption>
+						Tumor Volumn in both control and experWe know this from experiments on ten primate cynomolgus
+						monkeysimental mice
+					</figcaption>
+				</figure>
+				<p>Consistent with the in vitro experiments, evident antitumor effects were observed in M1-treated
+					animals.</p>
+				<h3 id="improved-ode-model">Improved ODE Model</h3>
+				<p>Considering the different environment in human body because of the immune effect and the limitation
+					of the number of uninfected tumour cells <span class="math inline"><em>U</em>(<em>t</em>)</span>,
+					infected tumour cells <span class="math inline"><em>I</em>(<em>t</em>)</span>, we decided to change
+					our model:<span class="math inline"><em></em><sup>[2]</sup></span><br />
+					<span class="math display">$$\left\{ \begin{aligned}
+						\frac{dU(t)}{dt}&amp;=r*U(t)*\frac{1}{\varphi*U(t)+\psi*I(t)}-\beta U(t)M(t)\\
+						\frac{dI(t)}{dt}&amp;=r*I(t)*\frac{1}{\varphi*U(t)+\psi*I(t)}+\beta U(t)M(t)-\alpha
+						I(t)-\frac{I(t)}{I(t)+U(t)}\\ \frac{dM(t)}{dt}&amp;=\sigma
+						I(t)-uM(t)-M(t)*\frac{I(t)}{I(t)+U(t)}\\ \end{aligned} \right.$$</span><br /> In the equations
+					above, <span class="math inline"><em>M</em>(<em>t</em>)</span>is the titer of the M1. The proportion
+					of infected tumour cells among all the tumor cells as <span
+						class="math inline">$\frac{I(t)}{I(t)+U(t)}$</span> means the immune effect on the titer of the
+					infected tumour, meanwhile, in order to take the limitation of tumour cells to themselves into
+					consideration, we add <span class="math inline">$\frac{1}{\varphi*U(t)+\psi*I(t)}$</span> to show
+					the counteraction to its own growth with a large amount of tumour.</p>
+				<p>The solution of the equations is showed below:</p>
+				<figure>
+					<img src="https://2019.igem.org/wiki/images/9/92/T--SYSU-Medicine--team-Model-ImprovedODE.png"
+						alt="" />
+					<figcaption>
+						text
+					</figcaption>
+				</figure>
+				<p>This solution is more reasonable. It proves the effectiveness of M1 with the reduction of the
+					uninfected tumour cells. Obviously the solution tends to be stable and the infected tumour cells
+					will gradually become zero. In addition, the remain of the tumour cells also prove that the second
+					dose is necessary.</p>
+				<h2 id="safety">Safety</h2>
+				<p>As for the safety of our system, we know this from experiments on ten primate cynomolgus monkeys. In
+					this experiment, Ten captive-bred 4 to 6-year-old male- or female- specific pathogen-free cynomolgus
+					macaques (M. fascicularis) weighing between 3.5 and 6 kg were obtained and Five randomly selected
+					macaques were treated with oncolytic virus M1; the left five ones were subjected to the control
+					group–receiving vehicle after the same schedule as the virus injections in the test group. All
+					animals were bled 2 days before viral injection to confirm the absence of neutralizing
+					antibodies.<span class="math inline"><em></em><sup>[3]</sup></span></p>
+				<p>During the experiment, the body weight and body temperature of experimental macaques and control
+					macaques were measured weekly. In addtional, the count of white blood cells, lymphocyte,monocyte,
+					albumin(ALB), globulin(GLB), aspartate amino-transferase (AST) , alanine transaminase (ALT),
+					alkaline phosphatase (ALP) Were examined and counted. The results are listed as below:</p>
+				<table class="table table-bordered">
+					<caption>
+						Tumor Volumn in both control and experimental mice<span label="table"></span>
+					</caption>
+					<thead>
+						<tr class="header">
+							<th style="text-align: center;">Diagnosis</th>
+							<th style="text-align: center;">Control</th>
+							<th style="text-align: center;">Test</th>
+							<th style="text-align: center;">p value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="odd">
+							<td style="text-align: center;">Body weight</td>
+							<td style="text-align: center;">5.26 <span class="math inline">±</span> 1.39</td>
+							<td style="text-align: center;">5.81 <span class="math inline">±</span> 0.8</td>
+							<td style="text-align: center;">0.2099752 <span class="math inline">≥</span> 0.05</td>
 
-			<script>
-			</script>
-	</body>
+						</tr>
+						<tr class="even">
+							<td style="text-align: center;">Body temperature</td>
+							<td style="text-align: center;">38.42 <span class="math inline">±</span> 0.48</td>
+							<td style="text-align: center;">38.22 <span class="math inline">±</span> 0.52</td>
+							<td style="text-align: center;">0.2536536 <span class="math inline">≥</span> 0.05</td>
+						</tr>
+						<tr class="odd">
+							<td style="text-align: center;">WBC,cells/nl</td>
+							<td style="text-align: center;">11.12 <span class="math inline">±</span> 4.31</td>
+							<td style="text-align: center;">9.54 <span class="math inline">±</span> 4.01</td>
+							<td style="text-align: center;">0.2640504 <span class="math inline">≥</span> 0.05</td>
+						</tr>
+						<tr class="even">
+							<td style="text-align: center;">LY,%</td>
+							<td style="text-align: center;">34.72 <span class="math inline">±</span> 9.62</td>
+							<td style="text-align: center;">51.16 <span class="math inline">±</span> 12.14</td>
+							<td style="text-align: center;">0.006704666</td>
+						</tr>
+						<tr class="odd">
+							<td style="text-align: center;">MONO,%</td>
+							<td style="text-align: center;">4.86 <span class="math inline">±</span> 2.32</td>
+							<td style="text-align: center;">5.2 <span class="math inline">±</span> 3.17</td>
+							<td style="text-align: center;">0.3722814 <span class="math inline">≥</span> 0.05</td>
+						</tr>
+						<tr class="even">
+							<td style="text-align: center;">AST,U/liter</td>
+							<td style="text-align: center;">28 <span class="math inline">±</span> 5.24</td>
+							<td style="text-align: center;">28.2 <span class="math inline">±</span> 4.55</td>
+							<td style="text-align: center;">0.3862507 <span class="math inline">≥</span> 0.05</td>
+						</tr>
+						<tr class="odd">
+							<td style="text-align: center;">ALT,U/liter</td>
+							<td style="text-align: center;">32.4 <span class="math inline">±</span> 16.77</td>
+							<td style="text-align: center;">26.4 <span class="math inline">±</span> 3.78</td>
+							<td style="text-align: center;">0.2056938 <span class="math inline">≥</span> 0.05</td>
+						</tr>
+						<tr class="even">
+							<td style="text-align: center;">ALB,g/liter</td>
+							<td style="text-align: center;">44.66 <span class="math inline">±</span> 2.79</td>
+							<td style="text-align: center;">46.22 <span class="math inline">±</span> 1.81</td>
+							<td style="text-align: center;">0.1300045 <span class="math inline">≥</span> 0.05</td>
+						</tr>
+						<tr class="odd">
+							<td style="text-align: center;">GLB,g/liter</td>
+							<td style="text-align: center;">32 <span class="math inline">±</span> 3.50</td>
+							<td style="text-align: center;">30.26 <span class="math inline">±</span> 4.11</td>
+							<td style="text-align: center;">0.2247176 <span class="math inline">≥</span> 0.05</td>
+						</tr>
+						<tr class="even">
+							<td style="text-align: center;">ALP,U/liter</td>
+							<td style="text-align: center;">175 <span class="math inline">±</span> 76</td>
+							<td style="text-align: center;">181.8 <span class="math inline">±</span> 70.48</td>
+							<td style="text-align: center;">0.3788848 <span class="math inline">≥</span> 0.05</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>We run hypothesis tests on the data:</p>
+				<p><span class="math inline"><em>H</em><sub>0</sub></span>: No statistically significant differences</p>
+				<p><span class="math inline"><em>H</em><sub>1</sub></span>: There are statistically significant
+					differences</p>
+				<p>All the examinations mentioned above were performed to evaluate the potential comprehensive long-term
+					effects of multiple rounds of injections on macaques. As shown in Table, no significant differences
+					can be found in the test group compared withthe control, except for the increased percentage of
+					lymphocytes in the white blood cells, which is a common phenomenon during virus infection.</p>
+				<p>That is to say we should accept the <span class="math inline"><em>H</em><sub>0</sub></span>, and our
+					system is safe and dependable in a way.</p>
+				<p>The details of this experiment can be seen in the reference.</p>
+				<h2 id="the-contact-ratio-beta-and-spatial-distribution">*The Contact Ratio <span
+						class="math inline"><em>β</em></span> and Spatial Distribution</h2>
+				<p>Actually, in the research, the contact ratio <span class="math inline"><em>β</em></span> is different
+					due to the position. The uninfected tumor cells tend to have a higher contact ratio when they are
+					around an infected tumor cell. And as we can see, <span class="math inline"><em>β</em></span>
+					decreases as the cells move away from the infected one. Thus, we should consider the distribution of
+					infected tumor cells.</p>
+				<p>We could collect the fluorescent figure of different time, and regard the fluorescent points as
+					points in the plot. Then we could use k-means to cluster. And we can get the mean and variance of
+					each cluster. Thus we can use Gaussian Mixture Model to make an approximate distribution based on
+					the clustering. That is because the gaussian mixture distribution can approximate the non - negative
+					integrable function with arbitrary precision. Then we could get the figure below.</p>
+				<figure>
+					<img src="https://2019.igem.org/wiki/images/4/4b/T--SYSU-Medicine--team-Model-GMM.png" alt="" />
+					<figcaption>
+						Clustering and Gaussian Mixture Model
+					</figcaption>
+				</figure>
+				<p>Basee on the GMM, we could finally get the distribution of infected tumor cells. It is the
+					distribution of the contact ratio <span class="math inline"><em>β</em></span> as well.</p>
+				<figure>
+					<img src="https://2019.igem.org/wiki/images/0/09/T--SYSU-Medicine--team-Model-beta.png" alt="" />
+					<figcaption>
+						<span class="math inline"><em>β</em></span> Distribution
+					</figcaption>
+				</figure>
+				<p>The similar method can be applied into 3-dimensional human body. There is a little difficult in
+					adapting the time-varying distribution to the ODE. But we will try to finish it in the future.</p>
+
+				<h1 id="renference">Renference</h1>
+				<p>[1]Rafael Sanjuán,Valery Z Grdzelishvili. Evolution of oncolytic viruses[J]. Current Opinion in
+					Virology,2015,13.</p>
+				<p>[2]Zizi Wang,Zhiming Guo,Huaqin Peng. A mathematical model verifying potent oncolytic efficacy of M1
+					virus[J]. Mathematical Biosciences,2016,276.</p>
+				<p>[3]Haipeng Zhang, Yuan Lin, Kai Li, Jiankai Liang, Xiao Xiao, Jing Cai, Yaqian Tan, Fan Xing, Jialuo
+					Mai, Yuan Li, Wenli Chen, Longxiang Sheng, Jiayu Gu, Wenbo Zhu, Wei Yin, Pengxin Qiu, Xingwen Su,
+					Bingzheng Lu, Xuyan Tian, Jinhui Liu, Wanjun Lu, Yunling Dou, Yijun Huang, Bing Hu, Zhuang Kang,
+					Guangping Gao, Zixu Mao, Shi-Yuan Cheng, Ling Lu, Xue-Tao Bai, Shoufang Gong, Guangmei Yan, and Jun
+					Hu. Naturally Existing Oncolytic Virus M1 Is Nonpathogenic for the Nonhuman Primates After Multiple
+					Rounds of Repeated Intravenous Injections. Human Gene Therapy 2016 27:9, 700-711</p>
+				<p>  </p>
+			</div>
+		</div>
+
+		<script>
+		</script>
+</body>
 
 </html>

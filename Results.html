@@ -1,184 +1,194 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
-		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
-		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/home&action=raw&ctype=text/javascript"></script>
-		<!--<script type="text/javascript" src="home.js"></script>-->
-		<link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
-		<script src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
-		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript"
+		src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
+	<link type="text/css" rel="stylesheet"
+		href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
+	<script type="text/javascript"
+		src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/home&action=raw&ctype=text/javascript"></script>
+	<!--<script type="text/javascript" src="home.js"></script>-->
+	<link rel="stylesheet"
+		href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
+	<script
+		src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
+	<link type="text/css" rel="stylesheet"
+		href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
 
-		<title>SYSU-Medicine</title>
+	<title>SYSU-Medicine</title>
 
-		<style>
-			* {
-				font-family: 'Open Sans';
-			}
-			
-			.col-xs-12,
-			.col-xs-6,
-			.row {
-				align-content: space-around;
-			}
-			/*#Result-content img,
+	<style>
+		* {
+			font-family: 'Open Sans';
+		}
+
+		.col-xs-12,
+		.col-xs-6,
+		.row {
+			align-content: space-around;
+		}
+
+		/*#Result-content img,
 			video {
 				margin-top: 5%;
 				margin-bottom: 5%;
 			}*/
-			
-			#Result-content h1 {
-				font-size: 56px;
-			}
-			
-			#Result-content h2 {
-				font-size: 35px;
-			}
-			
-			#Result-content h3 {
-				font-size: 29px;
-			}
-			
-			#Result-content h4 {
-				font-size: 22px;
-			}
-			
-			#Result-content h5 {
-				font-size: 19px;
-			}
-			
-			#Result-content p {
-				font-size: 16px;
-				/*font-size:1.75rem;*/
-			}
-			
-			.my-no-padding {
-				padding: 0 0 0 0;
-			}
-			
-			.my-vertical-align {
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-			}
-			
-			#Result-content .panel-heading{
-				background-color: rgba(25, 46, 67,0.8) ;
-				border-color: rgba(25, 46, 67,0.8) ;
-				color: white ;
-			}
-			
-			#Result-content ul {
-				list-style: none;
-			}
-			/*ul的线条*/
-			
-			#Result-content ul li {
-				list-style-type: none;
-				position: relative;
-				/*width: 12px;*/
-				margin: 0 auto;
-				/*padding-top: 50px;*/
-				/*background: rgba(128, 128, 128, 0.5);*/
-				/*background: linear-gradient(180deg, rgba(255, 55, 68, 0), rgba(255, 55, 68, 0.5));*/
-				transition: all 0.5s ease-in-out;
-			}
-			/*ul的图片*/
-			
-			#Result-content ul li:nth-of-type(odd) .img-box {
-				/*border-left: 5px solid rgb(255, 55, 68);
+
+		#Result-content h1 {
+			font-size: 56px;
+		}
+
+		#Result-content h2 {
+			font-size: 35px;
+		}
+
+		#Result-content h3 {
+			font-size: 29px;
+		}
+
+		#Result-content h4 {
+			font-size: 22px;
+		}
+
+		#Result-content h5 {
+			font-size: 19px;
+		}
+
+		#Result-content p {
+			font-size: 16px;
+			/*font-size:1.75rem;*/
+		}
+
+		.my-no-padding {
+			padding: 0 0 0 0;
+		}
+
+		.my-vertical-align {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+
+		#Result-content .panel-heading {
+			background-color: rgba(25, 46, 67, 0.8);
+			border-color: rgba(25, 46, 67, 0.8);
+			color: white;
+		}
+
+		#Result-content ul {
+			list-style: none;
+		}
+
+		/*ul的线条*/
+
+		#Result-content ul li {
+			list-style-type: none;
+			position: relative;
+			/*width: 12px;*/
+			margin: 0 auto;
+			/*padding-top: 50px;*/
+			/*background: rgba(128, 128, 128, 0.5);*/
+			/*background: linear-gradient(180deg, rgba(255, 55, 68, 0), rgba(255, 55, 68, 0.5));*/
+			transition: all 0.5s ease-in-out;
+		}
+
+		/*ul的图片*/
+
+		#Result-content ul li:nth-of-type(odd) .img-box {
+			/*border-left: 5px solid rgb(255, 55, 68);
 				border-radius: 50%;*/
-				left:-3em;
-				width: 7em;
-				height: 15em;
-				/*border-left: 5px solid red;
+			left: -3em;
+			width: 7em;
+			height: 15em;
+			/*border-left: 5px solid red;
 				border-radius:50%;		*/
-				text-align: center;
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-				/*border: 1px solid black;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			/*border: 1px solid black;
    				border-radius: 100%;
     			border-right: none;*/
-				/*border: 5px solid rgb(255, 55, 68);*/
-				border-radius: 100% 0 0 100%/50%;
-				border-right: none;
-				
-				position: relative;
-				box-sizing: border-box;
-				/*border-color: rgb(255, 55, 68);*/
-				background-image: linear-gradient(white,white), linear-gradient(rgba(255, 55, 68, 1), rgba(255, 55, 68, 1),rgba(255, 55, 68, 1));
-				padding-right: 0px;
-				padding-left: 10px;
-				padding-top: 2px;
-				padding-bottom: 2px;
-				background-clip: content-box, padding-box;
-				/*margin-bottom: -30px;*/
-			}
-			
-			#Result-content ul li:nth-of-type(even) .img-box {
-				/*border-right: 5px solid rgb(255, 55, 68);
+			/*border: 5px solid rgb(255, 55, 68);*/
+			border-radius: 100% 0 0 100%/50%;
+			border-right: none;
+
+			position: relative;
+			box-sizing: border-box;
+			/*border-color: rgb(255, 55, 68);*/
+			background-image: linear-gradient(white, white), linear-gradient(rgba(255, 55, 68, 1), rgba(255, 55, 68, 1), rgba(255, 55, 68, 1));
+			padding-right: 0px;
+			padding-left: 10px;
+			padding-top: 2px;
+			padding-bottom: 2px;
+			background-clip: content-box, padding-box;
+			/*margin-bottom: -30px;*/
+		}
+
+		#Result-content ul li:nth-of-type(even) .img-box {
+			/*border-right: 5px solid rgb(255, 55, 68);
 				border-radius: 50%;*/
-				/*width: 100%;
+			/*width: 100%;
 			    height: 200%;*/
-				width: 8em;
-				height: 16em;
-				/*border-right: 5px solid red;
+			width: 8em;
+			height: 16em;
+			/*border-right: 5px solid red;
 				border-radius:50%;	*/
-				text-align: center;
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-				/*border: 5px solid;*/
-				border-radius: 0 100% 100% 0/50%;
-				border-left: none;
-				position: relative;
-				left: 4em;
-				box-sizing: border-box;
-				
-                background-image: linear-gradient(white,white), linear-gradient(rgba(255, 55, 68, 1), rgba(255, 55, 68, 1),rgba(255, 55, 68, 1));					
-				padding-right: 10px;
-				padding-left: 0px;
-				padding-top: 2px;
-				padding-bottom: 2px;
-				background-clip: content-box, padding-box;
-			}
-			
-			#Result-content ul li img {
-				/*border-right: 5px solid rgb(255, 55, 68);
+			text-align: center;
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			/*border: 5px solid;*/
+			border-radius: 0 100% 100% 0/50%;
+			border-left: none;
+			position: relative;
+			left: 4em;
+			box-sizing: border-box;
+
+			background-image: linear-gradient(white, white), linear-gradient(rgba(255, 55, 68, 1), rgba(255, 55, 68, 1), rgba(255, 55, 68, 1));
+			padding-right: 10px;
+			padding-left: 0px;
+			padding-top: 2px;
+			padding-bottom: 2px;
+			background-clip: content-box, padding-box;
+		}
+
+		#Result-content ul li img {
+			/*border-right: 5px solid rgb(255, 55, 68);
 				border-radius: 50%;*/
-				width: 12em;
-			    height: 9em;
-			}
-			
-			#Result-content ul li:nth-of-type(odd) img {
-				/*border-right: 5px solid rgb(255, 55, 68);
+			width: 12em;
+			height: 9em;
+		}
+
+		#Result-content ul li:nth-of-type(odd) img {
+			/*border-right: 5px solid rgb(255, 55, 68);
 				border-radius: 50%;*/
-				position: absolute;
-				left: 5rem;
-				/*width: 6rem;
+			position: absolute;
+			left: 5rem;
+			/*width: 6rem;
 				height: 6rem;*/
-			}
-			
-			#Result-content ul li:nth-of-type(even) img {
-				/*border-right: 5px solid rgb(255, 55, 68);
+		}
+
+		#Result-content ul li:nth-of-type(even) img {
+			/*border-right: 5px solid rgb(255, 55, 68);
 				border-radius: 50%;*/
-				position: absolute;
-				left: -2rem;
-				/*width: 6rem;
+			position: absolute;
+			left: -2rem;
+			/*width: 6rem;
 				height: 6rem;*/
-			}
-			
-			.my-vertical-align {
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-			}
-			/*#Result-content ul li::after {
+		}
+
+		.my-vertical-align {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+
+		/*#Result-content ul li::after {
 				content: '';
 				/*隐藏了
 				visibility: hidden;
@@ -195,27 +205,114 @@
 				z-index: 2;
 				background: rgba(255, 55, 68, 1);
 			}*/
-			/* 时间轴旁边的卡片 */
-			
-			.timeline ul li div {
-				position: relative;
-				bottom: 0;
-				width: 500px;
-				/*width: calc(40vw - 15px);
-				width: -webkit-calc(40vw - 15px);*/
-				flex-direction: column;
-				padding: 20px;
-				background: #fff;
-				/*box-shadow: 4px 6px 12px 1px rgba(252, 56, 56, 0.2);*/
-				border-radius: 5px;
-				display: flex;
-				align-items: initial;
-			}
-		</style>
-	</head>
+		/* 时间轴旁边的卡片 */
 
-	<body>
-		<!-- <div class="container">
+		.timeline ul li div {
+			position: relative;
+			bottom: 0;
+			width: 500px;
+			/*width: calc(40vw - 15px);
+				width: -webkit-calc(40vw - 15px);*/
+			flex-direction: column;
+			padding: 20px;
+			background: #fff;
+			/*box-shadow: 4px 6px 12px 1px rgba(252, 56, 56, 0.2);*/
+			border-radius: 5px;
+			display: flex;
+			align-items: initial;
+		}
+
+		/* title */
+		.title-box-new {
+			/* margin: 5vw 5vw 2vw 5vw; */
+			position: relative;
+			width: 100%;
+
+		}
+
+		/* .title-big {
+            background-image: url("../title.jpg");
+            opacity: 50;
+            z-index: -100;
+            
+background-size: auto 100%;  
+background-position: center; 
+background-repeat: no-repeat;
+background-origin: border-box; 
+background-clip: border-box;  
+        } */
+
+		.title-big h1 {
+			font-size: 6vw !important;
+			/* line-height:14vw; */
+
+		}
+
+		.title-big>.title-box-title {
+			padding: 0 !important;
+			justify-content: center;
+			border-left-style: none !important;
+			border-bottom-style: solid;
+			border-color: rgb(255, 55, 68);
+			border-bottom-width: 0.2vw;
+
+		}
+
+		.title-box-mask {
+			position: absolute;
+
+			height: 100%;
+
+			background-color: rgb(255, 55, 68);
+		}
+
+		.title-box-mask-left {
+			left: 0;
+		}
+
+		.title-box-mask-right {
+			right: 0;
+		}
+
+		.title-box-title {
+			/* justify-content: center; */
+			/* width: 100%; */
+			height: inherit;
+			border-left-style: solid;
+			border-color: rgb(255, 55, 68);
+			border-left-width: 0.25rem;
+			opacity: 0;
+			display: flex;
+			/* justify-content-safety: center; */
+
+
+		}
+
+		.title-big h1 {
+			flex-grow: 1;
+			vertical-align: middle;
+			text-align: center;
+			margin: 0;
+			font-size: 8rem;
+			color: rgb(25, 46, 67);
+		}
+
+		.title-box-title>h1 {
+			/* flex-grow: 1; */
+			vertical-align: middle;
+			/* text-align:center; */
+			padding: 0 4rem;
+			margin: 0;
+			/* font-size: 8rem; */
+			color: rgb(25, 46, 67);
+		}
+
+		/* title end */
+	</style>
+</head>
+
+<body>
+	<!-- <div class="container">
 			<div class="row">
 				<div class="col-sm-12 column">
 					<nav class="navigation" id="nav-top">
@@ -321,337 +418,416 @@
 				</div>
 			</div>
 		</div> -->
-		<div class="container">
-				<div class="row">
-					<div class="col-sm-12 column">
-						<nav class="navigation" id="nav-top">
-							<ul class="navigation-list nav-justified">
-								<div class="navigation-blue navigation-div">
-									<li class="navigation-item activate ">
-										<a class="navigation-item-link "
-											href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
-										<ul class="navigation-dropdown-panel"></ul>
-									</li>
-									<li class="navigation-item dropdown">
-										<a class="navigation-item-link "
-											>Project</a>
-										<ul class="navigation-dropdown-panel ">
-											<li class="navigation-subitem">
-												<a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
-											</li>
-											<li class="navigation-subitem">
-												<a href="https://2019.igem.org/Team:SYSU-Medicine/Design">Design</a>
-											</li>
-											<li class="navigation-subitem">
-												<a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
-											</li>
-											<li class="navigation-subitem">
-												<a href="https://2019.igem.org/Team:SYSU-Medicine/Experiments">Experiments</a>
-											</li>
-											<li class="navigation-subitem">
-												<a href="https://2019.igem.org/Team:SYSU-Medicine/Inspiration">Inspiration</a>
-											</li>
-										</ul>
-									</li>
-									<li class="navigation-item dropdown">
-										<a class="navigation-item-link"
-											>Model</a>
-										<ul class="navigation-dropdown-panel">
-											<li class="navigation-subitem">
-												<a href="https://2019.igem.org/Team:SYSU-Medicine/Model_Overview">Overview</a>
-											</li>
-											<li class="navigation-subitem">
-												<a href="https://2019.igem.org/Team:SYSU-Medicine/M1_Cultivation">M1 Cultivation
-												</a>
-											</li>
-											<li class="navigation-subitem">
-												<a href="https://2019.igem.org/Team:SYSU-Medicine/Injection_System">Injection
-													System
-												</a>
-											</li>
-											<li class="navigation-subitem">
-												<a href="https://2019.igem.org/Team:SYSU-Medicine/TES">T. E. S.</a>
-											</li>
-											<li class="navigation-subitem">
-												<a href="https://2019.igem.org/Team:SYSU-Medicine/Future">Future</a>
-											</li>
-										</ul>
-									</li>
-									<li class="navigation-item dropdown ">
-										<a class="navigation-item-link"
-											>Human Practices</a>
-										<ul class="navigation-dropdown-panel ">
-											<li class="navigation-subitem">
-												<a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices_Overview">Overview
-												</a>
-											</li>
-											<li class="navigation-subitem">
-												<a href="https://2019.igem.org/Team:SYSU-Medicine/Integrated_Practices">Integrated
-													Practices
-												</a>
-											</li>
-											<li class="navigation-subitem">
-												<a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education &
-													Engagement
-												</a>
-											</li>
-										</ul>
-									</li>
-		
-								</div>
-								<div class="navigation-red navigation-div">
-									<li class="navigation-item dropdown ">
-										<a class="navigation-item-link "
-											>Parts</a>
-										<ul class="navigation-dropdown-panel ">
-											<li class="navigation-subitem">
-												<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts Overview</a>
-											</li>
-											<li class="navigation-subitem">
-												<a href="https://2019.igem.org/Team:SYSU-Medicine/Basic_Part">Basic Parts</a>
-											</li>
-											<li class="navigation-subitem">
-												<a href="https://2019.igem.org/Team:SYSU-Medicine/Composite_Part">Composite
-													Parts
-												</a>
-											</li>
-											<li class="navigation-subitem">
-												<a href="https://2019.igem.org/Team:SYSU-Medicine/Part_Collection">Part
-													Collection
-												</a>
-											</li>
-										</ul>
-									</li>
-		
-									<li class="navigation-item ">
-										<a class="navigation-item-link"
-											href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
-										<ul class="navigation-dropdown-panel"></ul>
-									</li>
-									<li class="navigation-item ">
-										<a class="navigation-item-link"
-											href="https://2019.igem.org/Team:SYSU-Medicine/Medal">Awards</a>
-										<ul class="navigation-dropdown-panel">
-											<li class="navigation-subitem">
-												<a href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging</a>
-											</li>
-										</ul>
-									</li>
-									<li class="navigation-item dropdown ">
-										<a class="navigation-item-link "
-											>Team</a>
-										<ul class="navigation-dropdown-panel ">
-											<li class="navigation-subitem">
-												<a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
-											</li>
-											<li class="navigation-subitem">
-												<a
-													href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
-											</li>
-											<li class="navigation-subitem">
-												<a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions</a>
-											</li>
-										</ul>
-									</li>
-								</div>
-		
-							</ul>
-						</nav>
-					</div>
-				</div>
-			</div>
-		<div class="container" id="Result-content">
-
-			<div class="clearfix" style="margin-bottom: 10em;"></div>
-			
-			<div class="row clearfix">
-				<div class="col-xs-4 col-sm-4 col-xs-offset-5">
-					<div class="title-box">
-						<h1 class="title">
-        					<span class="title-has-mask playing">Results</span>
-        					<span class="title-mask playing"></span>
-        				</h1>
-					</div>
-				</div>
-			</div>
-					
-			<div class="row clearfix">
-				<div class="col-sm-12">
-					<ul>
-						<div class="panel-group" id="accordion">
-							<li>
-								<div class="row clearfix">
-									<div class="col-xs-3">
-										<div class="img-box">
-											<img class="img-responsive center-block" src="https://2019.igem.org/wiki/images/1/14/T--SYSU-Medicine--Results_%281%29.svg">
-										</div>
-
-									</div>
-									<div class="col-xs-9">
-										<div class="panel panel-default">
-											<div class="panel-heading">
-												<h4 class="panel-title">
-													<a data-toggle="collapse" data-parent="#accordion" 
-													   href="#collapseOne">
-														Determination of the infection and oncolytic ability of M1 virus to different tumor cell lines ↓
-													</a>
-												</h4>
-											</div>
-											<div id="collapseOne" class="panel-collapse collapse in">
-												<div class="panel-body">
-													Figure 1 Though M1 virus has been shown to be infectious to different types of tumor cell lines,it has only limited killing effects in resistant cell lines such as A549,Hct8 and Bxpc3 in vitro.Wild type M1 virus has been engineered to express green fluorescent protein in infected cells,and the percentage of green fluorescent cells can be used as a marker of infection rate.Cell viability assay was determined using an MTT kit.
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 column">
+				<nav class="navigation" id="nav-top">
+					<ul class="navigation-list nav-justified">
+						<div class="navigation-blue navigation-div">
+							<li class="navigation-item activate ">
+								<a class="navigation-item-link "
+									href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
+								<ul class="navigation-dropdown-panel"></ul>
 							</li>
-							<li>
-								<div class="row clearfix">
-									<div class="col-xs-3">
-										<div class="img-box">
-											<img class="img-responsive center-block" src="https://2019.igem.org/wiki/images/9/96/T--SYSU-Medicine--Results_%282%29.svg">
-										</div>
-									</div>
-									<div class="col-xs-9">
-										<div class="panel panel-default">
-											<div class="panel-heading">
-												<h4 class="panel-title">
-																	
-									<a data-toggle="collapse" data-parent="#accordion" 
-									   href="#collapse-2">
-									   Determination of the targeting ability of M1 virus to transplanted tumor
-									</a>
-								</h4>
-											</div>
-											<div id="collapse-2" class="panel-collapse collapse">
-												<div class="panel-body">
-													Figure 2 Wild type M1 virus has been engineered to express nanoluc luciferase,which can be used for bioluminescence,in infected cells.In vivo with or without a complete immune system,intravenous injection of M1 virus showed both high tumor targeting ability in mouse model transplanted with B16 and Hct8 cells.
-												</div>
-											</div>
-										</div>
+							<li class="navigation-item dropdown">
+								<a class="navigation-item-link ">Project</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Design">Design</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Experiments">Experiments</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Inspiration">Inspiration</a>
+									</li>
+								</ul>
 							</li>
-							<li>
-								<div class="row clearfix">
-									<div class="col-xs-3">
-										<div class="img-box">
-											<img class="img-responsive center-block" src="https://2019.igem.org/wiki/images/3/34/T--SYSU-Medicine--Results_%283%29.svg">
-										</div>
-									</div>
-									<div class="col-xs-9">
-										<div class="panel panel-default">
-											<div class="panel-heading">
-												<h4 class="panel-title">
-																	
-									<a data-toggle="collapse" data-parent="#accordion" 
-									   href="#collapse-3">
-									   Establishment of M1 virus strain expressing nitroreductase
-									</a>
-								</h4>
-											</div>
-											<div id="collapse-3" class="panel-collapse collapse">
-												<div class="panel-body">
-													Figure 3 The nitroreductase coding sequence from E.coli was introduced into the genome of M1 virus to replace the green fluorescent protein sequence.The M1-NR(M1 virus with nitroreductase coding sequence) virus has showed similar titer changes in vitro compared with M1-GFP.
-												</div>
-											</div>
-										</div>
+							<li class="navigation-item dropdown">
+								<a class="navigation-item-link">Model</a>
+								<ul class="navigation-dropdown-panel">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Model_Overview">Overview</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/M1_Cultivation">M1 Cultivation
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Injection_System">Injection
+											System
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/TES">T. E. S.</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Future">Future</a>
+									</li>
+								</ul>
 							</li>
-							<li>
-								<div class="row clearfix">
-									<div class="col-xs-3">
-										<div class="img-box">
-											<img class="img-responsive center-block" src="https://2019.igem.org/wiki/images/c/c2/T--SYSU-Medicine--Results_%284%29.svg">
-										</div>
-									</div>
-									<div class="col-xs-9">
-										<div class="panel panel-default">
-											<div class="panel-heading">
-												<h4 class="panel-title">
-																	
-									<a data-toggle="collapse" data-parent="#accordion" 
-									   href="#collapse-4">
-									   M1-Nitroreductase showed similar proliferation ability to M1-GFP.
-									</a>
-								</h4>
-											</div>
-											<div id="collapse-4" class="panel-collapse collapse">
-												<div class="panel-body">
-													Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-												</div>
-											</div>
-										</div>
-							</li>
-							<li>
-								<div class="row clearfix">
-									<div class="col-xs-3">
-										<div class="img-box">
-											<img class="img-responsive center-block" src="https://2019.igem.org/wiki/images/f/f2/T--SYSU-Medicine--Results_%285%29.svg">
-										</div>
-									</div>
-									<div class="col-xs-9">
-										<div class="panel panel-default">
-											<div class="panel-heading">
-												<h4 class="panel-title">
-																	
-									<a data-toggle="collapse" data-parent="#accordion" 
-									   href="#collapse-5">
-									   M1 virus mediated prodrug-enzyme system showed better antitumor activity.
-									   
-									</a>
-								</h4>
-											</div>
-											<div id="collapse-5" class="panel-collapse collapse">
-												<div class="panel-body">
-													Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-												</div>
-											</div>
-										</div>
-							</li>
-							<li>
-								<div class="row clearfix">
-									<div class="col-xs-3">
-										<div class="img-box">
-											<img class="img-responsive center-block" src="https://2019.igem.org/wiki/images/9/96/T--SYSU-Medicine--Results_%286%29.svg">
-										</div>
-									</div>
-									<div class="col-xs-9">
-										<div class="panel panel-default">
-											<div class="panel-heading">
-												<h4 class="panel-title">
-																	
-									<a data-toggle="collapse" data-parent="#accordion" 
-									   href="#collapse-6">
-									   Adding riboswitches to the genome makes M1 more controllable
-									</a>
-								</h4>
-											</div>
-											<div id="collapse-6" class="panel-collapse collapse">
-												<div class="panel-body">
-													Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-												</div>
-											</div>
-										</div>
+							<li class="navigation-item dropdown ">
+								<a class="navigation-item-link">Human Practices</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices_Overview">Overview
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Integrated_Practices">Integrated
+											Practices
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education &
+											Engagement
+										</a>
+									</li>
+								</ul>
 							</li>
 
-							</div>
+						</div>
+						<div class="navigation-red navigation-div">
+							<li class="navigation-item dropdown ">
+								<a class="navigation-item-link ">Parts</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts Overview</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts#Basic_Part">Basic
+											Parts</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts#Composite_Part">Composite
+											Parts
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts#Part_Collection">Part
+											Collection
+										</a>
+									</li>
+								</ul>
+							</li>
+
+							<li class="navigation-item ">
+								<a class="navigation-item-link"
+									href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
+								<ul class="navigation-dropdown-panel"></ul>
+							</li>
+							<li class="navigation-item ">
+								<a class="navigation-item-link"
+									href="https://2019.igem.org/Team:SYSU-Medicine/Medal">Awards</a>
+								<ul class="navigation-dropdown-panel">
+									<li class="navigation-subitem">
+										<a href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging</a>
+									</li>
+								</ul>
+							</li>
+							<li class="navigation-item dropdown ">
+								<a class="navigation-item-link ">Team</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
+									</li>
+									<li class="navigation-subitem">
+										<a
+											href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions</a>
+									</li>
+								</ul>
+							</li>
+						</div>
+
 					</ul>
-					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix" style="margin-bottom: 18em;"></div>
 
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-4 col-xs-offset-4">
+				<div class="title-box-new title-big">
+					<div class="title-big-bg"></div>
+					<div class="title-box-mask"></div>
+					<div class="title-box-title">
+						<h1>RESULTS</h1>
 					</div>
-
-					<div class="clearfix" style="margin-bottom: 10em;"></div>
-					</div>
-
-	</body>
-	<footer>
-		<div class="container clearfix">
-			<div class="row">
-				<div class="col-xs-12">
-					<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg" style="width:10%;margin-left:45%;">
 				</div>
 			</div>
 		</div>
-	</footer>
+	</div>
+	<div class="container" id="Result-content">
+
+
+		<div class="clearfix" style="margin-bottom: 10em;"></div>
+		<div class="row clearfix">
+			<div class="col-sm-12">
+				<ul>
+					<div class="panel-group" id="accordion">
+						<li>
+							<div class="row clearfix">
+								<div class="col-xs-3">
+									<div class="img-box">
+										<img class="img-responsive center-block"
+											src="https://2019.igem.org/wiki/images/1/14/T--SYSU-Medicine--Results_%281%29.svg">
+									</div>
+
+								</div>
+								<div class="col-xs-9">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+													Determination of the infection and oncolytic ability of M1 virus to
+													different tumor cell lines ↓
+												</a>
+											</h4>
+										</div>
+										<div id="collapseOne" class="panel-collapse collapse in">
+											<div class="panel-body">
+												Figure 1 Though M1 virus has been shown to be infectious to different
+												types of tumor cell lines,it has only limited killing effects in
+												resistant cell lines such as A549,Hct8 and Bxpc3 in vitro.Wild type M1
+												virus has been engineered to express green fluorescent protein in
+												infected cells,and the percentage of green fluorescent cells can be used
+												as a marker of infection rate.Cell viability assay was determined using
+												an MTT kit.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</li>
+						<li>
+							<div class="row clearfix">
+								<div class="col-xs-3">
+									<div class="img-box">
+										<img class="img-responsive center-block"
+											src="https://2019.igem.org/wiki/images/9/96/T--SYSU-Medicine--Results_%282%29.svg">
+									</div>
+								</div>
+								<div class="col-xs-9">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapse-2">
+													Determination of the targeting ability of M1 virus to transplanted
+													tumor
+												</a>
+											</h4>
+										</div>
+										<div id="collapse-2" class="panel-collapse collapse">
+											<div class="panel-body">
+												Figure 2 Wild type M1 virus has been engineered to express nanoluc
+												luciferase,which can be used for bioluminescence,in infected cells.In
+												vivo with or without a complete immune system,intravenous injection of
+												M1 virus showed both high tumor targeting ability in mouse model
+												transplanted with B16 and Hct8 cells.
+											</div>
+										</div>
+									</div>
+						</li>
+						<li>
+							<div class="row clearfix">
+								<div class="col-xs-3">
+									<div class="img-box">
+										<img class="img-responsive center-block"
+											src="https://2019.igem.org/wiki/images/3/34/T--SYSU-Medicine--Results_%283%29.svg">
+									</div>
+								</div>
+								<div class="col-xs-9">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapse-3">
+													Establishment of M1 virus strain expressing nitroreductase
+												</a>
+											</h4>
+										</div>
+										<div id="collapse-3" class="panel-collapse collapse">
+											<div class="panel-body">
+												Figure 3 The nitroreductase coding sequence from E.coli was introduced
+												into the genome of M1 virus to replace the green fluorescent protein
+												sequence.The M1-NR(M1 virus with nitroreductase coding sequence) virus
+												has showed similar titer changes in vitro compared with M1-GFP.
+											</div>
+										</div>
+									</div>
+						</li>
+						<li>
+							<div class="row clearfix">
+								<div class="col-xs-3">
+									<div class="img-box">
+										<img class="img-responsive center-block"
+											src="https://2019.igem.org/wiki/images/c/c2/T--SYSU-Medicine--Results_%284%29.svg">
+									</div>
+								</div>
+								<div class="col-xs-9">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapse-4">
+													M1-Nitroreductase showed similar proliferation ability to M1-GFP.
+												</a>
+											</h4>
+										</div>
+										<div id="collapse-4" class="panel-collapse collapse">
+											<div class="panel-body">
+												Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+												nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+											</div>
+										</div>
+									</div>
+						</li>
+						<li>
+							<div class="row clearfix">
+								<div class="col-xs-3">
+									<div class="img-box">
+										<img class="img-responsive center-block"
+											src="https://2019.igem.org/wiki/images/f/f2/T--SYSU-Medicine--Results_%285%29.svg">
+									</div>
+								</div>
+								<div class="col-xs-9">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapse-5">
+													M1 virus mediated prodrug-enzyme system showed better antitumor
+													activity.
+
+												</a>
+											</h4>
+										</div>
+										<div id="collapse-5" class="panel-collapse collapse">
+											<div class="panel-body">
+												Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+												nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+											</div>
+										</div>
+									</div>
+						</li>
+						<li>
+							<div class="row clearfix">
+								<div class="col-xs-3">
+									<div class="img-box">
+										<img class="img-responsive center-block"
+											src="https://2019.igem.org/wiki/images/9/96/T--SYSU-Medicine--Results_%286%29.svg">
+									</div>
+								</div>
+								<div class="col-xs-9">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapse-6">
+													Adding riboswitches to the genome makes M1 more controllable
+												</a>
+											</h4>
+										</div>
+										<div id="collapse-6" class="panel-collapse collapse">
+											<div class="panel-body">
+												Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
+												nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+											</div>
+										</div>
+									</div>
+						</li>
+
+					</div>
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="clearfix" style="margin-bottom: 10em;"></div>
+	</div>
+	<script type="text/javascript">
+		// title
+		$(document).ready(function () {
+			speed = 250;
+			$(".title-box-new").each(function (titlebox_i, title_box) {
+				var last = $(title_box).offset().top - $(window).scrollTop();
+				var viewheight = window.innerHeight / 5 * 3;
+				if (last < viewheight) {
+					if ($(title_box).hasClass("played")) { } else {
+						$(title_box).addClass("played");
+
+						$(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+						$(title_box).children(".title-box-mask").animate({ width: $(title_box).find("h1").outerWidth() }, speed, "swing", function () {
+							$(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
+							// console.log($(title_box).width());
+							// console.log($(title_box).find("h1").width());
+							console.log(parseInt($(title_box).find(".title-box-title").css("border-left-width")));
+							var cache = $(title_box).width() - $(title_box).find("h1").outerWidth();
+							$(title_box).children(".title-box-mask").css("right", cache);
+							// $(title_box).children(".title-box-mask").addClass("title-box-mask-right");
+							$(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
+						});
+						$(title_box).children(".title-box-mask").animate({ width: "0" }, speed, "swing");
+					}
+
+
+				}
+			});
+		})
+		$(document).scroll(function () {
+			speed = 250;
+			$(".title-box-new").each(function (titlebox_i, title_box) {
+				var last = $(title_box).offset().top - $(window).scrollTop();
+				var viewheight = window.innerHeight / 5 * 3;
+				if (last < viewheight) {
+					if ($(title_box).hasClass("played")) { } else {
+						$(title_box).addClass("played");
+
+						$(title_box).children(".title-box-mask").addClass("title-box-mask-left");
+						$(title_box).children(".title-box-mask").animate({ width: $(title_box).find("h1").outerWidth() }, speed, "swing", function () {
+							$(title_box).children(".title-box-mask").removeClass("title-box-mask-left");
+							// console.log($(title_box).width());
+							// console.log($(title_box).find("h1").width());
+							console.log(parseInt($(title_box).find(".title-box-title").css("border-left-width")));
+							var cache = $(title_box).width() - $(title_box).find("h1").outerWidth();
+							$(title_box).children(".title-box-mask").css("right", cache);
+							// $(title_box).children(".title-box-mask").addClass("title-box-mask-right");
+							$(title_box).children(".title-box-title").animate({ opacity: "100" }, speed / 2);
+						});
+						$(title_box).children(".title-box-mask").animate({ width: "0" }, speed, "swing");
+					}
+
+
+				}
+			});
+		})
+
+// title end
+
+	</script>
+</body>
+<footer>
+	<div class="container clearfix">
+		<div class="row">
+			<div class="col-xs-12">
+				<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg"
+					style="width:10%;margin-left:45%;">
+			</div>
+		</div>
+	</div>
+</footer>
 
 </html>

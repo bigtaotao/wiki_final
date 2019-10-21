@@ -1,0 +1,367 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
+		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
+		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/home&action=raw&ctype=text/javascript"></script>
+		<link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
+		<script src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
+		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
+		<title>SYSU-Medicine</title>
+
+		<script type="text/x-mathjax-config">
+			$(function(){ MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} }); });
+		</script>
+		<script src="https://2019.igem.org/common/MathJax-2.5-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		<style>
+			#model-content>div {
+				/*for <h1> , figure, table */
+				counter-reset: counter1 counter7 counter8;
+			}
+			
+			#model-content {
+				/*for fig*/
+				/*counter-reset: counter7;*/
+			}
+			
+			
+			#model-head h1 {
+				font-size: 48px;
+			}
+			
+			#model-head h3 {
+				font-size: 32px;
+			}
+			
+			#model-content {
+				counter-reset: counter7;
+			}
+			
+			#model-content h1 {
+				font-size: 48px !important;
+				counter-reset: counter2;
+				margin-top: 48px;
+				margin-bottom: 48px;
+			}
+			
+			#model-content h1:before {
+				counter-increment: counter1;
+				content: counter(counter1) ". ";
+			}
+			
+			#model-content h2 {
+				font-size: 40px !important;
+				counter-reset: counter3;
+				margin-top: 40px;
+				margin-bottom: 40px;
+			}
+			
+			#model-content h2:before {
+				counter-increment: counter2;
+				content: counter(counter1) "." counter(counter2) "  ";
+			}
+			
+			#model-content h3 {
+				font-size: 32px !important;
+				counter-reset: counter4;
+				margin-top: 32px;
+				margin-bottom: 32px;
+			}
+			
+			#model-content h3:before {
+				counter-increment: counter3;
+				content: counter(counter1) "." counter(counter2) "." counter(counter3) "  ";
+			}
+			
+			#model-content h4 {
+				font-size: 28px !important;
+				counter-reset: counter5;
+				margin-top: 28px;
+				margin-bottom: 28px;
+			}
+			
+			#model-content h4:before {
+				counter-increment: counter4;
+				content: counter(counter1) "." counter(counter2) "." counter(counter3) "." counter(counter4) "  ";
+			}
+			
+			#model-content h5 {
+				font-size: 24px !important;
+				counter-reset: counter6;
+				margin-top: 24px;
+				margin-bottom: 24px;
+			}
+			
+			#model-content h5:before {
+				counter-increment: counter5;
+				content: counter(counter1) "." counter(counter2) "." counter(counter3) "." counter(counter4) "." counter(counter5) "  ";
+			}
+			
+			#model-content p {
+				font-size: 18px !important;
+				line-height: 180%;
+				text-indent: 2em;
+			}
+			
+			#model-content figure {
+				text-align: center;
+				margin-top: 48px;
+				margin-bottom: 48px;
+			}
+			
+			#model-content img {
+				width:100%;
+			}
+			
+			#model-content figure>figcaption:before {
+				counter-increment: counter7;
+				content: "Fig." counter(counter7) ": ";
+			}
+			
+			#model-content caption {
+				text-align: center;
+				font-size: 18px;
+				color: black;
+			}
+			
+			#model-content caption:before {
+				counter-increment: counter8;
+				content: "Table " counter(counter8) ": ";
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 column">
+					<nav class="navigation" id="nav-top">
+						<ul class="navigation-list nav-justified">
+							<div class="navigation-blue navigation-div">
+								<li class="navigation-item activate ">
+									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
+									<ul class="navigation-dropdown-panel"></ul>
+								</li>
+								<li class="navigation-item dropdown">
+									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine/Description">Project</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Design">Design</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Experiments">Experiments</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Inspiration">Inspiration</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item dropdown">
+									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Model">Model</a>
+									<ul class="navigation-dropdown-panel">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Model_Overview">Overview</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/M1_Cultivation">M1 Cultivation
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Injection_System">Injection System
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/TES">T. E. S.</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Future">Future</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Human Practices</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices_Overview">Overview
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Integrated_Practices">Integrated Practices
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education & Engagement
+											</a>
+										</li>
+									</ul>
+								</li>
+
+							</div>
+							<div class="navigation-red navigation-div">
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts Overview</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Basic_Part">Basic Parts</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Composite_Part">Composite Parts
+											</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Part_Collection">Part Collection
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item dropdown ">
+									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team</a>
+									<ul class="navigation-dropdown-panel ">
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
+										</li>
+										<li class="navigation-subitem">
+											<a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions</a>
+										</li>
+									</ul>
+								</li>
+								<li class="navigation-item ">
+									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
+									<ul class="navigation-dropdown-panel"></ul>
+								</li>
+								<li class="navigation-item dropdown">
+									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Medal">Awards</a>
+									<ul class="navigation-dropdown-panel">
+										<li class="navigation-subitem">
+											<a href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging</a>
+										</li>
+									</ul>
+								</li>
+							</div>
+
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-xs-8 col-xs-offset-2" id="model-head" style="text-align:center;">
+					<h1 class="title">Modeling</h1>
+				</div>
+			</div>
+			<div class="row clearfix" id="model-content">
+				<div class="col-xs-12 col-md-8 col-md-offset-2 ">
+					<h1 id="m1-cultivation">M1 Cultivation</h1>
+					<h2 id="the-curve-of-titer-of-m1-with-time">The Curve of Titer of M1 with Time</h2>
+					<p>In the process of the culture in vitro of oncolytic virus M1, there were uninfected vero cells, infected vero cells and oncolytic virus M1 in the medium. The change of the number of the microorganism is related to the number at the current moment of it. We used ordinary differential equation model to describe the change of the number of the three kinds of microorganisms with time.</p>
+					<p>The relationship among the three kings of microorganism is shown in the figure below:</p>
+					<figure>
+						<img src="https://2019.igem.org/wiki/images/c/cb/T--SYSU-Medicine--ODE_00.png"  alt="" />
+						<figcaption>
+							The Transforming Relationship among the Three Kings of Microorganism
+						</figcaption>
+					</figure>
+					<p>According to the mutual transformation relationship between the microorganism, the ordinary differential equations are established:</p>
+					<p><br />
+						<span class="math display">$$\left\{ \begin{aligned} \frac{dU(t)}{dt}&amp;=rU(t)(1-\frac{U(t)+I(t)}{K})-\beta U(t)M(t)\\ \frac{dI(t)}{dt}&amp;=\beta U(t)M(t)-\alpha I(t)\\ \frac{dM(t)}{dt}&amp;=\sigma I(t)-uM(t) \end{aligned} \right.$$</span><br /></p>
+					<p>According to the experimental data and references, we obtained the values of parameters of M1 as follows <span class="math inline"><em></em><sup>[1]</sup></span>:</p>
+					<p><br />
+						<span class="math display"><em>r</em> = 0.95, <em>K</em> = 600, <em>β</em> = 0.27, <em>σ</em> = 1, <em>u</em> = 0.6</span><br /></p>
+					<p>By using ode45 function in MATLAB to solve the system of ordinary differential equations, we obtained the number change curve of M1, infected vero cells and uninfected vero cells with time:</p>
+					<figure>
+						<img src="https://2019.igem.org/wiki/images/e/ea/T--SYSU-Medicine--ODE_Plot1.png"   alt="" />
+						<figcaption>
+							The Number Change curve of M1, Infected Vero Cells and Uninfected Vero Cells with Time<span label="figure 2"></span>
+						</figcaption>
+					</figure>
+					<p>This is consistent with the growth rule of virus in vitro culture, which proves that our ordinary differential equations are reasonable.</p>
+					<p>We use the solution to calculate the time-varying growth rate of M1, and find that 67.4701h is the time for the highest growth rate.</p>
+					<figure>
+						<img src="https://2019.igem.org/wiki/images/e/ee/T--SYSU-Medicine--GrowthRate.png" alt="" />
+						<figcaption>
+							The Highest Growth Rate of M1
+						</figcaption>
+					</figure>
+					<h2 id="m1-rna-point-mutation-model">M1 RNA Point Mutation Model</h2>
+					<p>We first assumed that during the process, each site of the RNA mutates independently. That is, the mutation probability of each site is not affected by the mutation of other sites. At this time, the number of mutated sites of M1 obey Poisson Distribution within a certain time.</p>
+					<p><br />
+						<span class="math display">$$P(N(s,s+t]=k) = \frac{(\lambda t)^k}{k!}e^{-\lambda t}, k=0, 1, 2\cdots$$</span><br /></p>
+					<p>The derivation with respect to t:<br />
+						<span class="math display">$$\frac{\partial \frac{(\lambda t)^k}{k!}e^{-\lambda t}}{\partial t} = \frac{(\lambda)^k}{k!}e^{\lambda t}t^{k-1}(k-\lambda t) = 0$$</span><br /></p>
+					<p>We have:</p>
+					<p><br />
+						<span class="math display">$$\hat{t} = \frac{k}{\lambda} = \frac{48k}{11000\alpha}$$</span><br /></p>
+					<p>During the experiment, the mutation rate of the RNA of M1 is 0.01%, so we can get the curves describing the best time to collect M1 with specified number of mutation sites.</p>
+					<figure>
+						<img src="https://2019.igem.org/wiki/images/3/3f/T--SYSU-Medicine--Possion.png" id="figure 3" alt="" />
+						<figcaption>
+							The Best Time to Collect M1 with k Mutation Sites<span label="figure 3"></span>
+						</figcaption>
+					</figure>
+					<p>The best collection times are listed as below:</p>
+					<table class="table table-bordered">
+						<caption>
+							The best collection times<span label="table 1"></span>
+						</caption>
+						<thead>
+							<tr class="header">
+								<th style="text-align: center;">k</th>
+								<th style="text-align: center;">0</th>
+								<th style="text-align: center;">1</th>
+								<th style="text-align: center;">2</th>
+								<th style="text-align: center;">3</th>
+								<th style="text-align: center;">4</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="odd">
+								<td style="text-align: center;">Best Time</td>
+								<td style="text-align: center;">0h</td>
+								<td style="text-align: center;">43.636h</td>
+								<td style="text-align: center;">87.273h</td>
+								<td style="text-align: center;">130.909h</td>
+								<td style="text-align: center;">174.545h</td>
+							</tr>
+						</tbody>
+					</table>
+					<p>We can see that the probability of 2 point mutation is the highest at 87.273h. Combined with the best time for the growth rate of M1, the best interval to collect M1 who has a high growth rate and a high probability of 2 point mutation is<br />
+						<span class="math display">[67.4701<em>h</em>, 87.273<em>h</em>].</span><br /> However, the growth rate curve seems to decent more sharply, so the best time is ought to get closer to 67.4701h. In a sense, 72h is a good option. Luckily, 72h is actually the best time for collection, confirmed by experiment. In a sense, our model is quite suitable for our experiment.</p>
+					<p>Additionally, In order to make the model more scientific and reasonable, we consider that RNA sites of M1 may mutate interactively. Therefore, we adopt the Pearson Correlation Test to calculate the correlation of the RNA sites. <span class="math inline"><em></em><sup>[2]</sup></span> In fact, mutation rate 0.01% can be used under the assumption that the mutation is independent between sites. 0.01% is measured under experiment, which contains the situation that one site will be highly related to another site. Because in RNA, the relationship between sites is complex. If we consider the relationship of sites and estimate which site will mutate, the model will become very complex. In addition, the mutation data is hard to collect, and the relationship between sites is unknown. So there is significant for us to choose the Poisson Process, which can be accurate and effective.</p>
+					
+					<h1 id="renference">Renference</h1>
+					<p>Part 1: M1 Cultivation</p>
+					<p>[1]Xiangming Zhang, Zhihua Liu. Bifurcation Analysis of an Age Structured HIV Infection Model with Both Virus-to-Cell and Cell-to-Cell Transmissions. International Journal of Bifurcation and Chaos 2018 28:09</p>
+					<p>[2]Ren Yonghui. Study on several tumor treatment models [D]. Shanxi normal university,2012.</p>
+					<p>  </p>
+				</div>
+			</div>
+
+			<script>
+			</script>
+	</body>
+
+</html>

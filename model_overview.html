@@ -28,7 +28,7 @@ background-clip: border-box;
         } */
 
         .title-big h1 {
-            font-size: 8vw !important;
+            font-size: 6vw !important;
             padding: 0 !important;
             /* line-height:14vw; */
 
@@ -126,7 +126,7 @@ background-clip: border-box;
         .card-red {
             border-left-color: rgb(255, 55, 68);
         }
-        
+
 
         .card-img-top {
             width: 60%;
@@ -378,8 +378,8 @@ background-clip: border-box;
             </div>
         </div>
     </div> -->
-    <div class="clearfix" style="margin-bottom: 23em;"></div>
-    <div class="container-fluid">
+    <div class="clearfix" style="margin-bottom: 18em;"></div>
+    <div class="container std-content">
 
         <div class="row">
             <div class="col-xs-6 col-xs-offset-3">
@@ -387,7 +387,7 @@ background-clip: border-box;
                     <div class="title-big-bg"></div>
                     <div class="title-box-mask"></div>
                     <div class="title-box-title">
-                        <h1>ABSTRACT</h1>
+                        <h1>OVERVIEW</h1>
                     </div>
                 </div>
             </div>
@@ -409,185 +409,122 @@ background-clip: border-box;
         <div class="row">
             <div class="col-xs-8 col-xs-offset-2">
                 <div class="content-safety content-safety-0">
-                    <p>&#160&#160&#160&#160Modeling is a way to help reduce time and cost of work, especially
-                        in the experiment. The cost in exploring the suitable condition for ex-
-                        periment is high, including the reagents purchase, lab cost, and probable
-                        consulting cost. And experiments often begin on experience, including the
-                        collection time. After the method is established, can we have a prediction
-                        on its effect? Because of these reasons, our modeling is necessary.</p>
-                    <p>&#160&#160&#160&#160Our modeling contains 4 parts:M1 Cultivation, Injection System,
-                        Saty and Effectiveness and Future. Each section relate with the spe-
-                        cific period of our experiment. And the target of each section is to solve
-                        the problem that happened in the experiment and probably in the future.</p>
-                    <p>&#160&#160&#160&#160In the section of expanding the gene library of M1, we compared
-                        many structures and parameters of models and finally selected our differ-
-                        ential equations. We improved the mutation model to describe the change
-                        of number of M1 and the situation of RNA sequence mutation accurate-
-                        ly. And this method was also used in the next section. As a result, we
-                        calculated 72h as the best time for collection, which could be confirmed
-                        by experiment. We provided the method which can be used in the next
-                        section. Firstly, it was considered that there were uninfected vero cells,
-                        infected vero cells and M1 in the culture medium, and the change of the
-                        number of the three microorganisms was related to the number at the
-                        current moment. Based on the biological characteristics of viruses grow-
-                        ing in culture medium and the growth rules of other types of viruses in
-                        culture medium, functional differential equations were established to de-
-                        scribe the number of the three kinds of microorganisms over time. For the
-                        differential equations in the model, we adopted Runge-Kutta algorithm.
-                        The numerical solution of the equations was obtained with the help of
-                        MATLAB, which reflected the relation between the number of M1 and
-                        it's growing time.</p>
-                    <p>&#160&#160&#160&#160Then, we analyzed the process of the directed evolution of M1. Dur-
-                        ing the growth of M1, we hoped to accumulate useful mutations by con-
-                        trolling its growth environment, so as to enhance its effect on tumors and
-                        even expand its range of action.</p>
-                    <p>&#160&#160&#160&#160During the process, each site of the RNA was assumed to mutate
-                        independently. That is, the mutational probability of each site was not
-                        affected by the mutation of other sites. And we also assumed that within
-                        a certain time, the number of mutated sites of M1 obeyed Poisson Process.
-                        This enabled us to know the change rule of mutation sites number after
-                        the M1 mutation rate reached 0.1%, which provided the best time for the
-                        experiment to collect the target M1 virus.</p>
-                    <p>&#160&#160&#160&#160In the section of Animal Experiment, we established the models ac-
-                        cording to M1’s and actinomycin D’s concentration development in
-                        the area of tumor and the whole body of mouse.</p>
-                    <p>&#160&#160&#160&#160In the area of tumor, we established the ER-M1 model which con-
-                        sidered the enzymatic reaction was caused by M1 injection and enzyme
-                        production. This model was tranformed according to the Dynamic Sys-
-                        tem of enzymatic reaction. The rate of the reaction was adaptive to the
-                        time-varying titer of M1 and the concentration of enzyme, and then we
-                        could realize the development of the complex time-varying concentration
-                        of actinomycin D. Furthermore, we considered the injection of M1 and
-                        the damage of actinomycin D to tumor cell. By the improved differential
-                        equations model above and innovative Mixed Michaelis-Menten Equation,
-                        we simulated the movement of M1 and drug therapy more accurately.</p>
-                    <p>&#160&#160&#160&#160For the whole body of mouse, M1 targeting ability and prodrug con-
-                        centration variation in the local and global relationship were taken into
-                        consideration. And we used compartment model to obtain the relation-
-                        ship between medicine concentration in blood and in targeting area under
-                        the rapid intravenous injection. Then we could acquire the initial titer of
-                        M1 and prodrug concentration in the tumor area. In addition, we provid-
-                        ed the method of estimating the distribution of drug in the specific area
-                        to predict the upper and lower bound of concentration. On the basis of it,
-                        we could control the side effect and maintain the curative level of drug.
-                        From the macroscopic injection to microcosmic variation of medicine con-
-                        centration, virus titer and the tumor cell concentration, the mixed model
-                        depicted the process elaborately. Thus, we got that around 72h is the
-                        best injection time interval and about 3.455µg/mL as the best injection
-                        volume. The model got sufficient theoretical support and was innovative. It provided vital
-                        reference value for the establishment of treatment
-                        regime.</p>
-                    <p>&#160&#160&#160&#160It is indubitable that doctors wish to apply the successful excellent
-                        medical method on the body of patients in the future to solve the problem
-                        that could not be solved by traditional methods. To evaluate the probable
-                        curative effect on human beings, we collected large amounts of medical
-                        data of mouse and human, and also read a lot of references. Then we
-                        compared a great many regression methods(polynomial, linear, etc) and
-                        classifiers (including SVM, RF, AdaBoost etc.) by using the AUC and
-                        accuracy rate to get the Ensemble Classifier with the best configuration.
-                        We luckily found that M1 method could make the tumor decrease about
-                        60% in 48h in prediction based on data. However, we could not just apply
-                        the treatment strategies of mouse to man directly due to the complexity of
-                        human body. What’s more, the traditional treatment regime that could
-                        not be strictly time-varying could not always have good effect. In fact,
-                        oncotherapy is more likely to be the game between tumor and doctor,
-                        so we added the DTR model on the basis of reinforcement learning to
-                        provide the dynamic treatment regime for the future.</p>
-                    <p>&#160&#160&#160&#160In addition, we adopted the Path Model that SYSU-Medicine used in
-                        2016, and made the change of the picture more smooth by using neutral
-                        network, by which the medicine distribution change can be visualized
-                        in the body of mouse with time. And we collected the data from the
-                        experiments, references and databases to guarantee the accuracy of our
-                        models. But some data was difficult to collect or the measurement of
-                        them had big error. In that case, we simulated the process based on
-                        our model. And in the actual process, contact ratio has its time-varying
-                        distribution. We used Gaussian Mixture Model to fit the distribution, and
-                        we could got the estimated value of contact ratio based on the position.
-                        In the end, we tried to package the models and algorithms to make them
-                        simple in practical use, especially for synthetic biology researchers and
-                        medicine science researchers. In the future, we will consider to reduce
-                        the algorithm complexity and add the improved Cellular Automation to
-                        adjust our model for higher accuracy and better efficiency. In a whole, our
-                        modeling result has the advantages of elaboration, accuracy, innovation,
-                        intelligence and convenience, giving our experiment important support
-                        and vital evaluation. It pushes our experimental result into models and
-                        data in order to make the research can stand on the shoulder of us and
-                        make it better.</p>
-
-
-
-
-
-
+                    <p>To make a more critical experiment criteria and bring our project a
+                        promotion for clinical use, we established 9 models to describe the process.
+                        Our modeling contained 2 parts. In part 1, M1 Cultivation searched for
+                        the best time to collect M1. And Injection System helped us find the rule
+                        of interaction of M1, tumor cells, prodrug and actinomycin D, by which
+                        we find the best time for injection. These two criteria is more objective
+                        and scientific compared to empirical method. In part 2, Targeting Ability,
+                        Safety and Effectiveness showed that our method was safe and effective.
+                        Future section provided a probable prediction on human body. In a sense,
+                        these result of models fit for biological and medical study, and are confirmed
+                        by our experiment. And our result provides guidance for our experiment,
+                        enhancing the coming research.</p>
 
                 </div>
             </div>
         </div>
         <div class="clearfix" style="margin-bottom: 10em;"></div>
 
+    </div>
+    <div class="container std-content">
         <div class="clearfix" style="margin-bottom: 10em;"></div>
-        <div class="row">
-            <div class="col-xs-12 col-md-3">
+        <div class="row row-eq-height">
+            <div class="col-xs-12 col-md-4">
                 <div class="card card-blue">
                     <img class="card-img-top" src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg">
                     <div class="card-body">
-                        <h2 class="card-title">test</h2>
+                        <h2 class="card-title"> M1 Cultivation</h2>
                         <p class="card-text">
-                            Due to M1's selective infection of tumor cells and the exquisitely-designed prodrug/enzyme
-                            collocation, the system has
+                            <b>Aim:</b> To find the best time when the copy rate and the number of M1
+                            with 2 mutation sites is the highest.
+                            <b>Method:</b> ODE model, Poisson Process.
+                            <b>Result:</b> [67.4701h,87.273h], 72h is a good choice.
                         </p>
 
                     </div>
                     <div class="card-button card-button-blue">
-                        <a class="card-button-link">it is a link</a>
+                        <a class="card-button-link">entry</a>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-md-3">
+            <div class="col-xs-12 col-md-4">
                 <div class="card card-blue">
                     <img class="card-img-top" src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg">
                     <div class="card-body">
-                        <h2 class="card-title">test</h2>
+                        <h2 class="card-title">Injection System</h2>
                         <p class="card-text">
-                            Due to M1's selective infection of tumor cells and the exquisitely-designed prodrug/enzyme
-                            collocation, the system has
+                            <b>Aim:</b> To find complex concentration variation of tumor cells, M1, pro-
+                            drug and actinomycin D in the experiment on mouse. And to find the
+                            time-varying concentration distribution of M1.<br>
+                            <b>Method:</b> Improved Michaelis-Menten Equation, Compartment Mod-
+                            el, Integrated Injection Model, Impulsive Differential Equation, BP Neural
+                            Network.<br>
+                            <b>Result:</b> About 24h is the best length of injection time interval, 0.58µg/mL
+                            is the best injection volume per dose.
                         </p>
 
                     </div>
                     <div class="card-button card-button-blue">
-                        <a class="card-button-link">it is a link</a>
+                        <a class="card-button-link">entry</a>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-md-3">
+            <div class="col-xs-12 col-md-4">
                 <div class="card card-red">
                     <img class="card-img-top" src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg">
                     <div class="card-body">
-                        <h2 class="card-title">test</h2>
+                        <h2 class="card-title">Targeting Ability, Safety and
+                            Effectiveness</h2>
                         <p class="card-text">
-                            Due to M1's selective infection of tumor cells and the exquisitely-designed prodrug/enzyme
-                            collocation, the system has
+                            <b>Aim:</b> To confirm the targeting ability, safety and effectiveness of our
+                            system on animals.<br>
+                            <b>Method:</b> Improved ODE Model, comparison, t-test, Fitting.<br>
+                            <b>Result:</b> Our system is safe and effective in a way.
                         </p>
 
                     </div>
                     <div class="card-button card-button-red">
-                        <a class="card-button-link">it is a link</a>
+                        <a class="card-button-link">entry</a>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-md-3">
+            <div class="clearfix" style="margin-bottom: 10em;"></div>
+            <div class="col-xs-12 col-md-4 col-md-offset-2">
                 <div class="card card-red">
                     <img class="card-img-top" src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg">
                     <div class="card-body">
-                        <h2 class="card-title">test</h2>
+                        <h2 class="card-title">Future</h2>
                         <p class="card-text">
-                            Due to M1's selective infection of tumor cells and the exquisitely-designed prodrug/enzyme
-                            collocation, the system has
+                            <b>Aim:</b> To give a prediction of our method on human body, and provide
+                            a treatment model with higher precision.<br>
+                            <b>Method:</b> BP Neural Network, Dynamic Treatment Regime with Rein-
+                            forcement Learning.<br>
+                            <b>Result:</b> For some kinds of cancer, the decrease of tumor can reach
+                            about 60% in human body. And we should use the M1 method based on
+                            the observation and history.
                         </p>
 
                     </div>
                     <div class="card-button card-button-red">
-                        <a class="card-button-link">it is a link</a>
+                        <a class="card-button-link">entry</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-4">
+                <div class="card card-red">
+                    <img class="card-img-top" src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg">
+                    <div class="card-body">
+                        <h2 class="card-title"> Conclusion</h2>
+                        <p class="card-text">
+                            <b>Aim:</b> To summarize the advantages and disadvantages of our model,
+                            and give an expectation for the future.
+                        </p>
+
+                    </div>
+                    <div class="card-button card-button-red">
+                        <a class="card-button-link">entry</a>
                     </div>
                 </div>
             </div>

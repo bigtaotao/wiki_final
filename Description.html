@@ -1830,7 +1830,7 @@
             </div>
             <div class="mask-front-content mask-front-content-11">
                 <p>
-                    【limitations of NTR/CB1954】
+                    【limitations of chemotherapy drugs】
 
                 </p>
             </div>
@@ -1871,10 +1871,9 @@
             <div class="rich-content rich-content-11">
                 <img src="https://2019.igem.org/wiki/images/thumb/7/7e/T--SYSU-Medicine--problem_definition_2.png/1600px-T--SYSU-Medicine--problem_definition_2.png"
                     class="img-pd-1">
-                <p><b class="b_have_border">limitations of NTR/CB1954</b><br>
-                    CB1954 could be activated by NTR and causes DNA–DNA interstrand cross-links to form within the
-                    cells. These cross-links are poorly repaired, and lead to cell death in both dividing and
-                    non-dividing cells [5].
+                <p><b class="b_have_border">limitations of chemotherapy drugs</b><br>
+                    Chemotherapy drugs remain a backbone of current treatment, but are limited by a narrow therapeutic
+                    index, significant toxicities, and frequently acquired resistance.
                 </p>
             </div>
             <div class="rich-content rich-content-12">
@@ -2001,12 +2000,12 @@
 
                 <p><b class="b_have_border">Ideal M1-Prodrug Enzyme System</b><br>
                     As described in the experimental results, we first verified the significant effect of prodrug enzyme
-                    system and M1 combination on the reduction of side effects of chemotherapy drugs with CB1954.
-                    Furthermore, we verified that the chemotherapy drug actinomycin D can in turn promote M1 infection
-                    on a variety of tumor cells. Therefore, if we can combine the advantages of the two, this would be
-                    an ideal M1 prodrug enzyme system. To this end, we designed the prodrug structure of actinomycin D
-                    (see design for details) and screened a variety of drugs with similar mechanism of action to
-                    actinomycin D. We plan to carry out further experimental verification soon.
+                    system CB1954/NTR and M1 combination on the anti-tumor activity. Furthermore, we verified that the
+                    chemotherapy drug actinomycin D can in turn promote M1 infection on a variety of tumor cells.
+                    Therefore, if we can combine the advantages of the two, this would be an ideal M1 prodrug enzyme
+                    system. To this end, we designed the prodrug structure of actinomycin D (see design for details) and
+                    screened a variety of drugs with similar mechanism of action to actinomycin D. We plan to carry out
+                    further experimental verification soon.
                 </p>
                 <img src="https://2019.igem.org/wiki/images/thumb/6/60/T--SYSU-Medicine--approach_1.png/1600px-T--SYSU-Medicine--approach_1.png"
                     class="img-fp-1">
@@ -2078,8 +2077,10 @@
                     In the experiment, we observed that the expression level of nitroreductase in the cell itself would
                     affect the transformation of prodrug, and at the same time, actinomycin D played a role in promoting
                     M1 virus infection. It is reasonable to speculate that this feature can be used to exert selective
-                    pressure on the evolution of M1, and to give drugs to tumor cells with low expression level of
-                    nitroreductase for targeted evolutionary screening of M1.
+                    pressure on the evolution of M1-prodrug enzyme system, by administrating drugs to tumor cells with
+                    low expression level of nitroreductase for targeted evolutionary screening of M1. In our previous
+                    study, a laboratory member has already successfully obtained virus strains with directed evolution
+                    using similar strategies.
                 </p>
                 <img src="https://2019.igem.org/wiki/images/c/cf/T--SYSU-Medicine--des_f1.png" class="img-fp-1">
             </div>
@@ -2185,120 +2186,10 @@
     </div>
     <div class="space" style="height: 30vw;"></div>
 </body>
-<script>
+<script type="text/javascript">
     $(function () { $(".navigation").css("width", window.innerWidth); });
     // all in one
 
-    // $(function () {
-    //     $(".piano-subpage-key").addClass("stop-animation");
-    //     $(".piano-subpage-key").addClass("animation");
-    //     $(".key-kernel").addClass("animation");
-    // });
-    // var piano_flag = [];
-    // $(function () {
-    //     $(".sub-content").each(function () {
-    //         piano_flag.push(1);
-    //         $(".test").text(piano_flag);
-    //     });
-    // });
-
-    // $(document).scroll(function () {
-    //     debug = []
-    //     playing_flag = 1;
-    //     $(".sub-content").each(function (i, each_0) {
-    //         var content_top = $(each_0).offset().top - $(window).scrollTop();
-    //         var content_bottom = content_top + $(each_0).outerHeight();
-    //         debug.push(content_bottom);
-    //         var judge = window.innerHeight / 3 * 2;
-    //         $(".test").text(piano_flag);
-    //         if (content_top < judge) {
-    //             if (playing_flag) {
-    //                 piano_flag[i] = 0;
-    //                 var key_id = $(each_0).attr("id");
-    //                 key_id += "-key";//找到钢琴键
-    //                 playing_flag = 1;
-    //                 $(document.getElementById(key_id)).animate({
-    //                     width: "12vw",
-    //                     height: "2vh"
-    //                 }, 200,function(){
-    //                     playing_flag = 1;
-    //                 });//钢琴放大
-    //             }
-    //             //    $(document.getElementById(key_id)).children().animate({background-color: "rgb(255,55,68)"})
-    //         }
-    //         if (content_bottom < judge) {
-
-    //             piano_flag[i] = 1;
-    //             var key_id = $(each_0).attr("id");
-    //             key_id += "-key";//找到钢琴键
-    //             $(document.getElementById(key_id)).animate({
-    //                 width: "8vw",
-    //                 height: "1vh"
-    //             }, 200)//钢琴缩小
-    //             //    $(document.getElementById(key_id)).children().animate({background-color: "rgb(255,55,68)"})
-    //         }
-    //         console.log(debug);
-    //     }
-
-    //     );
-    //     // var scrollBox = $(document);
-    //     //     //调用throttle函数，传入相应的方法和规定的时间;
-    //     //     var thro = throttle(throFun,300);
-    //     //     //触发事件;
-    //     //     scrollBox.on('scroll' , function(){
-    //     //         //调用执行函数;
-    //     //         thro();
-    //     //     })
-
-    //     //     // 封装函数;    
-    //     //     function throttle(method,time){
-    //     //         var timer = null;
-    //     //         var startTime = new Date();
-    //     //         return function(){
-    //     //             var context = this;
-    //     //             var endTime = new Date();
-    //     //             var resTime = endTime - startTime;
-    //     //             //判断大于等于我们给的时间采取执行函数;
-    //     //             if(resTime >= time){
-    //     //                 method.call(context);
-    //     //                 //执行完函数之后重置初始时间，等于最后一次触发的时间
-    //     //                 startTime = endTime;
-    //     //             }
-    //     //         }
-    //     //     }
-    //     //     function throFun(){
-    //     //         $(".sub-content").each(function(i,each_0){
-    //     //             var content_top = $(each_0).offset().top - $(window).scrollTop();
-    //     //             var content_bottom = content_top + $(each_0).outerHeight();
-
-    //     //             var judge = window.innerHeight/3*2;
-    //     //             $(".test").text(content_bottom-judge);
-    //     //             if (content_top<judge){
-    //     //                 if (piano_flag){
-    //     //                     piano_flag = 0;
-    //     //                     var key_id =  $(each_0).attr("id");
-    //     //                     key_id += "-key";//找到钢琴键
-    //     //                     $(document.getElementById(key_id)).animate({width:"12vw",
-    //     //                      height: "2vh"},200);//钢琴放大
-    //     //                 }    
-    //     //             //    $(document.getElementById(key_id)).children().animate({background-color: "rgb(255,55,68)"})
-    //     //             }
-    //     //             if (content_bottom<judge){
-    //     //                 // 
-    //     //                 piano_flag = 1;
-    //     //                 var key_id =  $(each_0).attr("id");
-    //     //                 key_id += "-key";//找到钢琴键
-    //     //                 $(document.getElementById(key_id)).animate({width:"8vw",
-    //     //                  height: "1vh"},200)//钢琴缩小
-    //     //              //    $(document.getElementById(key_id)).children().animate({background-color: "rgb(255,55,68)"})
-    //     //              }
-
-    //     //         });
-    //     //     }
-
-
-
-    // });
 
     $(function () {
         $("#content-0").css("height", "30vw");
@@ -2748,5 +2639,35 @@
     })
     //all in one end
 </script>
+<footer>
+    <div style="background-color: rgb(25, 46, 67);" class="container-fluid std-content">
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <div class="row" style="display: flex;align-items: center;">
+                    <div class="col-xs-6">
+                        <div style="display: flex;align-items: center;" class="row">
+                            <div class="col-xs-8">
+                                <img style="width: 100%;"
+                                    src="https://2019.igem.org/wiki/images/1/13/T--SYSU-Medicine--footer_logo.png">
+                            </div>
+                            <div class="col-xs-4">
+                                <img style="height:8em;" class="img-circle"
+                                    src="https://2019.igem.org/wiki/images/f/fe/T--SYSU-Medicine--five_logo.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <br />
+                        <p style="color: #fff;">Address: No.74 Zhongshan Rd.2, Guangzhou, P.R. China</p>
+                        <p style="color: #fff;">ZipCode: 510080</p>
+
+                        <p style="color: #fff;">E-mail: sysumedicine2019@163.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</footer>
 
 </html>

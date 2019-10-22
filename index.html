@@ -1,589 +1,635 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<style>
-			.navigation {
-				top: 16px;
-				left: 0 !important;
-				right: 0 !important;
-				margin: 0 !important;
-				padding: 0 !important;
-			}
-			
-			.navigation-list {
-				top: 16px;
-				left: 0 !important;
-				right: 0 !important;
-				margin: 0 !important;
-				padding: 0 !important;
-			}
-			
-			.navigation-item {
-				margin: 0 !important;
-			}
-			
-			.navigation-dropdown-panel {
-				margin: 0 !important;
-			}
-			
-			.navigation-subitem {
-				margin: 0 !important;
-			}
-		</style>
+<head>
+	<style>
+		.navigation {
+			top: 16px;
+			left: 0 !important;
+			right: 0 !important;
+			margin: 0 !important;
+			padding: 0 !important;
+		}
 
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
-		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
-		<script type="text/javascript" src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/home&action=raw&ctype=text/javascript"></script>
-		<!--<script type="text/javascript" src="home.js"></script>-->
-		<link rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
-		<script src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
-		<link type="text/css" rel="stylesheet" href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
+		.navigation-list {
+			top: 16px;
+			left: 0 !important;
+			right: 0 !important;
+			margin: 0 !important;
+			padding: 0 !important;
+		}
 
-		<title>SYSU-Medicine</title>
+		.navigation-item {
+			margin: 0 !important;
+		}
 
-		<style>
-			.col-xs-12,
-			.col-xs-6,
-			.row {
-				align-content: space-around;
-			}
-			
-			#home-content img,
-			video {
-				margin-top: 5%;
-				margin-bottom: 5%;
-			}
-			
-			#home-content h1 {
-				font-size: 56px;
-			}
-			
-			#home-content h2 {
-				font-size: 48px;
-			}
-			
-			#home-content h3 {
-				font-size: 29px;
-			}
-			
-			#home-content h4 {
-				font-size: 22px;
-			}
-			
-			#home-content h5 {
-				font-size: 20px;
-			}
-			
-			#home-content p {
-				font-size: 18px;
-				/*font-size:1.75rem;*/
-			}
-			
-			.my-no-padding {
-				padding: 0 0 0 0;
-			}
-			
-			.my-vertical-align {
-				/*display: flex;
+		.navigation-dropdown-panel {
+			margin: 0 !important;
+		}
+
+		.navigation-subitem {
+			margin: 0 !important;
+		}
+	</style>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript"
+		src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/jquery&action=raw&ctype=text/javascript"></script>
+	<link type="text/css" rel="stylesheet"
+		href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/default&action=raw&ctype=text/css" />
+	<script type="text/javascript"
+		src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/home&action=raw&ctype=text/javascript"></script>
+	<!--<script type="text/javascript" src="home.js"></script>-->
+	<link rel="stylesheet"
+		href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/bootstrap&action=raw&ctype=text/css">
+	<script
+		src="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/js/bootstrap&action=raw&ctype=text/javascript"></script>
+	<link type="text/css" rel="stylesheet"
+		href="https://2019.igem.org/wiki/index.php?title=Team:SYSU-Medicine/css/style&action=raw&ctype=text/css" />
+
+	<title>SYSU-Medicine</title>
+
+	<style>
+		.col-xs-12,
+		.col-xs-6,
+		.row {
+			align-content: space-around;
+		}
+
+		#home-content img,
+		video {
+			margin-top: 5%;
+			margin-bottom: 5%;
+		}
+
+		#home-content h1 {
+			font-size: 56px;
+		}
+
+		#home-content h2 {
+			font-size: 48px;
+		}
+
+		#home-content h3 {
+			font-size: 29px;
+		}
+
+		#home-content h4 {
+			font-size: 22px;
+		}
+
+		#home-content h5 {
+			font-size: 20px;
+		}
+
+		#home-content p {
+			font-size: 18px;
+			/*font-size:1.75rem;*/
+		}
+
+		.my-no-padding {
+			padding: 0 0 0 0;
+		}
+
+		.my-vertical-align {
+			/*display: flex;
 			align-items: center;
 			flex-wrap: wrap;*/
-			}
-			/*= effect-3 css starts =*/
-			
-			.single-member {
-				/*width: 280px;*/
-				width: 100%;
-				/*height: 500px;*/
-				float: left;
-				margin: 30px 2.5%;
-				background-color: #fff;
-				text-align: center;
-				position: relative;
-			}
-			
-			.member-image img {
-				max-width: 100%;
-				vertical-align: middle;
-			}
-			
-			.effect-3 h3 {
-				font-size: 24px;
-				margin: 10px 0 0;
-				text-transform: uppercase;
-			}
-			
-			.effect-3 h5 {
-				font-size: 16px;
-				margin: 0 0 15px;
-				line-height: 24px;
-			}
-			
-			.effect-3 p {
-				font-size: 14px;
-				line-height: 22px;
-				font-weight: 300;
-				padding: 0 30px;
-				margin-bottom: 10px;
-			}
-			
-			.effect-3 {
-				max-height: 500px;
-				min-height: 500px;
-				overflow: hidden;
-			}
-			
-			.effect-3 h3 {
-				padding-top: 7px;
-				line-height: 35px;
-			}
-			
-			.effect-3 .member-image {
-				border-bottom: 5px solid rgb(255, 55, 68);
-				transition: 0.4s;
-				/*height: 212px;*/
-				height: 400px;
-				width: 100%;
-				display: inline-block;
-				float: none;
-				vertical-align: middle;
-				overflow: hidden;
-			}
-			
-			.effect-3 .member-info {
-				transition: 0.4s;
-			}
-			
-			.effect-3 .member-image img {
-				width: 100%;
-				vertical-align: bottom;
-			}
-			
-			.effect-3 .member-bottom-bar {
-				background-color: rgb(255, 55, 68);
-				float: left;
-				left: 0;
-				bottom: 0;
-				/*溢出隐藏*/
-				overflow: hidden;
-				padding: 5px 0;
-				width: 100%;
-				height: 36px;
-				transition: 0.4s;
-			}
-			
-			.effect-3:hover .member-bottom-bar {
-				/*height: 80%;*/
-			}
-			
-			.effect-3:hover .member-image {
-				/*border-bottom: 0;*/
-				/*border-radius: 50px 50px 50px 50px;*/
-				border-radius: 0%;
-				height: 100px;
-				display: inline-block;
-				overflow: hidden;
-				/*width: 109px;*/
-				transition: 0.4s;
-			}
-			/*= effect-3 css end =*/
-			
-			
-		</style>
-	</head>
+		}
 
-	<body>
-		<!-- <div class="debug" style= "position:fixed;top:6rem">
+		/*= effect-3 css starts =*/
+
+		.single-member {
+			/*width: 280px;*/
+			width: 100%;
+			/*height: 500px;*/
+			float: left;
+			margin: 30px 2.5%;
+			background-color: #fff;
+			text-align: center;
+			position: relative;
+		}
+
+		.member-image img {
+			max-width: 100%;
+			vertical-align: middle;
+		}
+
+		.effect-3 h3 {
+			font-size: 24px;
+			margin: 10px 0 0;
+			text-transform: uppercase;
+		}
+
+		.effect-3 h5 {
+			font-size: 16px;
+			margin: 0 0 15px;
+			line-height: 24px;
+		}
+
+		.effect-3 p {
+			font-size: 14px;
+			line-height: 22px;
+			font-weight: 300;
+			padding: 0 30px;
+			margin-bottom: 10px;
+		}
+
+		.effect-3 {
+			max-height: 500px;
+			min-height: 500px;
+			overflow: hidden;
+		}
+
+		.effect-3 h3 {
+			padding-top: 7px;
+			line-height: 35px;
+		}
+
+		.effect-3 .member-image {
+			border-bottom: 5px solid rgb(255, 55, 68);
+			transition: 0.4s;
+			/*height: 212px;*/
+			height: 400px;
+			width: 100%;
+			display: inline-block;
+			float: none;
+			vertical-align: middle;
+			overflow: hidden;
+		}
+
+		.effect-3 .member-info {
+			transition: 0.4s;
+		}
+
+		.effect-3 .member-image img {
+			width: 100%;
+			vertical-align: bottom;
+		}
+
+		.effect-3 .member-bottom-bar {
+			background-color: rgb(255, 55, 68);
+			float: left;
+			left: 0;
+			bottom: 0;
+			/*溢出隐藏*/
+			overflow: hidden;
+			padding: 5px 0;
+			width: 100%;
+			height: 36px;
+			transition: 0.4s;
+		}
+
+		.effect-3:hover .member-bottom-bar {
+			/*height: 80%;*/
+		}
+
+		.effect-3:hover .member-image {
+			/*border-bottom: 0;*/
+			/*border-radius: 50px 50px 50px 50px;*/
+			border-radius: 0%;
+			height: 100px;
+			display: inline-block;
+			overflow: hidden;
+			/*width: 109px;*/
+			transition: 0.4s;
+		}
+
+		/*= effect-3 css end =*/
+	</style>
+</head>
+
+<body>
+	<!-- <div class="debug" style= "position:fixed;top:6rem">
         <a class="a">a</a>
     </div> -->
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 column">
-					<nav class="navigation" id="nav-top">
-						<ul class="navigation-list nav-justified">
-							<div class="navigation-blue navigation-div">
-								<li class="navigation-item activate ">
-									<a class="navigation-item-link " href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
-									<ul class="navigation-dropdown-panel"></ul>
-								</li>
-								<li class="navigation-item dropdown">
-									<a class="navigation-item-link ">Project</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Design">Design</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Experiments">Experiments</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Inspiration">Inspiration</a>
-										</li>
-									</ul>
-								</li>
-								<li class="navigation-item dropdown">
-									<a class="navigation-item-link">Model</a>
-									<ul class="navigation-dropdown-panel">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Model">Overview</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/M1_Cultivation">M1 Cultivation
-											</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Injection_System">Injection System
-											</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/TES">T. E. S.</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Future">Future</a>
-										</li>
-									</ul>
-								</li>
-								<li class="navigation-item dropdown ">
-									<a class="navigation-item-link">Human Practices</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Overview
-											</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Integrated_Practices">Integrated Practices
-											</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education & Engagement
-											</a>
-										</li>
-									</ul>
-								</li>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 column">
+				<nav class="navigation" id="nav-top">
+					<ul class="navigation-list nav-justified">
+						<div class="navigation-blue navigation-div">
+							<li class="navigation-item activate ">
+								<a class="navigation-item-link "
+									href="https://2019.igem.org/Team:SYSU-Medicine">Home</a>
+								<ul class="navigation-dropdown-panel"></ul>
+							</li>
+							<li class="navigation-item dropdown">
+								<a class="navigation-item-link ">Project</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Description">Description</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Design">Design</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Results">Results</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Experiments">Experiments</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Inspiration">Inspiration</a>
+									</li>
+								</ul>
+							</li>
+							<li class="navigation-item dropdown">
+								<a class="navigation-item-link">Model</a>
+								<ul class="navigation-dropdown-panel">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Model">Overview</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/M1_Cultivation">M1 Cultivation
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Injection_System">Injection
+											System
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/TES">T. E. S.</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Future">Future</a>
+									</li>
+								</ul>
+							</li>
+							<li class="navigation-item dropdown ">
+								<a class="navigation-item-link">Human Practices</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Human_Practices">Overview
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Integrated_Practices">Integrated
+											Practices
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Public_Engagement">Education &
+											Engagement
+										</a>
+									</li>
+								</ul>
+							</li>
 
-							</div>
-							<div class="navigation-red navigation-div">
-								<li class="navigation-item dropdown ">
-									<a class="navigation-item-link ">Parts</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts Overview</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts#Basic_Part">Basic Parts</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts#Composite_Part">Composite Parts
-											</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts#Part_Collection">Part Collection
-											</a>
-										</li>
-									</ul>
-								</li>
+						</div>
+						<div class="navigation-red navigation-div">
+							<li class="navigation-item dropdown ">
+								<a class="navigation-item-link ">Parts</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts">Parts Overview</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts#Basic_Part">Basic
+											Parts</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts#Composite_Part">Composite
+											Parts
+										</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Parts#Part_Collection">Part
+											Collection
+										</a>
+									</li>
+								</ul>
+							</li>
 
-								<li class="navigation-item ">
-									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
-									<ul class="navigation-dropdown-panel"></ul>
-								</li>
-								<li class="navigation-item ">
-									<a class="navigation-item-link" href="https://2019.igem.org/Team:SYSU-Medicine/Medal">Awards</a>
-									<ul class="navigation-dropdown-panel">
-										<li class="navigation-subitem">
-											<a href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging</a>
-										</li>
-									</ul>
-								</li>
-								<li class="navigation-item dropdown ">
-									<a class="navigation-item-link ">Team</a>
-									<ul class="navigation-dropdown-panel ">
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
-										</li>
-										<li class="navigation-subitem">
-											<a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions</a>
-										</li>
-									</ul>
-								</li>
-							</div>
+							<li class="navigation-item ">
+								<a class="navigation-item-link"
+									href="https://2019.igem.org/Team:SYSU-Medicine/Safety">Safety</a>
+								<ul class="navigation-dropdown-panel"></ul>
+							</li>
+							<li class="navigation-item ">
+								<a class="navigation-item-link"
+									href="https://2019.igem.org/Team:SYSU-Medicine/Medal">Awards</a>
+								<ul class="navigation-dropdown-panel">
+									<li class="navigation-subitem">
+										<a href="https://igem.org/2019_Judging_Form?team=SYSU-Medicine">Judging</a>
+									</li>
+								</ul>
+							</li>
+							<li class="navigation-item dropdown ">
+								<a class="navigation-item-link ">Team</a>
+								<ul class="navigation-dropdown-panel ">
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Team">Team Members</a>
+									</li>
+									<li class="navigation-subitem">
+										<a
+											href="https://2019.igem.org/Team:SYSU-Medicine/Collaborations">Collaborations</a>
+									</li>
+									<li class="navigation-subitem">
+										<a href="https://2019.igem.org/Team:SYSU-Medicine/Attributions">Attributions</a>
+									</li>
+								</ul>
+							</li>
+						</div>
 
-						</ul>
-					</nav>
-				</div>
+					</ul>
+				</nav>
 			</div>
 		</div>
+	</div>
 
-		<div class="container-fluid">
-			<div class="row clearfix">
-				<!--<div class="col-xs-12 my-no-padding">
+	<div class="container-fluid">
+		<div class="row clearfix">
+			<!--<div class="col-xs-12 my-no-padding">
 					<img src="https://2019.igem.org/wiki/images/7/73/T--SYSU-Medicine--homepage_11.jpg" style="width:100%;" />
 				</div>-->
-				<br />
-				<br />
-				<div class="col-xs-12 my-no-padding">
-					<video class="video-big" controls="controls" style="max-width: 100%;margin-top: 0;width: 100%;" poster="https://2019.igem.org/wiki/images/e/ef/T--SYSU-Medicine--homepage_2.jpg">
-						<source src="https://2019.igem.org/wiki/images/d/d8/T--SYSU-Medicine--homepage_0.mp4" type="video/mp4">
-					</video>
+			<br>
+			<div class="col-xs-12 my-no-padding">
+				<video class="video-big" controls="controls" style="max-width: 100%;margin-top: 0;width: 100%;"
+					poster="https://2019.igem.org/wiki/images/e/ef/T--SYSU-Medicine--homepage_2.jpg">
+					<source src="https://2019.igem.org/wiki/images/d/d8/T--SYSU-Medicine--homepage_0.mp4"
+						type="video/mp4">
+				</video>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="container-fluid" id="home-content">
+		<div class="row clearfix text-center">
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 center-block text-center">
+				<div class="single-member effect-3 center-block text-center">
+					<div class="member-image center-block">
+						<img src="https://2019.igem.org/wiki/images/2/23/T--SYSU-Medicine--home-m1.jpg" alt="Member">
+					</div>
+					<div class="member-info">
+						<h3>M1</h3>
+						<p>Oncolytic virus therapy is a therapeutic approach to cancer treatment that utilizes native or
+							genetically modified viruses that selectively replicate within tumor cells. M1, as a strain
+							of alphavirus that was isolated from mosquitoes collected on Hainan Island of China,
+							possesses selective and potent antitumor activity through intravenous infusion.</p>
+						<div class="member-bottom-bar"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 center-block">
+				<div class="single-member effect-3">
+					<div class="member-image">
+						<img src="https://2019.igem.org/wiki/images/c/c1/T--SYSU-Medicine--home_logo.jpg" alt="Member">
+					</div>
+					<div class="member-info">
+						<h3>TAICHI</h3>
+						<p>Therefore, we came up with the idea to combine them together!
+							We engineered M1 to specifically encode enzymes that could convert prodrugs into active
+							therapeutic metabolites and utilized riboswitch to enhance the dynamic regulation of the
+							system, which can significantly increase the targeting of chemotherapy drugs and reduce its
+							side effects.
+							Thus, it is called “Target-Activated In situ Cancer Hijack system”, or “TAICHI” for short.
+						</p>
+						<div class="member-bottom-bar"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 center-block">
+				<div class="single-member effect-3">
+					<div class="member-image">
+						<img src="https://2019.igem.org/wiki/images/4/43/T--SYSU-Medicine--home-drug.jpg" alt="Member">
+					</div>
+					<div class="member-info">
+						<h3>Chemotherapy Drugs</h3>
+						<p>Chemotherapy, as the classical method and cornerstone of tumor treatment, has been widely
+							used in clinic, but also has serious problems. Take Actinomycin D as an example, it causes
+							severe side effects in the bone marrow, lymphoid tissues, and intestinal epithelium.</p>
+						<div class="member-bottom-bar"></div>
+					</div>
 				</div>
 			</div>
 		</div>
-		
-		
 
-		<div class="container-fluid" id="home-content">
-			<div class="row clearfix text-center">
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 center-block text-center">
-					<div class="single-member effect-3 center-block text-center">
-						<div class="member-image center-block">
-							<img src="https://2019.igem.org/wiki/images/2/23/T--SYSU-Medicine--home-m1.jpg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h3>M1</h3>
-							<p>Oncolytic virus therapy is a therapeutic approach to cancer treatment that utilizes native or genetically modified viruses that selectively replicate within tumor cells. M1, as a strain of alphavirus that was isolated from mosquitoes collected on Hainan Island of China, possesses selective and potent antitumor activity through intravenous infusion.</p>
-							<div class="member-bottom-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 center-block">
-					<div class="single-member effect-3">
-						<div class="member-image">
-							<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h3>TAICHI</h3>
-							<p>Therefore, we came up with the idea to combine them together!
-							We engineered M1 to specifically encode enzymes that could convert prodrugs into active therapeutic metabolites and utilized riboswitch to enhance the dynamic regulation of the system, which can significantly increase the targeting of chemotherapy drugs and reduce its side effects. 
-							Thus, it is called “Target-Activated In situ Cancer Hijack system”, or “TAICHI” for short.
-							</p>
-							<div class="member-bottom-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 center-block">
-					<div class="single-member effect-3">
-						<div class="member-image">
-							<img src="https://2019.igem.org/wiki/images/4/43/T--SYSU-Medicine--home-drug.jpg" alt="Member">
-						</div>
-						<div class="member-info">
-							<h3>Chemotherapy Drugs</h3>
-							<p>Chemotherapy, as the classical method and cornerstone of tumor treatment, has been widely used in clinic, but also has serious problems. Take Actinomycin D as an example, it causes severe side effects in the bone marrow, lymphoid tissues, and intestinal epithelium.</p>
-							<div class="member-bottom-bar"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="clearfix" style="margin-bottom: 6em;"></div>
+		<div class="clearfix" style="margin-bottom: 6em;"></div>
 
-			<div class="row clearfix my-vertical-align">
-				<div class="col-xs-12 col-sm-6">
-					<div class="content-white">
-						<div class="row clearfix">
-							<div class="col-xs-12 col-sm-6 col-xs-offset-1">
-								<div class="piano piano-one">
-									<div class="piano-key piano-key-0-0">
-										<div class="piano-key-colorkernel"></div>
-									</div>
-								</div>
-							</div>
-							<br />
-							<br />
-						</div>
-						
-						<div class="row clearfix">
-							<div class="col-xs-10 col-sm-10 col-xs-offset-1">
-								<br />
-								<br />
-								<br />
-								<p>A Nitroreductase is inserted into the genome of the oncolytic virus M1 to reduce some kinds of prodrugs to thousands more cytotoxic intermediates.</p>
-								<p>Modified M1 and prodrugs are injected intravenously at the same time, reaching normal tissue in the body. Non-functional prodrugs cannot work effectively, while M1's selective infection mechanism also prevents it from acting on normal cells.
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6">
-					<video class="video-box" muted autoplay loop style="width:100%;">
-						<source src="https://2019.igem.org/wiki/images/0/07/T--SYSU-Medicine--homepage_1.mp4" type="video/mp4">
-					</video>
-				</div>
-			</div>
-
-			<div class="clearfix" style="margin-bottom: 10em;"></div>
-			<div class="row clearfix content-blue my-vertical-align">
-				<div class="col-xs-12 col-sm-6 content-blue">
-					<video class="video-box" muted autoplay loop style="width:90%;">
-						<source src="https://2019.igem.org/wiki/images/4/41/T--SYSU-Medicine--homepage_2.mp4" type="video/mp4" style="width:80%;">
-					</video>
-				</div>
-				<div class="col-xs-12 col-sm-6 ">
-					<div class="content-blue">
-						<div class="row clearfix">
-							<div class="col-xs-11 col-sm-11">
-								<div class="piano piano-two">
-									<div class="piano-key piano-key-1-0">
-										<div class="piano-key-colorkernel"></div>
-									</div>
-									<div class="piano-key piano-key-1-1">
-										<div class="piano-key-colorkernel"></div>
-									</div>
-								</div>
-							</div>
-							<br />
-							<br />
-						</div>
-					</div>
+		<div class="row clearfix my-vertical-align">
+			<div class="col-xs-12 col-sm-6">
+				<div class="content-white">
 					<div class="row clearfix">
-						<div class="col-xs-6 col-sm-6 col-xs-offset-1" style="color:white;">
-							<br />
-							<br />
-							<br />
-							<br />
-							<br />
-							<p>However, in insensitive tumor tissues (such as lung cancer), a small amount of M1 infects tumor cells and expresses nitroreductase in their cytoplasm. Meanwhile, prodrugs transport across cell membrane, converting into their active form by those enzymes.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="clearfix" style="margin-bottom: 10em;"></div>
-
-			<div class="row clearfix content-white my-vertical-align">
-				<div class="col-xs-12 col-sm-6 content-white">
-					<div class="row clearfix">
-						<div class="col-xs-6 col-sm-6 col-xs-offset-1">
-							<div class="piano piano-three">
-								<div class="piano-key piano-key-2-0">
-									<div class="piano-key-colorkernel"></div>
-								</div>
-								<div class="piano-key piano-key-2-1">
-									<div class="piano-key-colorkernel"></div>
-								</div>
-								<div class="piano-key piano-key-2-2">
+						<div class="col-xs-12 col-sm-6 col-xs-offset-1">
+							<div class="piano piano-one">
+								<div class="piano-key piano-key-0-0">
 									<div class="piano-key-colorkernel"></div>
 								</div>
 							</div>
-							<br />
-							<br />
-							<br />
-							<br />
 						</div>
+						<br />
+						<br />
 					</div>
+
 					<div class="row clearfix">
-						<div class="col-xs-8 col-sm-8 col-xs-offset-2">
+						<div class="col-xs-10 col-sm-10 col-xs-offset-1">
 							<br />
 							<br />
 							<br />
-							<br />
-							<p>The active drugs diffuse in the tumor, together with M1 cause a bystander effect while synergistically killing tumor cells, recruiting more immune cells to remove residual tumors.
+							<p>A Nitroreductase is inserted into the genome of the oncolytic virus M1 to reduce some
+								kinds of prodrugs to thousands more cytotoxic intermediates.</p>
+							<p>Modified M1 and prodrugs are injected intravenously at the same time, reaching normal
+								tissue in the body. Non-functional prodrugs cannot work effectively, while M1's
+								selective infection mechanism also prevents it from acting on normal cells.
 							</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-12 col-sm-6 content-white">
-					<video class="video-box" muted loop autoplay style="width:90%;">
-						<source src="https://2019.igem.org/wiki/images/d/d1/T--SYSU-Medicine--homepage_3.mp4" type="video/mp4" style="width:80%;">
-					</video>
-				</div>
 			</div>
+			<div class="col-xs-12 col-sm-6">
+				<video class="video-box" muted autoplay loop style="width:100%;">
+					<source src="https://2019.igem.org/wiki/images/0/07/T--SYSU-Medicine--homepage_1.mp4"
+						type="video/mp4">
+				</video>
+			</div>
+		</div>
 
-			<div class="clearfix" style="margin-bottom: 10em;"></div>
-
-			<div class="row clearfix content-blue my-vertical-align">
-				<div class="col-xs-12 col-sm-6 content-blue">
-					<video class="video-box" muted autoplay loop style="width:90%;">
-						<source src="https://2019.igem.org/wiki/images/d/df/T--SYSU-Medicine--homepage_4.mp4" type="video/mp4" style="width:80%;">
-					</video>
-				</div>
-				<div class="col-xs-12 col-sm-6">
-					<div class="content-blue">
-						<div class="row clearfix">
-							<div class="col-xs-11 col-sm-11">
-								<div class="piano piano-four">
-									<div class="piano-key piano-key-3-0">
-										<div class="piano-key-colorkernel"></div>
-									</div>
-									<div class="piano-key piano-key-3-1">
-										<div class="piano-key-colorkernel"></div>
-									</div>
-									<div class="piano-key piano-key-3-2">
-										<div class="piano-key-colorkernel"></div>
-									</div>
-									<div class="piano-key piano-key-3-3">
-										<div class="piano-key-colorkernel"></div>
-									</div>
+		<div class="clearfix" style="margin-bottom: 10em;"></div>
+		<div class="row clearfix content-blue my-vertical-align">
+			<div class="col-xs-12 col-sm-6 content-blue">
+				<video class="video-box" muted autoplay loop style="width:90%;">
+					<source src="https://2019.igem.org/wiki/images/4/41/T--SYSU-Medicine--homepage_2.mp4"
+						type="video/mp4" style="width:80%;">
+				</video>
+			</div>
+			<div class="col-xs-12 col-sm-6 ">
+				<div class="content-blue">
+					<div class="row clearfix">
+						<div class="col-xs-11 col-sm-11">
+							<div class="piano piano-two">
+								<div class="piano-key piano-key-1-0">
+									<div class="piano-key-colorkernel"></div>
 								</div>
-								<br />
-								<br />
-								<br />
+								<div class="piano-key piano-key-1-1">
+									<div class="piano-key-colorkernel"></div>
+								</div>
 							</div>
 						</div>
-						
-						<div class="row clearfix">
-							<div class="col-xs-9 col-sm-9 col-xs-offset-1" style="color: white;">
-								<br />
-								<br />
-								<br />
-								<br />
-								<p>At the same time, drugs transformed into active forms by prodrug enzymes can in turn enhance the infection rate of M1, leading to more virus production and release, forming a cascading amplification effect.</p>
-								<p>What's more, three riboswitches have also been inserted into the UTR regions of M1.</p>
-								<p>After the tumor has been jointly destroyed, theophylline is injected externally to bind the aptamer on riboswitches, preventing expression of M1, therefore stopping its infection.
-								</p>
+						<br />
+						<br />
+					</div>
+				</div>
+				<div class="row clearfix">
+					<div class="col-xs-6 col-sm-6 col-xs-offset-1" style="color:white;">
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						<p>However, in insensitive tumor tissues (such as lung cancer), a small amount of M1 infects
+							tumor cells and expresses nitroreductase in their cytoplasm. Meanwhile, prodrugs transport
+							across cell membrane, converting into their active form by those enzymes.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="clearfix" style="margin-bottom: 10em;"></div>
+
+		<div class="row clearfix content-white my-vertical-align">
+			<div class="col-xs-12 col-sm-6 content-white">
+				<div class="row clearfix">
+					<div class="col-xs-6 col-sm-6 col-xs-offset-1">
+						<div class="piano piano-three">
+							<div class="piano-key piano-key-2-0">
+								<div class="piano-key-colorkernel"></div>
 							</div>
+							<div class="piano-key piano-key-2-1">
+								<div class="piano-key-colorkernel"></div>
+							</div>
+							<div class="piano-key piano-key-2-2">
+								<div class="piano-key-colorkernel"></div>
+							</div>
+						</div>
+						<br />
+						<br />
+						<br />
+						<br />
+					</div>
+				</div>
+				<div class="row clearfix">
+					<div class="col-xs-8 col-sm-8 col-xs-offset-2">
+						<br />
+						<br />
+						<br />
+						<br />
+						<p>The active drugs diffuse in the tumor, together with M1 cause a bystander effect while
+							synergistically killing tumor cells, recruiting more immune cells to remove residual tumors.
+						</p>
+						<p>At the same time, drugs transformed into active forms by prodrug enzymes can in turn enhance
+							the infection rate of M1, leading to more virus production and release, forming a cascading
+							amplification effect.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 content-white">
+				<video class="video-box" muted loop autoplay style="width:90%;">
+					<source src="https://2019.igem.org/wiki/images/d/d1/T--SYSU-Medicine--homepage_3.mp4"
+						type="video/mp4" style="width:80%;">
+				</video>
+			</div>
+		</div>
+
+		<div class="clearfix" style="margin-bottom: 10em;"></div>
+
+		<div class="row clearfix content-blue my-vertical-align">
+			<div class="col-xs-12 col-sm-6 content-blue">
+				<video class="video-box" muted autoplay loop style="width:90%;">
+					<source src="https://2019.igem.org/wiki/images/d/df/T--SYSU-Medicine--homepage_4.mp4"
+						type="video/mp4" style="width:80%;">
+				</video>
+			</div>
+			<div class="col-xs-12 col-sm-6">
+				<div class="content-blue">
+					<div class="row clearfix">
+						<div class="col-xs-11 col-sm-11">
+							<div class="piano piano-four">
+								<div class="piano-key piano-key-3-0">
+									<div class="piano-key-colorkernel"></div>
+								</div>
+								<div class="piano-key piano-key-3-1">
+									<div class="piano-key-colorkernel"></div>
+								</div>
+								<div class="piano-key piano-key-3-2">
+									<div class="piano-key-colorkernel"></div>
+								</div>
+								<div class="piano-key piano-key-3-3">
+									<div class="piano-key-colorkernel"></div>
+								</div>
+							</div>
+							<br />
+							<br />
+							<br />
+						</div>
+					</div>
+
+					<div class="row clearfix">
+						<div class="col-xs-9 col-sm-9 col-xs-offset-1" style="color: white;">
+							<br />
+							<br />
+							<br />
+							<br />
+							<p>At the same time, drugs transformed into active forms by prodrug enzymes can in turn
+								enhance the infection rate of M1, leading to more virus production and release, forming
+								a cascading amplification effect.</p>
+							<p>What's more, three riboswitches have also been inserted into the UTR regions of M1.</p>
+							<p>After the tumor has been jointly destroyed, theophylline is injected externally to bind
+								the aptamer on riboswitches, preventing expression of M1, therefore stopping its
+								infection.
+							</p>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
 
-			<div class="clearfix" style="margin-bottom: 10em;"></div>
+		<div class="clearfix" style="margin-bottom: 10em;"></div>
 
-			<div class="row clearfix content-white my-vertical-align">
-				<div class="col-xs-12 col-sm-6 content-white">
-					<div class="content-white">
-						<div class="row clearfix">
-							<div class="col-xs-10 col-sm-6 col-xs-offset-1">
-								<div class="piano piano-one">
+		<div class="row clearfix content-white my-vertical-align">
+			<div class="col-xs-12 col-sm-6 content-white">
+				<div class="content-white">
+					<div class="row clearfix">
+						<div class="col-xs-10 col-sm-6 col-xs-offset-1">
+							<!-- <div class="piano piano-one">
 									<div class="piano-key piano-key-0-0">
 										<div class="piano-key-colorkernel"></div>
 									</div>
-								</div>
-								<br />
-								<br />
-							</div>
+								</div> -->
+							<br />
+							<br />
 						</div>
-						
-						<div class="col-xs-9 col-sm-9 col-xs-offset-2 ">
-							<div class="bg-img">
-								<br />
-								<br />
-								<br />
-								<br />
-								<br />
-								<p>
-									Due to M1's selective infection of tumor cells and the exquisitely-designed prodrug/enzyme collocation, the system has both high lethality and targeting ability, which is why we named it "Target-Activated In situ Cancer HIjack system". Abbreviated as "TAICHI", it is also a metaphor for the complementary role of M1 and actinomycin D.
-								</p>
-							</div>
+					</div>
+
+					<div class="col-xs-9 col-sm-9 col-xs-offset-2 ">
+						<div class="bg-img">
+							<br />
+							<br />
+							<br />
+							<br />
+							<br />
+							<p>
+								Due to M1's selective infection of tumor cells and the exquisitely-designed
+								prodrug/enzyme collocation, the system has both high lethality and targeting ability,
+								which is why we named it "Target-Activated In situ Cancer HIjack system". Abbreviated as
+								"TAICHI", it is also a metaphor for the complementary role of M1 and actinomycin D.
+							</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-12 col-sm-6">
-					<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg" style="width:80%;margin-top:0%;">
-				</div>
 			</div>
+			<div class="col-xs-12 col-sm-6">
+				<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg"
+					style="width:80%;margin-top:0%;">
+			</div>
+		</div>
 
-			<!--<div class="row clearfix">
+		<!--<div class="row clearfix">
 				<div class="col-xs-12 col-sm-6">
 
 				</div>
@@ -613,7 +659,7 @@
 				</div>
 			</div>-->
 
-			<!--<div class="col-xs-12">
+		<!--<div class="col-xs-12">
 				<div class="content content-white">
 					<div class="piano piano-one">
 						<div class="piano-key piano-key-0-0">
@@ -725,17 +771,48 @@
 					</div>
 				</div>-->
 
-		</div>
+	</div>
 
-	</body>
-	<footer>
-		<div class="container clearfix">
-			<div class="row">
-				<div class="col-xs-12">
-					<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg" style="width:10%;margin-left:45%;">
-				</div>
+</body>
+
+	<!-- <div class="container clearfix">
+		<div class="row">
+			<div class="col-xs-12">
+				<img src="https://2019.igem.org/wiki/images/9/9e/T--SYSU-Medicine--logo.svg"
+					style="width:10%;margin-left:45%;">
 			</div>
 		</div>
-	</footer>
+	</div> -->
+	<footer>
+			<div style="background-color: rgb(25, 46, 67);" class="container-fluid std-content">
+				<div class="row">
+					<div class="col-xs-10 col-xs-offset-1">
+						<div class="row"  style="display: flex;align-items: center;">
+							<div  class="col-xs-6">
+								<div  style="display: flex;align-items: center;" class="row">
+									<div class="col-xs-8">
+										<img style="width: 100%;"
+											src="https://2019.igem.org/wiki/images/1/13/T--SYSU-Medicine--footer_logo.png">
+									</div>
+									<div class="col-xs-4">
+										<img style="height:8em;" class="img-circle"
+											src="https://2019.igem.org/wiki/images/f/fe/T--SYSU-Medicine--five_logo.png">
+									</div>
+								</div>
+							</div>
+							<div  class="col-xs-6">
+								<br/>
+								<p style="color: #fff;">Address: No.74 Zhongshan Rd.2, Guangzhou, P.R. China</p>
+								<p style="color: #fff;">ZipCode: 510080</p>
+		
+								<p style="color: #fff;">E-mail: sysumedicine2019@163.com</p>
+							</div>
+						</div>
+					</div>
+				</div>
+		
+			</div>
+		</footer>
+
 
 </html>

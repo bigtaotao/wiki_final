@@ -59,7 +59,7 @@
 		}
 
 		#Result-content p {
-			font-size: 16px;
+			font-size: 18px;
 			/*font-size:1.75rem;*/
 		}
 
@@ -157,14 +157,14 @@
 			background-clip: content-box, padding-box;
 		}
 
-		#Result-content ul li img {
+		#Result-content ul li .myimg {
 			/*border-right: 5px solid rgb(255, 55, 68);
 				border-radius: 50%;*/
 			width: 12em;
 			height: 9em;
 		}
 
-		#Result-content ul li:nth-of-type(odd) img {
+		#Result-content ul li:nth-of-type(odd) .myimg {
 			/*border-right: 5px solid rgb(255, 55, 68);
 				border-radius: 50%;*/
 			position: absolute;
@@ -173,7 +173,7 @@
 				height: 6rem;*/
 		}
 
-		#Result-content ul li:nth-of-type(even) img {
+		#Result-content ul li:nth-of-type(even) .myimg {
 			/*border-right: 5px solid rgb(255, 55, 68);
 				border-radius: 50%;*/
 			position: absolute;
@@ -480,7 +480,7 @@ background-clip: border-box;
 							<div class="row clearfix">
 								<div class="col-xs-3">
 									<div class="img-box">
-										<img class="img-responsive center-block"
+										<img class="img-responsive center-block myimg"
 											src="https://2019.igem.org/wiki/images/1/14/T--SYSU-Medicine--Results_%281%29.svg">
 									</div>
 
@@ -489,21 +489,22 @@ background-clip: border-box;
 									<div class="panel panel-default">
 										<div class="panel-heading">
 											<h4 class="panel-title">
-												<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-													Determination of the infection and oncolytic ability of M1 virus to
-													different tumor cell lines ↓
+												<a data-toggle="collapse" data-parent="#accordion" href="#collapse-1">
+													Determination of the infection and oncolytic ability of M1 virus to different tumor cell lines
 												</a>
 											</h4>
 										</div>
-										<div id="collapseOne" class="panel-collapse collapse in">
+										<div id="collapse-1" class="panel-collapse ">
 											<div class="panel-body">
-												Figure 1 Though M1 virus has been shown to be infectious to different
-												types of tumor cell lines,it has only limited killing effects in
-												resistant cell lines such as A549,Hct8 and Bxpc3 in vitro.Wild type M1
-												virus has been engineered to express green fluorescent protein in
-												infected cells,and the percentage of green fluorescent cells can be used
-												as a marker of infection rate.Cell viability assay was determined using
-												an MTT kit.
+												<img class="img-responsive center-block"
+											src="https://2019.igem.org/wiki/images/1/1c/T--SYSU-Medicine--Result-fig1.jpg">
+												<p>
+													Figure 1 <br />
+													(A)	Cell viability after infection of M1 virus.<br />
+													(B)	Cell expressed eGFP after infection of M1 virus.Images were obtained 24 hours after infection.<br />
+													(C)	Infection rate were determined 24 hours after infection of M1 virus.<br />
+													Though M1 virus has been shown to be infectious to different types of tumors include human and mouse cell lines,it has only limited killing effects in resistant cell lines such as A549,Hct8 and Bxpc3 in vitro.Wild type M1 virus has been engineered to express green fluorescent protein in infected cells(M1-GFP),and the percentage of green fluorescent cells can be used as a marker of infection rate and could be detected by flow cytometry.Cell viability assay was determined using an MTT kit.The infection rate of resistant cell lines could meet the requirements of enzyme expressing cells of nitroreductase mediated podrug-enzyme system.
+												</p>
 											</div>
 										</div>
 									</div>
@@ -515,7 +516,7 @@ background-clip: border-box;
 							<div class="row clearfix">
 								<div class="col-xs-3">
 									<div class="img-box">
-										<img class="img-responsive center-block"
+										<img class="img-responsive center-block myimg"
 											src="https://2019.igem.org/wiki/images/9/96/T--SYSU-Medicine--Results_%282%29.svg">
 									</div>
 								</div>
@@ -523,20 +524,20 @@ background-clip: border-box;
 									<div class="panel panel-default">
 										<div class="panel-heading">
 											<h4 class="panel-title">
-
 												<a data-toggle="collapse" data-parent="#accordion" href="#collapse-2">
-													Determination of the targeting ability of M1 virus to transplanted
-													tumor
+													Determination of the targeting ability of M1 virus to transplanted tumor
 												</a>
 											</h4>
 										</div>
-										<div id="collapse-2" class="panel-collapse collapse">
+										<div id="collapse-2" class="panel-collapse">
 											<div class="panel-body">
-												Figure 2 Wild type M1 virus has been engineered to express nanoluc
-												luciferase,which can be used for bioluminescence,in infected cells.In
-												vivo with or without a complete immune system,intravenous injection of
-												M1 virus showed both high tumor targeting ability in mouse model
-												transplanted with B16 and Hct8 cells.
+												<img class="img-responsive center-block"
+													src="https://2019.igem.org/wiki/images/d/d3/T--SYSU-Medicine--Result-fig2.jpg">
+												<p>
+													Figure 2 M1-iRFP showed targeting ability to tranplanted tumor on nude mice.(Dpi:Days post infection)
+													<br />
+													Wild type M1 virus has been engineered to express iRFP in infected cells(M1-iRFP),which can be used for bioluminescence,in infected cells.In vivo without a complete immune system,intravenous injection of M1 virus showed both high tumor targeting ability in mouse model transplanted with Hep3B cells.
+												</p>
 											</div>
 										</div>
 									</div>
@@ -545,7 +546,7 @@ background-clip: border-box;
 							<div class="row clearfix">
 								<div class="col-xs-3">
 									<div class="img-box">
-										<img class="img-responsive center-block"
+										<img class="img-responsive center-block myimg"
 											src="https://2019.igem.org/wiki/images/3/34/T--SYSU-Medicine--Results_%283%29.svg">
 									</div>
 								</div>
@@ -553,18 +554,21 @@ background-clip: border-box;
 									<div class="panel panel-default">
 										<div class="panel-heading">
 											<h4 class="panel-title">
-
 												<a data-toggle="collapse" data-parent="#accordion" href="#collapse-3">
 													Establishment of M1 virus strain expressing nitroreductase
 												</a>
 											</h4>
 										</div>
-										<div id="collapse-3" class="panel-collapse collapse">
+										<div id="collapse-3" class="panel-collapse">
 											<div class="panel-body">
-												Figure 3 The nitroreductase coding sequence from E.coli was introduced
-												into the genome of M1 virus to replace the green fluorescent protein
-												sequence.The M1-NR(M1 virus with nitroreductase coding sequence) virus
-												has showed similar titer changes in vitro compared with M1-GFP.
+												<img class="img-responsive center-block"
+													src="https://2019.igem.org/wiki/images/d/d4/T--SYSU-Medicine--Result-fig3.jpg">
+												<p>
+													Figure 3<br />
+													(A)	Plasmid for M1-GFP had been engineered to replaced the eGFP sequence with human codon optimized nitroreductase sequence from E.coli K12. <br />
+													(B)	Expression of nitroreductase were determined in vero cells, b16 and A549 cell line.<br />
+													The nitroreductase coding sequence from E.coli was introduced into the genome of  M1 virus to replace the green fluorescent protein sequence(M1-NR),this process was achieved by enzyme cutting and T4 ligation of target fragment at the restriction ezyme cutting sites of MfeI and XhoI.We used anti-flag antibody to verify the expression of nitroreductase by western blot 24 hours post M1-NR infection (MOI=1).And the expression of eGFP was determined 24 hours post M1-GFP infection as control(MOI=1).
+												</p>
 											</div>
 										</div>
 									</div>
@@ -573,7 +577,7 @@ background-clip: border-box;
 							<div class="row clearfix">
 								<div class="col-xs-3">
 									<div class="img-box">
-										<img class="img-responsive center-block"
+										<img class="img-responsive center-block myimg"
 											src="https://2019.igem.org/wiki/images/c/c2/T--SYSU-Medicine--Results_%284%29.svg">
 									</div>
 								</div>
@@ -583,14 +587,18 @@ background-clip: border-box;
 											<h4 class="panel-title">
 
 												<a data-toggle="collapse" data-parent="#accordion" href="#collapse-4">
-													M1-Nitroreductase showed similar proliferation ability to M1-GFP.
+													M1 virus mediated prodrug-enzyme system showed better antitumor activity 
 												</a>
 											</h4>
 										</div>
-										<div id="collapse-4" class="panel-collapse collapse">
+										<div id="collapse-4" class="panel-collapse">
 											<div class="panel-body">
-												Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-												nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+												<img class="img-responsive center-block"
+													src="https://2019.igem.org/wiki/images/3/33/T--SYSU-Medicine--Result-fig4.jpg">
+												<p>
+													Figure 4 Cell viability assay at different time points to verify the lethality of M1-NR together with CB1954.<br />
+													MTT assay showed a better anti-tumor ability when M1-NR and CB1954 were added into the culture medium at the same time than adding M1-NR or CB1954 independently to the culture system.Considering anti-tumor ability of this prodrug-enzyme system is closely related to the expression level of nitroreductase,we infected cells at moi=10.
+												</p>
 											</div>
 										</div>
 									</div>
@@ -599,7 +607,7 @@ background-clip: border-box;
 							<div class="row clearfix">
 								<div class="col-xs-3">
 									<div class="img-box">
-										<img class="img-responsive center-block"
+										<img class="img-responsive center-block myimg"
 											src="https://2019.igem.org/wiki/images/f/f2/T--SYSU-Medicine--Results_%285%29.svg">
 									</div>
 								</div>
@@ -609,46 +617,62 @@ background-clip: border-box;
 											<h4 class="panel-title">
 
 												<a data-toggle="collapse" data-parent="#accordion" href="#collapse-5">
-													M1 virus mediated prodrug-enzyme system showed better antitumor
-													activity.
-
+													Prodrug derived from actinomycin D(ActD) is a potential optimizing tool for our system
 												</a>
 											</h4>
 										</div>
-										<div id="collapse-5" class="panel-collapse collapse">
+										<div id="collapse-5" class="panel-collapse ">
 											<div class="panel-body">
-												Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-												nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
+												<div class="row clearfix">
+													<div class="col-xs-12">
+														<img class="img-responsive center-block"
+															src="https://2019.igem.org/wiki/images/2/27/T--SYSU-Medicine--Result-fig6a.jpg">
+													</div>
+													<div class="col-xs-12">
+														<p>
+															Figure 5 (A) Screening the drugs that may promote M1 infection.<br />
+														</p>
+													</div>
+												</div>
+												<div class="row clearfix">
+													<div class="col-xs-12">
+														<img class="img-responsive center-block"
+															src="https://2019.igem.org/wiki/images/b/b0/T--SYSU-Medicine--Result-fig6b.jpg">
+													</div>
+													<div class="col-xs-12">
+														<p>
+															Figure 5 (B) Cell treated with actinomycin D showed higher infection rate.<br />
+														</p>
+													</div>
+												</div>
+												<div class="row clearfix">
+													<div class="col-xs-12">
+														<img class="img-responsive center-block"
+															src="https://2019.igem.org/wiki/images/4/4f/T--SYSU-Medicine--Result-fig6c.jpg">
+													</div>
+													<div class="col-xs-12">
+														<p>
+															Figure 5 (C) Synergistic killing of actinomycin D and virus on tumor cell lines.<br />
+														</p>
+													</div>
+												</div>
+												<div class="row clearfix">
+													<div class="col-xs-12">
+														<img class="img-responsive center-block"
+															src="https://2019.igem.org/wiki/images/6/6f/T--SYSU-Medicine--Result-fig6d.jpg">
+													</div>
+													<div class="col-xs-12">
+														<p>
+															Figure 5 (D) Prodrug derived from actinomycin D had been shown to convert to its effective form in the presence of nitroreductase.<br />
+														</p>
+														<p>We selected several drugs with similar structure and transcriptional blocking function to determine their power to promote M1-GFP infection.The infection rate was determined by flow cytometry 24 hours post infection on A549(MOI=1).All the drugs were added into the culture medium 9 hours post infection at a concentration of 1uM.For further detection of infection rate improved by actinomycin D ,images were captured 24 hours after M1-GFP infection and cell were treated with 0.3ug/ml actinomycin D 9 hours after infection.Infection rates were determined by flow cytometry 36 hours post infection.We hypothesized that the presence of prodrug of actinomycin D could be a stressful environment which could help us to screening out viruses with stronger prodrug converting ability.</p>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 						</li>
-						<li>
-							<div class="row clearfix">
-								<div class="col-xs-3">
-									<div class="img-box">
-										<img class="img-responsive center-block"
-											src="https://2019.igem.org/wiki/images/9/96/T--SYSU-Medicine--Results_%286%29.svg">
-									</div>
-								</div>
-								<div class="col-xs-9">
-									<div class="panel panel-default">
-										<div class="panel-heading">
-											<h4 class="panel-title">
-
-												<a data-toggle="collapse" data-parent="#accordion" href="#collapse-6">
-													Adding riboswitches to the genome makes M1 more controllable
-												</a>
-											</h4>
-										</div>
-										<div id="collapse-6" class="panel-collapse collapse">
-											<div class="panel-body">
-												Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-												nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-											</div>
-										</div>
-									</div>
-						</li>
+						
 
 					</div>
 				</ul>
@@ -657,6 +681,17 @@ background-clip: border-box;
 		</div>
 
 		<div class="clearfix" style="margin-bottom: 10em;"></div>
+		
+		<div class="row clearfix">
+			<div class="col-xs-12">
+				<h3>Conclusion</h3>
+				<p>
+					We first evaluated the infection and oncolytic ability of M1 virus to different tumor cell lines in vitro, as well as its targeting ability to transplanted tumor in vivo. We then constructed M1 virus strain expressing nitroreductase to verify the significant effect of prodrug enzyme system CB1954/NTR and M1 combination on the anti-tumor activity. Furthermore, we verified that the chemotherapy drug actinomycin D can in turn promote M1 infection on a variety of tumor cell lines. Therefore, if we can combine the advantages of the two, this would be an ideal M1 prodrug enzyme system. In addition, we have also inserted riboswitches to edit M1 to be more controllable as a tool of synthetic biology.
+				</p>
+				<br /><br /><br /><br /><br />
+			</div>
+		</div>
+		
 	</div>
 	<script type="text/javascript">
 		// title
@@ -719,7 +754,7 @@ background-clip: border-box;
 
 	</script>
 </body>
-<footer>
+<!-- <footer>
 	<div class="container clearfix">
 		<div class="row">
 			<div class="col-xs-12">
@@ -728,6 +763,36 @@ background-clip: border-box;
 			</div>
 		</div>
 	</div>
-</footer>
-
+	
+</footer> -->
+<footer>
+		<div style="background-color: rgb(25, 46, 67);" class="container-fluid std-content">
+			<div class="row">
+				<div class="col-xs-10 col-xs-offset-1">
+					<div class="row"  style="display: flex;align-items: center;">
+						<div  class="col-xs-6">
+							<div  style="display: flex;align-items: center;" class="row">
+								<div class="col-xs-8">
+									<img style="width: 100%;"
+										src="https://2019.igem.org/wiki/images/1/13/T--SYSU-Medicine--footer_logo.png">
+								</div>
+								<div class="col-xs-4">
+									<img style="height:8em;" class="img-circle"
+										src="https://2019.igem.org/wiki/images/f/fe/T--SYSU-Medicine--five_logo.png">
+								</div>
+							</div>
+						</div>
+						<div  class="col-xs-6">
+							<br/>
+							<p style="color: #fff;">Address: No.74 Zhongshan Rd.2, Guangzhou, P.R. China</p>
+							<p style="color: #fff;">ZipCode: 510080</p>
+	
+							<p style="color: #fff;">E-mail: sysumedicine2019@163.com</p>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+		</div>
+	</footer>
 </html>

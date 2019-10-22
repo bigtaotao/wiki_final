@@ -21,7 +21,89 @@
 		<title>SYSU-Medicine</title>
 
 		<style>
-			
+			.card {
+	            height: 100%;
+	            /* display: -webkit-flex; */
+	            display: flex;
+	            -webkit-flex-wrap: wrap;
+	            flex-wrap: wrap;
+	            align-content: stretch;
+	            justify-content: center;
+	            align-items: flex-start;
+	            flex-direction: row;
+	            text-align: center;
+	            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+	            padding: 1em 2em;
+	        }
+	
+	        .card-blue {
+	            border-left-color: rgb(25, 46, 67);
+	        }
+	
+	        .card-red {
+	            border-left-color: rgb(255, 55, 68);
+	        }
+	
+	
+	        .card-img-top {
+	            width: 60%;
+	        }
+	
+	        .card-body {
+	            width: 80%;
+	            display: flex;
+	            flex-direction: column;
+	            justify-content: center;
+	            align-items: center;
+	        }
+	
+	        .card-button {
+	            cursor: pointer;
+	            align-self: flex-end;
+	            -webkit-align-self: flex-end;
+	            width: 100%;
+	            padding: 1em;
+	            margin-bottom: 1em;
+	
+	        }
+	
+	        .card-button-blue {
+	            background-color: rgb(25, 46, 67);
+	        }
+	
+	        .card-button-red {
+	            background-color: rgb(255, 55, 68);
+	        }
+	
+	        .card-text {
+	            text-align: justify;
+	            line-height: 1.8em;
+	            font-family: 'Open Sans';
+	            font-size: 15px !important;
+	
+	
+	        }
+	
+	
+	
+	        .card-button-link {
+	
+	            color: rgb(255, 255, 255);
+	            font-size: 1.5em;
+	            /* margin: 2em; */
+	        }
+	
+	        .card-button-link:visited {
+	            color: rgb(255, 255, 255);
+	        }
+	
+	        .card-button-link:hover {
+	            text-decoration: none;
+	            color: rgb(210, 210, 210);
+	        }
+        
+        
+        
 		</style>
 	</head>
 
@@ -188,6 +270,36 @@
 					4
 				</div>
 			</div>
+			
+			
+			
+			<div class="row equal-height">
+	            <div class="clearfix" style="margin-bottom: 10em;"></div>
+	            <div class="col-xs-4  add-padding ">
+	                <div class="card ">
+	                    <div class="card-body">
+	                        <h4 class="card-title">Future</h4>
+	                    </div>
+	                    <div class="card-button card-button-blue">
+	                        <a class="card-button-link" href="https://2019.igem.org/Team:SYSU-Medicine/Future">Entry</a>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="col-xs-4  col-xs-offset-4 add-padding">
+	                <div class="card ">
+	                    <!--<div class="card-body">
+	                        <h4 class="card-title">Conclusion</h4>
+	                    </div>-->
+	                    <div class="card-button card-button-blue">
+	                        <a class="card-button-link"
+	                            href="https://2019.igem.org/Team:SYSU-Medicine/Future#conclusion">Entry</a>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+			
+			
+			
 		</div>
 
 		<script>

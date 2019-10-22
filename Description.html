@@ -297,6 +297,12 @@
         font-size: 3.5vw !important;
     }
 
+    .mask-front-content-30>p,
+    .mask-front-content-31>p,
+    .mask-front-content-32>p {
+        font-size: 3.5vw !important;
+    }
+
     p {
         color: rgb(255, 255, 255);
         font-size: 1vw;
@@ -535,7 +541,7 @@
 
     /* title */
 
-    .title-box-new {
+    .title-box-new-des {
         margin: 5vw 5vw 2vw 5vw;
         position: relative;
     }
@@ -978,13 +984,13 @@
             </div>
         </div>
     </div> -->
-    <div class="title-box-new title-big">
+    <div class="title-box-new-des title-big">
         <div class="title-box-mask"></div>
         <div class="title-box-title">
             <h1>DESCRIPTION</h1>
         </div>
     </div>
-    <div class="title-box-new title-0">
+    <div class="title-box-new-des title-0">
         <div class="title-box-mask"></div>
         <div class="title-box-title">
             <h1>Background</h1>
@@ -1137,7 +1143,7 @@
     </div>
 
 
-    <div class="title-box-new title-0">
+    <div class="title-box-new-des title-0">
         <div class="title-box-mask"></div>
         <div class="title-box-title">
             <h1>Mechanism</h1>
@@ -1717,6 +1723,11 @@
                                             replication
                                             or cytopathic vacuoles formation [20].
                                         </p>
+                                        <img src="https://2019.igem.org/wiki/images/0/06/T--SYSU-Medicine--des_9.png">
+
+                                        <p style="font-size: 1em;" class="fig-text">Figure 8. Sites for inhibition of
+                                            nucleic acid synthesis by antibiotics and drugs. Waring, M. J. (1981). DNA
+                                            Modification and Cancer. Annual Review of Biochemistry, 50(1), 159–192. </p>
                                         <p> As early as 1963, a study suggested that actinomycin D could enhance the
                                             growth of
                                             Chikungunya
@@ -1802,7 +1813,7 @@
 
 
 
-    <div class="title-box-new title-1">
+    <div class="title-box-new-des title-1">
         <div class="title-box-mask"></div>
         <div class="title-box-title">
             <h1>Problem Definition</h1>
@@ -1887,7 +1898,7 @@
 
 
     </div>
-    <div class="title-box-new title-2">
+    <div class="title-box-new-des title-2">
         <div class="title-box-mask"></div>
         <div class="title-box-title">
             <h1>Approach</h1>
@@ -1935,7 +1946,7 @@
 
 
     </div>
-    <div class="title-box-new title-3">
+    <div class="title-box-new-des title-3">
         <div class="title-box-mask"></div>
         <div class="title-box-title">
             <h1>Future Perspectives</h1>
@@ -2093,7 +2104,7 @@
         </div>
     </div>
     <div class="reference-box">
-        <div class="title-box-new title-4">
+        <div class="title-box-new-des title-4">
             <div class="title-box-mask"></div>
             <div class="title-box-title">
                 <h1 class="reference-title">REFERENCE</h1>
@@ -2693,7 +2704,7 @@
     // title 出现  后期吧subpage和homepage合并
     $(document).ready(function () {
         speed = 250
-        $(".title-box-new").each(function (titlebox_i, title_box) {
+        $(".title-box-new-des").each(function (titlebox_i, title_box) {
             var last = $(title_box).offset().top - $(window).scrollTop();
             var viewheight = window.innerHeight / 5 * 3;
             if (last < viewheight) {
@@ -2715,7 +2726,7 @@
     })
     $(document).scroll(function () {
         speed = 250
-        $(".title-box-new").each(function (titlebox_i, title_box) {
+        $(".title-box-new-des").each(function (titlebox_i, title_box) {
             var last = $(title_box).offset().top - $(window).scrollTop();
             var viewheight = window.innerHeight / 5 * 3;
             if (last < viewheight) {
